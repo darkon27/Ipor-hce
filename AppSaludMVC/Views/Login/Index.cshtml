@@ -1,0 +1,162 @@
+﻿@using Region = Ext.Net.Region
+@model SoluccionSalud.Entidades.Entidades.ENTITY_GLOBAL
+@{
+    ViewBag.Title = "ERP VitalDocs - Asistencial";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+@section cabecera
+{
+    <script>     
+
+        function exitLogin() {
+            setCookie("login", "", -1);
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(";");
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == " ") {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        var getUser = function () {
+            var user = getCookie("login");
+            if (user != "") {
+                if (user == window.name) {
+                    return;
+                    alert(user + " ya ingreso al sistema en otra ventana");
+                    window.location.href = "https://google.com";
+                } else {
+                    while (user == "") {
+                        user = prompt("User Login");
+                    }
+                    document.write(user + " acaba de entrar al sistema");
+                    setCookie("login", user, 1);
+                    window.name = user;
+                    window.onbeforeunload = exitLogin;
+                }
+            } else {
+                user = App.txtUsername.getValue();
+            }
+            alert('Paso ' + user);
+            return user;
+        };
+
+        function login() {
+            Ext.net.DirectMethod.request({
+                url: '@(Url.Action("Login"))',
+                params: {
+                    txtUsername: App.txtUsername.getValue(),
+                    txtPassword: App.txtPassword.getValue()
+                },
+                eventMask: {
+                    showMask: true,
+                    msg: "Verificando Usuario.."
+                }
+            });
+        }
+
+        function togglePasswordVisibility() {
+            var passwordField = App.txtPassword;
+            passwordField.inputEl.dom.type = passwordField.inputEl.dom.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+}
+
+@section cuerpo
+{
+    @(Html.X().Window()
+        .Closable(false)
+        .CloseAction(CloseAction.Destroy)
+        .Resizable(false)
+        .Height(170)
+        .Icon(Icon.Lock)
+                .Title("Login - ERP VitalDocs - Asistencial")
+        .Draggable(false)
+        .Width(350)
+        .Modal(false)
+        .ID("WindowLogin")
+        .BodyPadding(5)
+        .X(950)
+        .Layout(LayoutType.Fit)
+        .Items(
+            Html.X().FormPanel()
+                .ID("FormPanel1")
+                .Border(false)
+                .BodyStyle("background-color:transparent;")
+                .Layout(LayoutType.Column)
+                .FieldDefaults(fd => {
+                    fd.LabelAlign = LabelAlign.Left;
+                    fd.MsgTarget = MessageTarget.Side;
+                })
+                .Items(
+                    Html.X().Image()
+                        .ID("IMG")
+                        .ImageUrl("~/resources/images/LOGOROYAL.jpg")
+                        .MarginSpec("0 05 0 05")
+                        .Width(90)
+                        .Height(100),
+                    Html.X().Container()
+                        .Layout(LayoutType.VBox)
+                        .Defaults(d => d.Add(new Parameter("LabelWidth", "45")))
+                        .Items(
+                            Html.X().Label().Html("<br/><br/><br/>"),
+                            Html.X().TextField()
+                                .ID("txtUsername")
+                                .ReadOnly(false)
+                                .FieldLabel("Usuario")
+                                .Text("")
+                                .AllowBlank(false)
+                                .BlankText("Su código de Usuario/Agente es requerido."),
+                            Html.X().TextField()
+                                .ID("txtPassword")
+                                .ReadOnly(false)
+                                .InputType(Ext.Net.InputType.Password)
+                                .FieldLabel("Clave")
+                                .Text(""),
+                            Html.X().Checkbox()
+                                .BoxLabel("Mostrar contraseña")
+                                .Listeners(ls => ls.Change.Handler = "togglePasswordVisibility();")
+                        )
+                )
+        )
+        .Buttons(
+            Html.X().Button()
+                .Text("Login")
+                .Icon(Icon.Accept)
+                .DirectEvents(de => {
+                    de.Click.Action = "Login";
+                    de.Click.EventMask.ShowMask = true;
+                    de.Click.EventMask.Msg = "Verificando...";
+                    de.Click.EventMask.MinDelay = 1000;
+                    de.Click.FormID = "#(return this.up('window').down('form');)";
+                }),
+            Html.X().Button()
+                .Text("Cancelar")
+                .Icon(Icon.Cancel)
+                .Handler("parent.window.location.href = 'http://www.ipor.com/';")
+        )
+    )
+
+    @(Html.X().KeyNav()
+        .Target("FormPanel1")
+        .Enter(a => a.Handler = "login();")
+    )
+}

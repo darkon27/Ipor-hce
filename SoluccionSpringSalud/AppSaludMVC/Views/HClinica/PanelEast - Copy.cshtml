@@ -1,0 +1,114 @@
+﻿ @{
+    ViewBag.Title = "Simple TreePanel";
+    Layout = "";
+    var X = Html.X();
+}
+<script>
+     
+    var nodeLoad = function (view, record, item, index, event) {
+        var nodeId = record.data.id;
+        var path = record.getPath('text', '/');
+
+        App.direct.CreateGridPanel(path, {
+            success: function (result) {
+                alert(result);
+            },
+
+            failure: function (errorMsg) {
+                alert(errorMsg);
+            }
+        });
+    }; 
+     
+     var filterTree = function (tf, e) {
+         var tree = this.up("TreeEast"),
+               text = tf.getRawValue();            
+
+           tree.clearFilter();
+            
+           if (Ext.isEmpty(text, false)) {
+               return;
+           }
+            
+           if (e.getKey() === Ext.EventObject.ESC) {
+               clearFilter();
+           } else {
+               var re = new RegExp(".*" + text + ".*", "i");
+                
+               tree.filterBy(function (node) {
+                   return re.test(node.data.text);
+               });
+           }
+       };
+        
+    var clearFilter = function () {
+        var field = this,
+            tree = this.up("TreeEast");
+            
+        field.setValue(""); 
+        tree.clearFilter(true);             
+        tree.getView().focus();            
+    };
+  
+
+</script>
+@(
+ Html.X().TreePanel()
+            //.Title("Tree")
+            .Height(500)
+            .Width(200)
+            .ID("TreeEast")
+            .Border(false)
+            .TopBarItem(
+                        Html.X().ToolbarTextItem().Text("Servicios:"),
+                        Html.X().ToolbarSpacer(),
+                        Html.X().TriggerField()
+                            .EnableKeyEvents(true)
+                            .Triggers(
+                                Html.X().FieldTrigger().Icon(TriggerIcon.Clear)
+                            )
+                            .Listeners(l =>
+                            {
+                                l.KeyUp.Fn = "filterTree";
+                                l.KeyUp.Buffer = 250;
+
+                                l.TriggerClick.Fn = "clearFilter";
+                            })
+                    )
+            .Store(
+                Html.X().TreeStore()
+                    .Proxy(
+                        Html.X().AjaxProxy().Url(Url.Action("GetTreeViewChildRitgh"))
+                    )
+            )
+            .Root(
+                         Html.X().Node().NodeID("0").Text("RECURSOS")
+            )
+            .DirectEvents(ev =>
+                        {
+                            ev.Select.Url = "/HClinica/GetTreeView";
+                            ev.Select.Method = HttpMethod.GET;
+                            ev.Select.ExtraParams.Add(new
+                                                {
+                                                    text = JRawValue.From("record.data.id"),
+                                                    containerId = "Center1"
+                                                });
+                            //ev.Select.Before = "o.url = record.get('url');";
+                            // new Parameter("path", "record.get('path')", ParameterMode.Raw));
+                            //ev.Select.Success = "onSuccess(result.data)";
+                        })
+           .Listeners(l =>
+            {
+               // l.ItemClick.Fn = "nodeLoad";
+            })
+           .View(
+                        X.TreeView()
+                            .Plugins(
+                                    X.TreeViewDragDrop().EnableDrop(true).ContainerScroll(true)
+                            )
+                    )
+
+                         
+)
+
+ 

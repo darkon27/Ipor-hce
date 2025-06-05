@@ -1,0 +1,75 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoluccionSalud.RepositoryReport.Entidades
+{
+    public class rptViewEscalaAltaCirugiaAmbulatoriaFEEdit
+    {
+        public string UnidadReplicacion { get; set; }
+        public long IdEpisodioAtencion { get; set; }
+        public int IdPaciente { get; set; }
+        public int EpisodioClinico { get; set; }
+        public int IdEscalaAltaCirugiaAmb { get; set; }
+        public Nullable<System.DateTime> FechaIngreso { get; set; }
+        public Nullable<System.DateTime> HoraIngreso { get; set; }
+        public Nullable<int> FlagParametro1 { get; set; }
+        public Nullable<int> FlagParametro2 { get; set; }
+        public Nullable<int> FlagParametro3 { get; set; }
+        public Nullable<int> FlagParametro4 { get; set; }
+        public Nullable<int> FlagParametro5 { get; set; }
+        public Nullable<int> FlagParametro6 { get; set; }
+        public string Adicional1 { get; set; }
+        public string Adicional2 { get; set; }
+        public Nullable<int> Total { get; set; }
+        public Nullable<int> Estado { get; set; }
+        public string UsuarioCreacion { get; set; }
+        public Nullable<System.DateTime> FechaCreacion { get; set; }
+        public string UsuarioModificacion { get; set; }
+        public Nullable<System.DateTime> FechaModificacion { get; set; }
+        public string Accion { get; set; }
+        public string Version { get; set; }
+        public string ApellidoPaterno { get; set; }
+        public string ApellidoMaterno { get; set; }
+        public string Nombres { get; set; }
+        public string NombreCompleto { get; set; }
+        public string Busqueda { get; set; }
+        public string TipoDocumento { get; set; }
+        public string Documento { get; set; }
+        public Nullable<System.DateTime> FechaNacimiento { get; set; }
+        public string Sexo { get; set; }
+        public string EstadoCivil { get; set; }
+        public Nullable<int> PersonaEdad { get; set; }
+        public Nullable<int> IdOrdenAtencion { get; set; }
+        public string CodigoOA { get; set; }
+        public Nullable<int> LineaOrdenAtencion { get; set; }
+        public Nullable<int> TipoOrdenAtencionPac { get; set; }
+        public Nullable<int> TipoAtencion { get; set; }
+        public string TipoTrabajador { get; set; }
+        public Nullable<int> IdEstablecimientoSalud { get; set; }
+        public Nullable<int> IdUnidadServicio { get; set; }
+        public Nullable<int> IdPersonalSalud { get; set; }
+        public Nullable<System.DateTime> FechaRegistroPac { get; set; }
+        public Nullable<System.DateTime> FechaAtencion { get; set; }
+        public Nullable<int> IdEspecialidadPac { get; set; }
+        public Nullable<int> IdTipoOrden { get; set; }
+        public Nullable<int> estadoEpiAtencion { get; set; }
+        public string Expr101 { get; set; }
+        public string Expr102 { get; set; }
+        public string Expr103 { get; set; }
+        public string TipoAtencionDesc { get; set; }
+        public string TipoTrabajadorDesc { get; set; }
+        public string EstablecimientoCodigo { get; set; }
+        public string EstablecimientoDesc { get; set; }
+        public string UnidadServicioCodigo { get; set; }
+        public string UnidadServicioDesc { get; set; }
+        public string PersMedicoNombreCompleto { get; set; }
+        public string PersMedicoNombreDocumento { get; set; }
+        public string EspecialidadCodigo { get; set; }
+        public string EspecialidadDesc { get; set; }
+        public string Expr104 { get; set; }
+
+    }
+}

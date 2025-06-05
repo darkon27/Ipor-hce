@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectPersonaMast">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objSC" type="tns:AV_SOA_Service" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AV_SOA_Service">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCita" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCita" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndicadorExcedente" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="INDICADORHISTORIACLINICA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoCita" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DuracionPromedio" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DuracionReal" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comentario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estado" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PacientesIDS" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDPACIENTE_NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Celular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoPaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoMaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoHC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoHCAnterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RutaFoto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTurno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Medico" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Periodo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdConsultorio" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDCONSULTORIO_CODIGO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEDICO_NOMBRE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdOrdenAtencion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstadoDocumento" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoAtencion" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modalidad" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GRUPOATENCION_NOMBRE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Linea" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Especialidad" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESPECIALIDAD_NOMBRE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndicadorSeguimiento" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdConsultaExternaInicial" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdConsultaExterna" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoPaciente" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Situacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaConsulta" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pool" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdServicio" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoOA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="INDTOPICO" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTopico" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndHospitalizado" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnidadReplicacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TomoActual" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prioridad" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFinal" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPolizaPlan" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEmpresaAseguradora" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdContrato" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPoliza" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPlan" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCobertura" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdHorario" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCitaRelacionada" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCitaFecha" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MotivoCita" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTurno" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoraInicio" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoraFin" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstadoDocumentoCita" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoParentesco" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstadoOrdenServicio" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Expr1" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicioHorario" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFinHorario" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoOrdenAtencion" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndicadorDisponible" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPaciente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Persona" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSelectPersonaMastResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSelectPersonaMastResult" type="tns:ArrayOfAV_SOA_Service" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAV_SOA_Service">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AV_SOA_Service" nillable="true" type="tns:AV_SOA_Service" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectPersonaMastSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSelectPersonaMast" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectPersonaMastSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSelectPersonaMastResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosSaludSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectPersonaMast">
+      <wsdl:input message="tns:GetSelectPersonaMastSoapIn" />
+      <wsdl:output message="tns:GetSelectPersonaMastSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosSaludSoap" type="tns:ServiciosSaludSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectPersonaMast">
+      <soap:operation soapAction="http://tempuri.org/GetSelectPersonaMast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosSaludSoap12" type="tns:ServiciosSaludSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectPersonaMast">
+      <soap12:operation soapAction="http://tempuri.org/GetSelectPersonaMast" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosSalud">
+    <wsdl:port name="ServiciosSaludSoap" binding="tns:ServiciosSaludSoap">
+      <soap:address location="http://10.10.2.62/SOAService/ServiciosSalud.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosSaludSoap12" binding="tns:ServiciosSaludSoap12">
+      <soap12:address location="http://10.10.2.62/SOAService/ServiciosSalud.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

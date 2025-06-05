@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://service.springerp.royalsystems.pe/" name="ReglasSaludService" targetNamespace="http://service.springerp.royalsystems.pe/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://service.springerp.royalsystems.pe/" xmlns:tns="http://impl.service.springerp.royalsystems.pe/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.springerp.royalsystems.pe/">
+      <xsd:element name="EjecutarRegla" type="ns1:EjecutarRegla" />
+      <xsd:complexType name="EjecutarRegla">
+        <xsd:sequence>
+          <xsd:element name="arg0" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="EjecutarReglaResponse" type="ns1:EjecutarReglaResponse" />
+      <xsd:complexType name="EjecutarReglaResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="MensajeEstadoCMI" type="ns1:MensajeEstadoCMI" />
+      <xsd:complexType name="MensajeEstadoCMI">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="arg0" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="MensajeEstadoCMIResponse" type="ns1:MensajeEstadoCMIResponse" />
+      <xsd:complexType name="MensajeEstadoCMIResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MensajeEstadoCMI">
+    <wsdl:part name="parameters" element="ns1:MensajeEstadoCMI" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarReglaResponse">
+    <wsdl:part name="parameters" element="ns1:EjecutarReglaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarRegla">
+    <wsdl:part name="parameters" element="ns1:EjecutarRegla" />
+  </wsdl:message>
+  <wsdl:message name="MensajeEstadoCMIResponse">
+    <wsdl:part name="parameters" element="ns1:MensajeEstadoCMIResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ReglasSaludService">
+    <wsdl:operation name="EjecutarRegla">
+      <wsdl:input name="EjecutarRegla" message="ns1:EjecutarRegla" />
+      <wsdl:output name="EjecutarReglaResponse" message="ns1:EjecutarReglaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MensajeEstadoCMI">
+      <wsdl:input name="MensajeEstadoCMI" message="ns1:MensajeEstadoCMI" />
+      <wsdl:output name="MensajeEstadoCMIResponse" message="ns1:MensajeEstadoCMIResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

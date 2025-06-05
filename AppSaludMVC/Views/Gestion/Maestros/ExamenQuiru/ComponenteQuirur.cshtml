@@ -1,0 +1,410 @@
+﻿@model SoluccionSalud.Entidades.Entidades.ExamenQur
+
+
+
+@{
+
+    var X = Html.X();
+    var idWindow = "WindowExamenQuirur";
+    var modoDesc = (Model.ACCION == "NUEVO" ? "Nuevo" :
+                    (Model.ACCION == "UPDATE" ? "Modificar" :
+                        (Model.ACCION == "DELETE" ? "Eliminar" :
+                            (Model.ACCION == "VER" ? "Ver" : "--"))));
+
+    var indicaModoLectura = !(Model.ACCION == "NUEVO" ? true :
+                            (Model.ACCION == "UPDATE" ? true :
+                            (Model.ACCION == "DELETE" ? false :
+                            (Model.ACCION == "VER" ? false : false))));
+
+    var indicaModoLecturaKey = !(Model.ACCION == "NUEVO" ? true :
+                            (Model.ACCION == "UPDATE" ? false :
+                            (Model.ACCION == "DELETE" ? false :
+                            (Model.ACCION == "VER" ? false : false))));
+
+    var indicaModoLecturaProce_Almacen = !(Model.ACCION == "NUEVO" ? false :
+                            (Model.ACCION == "UPDATE" ? false :
+                            (Model.ACCION == "DELETE" ? false :
+                            (Model.ACCION == "VER" ? false : false))));
+
+
+    var indicaModoLecturPersona = !(Model.ACCION == "NUEVO" ? true :
+(Model.ACCION == "UPDATE" ? false :
+(Model.ACCION == "DELETE" ? false :
+(Model.ACCION == "VER" ? false : false))));
+
+    var STYLE_BACKGROUND_NODEIT = "background: #D2D6D6"; //BBD8D6  #9FBCB9
+    var COLOR_BORDER_DEFAULT = "#b5b8c8";
+
+    //var STYLE_BORDER_DEF_VALID01 = (Model.CodigoAgente != null ? "border-color: " + COLOR_BORDER_DEFAULT : "border-color: red");
+    //var STYLE_BORDER_DEF_VALID02 = (Model.Descripcion != null ? "border-color: " + COLOR_BORDER_DEFAULT : "border-color: red");
+
+}
+
+
+
+<script>
+
+
+    var template = 'color:{0};';
+    var COLOR_BLUE01 = "#284A89";
+    var COLOR_GREEN01 = "#177506";
+    var COLOR_RED01 = "#990000";
+    var COLOR_BORDER_ERROR = "red";
+    var COLOR_BORDER_DEF = "#b5b8c8";
+    var COLOR_BACKGROUND_NOEDIT = "#9FBCB9";
+
+
+    var change = function (value, meta) {
+        return value;
+
+    };
+
+    function seleccionadorGrupo() {
+        Ext.net.DirectMethod.request({
+            url: '@(Url.Action("seleccionadorSGGrupo"))',
+            params: {
+            accionSeleccion: 'getSeleccionSG_Grupo',
+            accionListado: 'LISTARPAG'
+            }
+        });
+    };
+    function seleccionadorPersona() {
+        Ext.net.DirectMethod.request({
+            url: '@(Url.Action("seleccionadorPersona"))',
+            params: {
+                accionSeleccion: 'getSeleccionPersonaMaestroAgente',
+                accionListado: 'LISTARPAGSELECUSER'
+            }
+        });
+    };
+    function seleccionadorOpciones() {
+        Ext.net.DirectMethod.request({
+            url: '@(Url.Action("seleccionadorOpciones"))',
+            params: {
+                accionSeleccion: 'getSeleccionOpciones',
+                accionListado: 'LISTARPAG'
+            }
+        });
+    };
+    function validarfechas(obj, fecha1, fecha2) {
+        if (fecha2 != null) {
+            if (fecha1 >= fecha2) {
+                obj.setValue(null);
+                Ext.Msg.show({
+                    title: "Advertencia",
+                    msg: "La fecha inicial no debe ser mayor o igual que la fecha final.",
+                    icon: Ext.Msg.WARNING,
+                    minWidth: 200,
+                    buttons: Ext.Msg.OK
+                });
+            }
+        }
+    };
+
+    function validarFechaExpiracion(obj, fecha1, fecha2, fecha3) {
+
+        if (fecha1 != null && fecha2 != null && fecha3 != null) {
+            if (fecha3 > fecha1 && fecha2 >= fecha3) {
+            } else {
+                obj.setValue(null);
+                Ext.Msg.show({
+                    title: "Advertencia",
+                    msg: "La fecha de expiración debe estar dentro del rango fecha inicio y fecha final.",
+                    icon: Ext.Msg.WARNING,
+                    minWidth: 200,
+                    buttons: Ext.Msg.OK
+                });
+            }
+        } else if (fecha1 == null && fecha2 == null) {
+            obj.setValue(null);
+            Ext.Msg.show({
+                title: "Advertencia",
+                msg: "Debe Ingresar fecha inicio y fecha final.",
+                icon: Ext.Msg.WARNING,
+                minWidth: 200,
+                buttons: Ext.Msg.OK
+            });
+        }
+    };
+
+    function validargenerico() {
+        alert("fsfs")
+    };
+
+    function cerrarWindow() {
+            Ext.net.DirectMethod.request({
+                url: '@(Url.Action("showMensajeBox"))',
+                params: {
+                    message: 'Se registró correctamente el Agente.',
+                    accion: null
+                }
+            });
+        }
+
+
+        var onSuccess = function (data) {
+            if (data != null) {
+                accionMensajes(data);
+            }
+        };
+
+        var onFailure = function (modo) {
+            App.btnSave.setDisabled(false);
+            Ext.net.DirectMethod.request({
+                url: '@(Url.Action("showMensajeBox"))',
+                params: {
+                    message: 'Un error en el evento ',
+                    titulo: "Error",
+                    tipo: 'ERROR'
+                }
+            });
+        };
+    var accionMensajes = function (data) {
+        var mensajes = "";
+        if (data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+                mensajes = mensajes + "*" + data[i].DESCRIPCION + "\n";
+            }
+            App.taAlerts.setVisible(true);
+            App.taAlerts.setValue(mensajes);
+        } else {
+            App.taAlerts.setVisible(false);
+        }
+
+    };
+
+    var getInvalidFields = function (form) {
+        var invalidFields = new Array();
+        var fields = form.getForm().getFields();
+        fields.filterBy(function (field) {
+            if (!field.isValid()) {
+                var VW_SS_HC_TABLAFORMATO_VALIDACION = {
+                    NombreCampo: field.name,
+                    IdEvento: (field.isValid() ? 1 : 0),
+                    ValorTexto: field.name + ': ' + field.getErrors()
+                };
+                invalidFields.push(VW_SS_HC_TABLAFORMATO_VALIDACION);
+            }
+        });
+        return invalidFields;
+    };
+
+    var beforeSave = function (form) {
+        var FieldsInvalidos = getInvalidFields(form);
+        if (!form.getForm().isValid()) {
+            if (FieldsInvalidos.length > 0) {
+                Ext.net.DirectMethod.request({
+                    url: '@(Url.Action("addRecursosValidacion"))',
+                    params: {
+                        data: FieldsInvalidos,
+                        indica: 'VALIDAR',
+                    },
+                    success: function (result) {
+                        accionMensajes(result.data);
+                        Ext.net.DirectMethod.request({
+                            url: '@(Url.Action("addRecursosValidacion"))',
+                            params: {
+                                data: FieldsInvalidos,
+                                indica: 'RESTART',
+                            }
+                        });
+                    }
+                });
+
+            }
+        }
+    };
+
+        var validarCampo = function (componente) {
+            if (componente.getValue() != null) {
+                if (componente.getValue().trim() == 0) {
+                    componente.setFieldStyle("border-color: " + COLOR_BORDER_ERROR);
+
+                } else {
+                    componente.setFieldStyle("border-color: " + COLOR_BORDER_DEF);
+                }
+            } else {
+                componente.setFieldStyle("border-color: " + COLOR_BORDER_ERROR);
+
+            }
+        };
+
+        var eventoCheck = function (check, componente) {
+            var checkAll = check.getValue();
+            if (checkAll) {
+                componente.setDisabled(true);
+                componente.setValue(null);
+            } else {
+                componente.setDisabled(false);
+            }
+        };
+
+        var eventoCheckGe = function (check, componente) {
+            var checkAll = check.getValue();
+            if (checkAll) {
+                document.getElementById("Nombre-inputEl").readOnly = false;
+                document.getElementById("Nombre-inputEl").value = "";
+            } else {
+                document.getElementById("Nombre-inputEl").readOnly = true;
+                document.getElementById("Nombre-inputEl").value = "";
+            }
+        };
+
+        var eventoFiltro = function (compo1, compo2) {
+            if (compo1 == "04") {
+                compo2.setVisible(true);
+            } else {
+                compo2.setVisible(false);
+            }
+        };
+        var eventoCombo = function (valor, componente, componente2,componente3,compo4,compo5) {
+            var val = valor;
+            if (val == 2) {
+                componente.setVisible(true);
+                document.getElementById("Nombre-inputEl").readOnly = true;
+                document.getElementById("Nombre-inputEl").value = "";
+                componente.setValue(null);
+                componente2.setVisible(true);
+                componente2.setValue(null);
+                componente3.setVisible(true);
+                componente3.setValue(null);
+                compo5.setVisible(true);
+                compo5.setValue(null);
+            } else {
+                componente.setVisible(false);
+                document.getElementById("Nombre-inputEl").readOnly = false;
+                document.getElementById("Nombre-inputEl").value = "";
+                componente2.setVisible(false);
+                componente3.setVisible(false);
+                compo4.setVisible(false);
+                compo5.setVisible(false);
+            }
+        }
+
+</script>
+
+@(Html.X().Window()
+    .Width(600)
+    .Height(300)
+    .Maximizable(true)
+    .Modal(true)
+    .OnEsc("false")
+    .Constrain(true)
+    //.AutoScroll(true)
+    .Layout(LayoutType.Fit)
+    .CloseAction(CloseAction.Destroy)
+    .Icon(Icon.ApplicationForm)
+    .ID(idWindow)
+    .Title("Registro de Nuevo Componente Quirúrgico:" + modoDesc).Items(
+    Html.X().FormPanel().ID("FormPanel1").StandardSubmit(true)
+         .Frame(false)
+         .Border(false)
+         .AutoScroll(true)
+        .Layout(LayoutType.VBox)
+        .LayoutConfig(new VBoxLayoutConfig { Align = VBoxAlign.Stretch })
+        .Items(
+        Html.X().FormPanel()
+                             .Frame(false)
+                             .Border(false)
+                            .Layout(LayoutType.HBox)
+                            .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
+
+                            .Items(
+
+                                             Html.X().FormPanel()
+                                 .Layout(LayoutType.Form)
+                                 .Width(500)
+                                 .FieldDefaults(d =>
+                                 {
+                                     d.LabelWidth = 100;
+                                 })
+                                 .BodyPadding(10)
+                                 .Frame(false)
+                                 .Border(false)
+                                 .Items(
+
+                                        Html.X().Container().Layout(LayoutType.VBox).LayoutConfig(new VBoxLayoutConfig { Align = VBoxAlign.Stretch })
+                                            .Items(
+                                            X.NumberFieldFor(m => m.Id).FieldLabel("Id").Hidden(true).Width(426).ReadOnly(true),
+                                                X.TextFieldFor(m => m.Descripcion).FieldLabel("Descripcion").Width(426).ReadOnly(false),
+                                                //X.TextFieldFor(m => m.Sucursal).FieldLabel("Sucursal").ReadOnly((Model.ACCION == "NUEVO" ? false : true)).Width(426),
+                                                X.TextFieldFor(m => m.CodigoMedi).FieldLabel("Codigo Medicamento").Width(426).ReadOnly(false),
+                                                //X.TextFieldFor(m => m.Tipo).FieldLabel("Tipo").ReadOnly((Model.ACCION == "NUEVO" ? false : true)).Width(426),
+
+
+                                                X.ComboBoxFor(m => m.Tipo)
+    .FieldLabel("Tipo")
+    .Width(426)
+    .ReadOnly(false)
+    .DisplayField("Descripcion").Editable(false)
+    .ValueField("Tipo")
+    .ForceSelection(true)
+    .Store(
+        Html.X().Store()
+            .DataSource(new object[]
+            {
+                new { Tipo = 1, Descripcion = "Exámenes" },
+                new { Tipo = 2, Descripcion = "Uso de Equipos" },
+                new { Tipo = 3, Descripcion = "Material Especializado" }
+            })
+            .Model(Html.X().Model()
+                .Fields(
+                    new ModelField("Tipo", ModelFieldType.Int),
+                    new ModelField("Descripcion", ModelFieldType.String)
+                )
+            )
+    )
+    .EmptyText("Seleccione un tipo"),
+
+
+                                                X.ComboBoxFor(m=>m.Sucursal).ID("cmbSucursal").Width(400).Editable(false)
+.FieldLabel("Sucursal").TypeAhead(true).QueryMode(DataLoadMode.Local).ForceSelection(true)
+.TriggerAction(TriggerAction.All).DisplayField("name").ValueField("codigo").EmptyText("Loading...").ValueNotFoundText("Loading...").Store(
+Html.X().Store().AutoLoad(true).Model(
+Html.X().Model().IDProperty("Codigo").Fields(
+new ModelField("codigo", ModelFieldType.String) { Mapping = "Codigo" },
+new ModelField("name", ModelFieldType.String) { Mapping = "Name" }))
+.Proxy(Html.X().AjaxProxy().Url(Url.Action("CombosQuirurgico")).Reader(Html.X().JsonReader().Root("data")))
+.Parameters(ps => ps.Add(new { Accion = "SUCURSAL", Par1 = "000000", Par2 = "" }))
+.Listeners(ls => ls.Load.Handler = @"var combo = App.cmbSucursal;App.cmbSucursal.setValue(records[0].get(combo.valueField));"))
+
+
+
+
+                                 ))
+
+
+            )
+
+        )
+
+    ).TopBar(
+X.Toolbar().Height(30)
+.Items(
+X.ToolbarFill(),
+X.Button().Hidden((Model.ACCION == "VER" ? true : false)).ID("btnSave").Text((Model.ACCION == "DELETE" ? "Eliminar" : "Guardar"))
+.Icon((Model.ACCION == "DELETE" ? Icon.DatabaseDelete : Icon.DatabaseSave)).DirectEvents(de =>
+{
+    de.Click.Url = Url.Action("save_ComponenteQuirurgico");
+    de.Click.EventMask.ShowMask = true;
+    de.Click.Before = "App.btnSave.setDisabled(true); " +
+        "beforeSave(App.FormPanel1); return App.FormPanel1.getForm().isValid(); ";
+    de.Click.After = "App.btnSave.setDisabled(false); ";
+    de.Click.ExtraParams.Add(new Parameter("MODO", Model.ACCION, ParameterMode.Value));
+    de.Click.ExtraParams.Add(new Parameter("idWindow", idWindow, ParameterMode.Value));
+    de.Click.FormID = "FormPanel1";
+    de.Click.Success = "onSuccess(result.data);";
+    de.Click.Failure = "onFailure('" + Model.ACCION + "');";
+}),
+    X.Button().Text((Model.ACCION == "VER" ? "Aceptar" : "Cancelar")).Icon((Model.ACCION == "VER" ? Icon.Accept : Icon.Cancel))
+    .DirectEvents(de =>
+    {  //Model.ACCION : Posee el MODO ACTUAL
+        de.Click.Url = Url.Action("cerrarWindow");
+        de.Click.ExtraParams.Add(new Parameter("id", idWindow, ParameterMode.Value));
+    }),
+    X.ToolbarSpacer(20)
+    )
+    )
+    )
+
+

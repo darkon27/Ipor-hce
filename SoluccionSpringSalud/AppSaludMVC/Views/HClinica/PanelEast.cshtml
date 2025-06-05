@@ -1,0 +1,112 @@
+﻿@model SoluccionSalud.Entidades.Entidades.ENTITY_GLOBAL
+@{
+    ViewBag.Title = "Simple TreePanel";
+    Layout = "";
+    var X = Html.X();
+}
+<script>
+    var filterTree = function (tf, e) {
+        var tree = tf.up("treepanel"),
+            store = tree.store,
+            logic = App.FilterLogic.getValue() ? tree : store,
+            text = tf.getRawValue();
+
+        logic.clearFilter();
+
+        if (Ext.isEmpty(text, false)) {
+            return;
+        }
+
+        if (e.getKey() === Ext.EventObject.ESC) {
+            clearFilter();
+        } else {
+            var re = new RegExp(".*" + text + ".*", "i");
+
+            logic.filterBy(function (node) {
+                return re.test(node.data.text);
+            });
+        }
+    };
+
+    var clearFilter = function () {
+        var field = this,
+            tree = this.up("treepanel"),
+            store = tree.store,
+            logic = App.FilterLogic.getValue() ? tree : store;
+
+        field.setValue("");
+        logic.clearFilter(true);
+        tree.getView().focus();
+    };
+
+</script>
+
+
+ 
+
+@(
+ Html.X().TreePanel()
+        //.Title("Tree")
+            .Height(500)
+            .Width(200)
+                .ID("treepanel")
+            .Border(false)
+            .TopBarItem(
+                        Html.X().ToolbarTextItem().Text("Servicios:"),
+                        Html.X().ToolbarSpacer(),
+                        Html.X().TriggerField()
+                            .EnableKeyEvents(true)
+                            .Triggers(
+                                Html.X().FieldTrigger().Icon(TriggerIcon.Clear)
+                            )
+                            .Listeners(l =>
+                            {
+                                l.KeyUp.Fn = "filterTree";
+                                l.KeyUp.Buffer = 250;
+
+                                l.TriggerClick.Fn = "clearFilter";
+                            }),
+                            Html.X().ToolbarSpacer(),
+                            Html.X().Checkbox()
+                                .ID("FilterLogic")
+                                .BoxLabel("Tree filtering")
+                                .Checked(true)
+                                .ToolTips(tips => tips.Add(new ToolTip { Html = "If checked then tree logic filtering (instead store logic)" }))
+                                    )
+            .Store(
+                Html.X().TreeStore()
+                    .Proxy(
+                        Html.X().AjaxProxy().Url(Url.Action("GetTreeViewChildRitgh"))
+                    )
+            )
+            .Root(
+                       Html.X().Node().NodeID(Model.MENUREC_CODIGO).Text(Model.MENUREC_DESCRIPCION)
+            )
+            //.DirectEvents(ev =>
+            //            {
+            //                ev.Select.Url = "/HClinica/GetTreeView";
+            //                ev.Select.Method = HttpMethod.GET;
+            //                ev.Select.ExtraParams.Add(new
+            //                                    {
+            //                                        text = JRawValue.From("record.data.id"),
+            //                                        containerId = "Center1"
+            //                                    });
+            //                //ev.Select.Before = "o.url = record.get('url');";
+            //                // new Parameter("path", "record.get('path')", ParameterMode.Raw));
+            //                //ev.Select.Success = "onSuccess(result.data)";
+            //            })
+           .Listeners(l =>
+            {
+                // l.ItemClick.Fn = "nodeLoad";
+            })
+            
+           .View(
+                        X.TreeView()
+                            .Plugins(
+                                    X.TreeViewDragDrop().EnableDrop(true).ContainerScroll(true)
+                            )
+                    )
+
+
+)
+

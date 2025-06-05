@@ -1,0 +1,270 @@
+﻿@using Region = Ext.Net.Region
+@{
+    ViewBag.Title = "South1Hijo";
+}
+<script>
+    var template = '<span style="color:{0};">{1}</span>';
+    var change = function (value) {
+        return Ext.String.format(template, (value > 0) ? "green" : "red", value);
+    };
+    var pctChange = function (value) {
+        return Ext.String.format(template, (value > 0) ? "green" : "red", value + "%");
+    };
+    var onSuccess = function (grid, data) {
+        grid.show();
+        grid.getStore().loadData(data);
+    };
+    var aRecordSelector = {
+        add: function (valor) {
+            var rango = valor.split('RowIndex');
+            var rango = rango[1].split(':');
+            var rango = rango[1].split('}');
+            source = App.GridPanel1;
+            var store = App.StoreTasks;
+            var status=0;
+            var i = 0;
+            var valores = "";
+            if (App.GridPanel1.getSelectionModel().hasSelection()) {
+                var records = App.GridPanel1.getSelectionModel().getSelection();
+                App.StoreTasks.each(function (r) {
+                    if (rango[0] == i) {
+                        valores = r.get('Persona_Old');
+                    }
+                    i = i + 1;
+                });
+                Ext.net.DirectMethod.request({
+                    url: '@(Url.Action("SelectClinico"))',
+                    params: {
+                        selection: valores
+                    }
+                });
+            }
+        }
+    };
+    var aRecordMast= {
+        add: function (valor) {
+            var rango = valor.split('RowIndex');
+            var rango = rango[1].split(':');
+            var rango = rango[1].split('}');
+            source = App.GridPanel1;
+            var store = App.StoreTasks;
+            var status = 0;
+            var i = 0;
+            var valores = "";
+            var Form = "";
+            if (App.GridPanel1.getSelectionModel().hasSelection()) {
+                var records = App.GridPanel1.getSelectionModel().getSelection();
+                App.StoreTasks.each(function (r) {
+                    if (rango[0] == i) {
+                        valores = r.get('IdPersonaUnificado');
+                        Form = r.get('ACCION');
+                    }
+                    i = i + 1;
+                });
+                Ext.net.DirectMethod.request({
+                    url: '@(Url.Action("EditCentral"))',
+                    params: {
+                        selection: valores,
+                        text: Form
+                    }
+                });
+            }
+        }
+    };
+</script>
+
+@(Html.X().GridPanel()
+        // .Title("Customers")
+         .Scroll(ScrollMode.Both)
+         .AutoScroll(true)
+        //.Width(600)
+        //.Height(160)
+         .ID("GridPanel1")
+         .Layout(Ext.Net.LayoutType.Fit)
+         .Margins("0 0 2 2")
+         .Border(false)
+         .TopBar(Html.X().Toolbar()
+                .Items(
+        // Html.X().Button()
+        //     .Text("Bitácora")
+        //    .Icon(Icon.Film),
+        // .Handler("this.up('grid').store.insert(0, new Person());this.up('grid').editingPlugin.startEdit(0, 0);"),
+        //  Html.X().ToolbarSeparator(),
+                       Html.X().ComboBox()
+                              .ID("comboInteres")
+                              .Editable(false)
+                              .FieldLabel("Procesos")
+                                  .Width(150)
+                                   .LabelWidth(50)
+                              .QueryMode(DataLoadMode.Local)
+                              .TriggerAction(TriggerAction.All)
+                              .EmptyText("Select a country")
+        //.Listeners(ls =>
+        //    ls.Select.Handler = "App.ComboBoxCity.clearValue(); App.ComboBoxCity.getStore().load()")
+
+                              .Items(
+                                    new ListItem("Diagnósticos", "BE"),
+                                    new ListItem("Consultas", "BR")
+                                 ),
+                          Html.X().ToolbarSeparator(),
+        /*
+        Html.X().ComboBox()
+                .ID("comboServicio")
+                .Editable(false)
+                .FieldLabel("Servicio")
+                    .Width(150)
+                     .LabelWidth(50)
+                .QueryMode(DataLoadMode.Local)
+                .TriggerAction(TriggerAction.All)
+                .EmptyText("Select a country")
+                .Listeners(ls =>
+                    ls.Select.Handler = "App.ComboBoxCity.clearValue(); App.ComboBoxCity.getStore().load()"
+                  )
+                .Items(
+                      new ListItem("Servicio1", "BE"),
+                       new ListItem("Servicio2", "BR")
+                   ),*/
+                         Html.X().ToolbarSeparator(),
+                         Html.X().ComboBox()
+                                  .ID("comboPersonal")
+                                      .Width(150)
+                                  .Editable(false)
+                                  .FieldLabel("Prof. de Salud")
+                                       .LabelWidth(80)
+                                  .QueryMode(DataLoadMode.Local)
+                                  .TriggerAction(TriggerAction.All)
+                                  .EmptyText("Select a country")
+        //.Listeners(ls =>
+        //  ls.Select.Handler = "App.ComboBoxCity.clearValue(); App.ComboBoxCity.getStore().load()")
+
+                                  .Items(
+                                        new ListItem("Médicos", "BE"),
+                                        new ListItem("Enfermera", "BR")
+                                     ),
+                               Html.X().ToolbarSeparator(),
+                                    Html.X().TextField()
+                                        .ID("txtBuscar")
+                                             .LabelWidth(50)
+                                        .Width(150)
+                                        .FieldLabel("Buscar"),
+                                Html.X().ToolbarSeparator(),
+                                   Html.X().DateField()
+                                            .ID("dtDeste")
+                                          .LabelWidth(40)
+                                        .Width(150)
+                                        .FieldLabel("Desde"),
+                                Html.X().ToolbarSeparator(),
+                                   Html.X().DateField()
+                                            .ID("dtHasta")
+                                        .Width(150)
+                                        .LabelWidth(40)
+                                        .FieldLabel("Hasta"),
+                            Html.X().ToolbarSeparator(),
+                            Html.X().Button()
+                                .Text("Filtrar")
+                                .Icon(Icon.FolderFind)
+                                .DirectEvents(directEvents =>
+                                                {
+                                                    directEvents.Click.Url = "HClinica/ListadoPacienteEpisodio";
+                                                    directEvents.Click.Success = "onSuccess(App.GridPanel1, result.data);";
+                                                    directEvents.Click.EventMask.ShowMask = true;
+                                                    directEvents.Click.EventMask.Msg = "Loading...";
+                                                    directEvents.Click.ExtraParams.Add(new
+                                                            {
+                                                                start = 1,
+                                                                limit = 3
+                                                            });
+                                                }),
+                            Html.X().Button()
+                                    .Text("Nuevo Ep.")
+                                    .Icon(Icon.ShapeSquareAdd)
+                                    .ID("cmdNuevoEpisodio")
+                                    .DirectEvents(directEvents =>
+                                                        {
+                                                            directEvents.Click.Url = "HClinica/EstadoClinico";
+                                                            directEvents.Click.EventMask.Msg = "Loading...";
+                                                            directEvents.Click.ExtraParams.Add(new
+                                                            {
+                                                                selection = "",
+                                                                accion = "Nuevo"
+                                                            });
+                                                        }),
+                           Html.X().Button()
+                                    .Text("Continua Ep.")
+                                    .Icon(Icon.ShapeSquareGo)
+                                    .ID("cmdContinuaEpisodio")
+                                    .DirectEvents(directEvents =>
+                                                    {
+                                                        directEvents.Click.Url = "HClinica/EstadoClinico";
+                                                        directEvents.Click.EventMask.Msg = "Loading...";
+                                                        directEvents.Click.ExtraParams.Add(new
+                                                        {  
+                                                            selection = "",
+                                                            accion = "Continuar" 
+                                                        });
+                                                    }),
+                            Html.X().Button()
+                                    .Text("Editar")
+                                    .ID("cmdEditar")
+                                    .Icon(Icon.ApplicationFormEdit)
+                                    .Listeners(l => { l.Click.Handler =  "aRecordMast.add(App.GridPanel1.getSelectionSubmit().getSelectionModelField().getValue());"; })
+                )
+          )
+       .Store(store => store.Add(
+                                Html.X().Store()
+                                      .ID("StoreTasks")
+        .AutoLoad(true)
+        .RemoteSort(false)
+        .IsPagingStore(true)
+        .RemotePaging(true)
+        .PageSize(3)
+        .Proxy(proxy => proxy.Add(Html.X().AjaxProxy()
+                                                .Url("HClinica/ListadoPacienteEpisodio")
+                            .Reader(reader => reader.Add(Html.X().JsonReader()
+                                                                   .Root("data")
+                                                                   .TotalProperty("total")
+                                                                   .IDProperty("Persona")))))
+            .Model(model => model.Add(Html.X().Model()
+                        .Fields(fields =>
+                        {
+                            fields.Add(Html.X().ModelField().Name("Persona"));
+                            fields.Add(Html.X().ModelField().Name("RutaFirma"));
+                            fields.Add(Html.X().ModelField().Name("ApellidoPaterno"));
+
+                            fields.Add(Html.X().ModelField().Name("Busqueda"));
+                            fields.Add(Html.X().ModelField().Name("FechaNacimiento"));
+                            fields.Add(Html.X().ModelField().Name("Persona_Old"));
+                            fields.Add(Html.X().ModelField().Name("personanew"));
+                            fields.Add(Html.X().ModelField().Name("ACCION"));
+                            fields.Add(Html.X().ModelField().Name("IdPersonaUnificado"));
+                            
+
+                             
+                        })))))
+
+
+        .ColumnModel(columnModel =>
+        {
+
+            columnModel.Columns.Add(Html.X().Column().Text("Atiende").DataIndex("Persona").Width(100).Hidden(true));
+            columnModel.Columns.Add(Html.X().Column().Text("Atiende").DataIndex("ApellidoPaterno").Width(250));
+            columnModel.Columns.Add(Html.X().Column().Text("Especialidad").DataIndex("RutaFirma").Width(250));
+            columnModel.Columns.Add(Html.X().Column().Text("Diagnostico").DataIndex("Busqueda").Width(300));
+            columnModel.Columns.Add(Html.X().Column().Text("Fecha").DataIndex("FechaNacimiento").Width(100));
+            columnModel.Columns.Add(Html.X().Column().Text("Clínico").DataIndex("Persona_Old").Width(100).Hidden(true));
+            columnModel.Columns.Add(Html.X().Column().Text("Episorio").DataIndex("personanew").Width(100).Hidden(true));
+            columnModel.Columns.Add(Html.X().Column().Text("Form").DataIndex("ACCION").Width(100).Hidden(true));
+            columnModel.Columns.Add(Html.X().Column().Text("uni").DataIndex("IdPersonaUnificado").Width(100).Hidden(true));
+
+        })
+        .View(view => view.Add(Html.X().GridView().TrackOver(false)))
+        .Listeners(l => l.CellClick.Handler = "aRecordSelector.add(App.GridPanel1.getSelectionSubmit().getSelectionModelField().getValue());")
+        .BottomBar(bar => bar.Add(Html.X().PagingToolbar()
+                                          .DisplayInfo(true)
+                                          .DisplayMsg("Displaying customers {0} - {1} of {2}")))
+         
+        .Border(false)
+
+
+)
+

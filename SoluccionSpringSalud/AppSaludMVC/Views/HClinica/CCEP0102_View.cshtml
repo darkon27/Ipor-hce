@@ -1,0 +1,350 @@
+﻿@using Region = Ext.Net.Region
+@model SoluccionSalud.Entidades.Entidades.SS_HC_ExamenFisico_Triaje
+@{
+    ViewBag.Title = "Portal - Ext.NET MVC Examples";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+    var X = Html.X();
+    }
+@section cabecera
+{
+    <script>
+        var Valores;
+        var template = '<span style="color:{0};">{1}</span>';
+
+        var change = function (value) {
+            return Ext.String.format(template, (value > 0) ? "green" : "red", value);
+        };
+
+        var pctChange = function (value) {
+            return Ext.String.format(template, (value > 0) ? "green" : "red", value + "%");
+        };
+
+        var onSuccess = function (grid, data) {
+            grid.show();
+            grid.getStore().loadData(data);
+        };
+
+        function deleteSelected(grid) {
+            var store = grid.store,
+                records = grid.selModel.getSelection();
+
+            store.remove(records);
+            store.load(true);
+        }
+
+    </script>
+    <script>
+        var refreshTree = function (tree) {
+            App.direct.RefreshMenu({
+                success: function (node) {
+                    if (!Ext.isEmpty(node)) {
+                        tree.setRootNode(node);
+                    }
+                    else {
+                        tree.getRootNode().removeAll();
+                    }
+                }
+            });
+        };
+    </script>
+
+<script>
+    var count = 0; // a counter for new records
+
+    function visibleGrid(grid) {
+        grid.visibleGrid(true);
+    }
+
+    function addRecord(grid) {
+        grid.store.insert(0, { CODIGOELEMENTO: 'New' + count++ });
+
+        Ext.Function.defer(function () {
+            grid.editingPlugin.startEditByPosition({ row: 0, column: 0 })
+        }, 100);
+    }
+
+    function deleteSelected(grid) {
+        var store = grid.store,
+            records = grid.selModel.getSelection();
+
+        store.remove(records);
+        store.load(true);
+    }
+
+    function selectRecord(grid, id) {
+        var record = grid.store.getById(id);
+
+        grid.store.loadPage(grid.store.findPage(record), {
+            callback: function () {
+                grid.getSelectionModel().select(record);
+            }
+        });
+    };
+    </script>
+    <script>
+        var OperaCMI = function (h) {
+            str = h.value;
+            var imc = 0;
+            var peso = App.Peso.getValue()
+            var talla = App.Talla.getValue()
+           // IMC = Peso / (talla x talla )
+            var mensajeSalud = "";
+            if ((peso > 0) && (talla > 0)) {
+                var talla = talla / 100;
+                var alturaCuadrado = talla * talla;
+                var imc = peso / alturaCuadrado;
+                //document.getElementById("IMC").value = Math.round(imc * 100) / 100;
+                imc = Math.round(imc * 100) / 100;
+               // alert(imc);
+                App.IndiceMasaCorporal.setValue(imc);
+                if (imc < 16) {
+                    mensajeSalud = "Delgadez Severa";
+                }
+                else if (imc < 17) {
+                    mensajeSalud = "Delgadez Moderada";
+                }
+                else if (imc < 18.5) {
+                    mensajeSalud = "Delgadez Aceptable";
+                }
+                else if (imc < 25) {
+                    mensajeSalud = "Peso Normal";
+                }
+                else if (imc < 30) {
+                    mensajeSalud = "Sobrepeso";
+                }
+                else if (imc < 35) {
+                    mensajeSalud = "Obeso: Tipo I";
+                }
+                else if (imc < 40) {
+                    mensajeSalud = "Obeso: Tipo II";
+                }
+                else if (imc >= 40) {
+                    mensajeSalud = "Obeso: Tipo III";
+                }
+                App.Mensaje.setValue(mensajeSalud);
+                
+            }
+        }
+        var hhValidation = function (h) {
+            str = h.value;
+
+            tempo = "'";
+            str = str.replace('javascript:myFunction(' + tempo, '');
+            str = str.replace('%20', ' ');
+            str = str.replace('%C3%B3', 'ó');
+            str = str.replace('%C3%A1', 'á');
+            str = str.replace('%C3%A9', 'é');
+            str = str.replace('%C3%AD', 'í');
+            str = str.replace('%C3%BA', 'ú');
+            str = str.replace('%C3%B1', 'ñ');
+
+            str = str.replace('%C3%8D', 'Í');
+            str = str.replace('%C3%93', 'Ó');
+            str = str.replace('%C3%81', 'Á');
+            str = str.replace('%C3%91', 'Ñ');
+            str = str.replace('%C3%9A', 'Ú');
+            str = str.replace(tempo + ')', '');
+            h.setValue(str);
+
+         }
+        var mmValidation = function (m) {
+            if (m.getValue() > 59) {
+                m.setValue(59);
+            }
+
+        }
+
+    </script>
+    }
+
+
+    @section cuerpo
+{
+
+
+    @(Html.X().Viewport()
+        .Layout(LayoutType.VBox)
+
+        .LayoutConfig(
+            new VBoxLayoutConfig { Align = VBoxAlign.Stretch }
+        )
+        .Listeners(l =>
+        {
+            l.AfterLayout.BroadcastOnBus = "App.resize";
+            l.AfterLayout.Single = true;
+        })
+        .Items(regions =>
+        {
+
+            regions.Add(Html.X().FormPanel()
+                .ItemID("center")
+                .DefaultAnchor("100%")
+                .AutoScroll(true)
+                .Height(340)
+               .Header(false)
+               .Border(true)
+              
+               .Items(
+                      X.FieldSet()
+                            .ColumnWidth(0.4)
+                            .Title("SIGNOS VITALES")
+                            //.Border(false)
+                            .MarginSpec("0 05 0 05")
+                            .Defaults(d =>
+                            {
+                                d.Add(new Parameter("LabelWidth", "150"));
+                                d.Add(new Parameter("DefaultAnchor", "100%"));
+                                d.Add(new Parameter("LabelAlign", "Left"));
+                            })
+
+                            .DefaultAnchor("100%")
+                        .FieldDefaults(d =>
+                        {
+                            d.LabelAlign = LabelAlign.Left;
+                        })
+
+                            .Items(
+                                    X.Container()
+                                          .Layout(LayoutType.HBox)
+                                          .Defaults(d =>
+                                          {
+                                              d.Add(new Parameter("LabelWidth", "170"));
+                                          })
+                                          .Items(
+                                                  X.NumberFieldFor(c => c.Secuencia).Hidden(true),
+                                                  X.NumberFieldFor(c => c.PresionArterial).FieldLabel("Presión arterial"),
+                                                   X.Component().Width(20),
+                                                  X.NumberFieldFor(c => c.FrecuenciaRespiratoria).FieldLabel("Frec.Respiratoria (x min)")
+                                                  
+                                                 ),
+                                    X.Container()
+                                          .Layout(LayoutType.HBox)
+                                          .Defaults(d =>
+                                          {
+                                              d.Add(new Parameter("LabelWidth", "170"));
+                                          })
+                                          .Items(
+                                                  X.NumberFieldFor(c => c.FrecuenciaCardiaca).FieldLabel("Frec.Cardiaca"),
+                                                   X.Component().Width(20),
+                                                  X.NumberFieldFor(c => c.Temperatura).FieldLabel("Temperatura (°C)")
+                                                    
+                                                 ),
+                                    X.Container()
+                                          .Layout(LayoutType.HBox)
+                                          .Defaults(d =>
+                                          {
+                                              d.Add(new Parameter("LabelWidth", "170"));
+                                          })
+                                          .Items(
+                                                  X.NumberFieldFor(c => c.Peso).FieldLabel("Peso (kg)")
+                                                  .Listeners(l => { l.Change.Handler = "OperaCMI(this);"; }),
+                                                   X.Component().Width(20),
+                                                  X.NumberFieldFor(c => c.Talla).FieldLabel("Talla (cm)")
+                                                  .Listeners(l => { l.Change.Handler = "OperaCMI(this);"; })
+                                                 ),
+                                    X.Container()
+                                          .Layout(LayoutType.HBox)
+                                          .Defaults(d =>
+                                          {
+                                              d.Add(new Parameter("LabelWidth", "170"));
+                                          })
+                                          .Items(
+                                                  X.Label(" "),
+                                                  X.TextFieldFor(c => c.IndiceMasaCorporal).FieldLabel("IMC"),
+                                                   X.Component().Width(20),
+                                                  X.TextField().ID("Mensaje")
+                                                 )
+                                ),
+                          X.FieldSet()
+                                 .ColumnWidth(0.4)
+                                 .Title("FUNCIONES BIOLOGICAS")
+                                 .MarginSpec("0 05 0 05")
+                                 .Defaults(d =>
+                                 {
+                                     d.Add(new Parameter("LabelWidth", "170"));
+                                 })
+
+                                 .DefaultAnchor("100%")
+                                 .FieldDefaults(d =>
+                                 {
+                                     d.LabelAlign = LabelAlign.Left;
+                                 })
+                                     .Items(
+                                            X.Container()
+                                                  .Layout(LayoutType.HBox)
+                                                  .Defaults(d =>
+                                                  {
+                                                      d.Add(new Parameter("LabelWidth", "170"));
+                                                  })
+                                                  .Items(
+                                                   
+                                                        X.ComboBoxFor(c => c.IdEstadoGeneral)
+                                                                .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABESTADOGENERAL").Select(d => new ListItem(d.Name, d.ID)))
+                                                                .FieldLabel("Estado general")
+                                                                .SimpleSubmit(true),
+                                                        X.Component().Width(20),
+                                                        X.ComboBoxFor(c => c.IdHidratacion)
+                                                                .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABHIDRATACION").Select(d => new ListItem(d.Name, d.ID)))
+                                                                .FieldLabel("Hidratación")
+                                                                .SimpleSubmit(true)    
+                                                                ),
+                                              X.Container()
+                                                  .Layout(LayoutType.HBox)
+                                                  .Defaults(d =>
+                                                  {
+                                                      d.Add(new Parameter("LabelWidth", "170"));
+                                                  })
+                                                  .Items(                                                                
+                                                        X.ComboBoxFor(c => c.IdNutricion)
+                                                                .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABNUTRICION").Select(d => new ListItem(d.Name, d.ID)))
+                                                                .FieldLabel("Nutricion")
+                                                                .SimpleSubmit(true),
+                                                        X.Component().Width(20),                                                                
+                                                        X.ComboBoxFor(c => c.IdColaboracion)
+                                                                .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABCOLABORACION").Select(d => new ListItem(d.Name, d.ID)))
+                                                                .FieldLabel("Colaboración")
+                                                                .SimpleSubmit(true)                                                                                                                              
+                                                        )
+                                         ),
+                            X.FieldSet()
+                                 .ColumnWidth(0.4)
+                                 .Title("OBSERVACIONES ADICIONALES")
+                                 .MarginSpec("0 05 0 05")
+                                 .Defaults(d =>
+                                 {
+                                     d.Add(new Parameter("LabelWidth", "170"));
+                                 })
+
+                                 .DefaultAnchor("100%")
+                                 .FieldDefaults(d =>
+                                 {
+                                     d.LabelAlign = LabelAlign.Left;
+                                 })
+                                     .Items(
+                                        X.TextAreaFor(c => c.ObservacionesAdicionales)
+                                        .FieldLabel("Observaciones")
+                                     )                               
+                     )
+                                                                                                                         
+                    .Buttons(
+                            X.Button()
+                                .Text("Guardar")
+                                .Icon(Icon.Add)
+                                .ID("cmdGuardar")
+                                .DirectClickAction("Save_ExamenFisico_Triaje"),
+                                //.OnClientClick("var form = this.up('form'); form.getForm().updateRecord(form.down('grid').getSelectionModel().getLastSelected());"),
+                            X.Button()
+                                .Text("Cancelar")
+                                .Icon(Icon.Cancel)
+                                .OnClientClick("this.up('form').getForm().reset();")
+
+                        )
+                );
+        }
+        )
+
+
+      )
+
+    }
+

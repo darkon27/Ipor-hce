@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Desktop - Ext.NET MVC Examples";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+@section cuerpo
+{
+    @(
+ Html.X().Window()
+            .Closable(false)
+            .CloseAction(CloseAction.Destroy)
+            .Resizable(false)
+            .Height(150)
+            .Icon(Icon.Lock)
+            .Title("Login")
+            .Draggable(false)
+            .Width(350)
+            .Modal(true)
+            .BodyPadding(5)
+            .Layout(LayoutType.Fit)
+            .Items(
+                Html.X().FormPanel()
+                    .Layout(LayoutType.Form)
+                    .Border(false)
+                    .BodyStyle("background-color:transparent;")
+                    .Items(
+                        Html.X().TextField()
+                            .ID("txtUsername")
+                            .ReadOnly(true)
+                            .FieldLabel("Username")
+                            .AllowBlank(false)
+                            .BlankText("Your username is required.")
+                            .Text("Demo"),
+
+                        Html.X().TextField()
+                            .ID("txtPassword")
+                            .ReadOnly(true)
+                            .InputType(Ext.Net.InputType.Password)
+                            .FieldLabel("Password")
+                            .AllowBlank(false)
+                            .BlankText("Your password is required.")
+                            .Text("Demo"),
+                        Html.X().ComboBox()
+                                    .ID("cbModulos")
+                                    .Editable(false)
+                                    .FieldLabel("Módulos")
+                                    .SelectedItems("HCE")
+        //.Select(0)
+                                    .QueryMode(DataLoadMode.Local)
+                                    .TriggerAction(TriggerAction.All)
+                                    .EmptyText("Select a módulo")
+                                    .Listeners(ls =>
+                                        ls.Select.Handler = "App.ComboBoxCity.clearValue(); App.ComboBoxCity.getStore().load()"
+                                    )
+                                    .Items(
+                                        new ListItem("Módulo Historía Clínica (HCE)", "HCE"),
+                                        new ListItem("Módulo Gestión Salud", "MGS")
+                                    )
+                    )
+            )
+            .Buttons(
+                Html.X().Button()
+                   .Text("Login")
+                   .Icon(Icon.Accept)
+                   .DirectEvents(de =>
+                   {
+                       de.Click.Action = "Login";
+                       de.Click.Success = "this.up('window').close();";
+                       de.Click.EventMask.ShowMask = true;
+                       de.Click.EventMask.Msg = "Verifying...";
+                       de.Click.EventMask.MinDelay = 1000;
+                       de.Click.FormID = "#(return this.up('window').down('form');)";
+                   })
+            )
+    )
+}

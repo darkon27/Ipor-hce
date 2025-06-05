@@ -1,0 +1,87 @@
+﻿@model List<Ext.Net.Node>
+@{
+    var X = Html.X();
+}
+
+@(X.Panel()
+        .Region(Region.North)
+        .ID("North001")
+        .Title("Datos del Médico")
+        .Layout(Ext.Net.LayoutType.Fit)
+        .Layout(LayoutType.Border)
+        .Layout(LayoutType.HBox)
+        .Height(90)
+        //.Width(800)
+        .AutoScroll(true)
+        .DefaultAnchor("100% 100%")
+        .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
+        .Listeners(l =>
+            {
+                l.AfterLayout.BroadcastOnBus = "App.resize";
+                l.AfterLayout.Single = true;
+            })
+        .Items(regions =>
+        {
+
+            regions.Add(Html.X().FormPanel()
+                .ItemID("center")
+                .DefaultAnchor("100%")
+                .AutoScroll(true)
+                 .Height(60)
+               .Header(false)
+               .Border(true)
+
+               .Items(
+                      X.FieldSet()
+                            .ColumnWidth(0.4)
+                            .Title("INFORMACION DEL USUARIO")
+                //.Border(false)
+                            .MarginSpec("0 05 0 05")
+                            .Defaults(d =>
+                            {
+                                d.Add(new Parameter("LabelWidth", "200"));
+                                d.Add(new Parameter("DefaultAnchor", "100%"));
+                                d.Add(new Parameter("LabelAlign", "Left"));
+                            })
+
+                            .DefaultAnchor("100%")
+
+                            .Items(
+                                    Html.X().Container()
+                                     .Defaults(d =>
+                                     {
+                                         d.Add(new Parameter("LabelWidth", "200"));
+                                         d.Add(new Parameter("DefaultAnchor", "100%"));
+                                         d.Add(new Parameter("LabelAlign", "Left"));
+                                     })
+                                   .Layout(LayoutType.HBox)
+                                                     .Items(
+                                                        Html.X().TextFieldFor("Nacio")
+                                                            .FieldStyle("Border : none")
+                                                               .FieldLabel("Apellidos y Nombres")
+                                                               .Text("Calderon Rojas, Mario")
+                                                               .Width(400),
+                                                        Html.X().Label()
+                                                                .Text("   ")
+                                                                .Width(50),
+                                                        Html.X().TextField()
+                                                            .FieldStyle("Border : none")
+                                                               .FieldLabel(" Codigo del Médico")
+                                                               .Text("1526231313")
+                                                               .Width(300)
+                                                    )
+                            
+                            
+                            )
+                )
+               );
+        }
+        )
+        
+        )
+
+               
+
+
+) 
+

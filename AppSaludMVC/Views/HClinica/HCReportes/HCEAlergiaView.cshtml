@@ -1,0 +1,67 @@
+﻿@model SoluccionSalud.Entidades.Entidades.PERSONAMAST
+@{
+    ViewBag.Title = "HCEAlergiaView";
+    var X = Html.X();
+    var STYLE_TEXT = "Border : none; background: none; font: normal 11px tahoma; height: 18px;";
+    var STYLE_LABELALERGIAS = "'width:100px;height: 18px; margin-right:5px; font: bold 11px tahoma ; color: #FA5858 ' >";
+    var indicadorOA = SoluccionSalud.Entidades.Entidades.ENTITY_GLOBAL.Instance.COD_BANDEJA == "TRIAJE" ? true : false;
+    var STYLE_ETQ_ABR = "<label style= ";
+    var STYLE_ETQ_CER = "</label>";
+}
+
+
+<script>
+    Ext.onReady(function () {
+        var myWindow = Ext.getCmp("myWindow");
+        myWindow.show();
+    });
+
+
+</script>
+
+
+@Html.X().Window().ID("myWindow").Title("Alergias").BodyPadding(10).Width(700).Height(350).TopBar(
+            X.Toolbar()
+            .Height(30)
+            .Items(
+                X.ToolbarSpacer()
+                )
+          ).Items(
+    Html.X().TextArea().ReadOnly(true).LabelSeparator("")
+                                    .FieldStyle(STYLE_TEXT)
+                                    .Rows(1)
+                                    .Text(""),
+
+    Html.X().TextArea().ReadOnly(true).LabelSeparator("")
+                                    //.FieldStyle(STYLE_TEXT)
+                                    .FieldLabel(STYLE_ETQ_ABR + STYLE_LABELALERGIAS + " Medicamentos :" + STYLE_ETQ_CER)
+
+                                    .Rows(2)
+                                    .Text(Model.Direccion).Height(80).Width(600),
+
+    Html.X().TextArea().ReadOnly(true).LabelSeparator("")
+                                    //.FieldStyle(STYLE_TEXT)
+                                    .FieldLabel(STYLE_ETQ_ABR + STYLE_LABELALERGIAS + " Alimentos :" + STYLE_ETQ_CER)
+                                    .Text(Model.DireccionEmergencia).Height(80).Width(600)
+
+                                    .Rows(2),
+
+    Html.X().TextArea().ReadOnly(true).LabelSeparator("")
+                                    //.FieldStyle(STYLE_TEXT)
+                                    .FieldLabel(STYLE_ETQ_ABR + STYLE_LABELALERGIAS + " Ambientales :" + STYLE_ETQ_CER)
+                                    .Text(Model.DireccionAmbiental).Height(80).Width(600)
+
+                                    .Rows(2),
+
+     Html.X().TextArea().ReadOnly(true).LabelSeparator("")
+                                    //.FieldStyle(STYLE_TEXT)
+                                    .FieldLabel(STYLE_ETQ_ABR + STYLE_LABELALERGIAS + " Contacto :" + STYLE_ETQ_CER)
+                                    .Text(Model.DireccionContacto).Height(80).Width(600)
+
+                                    .Rows(2)
+    ).Buttons(
+        Html.X().Button()
+            .Text("Cerrar")
+            .Handler("App.myWindow.hide()")
+    ).Modal(true).AutoScroll(true);
+

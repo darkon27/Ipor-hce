@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSaludMVC", "AppSaludMVC\AppSaludMVC.csproj", "{4C405DA6-A7A2-4088-8590-57D63848D49F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.Service", "SoluccionSalud.Service\SoluccionSalud.Service.csproj", "{BEABAC3B-A6F4-46C0-8A02-5023957EBFDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.Model", "SoluccionSalud.Model\SoluccionSalud.Model.csproj", "{CEEF6129-25BA-4E74-B82C-AF525AA8BE07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.Componentes", "SoluccionSalud.Componentes\SoluccionSalud.Componentes.csproj", "{A650C9A5-16B2-4DAA-BD79-24F7D2F3BFAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.ModelFormularios", "SoluccionSalud.ModelFormularios\SoluccionSalud.ModelFormularios.csproj", "{1DC8D9B0-BBDC-40DD-AA87-9E7B096EC8B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.RepositoryFormulario", "SoluccionSalud.RepositoryFormulario\SoluccionSalud.RepositoryFormulario.csproj", "{3CF56F08-414E-49E5-952A-CD88A840952C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.SOA.Bussines", "SoluccionSalud.SOA.Bussines\SoluccionSalud.SOA.Bussines.csproj", "{93C995A8-BE6E-442E-BF46-77CA3BEA83C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.SOA", "SoluccionSalud.SOA\SoluccionSalud.SOA.csproj", "{CFE7060A-69E6-4A2B-8458-53399DAF0634}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.SOA.Entidades", "SoluccionSalud.SOA.Entidades\SoluccionSalud.SOA.Entidades.csproj", "{3E2CAFFA-6059-4750-AB6D-F3A5F129EB2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.RepositoryReport", "SoluccionSalud.RepositoryReport\SoluccionSalud.RepositoryReport.csproj", "{BD140CAA-2995-48CA-B261-24307A68388F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.ModelPAE", "SoluccionSalud.ModelPAE\SoluccionSalud.ModelPAE.csproj", "{F10F7559-B21B-4FB0-AFB9-57340C7C3970}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0D9DFC4B-6084-456C-9BDE-0A85A98CA03A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.Entidades", "SoluccionSalud.Entidades\SoluccionSalud.Entidades.csproj", "{94C20B56-B046-491E-952C-5DF50A53591A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.Bussines", "SoluccionSalud.Bussines\SoluccionSalud.Bussines.csproj", "{B18AFD41-6D38-4168-8A55-28CBC43D9E37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoluccionSalud.Repository", "SoluccionSalud.Repository\SoluccionSalud.Repository.csproj", "{1B2EE0DA-B606-42B2-BC53-0073BD89BBE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C405DA6-A7A2-4088-8590-57D63848D49F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C405DA6-A7A2-4088-8590-57D63848D49F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C405DA6-A7A2-4088-8590-57D63848D49F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C405DA6-A7A2-4088-8590-57D63848D49F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEABAC3B-A6F4-46C0-8A02-5023957EBFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEABAC3B-A6F4-46C0-8A02-5023957EBFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEABAC3B-A6F4-46C0-8A02-5023957EBFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEABAC3B-A6F4-46C0-8A02-5023957EBFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEEF6129-25BA-4E74-B82C-AF525AA8BE07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEF6129-25BA-4E74-B82C-AF525AA8BE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEF6129-25BA-4E74-B82C-AF525AA8BE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEF6129-25BA-4E74-B82C-AF525AA8BE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A650C9A5-16B2-4DAA-BD79-24F7D2F3BFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A650C9A5-16B2-4DAA-BD79-24F7D2F3BFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A650C9A5-16B2-4DAA-BD79-24F7D2F3BFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A650C9A5-16B2-4DAA-BD79-24F7D2F3BFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DC8D9B0-BBDC-40DD-AA87-9E7B096EC8B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC8D9B0-BBDC-40DD-AA87-9E7B096EC8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC8D9B0-BBDC-40DD-AA87-9E7B096EC8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC8D9B0-BBDC-40DD-AA87-9E7B096EC8B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF56F08-414E-49E5-952A-CD88A840952C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF56F08-414E-49E5-952A-CD88A840952C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF56F08-414E-49E5-952A-CD88A840952C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF56F08-414E-49E5-952A-CD88A840952C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93C995A8-BE6E-442E-BF46-77CA3BEA83C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93C995A8-BE6E-442E-BF46-77CA3BEA83C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93C995A8-BE6E-442E-BF46-77CA3BEA83C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93C995A8-BE6E-442E-BF46-77CA3BEA83C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE7060A-69E6-4A2B-8458-53399DAF0634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE7060A-69E6-4A2B-8458-53399DAF0634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE7060A-69E6-4A2B-8458-53399DAF0634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE7060A-69E6-4A2B-8458-53399DAF0634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2CAFFA-6059-4750-AB6D-F3A5F129EB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2CAFFA-6059-4750-AB6D-F3A5F129EB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2CAFFA-6059-4750-AB6D-F3A5F129EB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2CAFFA-6059-4750-AB6D-F3A5F129EB2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD140CAA-2995-48CA-B261-24307A68388F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD140CAA-2995-48CA-B261-24307A68388F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD140CAA-2995-48CA-B261-24307A68388F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD140CAA-2995-48CA-B261-24307A68388F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10F7559-B21B-4FB0-AFB9-57340C7C3970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10F7559-B21B-4FB0-AFB9-57340C7C3970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10F7559-B21B-4FB0-AFB9-57340C7C3970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10F7559-B21B-4FB0-AFB9-57340C7C3970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C20B56-B046-491E-952C-5DF50A53591A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C20B56-B046-491E-952C-5DF50A53591A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C20B56-B046-491E-952C-5DF50A53591A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C20B56-B046-491E-952C-5DF50A53591A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18AFD41-6D38-4168-8A55-28CBC43D9E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18AFD41-6D38-4168-8A55-28CBC43D9E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18AFD41-6D38-4168-8A55-28CBC43D9E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18AFD41-6D38-4168-8A55-28CBC43D9E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2EE0DA-B606-42B2-BC53-0073BD89BBE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2EE0DA-B606-42B2-BC53-0073BD89BBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2EE0DA-B606-42B2-BC53-0073BD89BBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2EE0DA-B606-42B2-BC53-0073BD89BBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

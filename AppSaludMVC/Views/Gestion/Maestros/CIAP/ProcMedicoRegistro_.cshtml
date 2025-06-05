@@ -1,0 +1,346 @@
+﻿@model SoluccionSalud.Entidades.Entidades.SS_HC_CIAP2
+
+@{
+    var X = Html.X();
+    var modoDesc = (Model.Accion == "NUEVO" ? "Nuevo" :
+                    (Model.Accion == "UPDATE" ? "Modificar" :
+                        (Model.Accion == "DELETE" ? "Eliminar" :
+                            (Model.Accion == "VER" ? "Ver" : "--"))));
+
+    var indicaModoLectura = !(Model.Accion == "NUEVO" ? true :
+                            (Model.Accion == "UPDATE" ? true :
+                            (Model.Accion == "DELETE" ? false :
+                            (Model.Accion == "VER" ? false : false))));
+
+    var indicaModoLecturaKey = !(Model.Accion == "NUEVO" ? true :
+                            (Model.Accion == "UPDATE" ? false :
+                            (Model.Accion == "DELETE" ? false :
+                            (Model.Accion == "VER" ? false : false))));
+}
+
+<script>
+
+    var template = 'color:{0};';
+
+    var change = function (value, meta) {
+        return value;
+
+    };
+
+    function seleccionadorCIAP() {
+        Ext.net.DirectMethod.request({
+            url: '@(Url.Action("seleccionadorCIAP"))',
+            params: {
+                accionSeleccion: 'getSeleccionPadreMaestroCIAP',
+                accionListado: 'LISTARPAG'
+            }
+        });
+    };
+
+    var onSuccess = function (modo) {
+        accionMensajes(data);
+    };
+
+    var onFailure = function (modo) {
+        Ext.net.DirectMethod.request({
+            url: '@(Url.Action("showMensajeBox"))',
+            params: {
+                message: 'Un error en el evento ',
+                titulo: "Error",
+                tipo: 'ERROR'
+            }
+        });
+    };
+
+    function cerrarWindow() {
+        Ext.net.DirectMethod.request({
+            url: '@(Url.Action("showMensajeBox"))',
+            params: {
+                message: 'Se registró correctamente el usuario.',
+                accion: null
+            }
+        });
+    }
+
+    var showResult = function (btn) {
+        Ext.Msg.notify("Aceptar", "You clicked the " + btn + " button");
+    };
+
+    var accionMensajes = function (data) {
+        var mensajes = "";
+        if (data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+                mensajes = mensajes + "*" + data[i].DESCRIPCION + "\n";
+            }
+            App.taAlerts.setVisible(true);
+            App.taAlerts.setValue(mensajes);
+        } else {
+            App.taAlerts.setVisible(false);
+        }
+
+    };
+
+    var getInvalidFields = function (form) {
+        var invalidFields = new Array();
+        var fields = form.getForm().getFields();
+        fields.filterBy(function (field) {
+            if (!field.isValid()) {
+                var VW_SS_HC_TABLAFORMATO_VALIDACION = {
+                    NombreCampo: field.name,
+                    IdEvento: (field.isValid() ? 1 : 0),
+                    ValorTexto: field.name + ': ' + field.getErrors()
+                };
+                invalidFields.push(VW_SS_HC_TABLAFORMATO_VALIDACION);
+            }
+        });
+        return invalidFields;
+    };
+
+    var beforeSave = function (form) {
+        var FieldsInvalidos = getInvalidFields(form);
+        if (!form.getForm().isValid()) {
+            if (FieldsInvalidos.length > 0) {
+                Ext.net.DirectMethod.request({
+                    url: '@(Url.Action("addRecursosValidacion"))',
+                    params: {
+                        data: FieldsInvalidos,
+                        indica: 'VALIDAR',
+                    },
+                    success: function (result) {
+                        accionMensajes(result.data);
+                        Ext.net.DirectMethod.request({
+                            url: '@(Url.Action("addRecursosValidacion"))',
+                            params: {
+                                data: FieldsInvalidos,
+                                indica: 'RESTART',
+                            }
+                        });
+                    }
+                });
+
+            }
+        }
+    };
+
+</script>
+
+@(Html.X().Window()
+    .Width(650)
+    .Height(450)
+    .Maximizable(true)
+    .Modal(true)
+    .OnEsc("false")
+    .AutoScroll(true)
+    .Layout(LayoutType.Fit)
+    .CloseAction(CloseAction.Destroy)
+    .Icon(Icon.ApplicationForm)
+    .ID("WindowCuerpoHumano")
+        .Title("Registro de Procedimiento Medico (CIAP2):" + modoDesc)
+    .Padding(4)
+        //.X(0)
+        //.Y(0)
+    .Items(
+                Html.X().FormPanel().ID("FormPanel1")
+                             .Frame(false)
+                             .Border(false)
+                            .AutoScroll(true)
+                            .Layout(LayoutType.VBox)
+                            .LayoutConfig(new VBoxLayoutConfig { Align = VBoxAlign.Stretch })
+                    .Items(
+                        Html.X().FormPanel()
+                             .Frame(false)
+                             .Border(false)
+                            .Layout(LayoutType.HBox)
+                            .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
+
+                            .Items(
+                                    Html.X().FormPanel()
+                                    .Layout(LayoutType.Form)
+                                    .Width(300)
+                                    .FieldDefaults(d =>
+                                    {
+                                        d.LabelWidth = 100;
+                                    })
+                                    .BodyPadding(10)
+                                    .Frame(false)
+                                    .Border(false)
+                                    .Items(
+                                             X.NumberFieldFor(c => c.IdCIAP2)
+                                              .FieldLabel("Id").Width(200).Hidden(true)
+                                              .ReadOnly(true)
+                                                      ,
+                                                      X.NumberFieldFor(c => c.IdCIAP2Padre)
+                                                      .FieldLabel("Id Padre")
+                                                      .Width(200).Hidden(true).ReadOnly(true)
+                                                  .Hidden(false)
+                                                  ,
+                                                X.TextField().ID("tfIdPadre")
+                                                .FieldLabel("Padre").ReadOnly(true)
+                                                  .RightButtons(
+                                                    X.Button()
+                                                        .Text("...").Disabled(indicaModoLectura)
+
+                                                         .Handler("seleccionadorCIAP();")
+                                                    ),
+
+                                             X.TextFieldFor(m => m.Codigo).ReadOnly(indicaModoLectura)
+                                        .Width(200)
+                                        .FieldLabel("Código"),
+
+                                             X.TextFieldFor(m => m.RubricaCompleta).ReadOnly(indicaModoLectura)
+                                        .FieldLabel("Rúbrica Completa"),
+
+                                             X.TextFieldFor(m => m.RubricaAbreviada).ReadOnly(indicaModoLectura)
+                                         .FieldLabel("Rúbrica Abreviada")
+                                             ,
+                                            X.RadioGroupFor(m => m.Estado, new List<Radio.Config> {
+                                            new Radio.Config{BoxLabel = "Activo", InputValue = "0"
+                                             ,Checked= ( Model.Accion=="NUEVO"?true:(Model.Estado==0?true:false))
+                                             ,ReadOnly =indicaModoLectura
+                                            },
+                                             new Radio.Config{BoxLabel = "Inactivo", InputValue = "1"
+                                            ,Checked= ( Model.Accion=="NUEVO"?false:(Model.Estado==1?true:false))
+                                            ,ReadOnly =indicaModoLectura
+                                            //,Checked=true
+                                             }
+                                        })
+                                       .FieldLabel("Estado")
+                                        .AutomaticGrouping(false)
+
+
+                                    ),
+                                    Html.X().FormPanel()
+                                    .Layout(LayoutType.Form)
+                                    .Width(300)
+                                    .FieldDefaults(d =>
+                                    {
+                                        d.LabelWidth = 100;
+                                    })
+                                    .BodyPadding(10)
+                                    .Frame(false)
+                                    .Border(false)
+                                    .Items(
+                                                X.TextFieldFor(m => m.Incluido).ReadOnly(indicaModoLectura)
+                                        .FieldLabel("Incluido"),
+
+                                                X.TextFieldFor(m => m.Excluido).ReadOnly(indicaModoLectura)
+                                        .FieldLabel("Excluido"),
+
+                                                X.NumberFieldFor(c => c.Nivel).ReadOnly(indicaModoLectura)
+                                       .FieldLabel("Nivel").Width(200),
+
+                                                X.TextFieldFor(m => m.Criterios).ReadOnly(indicaModoLectura)
+                                        .FieldLabel("Criterios"),
+
+                                                X.TextFieldFor(m => m.Consideraciones).ReadOnly(indicaModoLectura)
+                                        .FieldLabel("Consideraciones"),
+
+                                                        X.TextFieldFor(m => m.Notas).ReadOnly(indicaModoLectura)
+                                            .FieldLabel("Notas")
+
+                                    )
+
+                                ),
+                                Html.X().FormPanel()
+                                .Layout(LayoutType.Form)
+                                .Width(500)
+                                .FieldDefaults(d =>
+                                 {
+                                     d.LabelWidth = 150;
+                                 })
+                                .BodyPadding(10)
+                                .Frame(false)
+                                .Border(false)
+                                    .Items(
+
+                                                X.FieldSet()
+
+                                                    .Title("Información Adicional")
+                                                    .FieldDefaults(d =>
+                                                     {
+                                                         d.LabelWidth = 90;
+                                                         d.InputWidth = 120;
+                                                     })
+                                                    .Items(
+                                                      Html.X().Container().Layout(LayoutType.HBox)
+                                                      .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
+
+                                                       .Items(
+                                                            X.TextFieldFor(m => m.UsuarioCreacion)
+                                                                .FieldLabel("Creación").ReadOnly(true),
+                                                            X.DateFieldFor(m => m.FechaCreacion)
+                                                                    .Format("dd/MM/yyyy").ReadOnly(true).HideLabel(true).Width(80),
+                                                               X.TimeFieldFor(m => m.FechaCreacion).ID("dfHoraCreacion").Format("H:mm:ss").ReadOnly(true).HideLabel(true).Width(80)
+
+                                                       ),
+                                                        Html.X().Container().Layout(LayoutType.HBox)
+                                                        .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
+
+                                                        .Items(
+                                                            X.TextFieldFor(m => m.UsuarioModificacion)
+                                                                .FieldLabel("Modificación").ReadOnly(true),
+                                                            X.DateFieldFor(m => m.FechaModificacion)
+                                                                    .Format("dd/MM/yyyy").ReadOnly(true).HideLabel(true).Width(80),
+                                                                X.TimeFieldFor(m => m.FechaModificacion).ID("dfHoraModificacion").Format("H:mm:ss").ReadOnly(true).HideLabel(true).Width(80)
+
+                                                        )
+                                                     )
+                                     ),
+                                    X.TextArea().ID("taAlerts")
+                                        .Border(false)
+                                        .StyleSpec("background:white;border:1px solid gray;")
+                                        .FieldStyle("color: red")
+                                        .Hidden(true)
+                                        .ReadOnly(true)
+                         )
+                         .TopBar(
+                             X.Toolbar()
+                             .Height(30)
+                             .Items(
+                                    X.ToolbarFill(),
+                                        X.Button()
+                                            .Hidden((Model.Accion == "VER" ? true : false))
+                                            .ID("btnSave")
+                                            .Text((Model.Accion == "DELETE" ? "Eliminar" : "Guardar"))
+                                            .Icon((Model.Accion == "DELETE" ? Icon.DatabaseDelete : Icon.DatabaseSave))
+        //.DirectClickAction("save_Usuario"),
+                                     .DirectEvents(de =>
+                                      {  //Model.ACCION : Posee el MODO ACTUAL
+                                          de.Click.Url = Url.Action("save_CIAP");
+                                          de.Click.EventMask.ShowMask = true;
+                                          de.Click.Before = "App.btnSave.setDisabled(true); " +
+                                                            "beforeSave(App.FormPanel1); return App.FormPanel1.getForm().isValid(); ";
+                                          de.Click.After = "App.btnSave.setDisabled(false); ";
+                                          de.Click.ExtraParams.Add(new Parameter("MODO", Model.Accion, ParameterMode.Value));
+                                          de.Click.ExtraParams.Add(new Parameter("idWindow", "WindowCuerpoHumano", ParameterMode.Value));
+                                          de.Click.Success = "onSuccess('" + Model.Accion + "');";
+                                          de.Click.Failure = "onFailure('" + Model.Accion + "');";
+
+                                      }),
+                                    X.Button()
+                                            .Text((Model.Accion == "VER" ? "Aceptar" : "Cancelar"))
+                                            .Icon((Model.Accion == "VER" ? Icon.Accept : Icon.Cancel))
+                                     .DirectEvents(de =>
+                                      {  //Model.ACCION : Posee el MODO ACTUAL
+                                          de.Click.Url = Url.Action("cerrarWindow");
+                                          //de.Click.EventMask.ShowMask = true;
+                                          de.Click.ExtraParams.Add(new Parameter(
+                                                "id", "WindowCuerpoHumano", ParameterMode.Value));
+                                          de.Click.Success = "onSuccess(result.data);";
+                                          de.Click.Failure = "onSuccess('" + Model.Accion + "');";
+                                      })
+                                 )
+                            )
+
+                //)
+        )
+                    .DirectEvents(de =>
+                    {
+                        de.Render.Url = Url.Action("postWindowCIAP");
+                        de.Render.ExtraParams.Add(new Parameter(
+                              "id", "" + Model.IdCIAP2, ParameterMode.Value));
+                        de.Render.ExtraParams.Add(new Parameter(
+                              "idpadre", "" + Model.IdCIAP2Padre, ParameterMode.Value));
+                    })
+    .CloseAction(CloseAction.Destroy)
+)

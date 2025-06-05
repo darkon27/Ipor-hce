@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aaee9ec0296c46148f1372c84b6a3dda" Name="Diagram1" ZoomLevel="35">
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.APLICACIONESMAST" Width="1.5" PointX="5.75" PointY="10.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.CM_CO_TablaMaestro" Width="1.5" PointX="14.75" PointY="4.5" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.CM_CO_TablaMaestroAsociado" Width="1.5" PointX="19.25" PointY="2" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.CM_CO_TablaMaestroConcepto" Width="1.5" PointX="17" PointY="6.5" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.CM_CO_TablaMaestroDetalle" Width="1.5" PointX="17" PointY="1.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.CM_CO_TablaMaestroDetalleConcepto" Width="1.5" PointX="19.25" PointY="6.625" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.EMPLEADOMAST" Width="1.5" PointX="3" PointY="29.375" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.HC_FlujoProceso" Width="1.5" PointX="24" PointY="9.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.HC_Proceso" Width="1.5" PointX="21.75" PointY="10.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.HC_SubProceso" Width="1.5" PointX="24" PointY="11.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.HC_SubProcesoHijo" Width="1.5" PointX="26.25" PointY="12.25" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.HC_SubProcesoSelector" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.MA_MiscelaneosHeader" Width="1.5" PointX="7.75" PointY="5.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.PERSONAMAST" Width="1.5" PointX="0.75" PointY="26.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SEGURIDADAUTORIZACIONE" Width="1.5" PointX="22" PointY="21.375" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SEGURIDADCONCEPTO" Width="1.5" PointX="22" PointY="25.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SEGURIDADGRUPO" Width="1.5" PointX="19.75" PointY="25.25" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SEGURIDADPERFILUSUARIO" Width="1.5" PointX="5.25" PointY="15.625" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SG_Opcion" Width="1.5" PointX="14.75" PointY="25.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_AD_OrdenAtencion" Width="1.5" PointX="5.25" PointY="28.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_AD_OrdenAtencionDetalle" Width="1.5" PointX="12.5" PointY="11.625" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_GE_Diagnostico" Width="1.5" PointX="24.75" PointY="16" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_GE_Paciente" Width="1.5" PointX="3" PointY="2.5" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_GE_ProcedimientoMedico" Width="1.5" PointX="24.75" PointY="21.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_GE_ProcedimientoMedicoDos" Width="1.5" PointX="26.75" PointY="21.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_GE_Servicio" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_GE_TipoAtencion" Width="1.5" PointX="14.75" PointY="11.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AnatomiaPatologica" Width="1.5" PointX="8" PointY="1.625" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EpisodioClinico" Width="1.5" PointX="5.25" PointY="6.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EstablecimientoSalud" Width="1.5" PointX="3" PointY="24" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_PatologiaClinica" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_PersonalSalud" Width="1.5" PointX="3" PointY="19.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ProcedimientoPrueba" Width="1.5" PointX="17" PointY="21.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Proceso" Width="1.5" PointX="28.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ProcesoSelector" Width="1.5" PointX="20.75" PointY="13.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Seccion" Width="1.5" PointX="24" PointY="5.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_SeccionCampo" Width="1.5" PointX="26.25" PointY="4.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Tabla" Width="1.5" PointX="21.75" PointY="3.5" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_TablaCampo" Width="1.5" PointX="24" PointY="1.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_UnidadMedida" Width="1.5" PointX="14.75" PointY="16.625" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_UnidadServicio" Width="1.5" PointX="5.25" PointY="24.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.UnidadesMast" Width="1.5" PointX="17" PointY="15.375" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.USUARIO" Width="1.5" PointX="3" PointY="14.25" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.WH_ItemMast" Width="1.5" PointX="17.75" PointY="25.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_GE_ServicioPrestacion" Width="1.5" PointX="28.75" PointY="6.75" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_CM_CO_TablaMaestroConcepto" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_CM_CO_TablaMaestroDetalle" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_CM_CO_TablaMaestroDetalleAsociadoP" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_CM_CO_TablaMaestroDetalleAsociadoS" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_CM_CO_TablaMaestroConceptoDetalle" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_CM_CO_TablaMaestroDetalleConcepto" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK__EmpleadoM__Emple__0A695708" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_HC_FLUJO_REFERENCE_HC_PROCE" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_HC_SUBPR_REFERENCE_HC_PROCE" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_HC_SUBPR_REFERENCE_HC_SUBPR" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_ES_REFERENCE_PERSONAM" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_PE_REFERENCE_PERSONAM" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_USUARIO_REFERENCE_PERSONAM" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK__SEGURIDAD__GRUPO__5AEE82B9" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SEGURIDA_REFERENCE_SEGURIDA" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK__SEGURIDAD__GRUPO__5812160E" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SEGURIDA_REFERENCE_USUARIO" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_AD_OrdenAtencion_SS_GE_Paciente" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_AD_OrdenAtencionDetalle" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_AD_OrdenAtencionRelacionada" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_AD_OrdenAtencionDetalle_SS_GE_Paciente" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_EP_REFERENCE_SS_GE_PA" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_UN_REFERENCE_SS_HC_ES" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_PR_REFERENCE_SS_HC_UN" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_SE_REFERENCE_SS_HC_SE" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_SE_REFERENCE_SS_HC_TA" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_TA_REFERENCE_SS_HC_TA" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_UNIDADES_REFERENCE_SS_HC_UN" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AF" Width="1.5" PointX="10.375" PointY="3.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AF_Enfermedad" Width="1.5" PointX="27" PointY="32.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AP" Width="1.5" PointX="10.25" PointY="38.5" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AP_Detalle" Width="1.5" PointX="5.375" PointY="18.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_EA" Width="1.5" PointX="10.25" PointY="57.625" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_EA_Sintoma" Width="1.5" PointX="12.5" PointY="59.25" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Diagnostico" Width="1.5" PointX="27" PointY="15.25" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EpisodioAtencion" Width="1.5" PointX="8" PointY="9.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ExamenFisico_Triaje" Width="1.5" PointX="29.375" PointY="11.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Imagen" Width="1.5" PointX="8" PointY="29" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_IntervencionQuirurgica" Width="1.5" PointX="8" PointY="32.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Prescripcion" Width="1.5" PointX="10.375" PointY="8.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Problema" Width="1.5" PointX="27" PointY="27.375" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Procedimiento" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.MA_MiscelaneosDetalle" Width="1.5" PointX="10" PointY="21.25" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK__MA_MiscelaneosDe__6BAFC5BE" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_AN_REFERENCE_SS_GE_DI" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_DI_FK_SS_HC__SS_GE_DI" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_Problema_Diagnostico" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_AN_REFERENCE_SS_HC_EP" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_Anamnesis_EA_EpisodioAtencion" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_Anamnesis_EA_Sintoma_Anamnesis_EA" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_AN_REFERENCE_SS_HC_PR" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_DI_REFERENCE_SS_HC_EP" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_EP_REFERENCE_SS_HC_PR" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_EP_REFERENCE_SS_HC_UN" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_EpisodioAtencion_EpisodioClinico" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_EpisodioAtencion_EstablecimientoSalud" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_EpisodiOAtencion_PersonalSalud" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_IM_REFERENCE_SS_HC_PR" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_IN_REFERENCE_SS_HC_PR" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_PR_REFERENCE_SS_HC_PR" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Medicamento" Width="1.5" PointX="17" PointY="52.875" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_Medicamento_UnidadMedida" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_Medicamento_UnidadTiempo" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ExamenSolicitado" Width="1.5" PointX="10.25" PointY="13" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_EX_FK_SS_HC__SS_HC_EP" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Selector" Width="1.5" PointX="24.25" PointY="27.75" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_SE_REFERENCE_SEGURIDA" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

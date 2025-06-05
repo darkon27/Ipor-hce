@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0f9260d1aef64188832c5533ec5ef79f" Name="Diagram1" ZoomLevel="35">
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_DescansoMedico_FE" Width="2.625" PointX="2.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Diagnostico_FE" Width="2.125" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ProximaAtencion_FE" Width="3" PointX="7.25" PointY="6.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ProximaAtencionDiagnostico_FE" Width="2.375" PointX="12.25" PointY="9.875" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.ProximaAtencionDiagnostico_FE_ProximaAtencion" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.SS_HC_ProximaAtencionDiagnostico_FE_ProximaAtencion" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AF_Enfermedad_FE" Width="1.5" PointX="15.75" PointY="8.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AF_FE" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AFAM_Enfermedad_FE" Width="1.5" PointX="16.25" PointY="5.375" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InterConsulta_FE" Width="1.5" PointX="2.75" PointY="20.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_SolucitudTransfusionalDiagnostico_FE" Width="1.5" PointX="21" PointY="5.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AntecedentesPersonalesINDetalle_FE" Width="1.5" PointX="20.625" PointY="25.5" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AntecedentesPersonalesIAdulDetalle_FE" Width="1.5" PointX="23.625" PointY="13.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_CONTRARREFERENCIA_FE" Width="2.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_CONTRARREFERENCIA_Diagnostico_FE" Width="1.5" PointX="6.625" PointY="14.75" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_CONTRARREFERENCIA_Diagnostico_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_GINECOOBSTETRICOS_Diagnostico_FE" Width="1.5" PointX="34.25" PointY="2.5" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AntePerGinecoObstetricosCatalogoCirugia_FE" Width="1.5" PointX="26" PointY="0.625" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AntePerGinecoObstetricos_FE" Width="1.5" PointX="23.375" PointY="0.75" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_AntePerGinecoObstetricosCatalogoCirugia_FE" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_GINECOOBSTETRICOS_Diagnostico_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AFAM_CAB_FE" Width="1.5" PointX="20.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EvolucionMedica_FE" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_DescansoMedico_Diagnostico_FE" Width="3.25" PointX="6.25" PointY="2.125" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_DescansoMedico_FE_Diagnostico_DescansoMedico_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_SolucitudTransfusional_FE" Width="1.5" PointX="18.75" PointY="34.75" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_SolucitudTransfusional_SolucitudTransfusionalDiagnostico_FE1" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ValoracionAM_FE" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ValoracionFuncionalAM_FE" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ValoracionSocioFamAM_FE" Width="1.5" PointX="7.375" PointY="18.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ValoracionMentalAM_FE" Width="1.5" PointX="9.375" PointY="18.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ENFER_VIGI_CATETERURINARIO_FE" Width="1.5" PointX="5.375" PointY="24.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ENFER_VIGI_CateterPeriferico_FE" Width="2.625" PointX="9.25" PointY="25.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ENFER_VIGI_VentilacionMecanica_FE" Width="1.5" PointX="3" PointY="28.625" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Referencia_FE" Width="1.5" PointX="27.375" PointY="17.25" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ReferenciaDetalle_FE" Width="1.5" PointX="29.625" PointY="20.125" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK__SS_HC_Referencia__0D30B51A" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Evaluacion_DolorEvaAdultos_FE" Width="1.5" PointX="3.375" PointY="14.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Evaluacion_GradoDependencia_FE" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Indicaciones_FE" Width="1.5" PointX="14.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Evaluacion_DolorEvaNinios_FE" Width="1.5" PointX="23.375" PointY="17.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EvaluacionNeonatos_FE" Width="1.5" PointX="14.375" PointY="26.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_SeguridadCirugia_Pausa_FE" Width="1.5" PointX="21.375" PointY="30.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_SeguridadCirugia_FE" Width="1.5" PointX="30.375" PointY="30.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AntecedentesPersonalesFisiologicos_FE" Width="1.5" PointX="5.375" PointY="31.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Medicamento_FE" Width="1.5" PointX="11.375" PointY="31.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EscalaBromage_FE" Width="1.5" PointX="30.375" PointY="24.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EscalaStewart_FE" Width="1.5" PointX="32.375" PointY="15.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EscalaAldrete_FE" Width="1.5" PointX="32.375" PointY="22.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EscalaAltaCirugiaAmbulatoria_FE" Width="1.5" PointX="33.375" PointY="7.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EscalaRamsay_FE" Width="1.5" PointX="13.375" PointY="33.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_RetiroVoluntario_FE" Width="1.5" PointX="15.375" PointY="33.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Escala_Glasgow_FE" Width="1.5" PointX="30.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EscalaNorton_FE" Width="1.5" PointX="34.375" PointY="14.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EscalaSedacionRass_FE" Width="1.5" PointX="34.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ApoyoDiagnostico_FE" Width="1.5" PointX="34.375" PointY="28.375" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ApoyoDiagnosticoDet_FE" Width="1.5" PointX="36.625" PointY="28.125" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_ApoyoDiagnosticoDet_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Evaluacion_DolorEvaNeonatosPrematuros_FE" Width="1.5" PointX="32.375" PointY="34.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EscalaWoodDownes_FE" Width="1.5" PointX="34.375" PointY="33.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ExamenSolicitadoDet_FE" Width="1.5" PointX="14.5" PointY="13.5" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EnfermedadActual_FE" Width="1.5" PointX="36.375" PointY="15.25" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EnfermedadActualDetalle_FE" Width="1.5" PointX="38.625" PointY="17.375" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_EnfermedadActualDetalle_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EvolucionObstetricaPuerperio_FE" Width="1.5" PointX="23.375" PointY="23.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InformeAlta_Diagnostico_FE" Width="1.5" PointX="12.375" PointY="5.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InformeAlta_Examen_FE" Width="1.5" PointX="5.5" PointY="54.875" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_InformeAlta_Examen_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InformeAlta_FE" Width="1.5" PointX="10.125" PointY="41.75" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_InformeAlta_Diagnostico_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Alergia_FE" Width="1.5" PointX="36.375" PointY="34.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AlergiaDetalle_FE" Width="1.5" PointX="38.625" PointY="34.25" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_AlergiaDetalle_FE2_Alergia_FE2" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_VIGILANCIA_DISPOSITIVOS_FE" Width="1.5" PointX="25.375" PointY="27.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InformeAltaAPD_FE" Width="1.5" PointX="11.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InformeAltaDiagAlt_FE" Width="1.5" PointX="27.375" PointY="5.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InformeAltaDiagIng_FE" Width="1.5" PointX="27.375" PointY="10.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InformeAltaProxCita_FE" Width="1.5" PointX="27.375" PointY="27.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_MedicamentoAlta_FE" Width="1.5" PointX="27.375" PointY="32.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_SolucionesAdministradas_FE" Width="1.5" PointX="2.75" PointY="36.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ApoyoDiagnosticoFile_FE" Width="1.5" PointX="21.375" PointY="37.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_BalanceHidroElect_FE" Width="1.5" PointX="15.375" PointY="38.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_BalanceHidroElectDetalle_FE" Width="1.5" PointX="38.375" PointY="10.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Monitoreo_Obs_Diagnostico_FE" Width="1.5" PointX="41.625" PointY="23.875" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Monitoreo_Obs_FE" Width="1.5" PointX="39.375" PointY="23" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Monitoreo_Obs_Ing_FE" Width="1.5" PointX="29.375" PointY="38.75" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_Monitoreo_Obs_Diagnostico_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Partograma_FE" Width="1.5" PointX="34.375" PointY="40.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_PartogramaDetalle_FE" Width="1.5" PointX="29.375" PointY="15.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_RESPARTO_EMB_ACT_FE" Width="1.5" PointX="39.375" PointY="29" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_RESPARTO_EMB_ANT_FE" Width="1.5" PointX="40.375" PointY="11" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_RESUMEN_PARTO_FE" Width="1.5" PointX="36.375" PointY="41" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_FuncionesVitales_FE" Width="1.5" PointX="38.375" PointY="40.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Ant_Fisiologico_Pediatrico_FE" Width="1.5" PointX="40.375" PointY="40.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anamnesis_AFAM_FE" Width="1.5" PointX="17.375" PointY="12.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AntecedentesPersonalesIAdul_FE" Width="1.5" PointX="21.375" PointY="43" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AntecedentesPersonalesIN_FE" Width="1.5" PointX="18.375" PointY="46.625" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_AntecedentesPersonalesIAdulDetalleAntecedentesPersonalesIA_FE" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_AntecedentesPersonalesINDetalleAntecedentesPersonalesIN_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anam_AP_PatologicosGenerales_FE" Width="1.5" PointX="7.375" PointY="32" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anam_AP_PatologicosGeneralesDetalle_FE" Width="1.5" PointX="17.375" PointY="19" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Apoyo_Diagnostico_FE" Width="1.5" PointX="5.5" PointY="59" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_Apoyo_FE_Diagnostico_DescansoMedico_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ExamenSolicitadoFE" Width="1.5" PointX="12.25" PointY="48.125" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_ExamenSolicitadoDet_ExamenSolicitadoFE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ExamenSolicitado_Diagnostico_FE" Width="1.5" PointX="11.375" PointY="13.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Pre_Operatorio_1_FE" Width="1.5" PointX="19.75" PointY="9.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.rptViewPreOperatorio_1_FE" Width="1.5" PointX="0.75" PointY="41.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Pre_Operatorio_2_FE" Width="1.5" PointX="16.375" PointY="24.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.rptViewPreOperatorio2" Width="1.5" PointX="3.375" PointY="41.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Kardex1_FE" Width="1.5" PointX="29.375" PointY="6.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Medicamento_Kardex" Width="1.5" PointX="41.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Kardex3FE" Width="1.5" PointX="41.375" PointY="27.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Medicamento_Kardex_FE" Width="1.5" PointX="41.375" PointY="32.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Ficha_Anestesia_2_FE" Width="1.5" PointX="31.375" PointY="42.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Ficha_Anestesia_5_FE" Width="1.5" PointX="42.375" PointY="40.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_FichaAnestesia_2_FE" Width="1.5" PointX="43.375" PointY="0.75" />
+	    <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_FichaAnestesia_3_FE" Width="1.5" PointX="43.375" PointY="0.75" />
+	    <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_FichaAnestesia_1_FE" Width="1.5" PointX="43.375" PointY="0.75" />
+		<EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AnestesiaDiagnosticoDetalle_FE" Width="1.5" PointX="43.375" PointY="0.75" />
+		<EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_AnestesiaExamenApoyoDetalle_FE" Width="1.5" PointX="43.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_FichaAnestesia_5_FE" Width="1.5" PointX="43.375" PointY="15.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Medicamento_FE_Epi2" Width="1.5" PointX="43.375" PointY="27.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anestesia_Farmaco_FE" Width="1.5" PointX="44.375" PointY="37.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Anestesia_Farmacos_Detalle_FE" Width="1.5" PointX="44.375" PointY="21.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Examen_Kardex_FE" Width="1.5" PointX="45.375" PointY="26.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InterConsulta_Kardex_FE" Width="1.5" PointX="12.375" PointY="41.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epicrisis_3_Diag_Principal" Width="1.5" PointX="45.375" PointY="6.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epicrisis_3_Diag_Secundaria" Width="1.5" PointX="45.375" PointY="11.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epicrisis_3_Diagnostico" Width="1.5" PointX="45.375" PointY="16.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epicrisis_3" Width="1.5" PointX="45.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_ExamenClinico_FE" Width="1.5" PointX="46.375" PointY="22" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_HojaRecienNacido_FE" Width="1.5" PointX="27.375" PointY="47" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_HojaRecienNacidoDetalle_FE" Width="1.5" PointX="35.375" PointY="8" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Oftalmologico_FE" Width="1.5" PointX="46.375" PointY="33.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Nota_Ingreso_FE" Width="1.5" PointX="46.375" PointY="45.25" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_NotasIngreso_FE" Width="1.5" PointX="36.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_NotaIngreso_Diagnostico_FE" Width="1.5" PointX="48.625" PointY="45" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_NotaIngreso_ExamenApoyo_FE" Width="1.5" PointX="48.625" PointY="50.125" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_NotaIngreso_ExamenApoyo_FE" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_HC_NotaIngreso_FE_Diagnostico_DescansoMedico_FE" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EpisodioNotificaciones_FE" Width="1.5" PointX="47.375" PointY="9.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_TriajeEmergencia_FE" Width="1.5" PointX="38.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Triaje_Ant_Alergia_FE" Width="1.5" PointX="47.375" PointY="1.125" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Triaje_Ant_AlergiaDetalle_FE" Width="1.5" PointX="49.625" PointY="1.75" />
+        <AssociationConnector Association="WEB_ERPSALUDModel.FK_SS_Triaje_Ant_AlergiaDetalle_FE2_Alergia_FE2" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EpisodioTriaje" Width="1.5" PointX="9.375" PointY="47.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_SolicitudTransfusional_2_FE" Width="1.5" PointX="14.375" PointY="47.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epicrisis_2_Detalle_FE" Width="1.5" PointX="47.375" PointY="26.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epicrisis_2_FE" Width="1.5" PointX="33.375" PointY="47.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epicrisis_1_Detalle_FE" Width="1.5" PointX="48.375" PointY="31.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epicrisis_1_FE" Width="1.5" PointX="49.375" PointY="8.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_OrdenInterQuiruDiagnosticoDetalle_FE" Width="1.5" PointX="48.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_OrdenInterQuiruExamenApoyoDetalle_FE" Width="1.5" PointX="48.375" PointY="39.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_OrdenIntervencionQuirurgicaCab_FE" Width="1.5" PointX="35.375" PointY="49.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_Epidemiologia_FE" Width="1.5" PointX="37.375" PointY="49.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EpidemiologiaDetalleLugar_FE" Width="1.5" PointX="49.375" PointY="15.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_EpidemiologiaDetalleCasos_FE" Width="1.5" PointX="49.375" PointY="26.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_NotasEnfermeria_FE" Width="1.5" PointX="50.375" PointY="21" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_InterConsulta_Epricrisis3_FE" Width="1.5" PointX="50.375" PointY="31.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_RESUMEN_PARTO_FE_2" Width="1.5" PointX="39.375" PointY="50.75" />
+        <EntityTypeShape EntityType="WEB_ERPSALUDModel.SS_HC_RESUMEN_PARTO_FE_3" Width="1.5" PointX="41.375" PointY="50.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

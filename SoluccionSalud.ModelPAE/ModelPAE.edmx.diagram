@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ad1393c5f90c4b44bd7f3ff321e187bc" Name="Diagram1" ZoomLevel="68" >
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_Actividad" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_DominioPAE" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_FactorRelacionado" Width="1.875" PointX="4.625" PointY="4.5" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_FactorRelacionadoNanda" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_IndicadorPAE" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_NANDA" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_NandaNoc" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_NICActividad" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_NOC2" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_NOCIndicador" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_NocNic" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_PAE_Diagnostico" PointX="18.375" PointY="15.75" Width="1.5" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_NIC" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_ClasePAE" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_FA_SolicitudProducto" Width="1.5" PointX="13.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_FA_Notificacion" Width="1.5" PointX="13.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_KardexEnfermeria" Width="1.5" PointX="9.375" PointY="13.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.VW_ATENCIONPACIENTEMEDICAMENTO" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_FA_DevolucionProducto" Width="2" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_EpisodioAtencionFormato" Width="1.5" PointX="15.375" PointY="11.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_FA_DevolucionProductoDetalle" Width="1.5" PointX="15.375" PointY="5.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_FA_SolicitudProductoDetalle" Width="1.5" PointX="11.375" PointY="13.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_PAE_Actividad" Width="1.5" PointX="5.375" PointY="14.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_PAE_ActividadRealizacion" Width="1.5" PointX="13.375" PointY="16.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_PAE_Indicador" Width="1.5" PointX="15.375" PointY="16.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_PAE_Intervencion" Width="1.5" PointX="17.375" PointY="5.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_PAE_Objetivo" Width="1.5" PointX="17.375" PointY="10.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_ProcesoPAE" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_ProcesoPAEObservacion" Width="1.5" PointX="7.375" PointY="18.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_KardexEnfermeriaDetalle" Width="1.5" PointX="19.375" PointY="5.75" />
+        <EntityTypeShape EntityType="ClinicaElGolfModel.SS_HC_ProcedimientoInformeSPRING" Width="1.5" PointX="3.375" PointY="20.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1316 @@
+﻿@using Region = Ext.Net.Region
+@model SoluccionSalud.Entidades.Entidades.SS_HC_Anamnesis_AP
+
+@{
+    ViewBag.Title = "Portal - Ext.NET MVC Examples";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+    var X = Html.X();
+}
+@section cabecera
+{
+<script>
+    var count = 0; // a counter for new records
+
+    function visibleGrid(grid) {
+        grid.visibleGrid(true);
+    }
+
+    function addRecord(grid) {
+        grid.store.insert(0, { CODIGOELEMENTO: 'New' + count++ });
+
+        Ext.Function.defer(function () {
+            grid.editingPlugin.startEditByPosition({ row: 0, column: 0 })
+        }, 100);
+    }
+
+    function deleteSelected(grid) {
+        var store = grid.store,
+            records = grid.selModel.getSelection();
+
+        store.remove(records);
+        store.load(true);
+    }
+
+    function selectRecord(grid, id) {
+        var record = grid.store.getById(id);
+
+        grid.store.loadPage(grid.store.findPage(record), {
+            callback: function () {
+                grid.getSelectionModel().select(record);
+            }
+        });
+    };
+</script>
+<script>
+    var hhValidation = function (h) {
+        str = h.value;
+        tempo = "'";
+        str = str.replace('javascript:myFunction(' + tempo, '');
+        str = str.replace('%20', ' ');
+        str = str.replace('%C3%B3', 'ó');
+        str = str.replace('%C3%A1', 'á');
+        str = str.replace('%C3%A9', 'é');
+        str = str.replace('%C3%AD', 'í');
+        str = str.replace('%C3%BA', 'ú');
+        str = str.replace('%C3%B1', 'ñ');
+
+        str = str.replace('%C3%8D', 'Í');
+        str = str.replace('%C3%93', 'Ó');
+        str = str.replace('%C3%81', 'Á');
+        str = str.replace('%C3%91', 'Ñ');
+        str = str.replace('%C3%9A', 'Ú');
+        
+        str = str.replace(tempo + ')', '');
+        h.setValue(str);
+
+    }
+    var mmValidation = function (m) {
+        if (m.getValue() > 59) {
+            m.setValue(59);
+        }
+
+    }
+
+</script>
+
+
+
+
+
+}
+
+
+@section cuerpo
+{
+
+
+    @(Html.X().Viewport()
+        .Layout(LayoutType.VBox)
+
+        .LayoutConfig(
+            new VBoxLayoutConfig { Align = VBoxAlign.Stretch }
+        )
+        .Listeners(l =>
+        {
+            l.AfterLayout.BroadcastOnBus = "App.resize";
+            l.AfterLayout.Single = true;
+        })
+        .Items(regions =>
+        {
+
+            regions.Add(Html.X().FormPanel()
+                    .ID("WizardPanel")
+                    .Title("Example Wizard")
+                    .BodyPadding(5)
+                    .AutoScroll(true)
+                    .Height(340)
+                    .Header(false)
+                    .Border(true)
+                    .Layout(LayoutType.Card)
+                    .ActiveIndex(0)
+                    .Items(
+                            X.FormPanel()
+                                .ID("Panel1")
+                               // .Html("<h1>Welcome to the Wizard!</h1><p>Step 1 of 3</p>")
+                                .BodyPadding(5)
+                               // .Layout(LayoutType.Card)
+                                .AutoScroll(true)
+                                .Border(false)
+                                .Header(false)
+                                .Items(
+                                      X.FieldSet()
+                                            .ColumnWidth(0.4)
+                                            .Title("Antecedentes de gestación")
+                                            //.Border(false)
+                                            .MarginSpec("0 05 0 05")
+                                            .Defaults(d =>
+                                            {
+                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                d.Add(new Parameter("DefaultAnchor", "100%"));
+                                                d.Add(new Parameter("LabelAlign", "Left"));
+                                            })
+
+                                            .DefaultAnchor("100%")
+                                            .FieldDefaults(d =>
+                                            {
+                                                d.LabelAlign = LabelAlign.Left;
+                                            })
+                                            .Items(
+                                                     X.CheckboxGroupFor(c => c.PatologiaGestacion, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Embarazo Normal", InputValue = "Embarazo Normal"},
+                                                                new Checkbox.Config{BoxLabel = "Complicado", InputValue = "Complicado"}
+                                                            })
+                                                            .FieldLabel("Antecedentes de gestación")
+                                                            .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            }),
+
+                                                 X.TextAreaFor(c=>c.PatologiaGestacion)
+                                                    .Rows(1)
+                                                    .FieldLabel("Patología en la gestación"),
+
+                                                 X.CheckboxGroupFor(c => c.IdControlPrenatal, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "No", InputValue = "0"}
+                                                            })
+
+                                                   .FieldLabel("Control prenatal")
+                                                   .Defaults(d =>
+                                                   {
+                                                       d.Add(new Parameter("LabelWidth", "170"));
+                                                   })
+                                                   .DefaultAnchor("100%"),
+
+                                                   X.Container()
+                                                        .Layout(LayoutType.HBox)
+                                                        .Defaults(d =>
+                                                        {
+                                                            d.Add(new Parameter("LabelWidth", "170"));
+                                                        })
+                                                              //.MarginSpec("0 0 10")
+                                                        .Items(
+                                                            X.TextFieldFor(c => c.CPnumeroControles)
+                                                             .FieldLabel("Número de controles"),
+                                                            X.Component().Width(20),
+                                                            X.TextFieldFor(c => c.CPnumeroEmbarazos)
+                                                              .FieldLabel("Número de embarazos")
+                                                            ),
+                                                      X.TextFieldFor(c => c.LugarControl)
+                                                            .FieldLabel("Lugar de control")
+
+												),
+                                      X.FieldSet()
+                                            .ColumnWidth(0.4)
+                                            .Title("Antecedentes de parto")
+                                            //.Border(false)
+                                            .MarginSpec("0 05 0 05")
+                                            .Defaults(d =>
+                                            {
+                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                d.Add(new Parameter("DefaultAnchor", "100%"));
+                                                d.Add(new Parameter("LabelAlign", "Left"));
+                                            })
+
+                                            .DefaultAnchor("100%")
+                                            .FieldDefaults(d =>
+                                            {
+                                                d.LabelAlign = LabelAlign.Left;
+                                            })
+                                            .Items(
+                                                    X.CheckboxGroupFor(c => c.IdTipoParto, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Normal", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Complicado", InputValue = "0"}
+                                                            })
+                                                           .FieldLabel("Antecedente de parto")
+                                                           .DefaultAnchor("100%")
+                                                           .Defaults(d =>
+                                                           {
+                                                               d.Add(new Parameter("LabelWidth", "170"));
+                                                           }),
+                                                      X.TextAreaFor(c => c.ComplicacionesParto)
+                                                            .Rows(1)
+                                                            .FieldLabel("Complicaciones de parto"),
+                                                     X.CheckboxGroupFor(c => c.IdLugarParto, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Establecimiento", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Atendido por profesional", InputValue = "2"},
+                                                                new Checkbox.Config{BoxLabel = "Domicilio", InputValue = "3"},
+                                                                new Checkbox.Config{BoxLabel = "Empirico", InputValue = "4"}
+                                                             })
+                                                           .FieldLabel("Lugar de parto")
+                                                           .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            })
+                                                           .ColumnsNumber(2)
+                                        )
+                                     ),
+                        X.FormPanel()
+                            .ID("Panel2")
+                                .BodyPadding(5)
+                                .AutoScroll(true)
+                                .Border(false)
+                                .Header(false)
+                                .Items(
+                                      X.FieldSet()
+                                            .ColumnWidth(0.4)
+                                            .Title("Antecedentes de nacimiento")
+                                            //.Border(false)
+                                            .MarginSpec("0 05 0 05")
+                                            .Defaults(d =>
+                                            {
+                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                d.Add(new Parameter("DefaultAnchor", "100%"));
+                                                d.Add(new Parameter("LabelAlign", "Left"));
+                                            })
+
+                                            .DefaultAnchor("100%")
+                                            .FieldDefaults(d =>
+                                            {
+                                                d.LabelAlign = LabelAlign.Left;
+                                            })
+                                             .Items(
+                                                  X.Container()
+                                                        .Layout(LayoutType.HBox)
+                                                        .Defaults(d =>
+                                                        {
+                                                            d.Add(new Parameter("LabelWidth", "170"));
+                                                        })
+                                                        .Items(
+                                                            X.TextFieldFor(c => c.EdadInicioAblactanciaMeses)
+                                                              .FieldLabel("Edad gestación al nacer"),
+                                                        X.Component().Width(20),
+                                                            X.TextFieldFor(c => c.PesoAlNacerGR)
+                                                              .FieldLabel("Peso al nacer")
+                                                            ),
+                                                  X.Container()
+                                                        .Layout(LayoutType.HBox)
+                                                        .Defaults(d =>
+                                                        {
+                                                            d.Add(new Parameter("LabelWidth", "170"));
+                                                        })
+                                                        .Items(
+                                                            X.TextFieldFor(c => c.TallaAlNacerCM)
+                                                             .FieldLabel("Talla al nacer"),
+                                                            X.Component().Width(20),
+                                                            X.TextFieldFor(c => c.PerimetroCefalicoCM)
+                                                              .FieldLabel("Perimetro cafalico")
+                                                            ),
+                                                    X.Label("Respiración y llanto al nacer"),
+                                                    X.RadioGroupFor(c =>  c.IdValoracionFuncional1, new List<Radio.Config> {
+                                                                new Radio.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                new Radio.Config{BoxLabel = "No", InputValue = "0"}
+                                                            })
+                                                         .Vertical(true)
+                                                         .FieldLabel("Fue inmediato")
+                                                         .Defaults(d =>
+                                                         {
+                                                             d.Add(new Parameter("LabelWidth", "100"));
+                                                         })
+                                                         .AnchorVertical("100%"),
+                                                    X.RadioGroupFor(c =>  c.IdValoracionFuncional1, new List<Radio.Config> {
+                                                                new Radio.Config{BoxLabel = "1'", InputValue = "1"},
+                                                                new Radio.Config{BoxLabel = "5'", InputValue = "5"}
+                                                            })
+                                                         .Vertical(true)
+                                                         .FieldLabel("APGAR")
+                                                         .Defaults(d =>
+                                                         {
+                                                             d.Add(new Parameter("LabelWidth", "100"));
+                                                         })
+                                                         .AnchorVertical("100%"),
+
+                                                    X.RadioGroupFor(c => c.IdValoracionFuncional3, new List<Radio.Config> {
+                                                                new Radio.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                new Radio.Config{BoxLabel = "No", InputValue = "0"}
+                                                            })
+                                                         .Vertical(true)
+                                                         .FieldLabel("Deprimido")
+                                                         .Defaults(d =>
+                                                         {
+                                                             d.Add(new Parameter("LabelWidth", "100"));
+                                                         })
+                                                         .AnchorVertical("100%"),
+
+                                                  X.RadioGroupFor(c => c.IdValoracionFuncional4, new List<Radio.Config> {
+                                                                new Radio.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                new Radio.Config{BoxLabel = "No", InputValue = "0"}
+                                                            })
+                                                         .Vertical(true)
+                                                         .FieldLabel("Reanimación")
+                                                         .Defaults(d =>
+                                                         {
+                                                             d.Add(new Parameter("LabelWidth", "100"));
+                                                         })
+                                                         .AnchorVertical("100%"),
+
+                                                     X.TextAreaFor(c => c.PatologiasPernatales)
+                                                           .Rows(1)
+                                                           .FieldLabel("Patologías perinatales"),
+                                                     X.TextAreaFor(c => c.DiasHospitalizacion)
+                                                            .FieldLabel("Tiempo de hospitalización")
+                                                 ),
+                                        X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("Antecedentes patologicos")
+                                                //.Border(false)
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                {
+                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                    d.Add(new Parameter("DefaultAnchor", "100%"));
+                                                    d.Add(new Parameter("LabelAlign", "Left"));
+                                                })
+
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                {
+                                                    d.LabelAlign = LabelAlign.Left;
+                                                })
+                                                 .Items(
+                                                        X.TextAreaFor( c => c.AntecentesPatologicos)
+                                                               .Rows(1)
+                                                               .FieldLabel("Antec. patologicos")
+                                                 )
+                                        ),
+                        X.FormPanel()
+                               .ID("Panel3")
+                               .BodyPadding(5)
+                                .AutoScroll(true)
+                                .Border(false)
+                                .Header(false)
+                                .Items(
+
+                                     X.FieldSet()
+                                            .ColumnWidth(0.4)
+                                            .Title("Antecedentes de lactancia")
+                                            //.Border(false)
+                                            .MarginSpec("0 05 0 05")
+                                            .Defaults(d =>
+                                            {
+                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                d.Add(new Parameter("DefaultAnchor", "100%"));
+                                                d.Add(new Parameter("LabelAlign", "Left"));
+                                            })
+                                            .DefaultAnchor("100%")
+                                            .FieldDefaults(d =>
+                                            {
+                                                d.LabelAlign = LabelAlign.Left;
+                                            })
+                                             .Items(
+                                                 X.CheckboxGroupFor(c => c.IdTipoLecheHasta6meses, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "LM exc.", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Artificial", InputValue = "2"},
+                                                                new Checkbox.Config{BoxLabel = "Mixta", InputValue = "3"}
+                                                             })
+                                                           .FieldLabel("Tipo de leche hasta 6 meses")
+                                                           .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            })
+                                                           .ColumnsNumber(2),
+
+                                                     X.TextAreaFor(c => c.AntecLactancia) //--
+                                                           .Rows(1)
+                                                           .FieldLabel("Antec. lactancia")
+
+                                             ),
+                                      X.FieldSet()
+                                            .ColumnWidth(0.4)
+                                            .Title("De esfera sexual y reproductiva")
+                                            .MarginSpec("0 05 0 05")
+                                            .Defaults(d =>
+                                            {
+                                                d.Add(new Parameter("LabelWidth", "170"));
+
+                                            })
+                                            .DefaultAnchor("100%")
+                                            .FieldDefaults(d =>
+                                            {
+                                                d.LabelAlign = LabelAlign.Left;
+                                            })
+
+                                                .Items(
+                                                       X.Container()
+                                                            .Layout(LayoutType.HBox)
+                                                            .Defaults(d =>
+                                                                {
+                                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                                })
+                                                            .Items(
+                                                                    X.DateFieldFor(c => c.FechaUltimaRegla).FieldLabel("FUR"), //--
+                                                                    X.DateFieldFor(c => c.FechaUltimoPeriodo).FieldLabel("FUP")
+                                                                   ),
+                                                        X.TextFieldFor(c => c.MetodosAnticonceptivos).FieldLabel("Métodos anticonceptivos")
+                                            ) ,
+                                      X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("Gineco-obstétricos")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                {
+                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                })
+
+                                                .DefaultAnchor("100%")
+							                    .FieldDefaults(d =>
+							                    {
+								                    d.LabelAlign = LabelAlign.Left;
+							                    })
+								                    .Items(
+
+										                    X.TextFieldFor(c=>c.Menarquia) .FieldLabel("Menarquía"),
+										                    X.TextFieldFor(c=>c.Menopausia) .FieldLabel("Menopausia"),
+										                    X.TextFieldFor(c=>c.CaracteristicasMenstruaciones) .FieldLabel("Características de menstruaciones")
+										                  //  X.TextFieldFor(c=>c.InformacionEmbarazos) .FieldLabel("Información sobre embarazos")
+							                    )
+                                  ),
+                       X.FormPanel()
+                               .ID("Panel4")
+                               .BodyPadding(5)
+                               .AutoScroll(true)
+                               .Border(false)
+                               .Header(false)
+                               .Items(
+                                     X.FieldSet()
+                                            .ColumnWidth(0.4)
+                                            .Title("Patológicos")
+                                            .MarginSpec("0 05 0 05")
+                                            .Defaults(d =>
+                                            {
+                                                d.Add(new Parameter("LabelWidth", "170"));
+                                            })
+                                            .DefaultAnchor("100%")
+                                            .FieldDefaults(d =>
+                                            {
+                                                d.LabelAlign = LabelAlign.Left;
+                                            })
+                                             .Items(
+                                                     X.GridPanel()
+                                                                .ID("grillaEnfer_Anteriores")
+                                                                .Border(false)
+                                                                .Store(
+                                                                    Html.X().Store()
+                                                                          .Model(
+                                                                            Html.X().Model()
+                                                                                .IDProperty("CODIGOELEMENTO")
+                                                                                .Fields(
+                                                                                    Html.X().ModelField().Name("VALORCODIGO1")
+                                                                                )
+                                                                        )
+                                                                        .PageSize(10)
+                                                                        .ServerProxy(
+                                                                            Html.X().AjaxProxy()
+                                                                                .Url(Url.Action("CCEP1051Read"))
+                                                                        )
+                                                                )
+                                                                .ColumnModel(
+                                                                   // Html.X().Column()
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO1")
+                                                                        .Text("Enfermedad Anteriores")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; })
+                                                                            )
+                                                                        //.Editor(Html.X().TextField())
+                                                                )
+                                                                .SelectionModel(
+                                                                    Html.X().RowSelectionModel().Mode(SelectionMode.Multi)
+                                                                )
+                                                                .Plugins(
+                                                                    Html.X().CellEditing()
+                                                                )
+
+                                                                .TopBar(
+                                                                    Html.X().Toolbar()
+                                                                        .Items(
+                                                                            Html.X().Button()
+                                                                                .Text("Agregar")
+                                                                                .Icon(Icon.Add)
+                                                                                .Handler("addRecord(this.up('grid'));"),
+
+                                                                            Html.X().Button()
+                                                                                .Text("Eliminar")
+                                                                                .Icon(Icon.Delete)
+                                                                                .Handler("deleteSelected(this.up('grid'));")
+
+                                                                        )
+                                                                ),
+                                                                 X.GridPanel()
+                                                                .ID("grillaEnfer_Profesionales")
+                                                                .Border(false)
+                                                                .Store(
+                                                                    Html.X().Store()
+                                                                          .Model(
+                                                                            Html.X().Model()
+                                                                                .IDProperty("CODIGOELEMENTO")
+                                                                                .Fields(
+                                                                                    Html.X().ModelField().Name("VALORCODIGO1")
+                                                                                )
+                                                                        )
+                                                                        .PageSize(10)
+                                                                        .ServerProxy(
+                                                                            Html.X().AjaxProxy()
+                                                                                .Url(Url.Action("CCEP1051Read"))
+                                                                        )
+                                                                )
+                                                                .ColumnModel(
+                                                                   // Html.X().Column()
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO1")
+                                                                        .Text("Enfermedad Profesionales")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; })
+                                                                            )
+                                                                        //.Editor(Html.X().TextField())
+                                                                )
+                                                                .SelectionModel(
+                                                                    Html.X().RowSelectionModel().Mode(SelectionMode.Multi)
+                                                                )
+                                                                .Plugins(
+                                                                    Html.X().CellEditing()
+                                                                )
+
+                                                                .TopBar(
+                                                                    Html.X().Toolbar()
+                                                                        .Items(
+                                                                            Html.X().Button()
+                                                                                .Text("Agregar")
+                                                                                .Icon(Icon.Add)
+                                                                                .Handler("addRecord(this.up('grid'));"),
+
+                                                                            Html.X().Button()
+                                                                                .Text("Eliminar")
+                                                                                .Icon(Icon.Delete)
+                                                                                .Handler("deleteSelected(this.up('grid'));")
+
+                                                                        )
+                                                                ),
+                                                               X.GridPanel()
+                                                                .ID("grillaAntec_Profesionales")
+                                                                .Border(false)
+                                                                .Store(
+                                                                    Html.X().Store()
+                                                                          .Model(
+                                                                            Html.X().Model()
+                                                                                .IDProperty("CODIGOELEMENTO")
+                                                                                .Fields(
+                                                                                    Html.X().ModelField().Name("VALORCODIGO1")
+                                                                                )
+                                                                        )
+                                                                        .PageSize(10)
+                                                                        .ServerProxy(
+                                                                            Html.X().AjaxProxy()
+                                                                                .Url(Url.Action("CCEP1051Read"))
+                                                                        )
+                                                                )
+                                                                .ColumnModel(
+                                                                   // Html.X().Column()
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO1")
+                                                                        .Text("Accidentes de trabajo")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; })
+                                                                            )
+                                                                        //.Editor(Html.X().TextField())
+                                                                )
+                                                                .SelectionModel(
+                                                                    Html.X().RowSelectionModel().Mode(SelectionMode.Multi)
+                                                                )
+                                                                .Plugins(
+                                                                    Html.X().CellEditing()
+                                                                )
+
+                                                                .TopBar(
+                                                                    Html.X().Toolbar()
+                                                                        .Items(
+                                                                            Html.X().Button()
+                                                                                .Text("Agregar")
+                                                                                .Icon(Icon.Add)
+                                                                                .Handler("addRecord(this.up('grid'));"),
+
+                                                                            Html.X().Button()
+                                                                                .Text("Eliminar")
+                                                                                .Icon(Icon.Delete)
+                                                                                .Handler("deleteSelected(this.up('grid'));")
+
+                                                                        )
+                                                                ),
+                                                                X.GridPanel()
+                                                                .ID("grillaInterQuirurgica")
+                                                                .Border(false)
+                                                                .Store(
+                                                                    Html.X().Store()
+                                                                          .Model(
+                                                                            Html.X().Model()
+                                                                                .IDProperty("CODIGOELEMENTO")
+                                                                                .Fields(
+                                                                                    Html.X().ModelField().Name("VALORCODIGO1")
+                                                                                )
+                                                                        )
+                                                                        .PageSize(10)
+                                                                        .ServerProxy(
+                                                                            Html.X().AjaxProxy()
+                                                                                .Url(Url.Action("CCEP1051Read"))
+                                                                        )
+                                                                )
+                                                                .ColumnModel(
+
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO1")
+                                                                        .Text("Intervenciones quirúrgicas")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; })
+                                                                            )
+
+                                                                )
+                                                                .SelectionModel(
+                                                                    Html.X().RowSelectionModel().Mode(SelectionMode.Multi)
+                                                                )
+                                                                .Plugins(
+                                                                    Html.X().CellEditing()
+                                                                )
+
+                                                                .TopBar(
+                                                                    Html.X().Toolbar()
+
+                                                                        .Items(
+                                                                            Html.X().Button()
+                                                                                .Text("Agregar")
+                                                                                .Icon(Icon.Add)
+                                                                                .Handler("addRecord(this.up('grid'));"),
+
+                                                                            Html.X().Button()
+                                                                                .Text("Eliminar")
+                                                                                .Icon(Icon.Delete)
+                                                                                .Handler("deleteSelected(this.up('grid'));")
+
+                                                                        )
+                                                                ),
+                                                         X.TextFieldFor(c => c.Transfusiones).FieldLabel("Transfusiones")
+                                                 )
+                                 ),
+                          X.FormPanel()
+                               .ID("Panel5")
+                               .BodyPadding(5)
+                               .AutoScroll(true)
+                               .Border(false)
+                               .Header(false)
+                               .Items(
+                                         X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("De inmunizaciones")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                {
+                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                })
+
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                {
+                                                    d.LabelAlign = LabelAlign.Left;
+                                                })
+                                                    .Items(
+                                                         X.Container()
+                                                                .Layout(LayoutType.HBox)
+                                                                .Defaults(d =>
+                                                                {
+                                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                                })
+                                                                .Items(
+                                                                        X.DateFieldFor(c => c.DeinmunizFechaAproximada).FieldLabel("Fecha"),  //--
+                                                                        X.NumberFieldFor(c => c.DeinmunizEdadAproximada).FieldLabel("Edad")
+                                                                       ),
+                                                            X.ComboBoxFor(c => c.ValoracionSocioFamiliar)
+                                                                .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("HCC_CURSOENF").Select(d => new ListItem(d.Name, d.ID)))
+                                                                .FieldLabel("Tabla de Vacuna")
+                                                                .SimpleSubmit(true)
+                                                ),
+
+                                          X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("De hábitos nocivos (uso y abuso de sustancias)")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170"));})
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                    { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+                                                      X.TextFieldFor(c => c.Alcohol).FieldLabel("Alcohol"),
+                                                      X.TextFieldFor(c => c.Tabaco).FieldLabel("Tabaco"),
+                                                      X.TextFieldFor(c => c.Drogas).FieldLabel("Drogas")
+                                                    ),
+                                          X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("De buenos hábitos")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170"));})
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                    { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+                                                      X.TextFieldFor(c => c.ActividadFisica).FieldLabel("Actividad fisica"),
+                                                      X.TextFieldFor(c => c.ConsumoVerduras).FieldLabel("Consumo de verduras"),
+                                                      X.TextFieldFor(c => c.ConsumoFrutas).FieldLabel("Consumo de Frutas")
+                                                    ),
+                                          X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("De Alergias")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170")); })
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+                                                      X.TextFieldFor(c => c.Medicamentos).FieldLabel("Medicamentos"), //--
+                                                      X.TextFieldFor(c => c.Alimentos).FieldLabel("Alimentos"),
+                                                      X.TextFieldFor(c => c.SustanciasEnElAmbiente).FieldLabel("Sustancias que están en el ambiente"),
+                                                      X.TextFieldFor(c => c.SustanciasContactoConPiel).FieldLabel("Sustancias que entran en contacto con la piel")
+                                                      )
+                                   ),
+                          X.FormPanel()
+                               .ID("Panel6")
+                               .BodyPadding(5)
+                               .AutoScroll(true)
+                               .Border(false)
+                               .Header(false)
+                               .Items(
+                                        X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("Epidemiológicos")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170")); })
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+                                                       X.GridPanel()
+                                                                .ID("GrillaEpidemiologicos")
+                                                                .Border(false)
+                                                                .Store(
+                                                                    Html.X().Store()
+                                                                          .Model(
+                                                                            Html.X().Model()
+                                                                                .IDProperty("CODIGOELEMENTO")
+                                                                                .Fields(
+                                                                                    Html.X().ModelField().Name("VALORCODIGO1"),
+                                                                                    Html.X().ModelField().Name("VALORCODIGO2") ,
+                                                                                    Html.X().ModelField().Name("VALORCODIGO3") ) )
+                                                                                .PageSize(10)
+                                                                                .ServerProxy(
+                                                                                    Html.X().AjaxProxy()
+                                                                                        .Url(Url.Action("CCEP1051Read")) ) )
+                                                                .ColumnModel(
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO1")
+                                                                        .Text("Enfermedad")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; }) ),
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO2")
+                                                                        .Text("Fecha")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().DateField() ),
+                                                                   Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO3")
+                                                                        .Text("Lugar")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; })) )
+                                                                .SelectionModel(
+                                                                    Html.X().RowSelectionModel().Mode(SelectionMode.Multi))
+                                                                .Plugins(
+                                                                    Html.X().CellEditing())
+                                                                .TopBar(
+                                                                    Html.X().Toolbar()
+                                                                        .Items(
+                                                                            Html.X().Button()
+                                                                                .Text("Agregar")
+                                                                                .Icon(Icon.Add)
+                                                                                .Handler("addRecord(this.up('grid'));"),
+
+                                                                            Html.X().Button()
+                                                                                .Text("Eliminar")
+                                                                                .Icon(Icon.Delete)
+                                                                                .Handler("deleteSelected(this.up('grid'));")
+
+                                                                        )
+                                                                ),
+                                                    X.TextFieldFor(c => c.CrianzaAnimalesDomesticos).FieldLabel("Crianza de animales domésticos")
+                                                ),
+                                          X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("Socio-económicos")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170")); })
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+                                                        X.TextFieldFor(c => c.AguaPotable).FieldLabel("Agua potable")  ,
+                                                        X.TextFieldFor(c => c.DisposicionExcretas).FieldLabel("Disposición de excretas")
+                                                        ),
+                                        X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("Generales")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170")); })
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+                                                X.GridPanel()
+                                                                .ID("grillaMedUsoFrecuente")
+                                                                .Border(false)
+                                                                .Store(
+                                                                    Html.X().Store()
+                                                                          .Model(
+                                                                            Html.X().Model()
+                                                                                .IDProperty("CODIGOELEMENTO")
+                                                                                .Fields(
+                                                                                    Html.X().ModelField().Name("VALORCODIGO1"),
+                                                                                    Html.X().ModelField().Name("VALORCODIGO2"),
+                                                                                    Html.X().ModelField().Name("VALORCODIGO3")
+                                                                                )
+                                                                        )
+                                                                        .PageSize(10)
+                                                                        .ServerProxy(
+                                                                            Html.X().AjaxProxy()
+                                                                                .Url(Url.Action("CCEP1051Read"))
+                                                                        )
+                                                                )
+                                                                .ColumnModel(
+
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO1")
+                                                                        .Text("Nombre")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; })
+                                                                            ),
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO2")
+                                                                        .Text("Dosis")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; })
+                                                                            ),
+                                                                    Html.X().ComponentColumn()
+                                                                        .Editor(true)
+                                                                        .DataIndex("VALORCODIGO3")
+                                                                        .Text("Observaciones")
+                                                                        .Flex(1)
+                                                                        .Component(
+                                                                            Html.X().TextField()
+                                                                                   .Listeners(l => { l.Change.Handler = "hhValidation(this);"; })
+                                                                            )
+
+                                                                )
+                                                                .SelectionModel(
+                                                                    Html.X().RowSelectionModel().Mode(SelectionMode.Multi)
+                                                                )
+                                                                .Plugins(
+                                                                    Html.X().CellEditing()
+                                                                )
+
+                                                                .TopBar(
+                                                                    Html.X().Toolbar()
+
+                                                                        .Items(
+                                                                            Html.X().Button()
+                                                                                .Text("Agregar")
+                                                                                .Icon(Icon.Add)
+                                                                                .Handler("addRecord(this.up('grid'));"),
+
+                                                                            Html.X().Button()
+                                                                                .Text("Eliminar")
+                                                                                .Icon(Icon.Delete)
+                                                                                .Handler("deleteSelected(this.up('grid'));")
+
+                                                                        )
+                                                                ),
+                                                          X.RadioGroupFor(c => c.ReaccionAdversaMedicamentos, new List<Radio.Config> {
+                                                                    new Radio.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                    new Radio.Config{BoxLabel = "No", InputValue = "0"}
+                                                                    })
+                                                                 .Vertical(true)
+                                                                 .FieldLabel("Reacción adversa a medicamentos")
+                                                                 .Defaults(d =>
+                                                                 {
+                                                                     d.Add(new Parameter("LabelWidth", "100"));
+                                                                 })
+                                                                .AnchorVertical("100%"),
+                                                            X.TextFieldFor(c => c.ReaccionAdversaMedicamentos).FieldLabel("Reacción adversa a medicamentos")  ,
+                                                            X.TextFieldFor(c => c.SaludBucal).FieldLabel("Salud bucal")
+                                                        ),
+                                        X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("Atención del niño")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170")); })
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+
+                                                    X.TextFieldFor(c => c.VigilanciaDeCrecimiento).FieldLabel("Vigilancia de crecimiento")  ,
+                                                    X.TextFieldFor(c => c.VigilanciaDelDesarrollo).FieldLabel("Vigilancia del desarrollo")
+                                               )
+                               ),
+                          X.FormPanel()
+                               .ID("Panel7")
+                               .BodyPadding(5)
+                               .AutoScroll(true)
+                               .Border(false)
+                               .Header(false)
+                               .Items(
+                                        X.Label("Valoración clínica de adulto mayor"),
+                                        X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("Funcional ")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170")); })
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+                                                       X.Label("Actividades Básicas de la Vida Diaria (ABVD)"),
+                                                       X.CheckboxGroupFor(c => c.IdValoracionFuncional1, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Dependiente", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Independiente", InputValue = "0"}
+                                                            })
+                                                            .FieldLabel("Lavarse")
+                                                            .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            }),
+                                                       X.CheckboxGroupFor(c => c.IdValoracionFuncional2, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Dependiente", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Independiente", InputValue = "0"}
+                                                            })
+                                                            .FieldLabel("Vestirse")
+                                                            .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            }),
+                                                       X.CheckboxGroupFor(c => c.IdValoracionFuncional3, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Dependiente", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Independiente", InputValue = "0"}
+                                                            })
+                                                            .FieldLabel("Uso de Serv. Higiénico")
+                                                            .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            }),
+                                                        X.CheckboxGroupFor(c => c.IdValoracionFuncional4, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Dependiente", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Independiente", InputValue = "0"}
+                                                            })
+                                                            .FieldLabel("Movilizarse")
+                                                            .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            }),
+                                                        X.CheckboxGroupFor(c => c.IdValoracionFuncional5, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Dependiente", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Independiente", InputValue = "0"}
+                                                            })
+                                                            .FieldLabel("Continencia")
+                                                            .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            }),
+                                                        X.CheckboxGroupFor(c => c.IdValoracionFuncional6, new List<Checkbox.Config> {
+                                                                new Checkbox.Config{BoxLabel = "Dependiente", InputValue = "1"},
+                                                                new Checkbox.Config{BoxLabel = "Independiente", InputValue = "0"}
+                                                            })
+                                                            .FieldLabel("Alimentarse")
+                                                            .DefaultAnchor("100%")
+                                                            .Defaults(d =>
+                                                            {
+                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                            })
+                                                  ),
+                                        X.FieldSet()
+                                                .ColumnWidth(0.4)
+                                                .Title("Estado Cognitivo ")
+                                                .MarginSpec("0 05 0 05")
+                                                .Defaults(d =>
+                                                { d.Add(new Parameter("LabelWidth", "170")); })
+                                                .DefaultAnchor("100%")
+                                                .FieldDefaults(d =>
+                                                { d.LabelAlign = LabelAlign.Left; })
+                                               .Items(
+                                                      X.Container()
+                                                                .Layout(LayoutType.HBox)
+                                                                .Defaults(d =>
+                                                                {
+                                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                                })
+                                                                .Items(
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo1).FieldLabel("¿Cuál es la fecha de hoy? (dia, mes, año)"),  //--
+                                                                        X.Component().Width(20),
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo2).FieldLabel("¿Qué día de la semana?")
+                                                                       ),
+
+                                                      X.Container()
+                                                                .Layout(LayoutType.HBox)
+                                                                .Defaults(d =>
+                                                                {
+                                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                                })
+                                                                .Items(
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo3).FieldLabel("¿En qué lugar etamos? (vale cualquier descripción correcta del lugar)"),
+                                                                        X.Component().Width(20),
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo4).FieldLabel("¿Cuál es su numero de teléfono?")
+                                                                       ),
+                                                      X.Container()
+                                                                .Layout(LayoutType.HBox)
+                                                                .Defaults(d =>
+                                                                {
+                                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                                })
+                                                                .Items(
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo5).FieldLabel("Cuál es su dirección completa?"),
+                                                                        X.Component().Width(20),
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo6).FieldLabel("¿Cuántos años tiene?")
+                                                                       ),
+                                                         X.Container()
+                                                                .Layout(LayoutType.HBox)
+                                                                .Defaults(d =>
+                                                                {
+                                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                                })
+                                                                .Items(
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo7).FieldLabel("¿Dónde nación?"),
+                                                                        X.Component().Width(20),
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo8).FieldLabel("¿Cuál es el nombre del presidente del perú?")
+                                                                       ),
+                                                         X.Container()
+                                                                .Layout(LayoutType.HBox)
+                                                                .Defaults(d =>
+                                                                {
+                                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                                })
+                                                                .Items(
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo9).FieldLabel(" Digame el primer apellido de su madre"),
+                                                                        X.Component().Width(20),
+                                                                        X.TextFieldFor(c => c.IdEstadoCognitivo10).FieldLabel("Restar de 3 en 3 desde 30 (cualquier error hace errónea la respuesta)")
+                                                                       ),
+                                                          X.CheckboxGroupFor(c => c.ValoracionCognitiva, new List<Checkbox.Config> {
+                                                                   new Checkbox.Config{BoxLabel = "NORMAL", InputValue = "2"},
+                                                                    new Checkbox.Config{BoxLabel = "DC LEVE", InputValue = "3"},
+                                                                    new Checkbox.Config{BoxLabel = "DC MODERADO", InputValue = "5"},
+                                                                    new Checkbox.Config{BoxLabel = "DC SEVERO", InputValue = "8"}
+                                                                 })
+                                                               .FieldLabel("VALORACION COGNITIVA")
+                                                               .DefaultAnchor("100%")
+                                                                .Defaults(d =>
+                                                                {
+                                                                    d.Add(new Parameter("LabelWidth", "170"));
+                                                                })
+                                                               .ColumnsNumber(2) 
+                                                              ),
+                                                X.FieldSet()
+                                                                .ColumnWidth(0.4)
+                                                                .Title("Estado Afectivo ")
+                                                                .MarginSpec("0 05 0 05")
+                                                                .Defaults(d =>
+                                                                { d.Add(new Parameter("LabelWidth", "170")); })
+                                                                .DefaultAnchor("100%")
+                                                                .FieldDefaults(d =>
+                                                                { d.LabelAlign = LabelAlign.Left; })
+                                                               .Items(
+                                                                       X.RadioGroupFor(c => c.IdEstadoAfectivo1, new List<Radio.Config> {
+                                                                                        new Radio.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                                        new Radio.Config{BoxLabel = "No", InputValue = "0"}
+                                                                                    })
+                                                                                 .Vertical(true)
+                                                                                 .FieldLabel("¿Está satisfecho con su vida?")
+                                                                                 .Defaults(d =>
+                                                                                     {
+                                                                                         d.Add(new Parameter("LabelWidth", "100"));
+                                                                                     }),
+                                                                        X.RadioGroupFor(c => c.IdEstadoAfectivo2, new List<Radio.Config> {
+                                                                                        new Radio.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                                        new Radio.Config{BoxLabel = "No", InputValue = "0"}
+                                                                                    })
+                                                                                 .Vertical(true)
+                                                                                 .FieldLabel("¿Se siente impotente o indefenso?")
+                                                                                 .Defaults(d =>
+                                                                                     {
+                                                                                         d.Add(new Parameter("LabelWidth", "100"));
+                                                                                     }),
+                                                                        X.RadioGroupFor(c => c.IdEstadoAfectivo3, new List<Radio.Config> {
+                                                                                        new Radio.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                                        new Radio.Config{BoxLabel = "No", InputValue = "0"}
+                                                                                    })
+                                                                                 .Vertical(true)
+                                                                                 .FieldLabel("¿Tiene problemas de memoria?")
+                                                                                 .Defaults(d =>
+                                                                                     {
+                                                                                         d.Add(new Parameter("LabelWidth", "100"));
+                                                                                     }),
+
+                                                                       X.RadioGroupFor(c => c.IdEstadoAfectivo4, new List<Radio.Config> {
+                                                                                        new Radio.Config{BoxLabel = "Si", InputValue = "1"},
+                                                                                        new Radio.Config{BoxLabel = "No", InputValue = "0"}
+                                                                                    })
+                                                                                 .Vertical(true)
+                                                                                 .FieldLabel("¿Siente desgano o se siente imposibilitado respecto a actividaes e intereses?")
+                                                                                 .Defaults(d =>
+                                                                                     {
+                                                                                         d.Add(new Parameter("LabelWidth", "100"));
+                                                                                     }) 
+                                                                      )
+                                                        ),
+                                        X.FormPanel()
+                                                   .ID("Panel8")
+                                                   .BodyPadding(5)
+                                                   .AutoScroll(true)
+                                                   .Border(false)
+                                                   .Header(false)
+                                                   .Items(
+                                                         X.FieldSet()
+                                                           .ColumnWidth(0.4)
+                                                           .Title("VALORACION SOCIO - FAMILIAR ")
+                                                           .MarginSpec("0 05 0 05")
+                                                           .Defaults(d =>
+                                                           { d.Add(new Parameter("LabelWidth", "170")); })
+                                                           .DefaultAnchor("100%")
+                                                           .FieldDefaults(d =>
+                                                           { d.LabelAlign = LabelAlign.Left; })
+                                                          .Items(
+                                                                X.CheckboxGroupFor(c => c.ValoracionSocioFamiliar1, new List<Checkbox.Config> {
+                                                                                new Checkbox.Config{BoxLabel = "Vive con familia, sin conflicto familiar", InputValue="1"},
+                                                                                 new Checkbox.Config{BoxLabel = "Vive con familiar, presenta algún grado de dependencia física/psíquica", InputValue="2"},
+                                                                                 new Checkbox.Config{BoxLabel = "Vive con cónyoge de similar edad", InputValue="3"},
+                                                                                 new Checkbox.Config{BoxLabel = "Vive solo y tiene hijos con vivienda próxima", InputValue="4"},
+                                                                                 new Checkbox.Config{BoxLabel = "Vive solo y carece de hijos o viven lejos(interior del país o extranjero)", InputValue="5"}
+
+                                                                             })
+                                                                           .FieldLabel("SITUACION FAMILIAR")
+                                                                           .DefaultAnchor("100%")
+                                                                            .Defaults(d =>
+                                                                            {
+                                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                                            })
+                                                                           .ColumnsNumber(1) ,
+                                                                  X.CheckboxGroupFor(c => c.ValoracionSocioFamiliar2, new List<Checkbox.Config> {
+                                                                                 new Checkbox.Config{BoxLabel = "Dos veces el salario mínimo vital", InputValue="1"},
+                                                                                 new Checkbox.Config{BoxLabel = "Menos de 2, pero más de 1, salarios minimos vitales", InputValue="2"},
+                                                                                 new Checkbox.Config{BoxLabel = "Un salario mínimo vital", InputValue="3"},
+                                                                                 new Checkbox.Config{BoxLabel = "Ingreso irregular(menos de mínimo vital)", InputValue="4"},
+                                                                                 new Checkbox.Config{BoxLabel = "Sin pensión, sin otros ingresos", InputValue="5"}
+                                                                             })
+                                                                           .FieldLabel("SITUACION ECONÓMICA")
+                                                                           .DefaultAnchor("100%")
+                                                                            .Defaults(d =>
+                                                                            {
+                                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                                            })
+                                                                           .ColumnsNumber(1),
+                                                                  X.CheckboxGroupFor(c => c.ValoracionSocioFamiliar3, new List<Checkbox.Config> {
+                                                                                 new Checkbox.Config{BoxLabel = "Mantiene relaciones sociales en la comunidad", InputValue="1"},
+                                                                                 new Checkbox.Config{BoxLabel = "Relación social sólo con familia y vecinos", InputValue="2"},
+                                                                                 new Checkbox.Config{BoxLabel = "Relación social solo con la familia", InputValue="3"},
+                                                                                 new Checkbox.Config{BoxLabel = "No sale del domicilio pero recibe visitas de familia", InputValue="4"},
+                                                                                 new Checkbox.Config{BoxLabel = "No sale del domicilio y no recibe visitas", InputValue="5"}
+                                                                             })
+                                                                           .FieldLabel("RELACIONES SOCIALES")
+                                                                           .DefaultAnchor("100%")
+                                                                            .Defaults(d =>
+                                                                            {
+                                                                                d.Add(new Parameter("LabelWidth", "170"));
+                                                                            })
+                                                                           .ColumnsNumber(1),   
+                                                                  X.CheckboxGroupFor(c => c.ValoracionSocioFamiliar4, new List<Checkbox.Config> {
+                                                                                 new Checkbox.Config{BoxLabel = "No necesita apoyo", InputValue="1"},
+                                                                                 new Checkbox.Config{BoxLabel = "Requiere apoyo familiar o vecinal", InputValue="2"},
+                                                                                 new Checkbox.Config{BoxLabel = "Tienes seguro, pero necesita mayor apoyo de éste o voluntariado social", InputValue="3"},
+                                                                                 new Checkbox.Config{BoxLabel = "No cuenta con Seguro Social", InputValue="4"},
+                                                                                 new Checkbox.Config{BoxLabel = "Situación de abandono familiar.", InputValue="5"}
+
+                                                                             })
+                                                                           .FieldLabel("APOYO DE LA RED SOCIAL (MUNICIPIO, CLUBES, ONG, SEGURO SOCIAL, VIVIENDA)")
+                                                                           .DefaultAnchor("100%")
+                                                                           .Vertical(true)
+                                                                           .ColumnsNumber(1),
+                                                                  X.CheckboxGroupFor(c => c.ValoracionSocioFamiliar5, new List<Checkbox.Config> {
+                                                                                 new Checkbox.Config{BoxLabel = "Buena/aceptable situación social", InputValue="9"},
+                                                                                 new Checkbox.Config{BoxLabel = "Existe riesgo social", InputValue="14"},
+                                                                                 new Checkbox.Config{BoxLabel = "Existe problema social", InputValue="15"}
+                                                                             })
+                                                                           .FieldLabel("VALORACION SOCIO - FAMILIAR")
+                                                                           .DefaultAnchor("100%")
+                                                                           .Vertical(true)
+                                                                           .ColumnsNumber(1)                                                                                                                                                                                                                                                                                                         
+                                                          
+                                                      )                                                                       
+                                      )                                                        
+                        )
+                
+                .Buttons(
+                     X.Button()
+                            .ID("txtLabel")
+                            //.Enable(false)
+                            //.Disabled(true)
+                            .Text("   Paginas de 1 a 8    "),
+            
+                     X.Button()
+                            .ID("btnNext")
+                            .Text("Siguiente")
+                            .Icon(Icon.NextGreen)
+                            .DirectEvents(de =>
+                            {
+                                de.Click.Url = Url.Action("Next_Click");
+                                de.Click.ExtraParams.Add(new Parameter("index", "#{WizardPanel}.items.indexOf(#{WizardPanel}.layout.activeItem)", ParameterMode.Raw));
+                            }),
+                     X.Button()
+                            .ID("btnPrev")
+                            .Text("Anterior")
+                            .Disabled(true)
+                            .Icon(Icon.PreviousGreen)
+                            .DirectEvents(de =>
+                            {
+                                de.Click.Url = Url.Action("Prev_Click");
+                                de.Click.ExtraParams.Add(new Parameter("index", "#{WizardPanel}.items.indexOf(#{WizardPanel}.layout.activeItem)", ParameterMode.Raw));
+                            }),
+                      X.Button()
+                          .Text("Guardar")
+                          .Icon(Icon.Add)
+                          .DirectClickAction("Save_SS_HC_Anamnesis_AP"),
+                           //.OnClientClick("var form = this.up('form'); form.getForm().updateRecord(form.down('grid').getSelectionModel().getLastSelected());"),
+                      X.Button()
+                          .Text("Cancelar")
+                          .Icon(Icon.Cancel)
+                          .OnClientClick("this.up('form').getForm().reset();")
+                      )
+                );
+        }
+    )
+
+
+)
+}
+

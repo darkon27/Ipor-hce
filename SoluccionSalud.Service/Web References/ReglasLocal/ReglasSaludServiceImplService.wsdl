@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.service.springerp.royalsystems.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://service.springerp.royalsystems.pe/" name="ReglasSaludServiceImplService" targetNamespace="http://impl.service.springerp.royalsystems.pe/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://service.springerp.royalsystems.pe/" location="http://localhost:8181/WebService/ReglasSaludService?wsdl=ReglasSaludService.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="ReglasSaludServiceImplServiceSoapBinding" type="ns1:ReglasSaludService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EjecutarRegla">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="EjecutarRegla">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EjecutarReglaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajeEstadoCMI">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="MensajeEstadoCMI">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MensajeEstadoCMIResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReglasSaludServiceImplService">
+    <wsdl:port name="ReglasSaludServiceImplPort" binding="tns:ReglasSaludServiceImplServiceSoapBinding">
+      <soap:address location="http://localhost:8181/WebService/ReglasSaludService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

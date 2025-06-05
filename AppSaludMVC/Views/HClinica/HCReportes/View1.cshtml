@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "View1";
+    Layout = "~/Views/BandejaMedico/ActosMedicos/CCEP9005_View.cshtml";
+}
+
+@{
+    var X = Html.X();
+    var COLOR_BLUE01_temp = "#284A89";
+    var COLOR_RED01_temp = "#990000";
+    var COLOR_GREEN01_temp = "#177506";
+    var COLOR_YELLOW02_temp = "#D9A407";
+    var urlActivo = "";
+
+    var RUTA_RAIZ = "/HClinica/CCEP0F90_View?_dc=1545340859871";
+}
+
+<style type="text/css">
+    /*<![CDATA[*/
+    #img_uno {
+        width: auto;
+        height: 100%;
+        align-self: center;
+        -webkit-user-select: none;
+        cursor: zoom-in;
+    }
+
+    #img_dos {
+        -webkit-user-select: none;
+        cursor: zoom-out;
+    }
+
+    .logo {
+        border: solid 3px #000;
+    }
+    /*]]>*/
+</style>
+
+
+@Html.X().Window().ID("ventanaSaludo").Title("Saludo").Width(400).Height(200).Modal(true).Layout(LayoutType.Fit).Hidden(true).BodyPadding(10).Items(Html.X().Label().Text("Hola"))
+

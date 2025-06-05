@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="@Url.Content("~/resources/css/examples.css")" />
+    @RenderSection("cabecera", false)
+</head>
+<body>
+    @RenderSection("cuerpo", true)
+</body>
+</html>
+ 
