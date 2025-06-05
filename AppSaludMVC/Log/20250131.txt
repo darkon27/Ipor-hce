@@ -1,0 +1,36 @@
+ASP.reportes_visorreporteshce_aspx 10:29:38
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 10:31:16
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 10:33:37
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 15:59:46
+Page_Init - El proceso no puede obtener acceso al archivo 'D:\Desarrollo\SANNA\PRODUCCION\sanna-hce\AppSaludMVC\resources\DocumentosAdjuntos\firmas\Rengifo Miguel Jorge.jpg' porque está siendo utilizado en otro proceso.
+
+ASP.reportes_visorreporteshce_aspx 16:02:47
+Page_Init - El proceso no puede obtener acceso al archivo 'D:\Desarrollo\SANNA\PRODUCCION\sanna-hce\AppSaludMVC\resources\DocumentosAdjuntos\firmas\Rengifo Miguel Jorge.jpg' porque está siendo utilizado en otro proceso.
+
+ASP.reportes_visorreporteshce_aspx 16:13:20
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 16:19:41
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 16:20:52
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 16:21:56
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 16:24:01
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:27:08
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:31:27
+Page_Init - Faltan los valores del parámetro.
+

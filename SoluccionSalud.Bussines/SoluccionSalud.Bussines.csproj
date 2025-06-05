@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B18AFD41-6D38-4168-8A55-28CBC43D9E37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoluccionSalud.Bussines</RootNamespace>
+    <AssemblyName>SoluccionSalud.Bussines</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLLActividades\ActividadesBLL.cs" />
+    <Compile Include="BLLAC_Sucursal\AC_SucursalBLL.cs" />
+    <Compile Include="BLLAsigMedico\AsigMedicoBLL.cs" />
+    <Compile Include="BLLAuditoriaImpresionDetalle\AuditoriaImpresionDetalleBLL.cs" />
+    <Compile Include="BLLAuditoriaImpresion\AuditoriaImpresionBLL.cs" />
+    <Compile Include="BLLAuditoria\AuditoriaBLL.cs" />
+    <Compile Include="BLLCategoriaUnidadServicio\CatUnidadServicioBLL.cs" />
+    <Compile Include="BLLCatUnidServAtencion\CatUnidServAtencionBLL.cs" />
+    <Compile Include="BLLClase\ClaseBLL.cs" />
+    <Compile Include="BLLClasificadorMovimiento\ClasificadorMovimientoBLL.cs" />
+    <Compile Include="BLLCobertura\CoberturaBLL.cs" />
+    <Compile Include="BLLcompanyowner\companyownerBLL.cs" />
+    <Compile Include="BLLComponenteBase\ComponenteBaseBLL.cs" />
+    <Compile Include="BLLControlAtributo\ControlAtributoBLL.cs" />
+    <Compile Include="BLLControlComponente\ControlComponenteBLL.cs" />
+    <Compile Include="BLLControlValidacion\ControlValidacionBLL.cs" />
+    <Compile Include="BLLDetalleMiscelaneo\DetalleMiscelaneoBLL.cs" />
+    <Compile Include="BLLDetalleMiscelaneo\MiscelaneoHeaderBLL.cs" />
+    <Compile Include="BLLDiagnosticoPAE\DiagnosticoPAEBLL.cs" />
+    <Compile Include="BLLDominio\DominioBLL.cs" />
+    <Compile Include="BLLEpisodioAtencion\EpisodioAtencionBLL.cs" />
+    <Compile Include="BLLEpisodioClinico\EpisodioClinicoBLL.cs" />
+    <Compile Include="BLLEspecialidadOrdenMedica\EspecialidadOrdenMedicaBLL.cs" />
+    <Compile Include="BLLEspecialidad\EspecialidadBLL.cs" />
+    <Compile Include="BLLEstablecimiento\BLLEstablecimiento.cs" />
+    <Compile Include="BLLFactorRelacionadoNanda\FactorRelacionadoNandaBLL.cs" />
+    <Compile Include="BLLFactorRelacionado\FactorRelacionadoBLL.cs" />
+    <Compile Include="BLLFactorRelacionado\FactorRelacionadoCombosBLL.cs" />
+    <Compile Include="BLLFavoritoCodigo\FavoritoCodigoBLL.cs" />
+    <Compile Include="BLLFavoritoDetalle\FavoritoDetalleBLL.cs" />
+    <Compile Include="BLLFavoritoNumero\FavoritoNumeroBLL.cs" />
+    <Compile Include="BLLFavorito\FavoritoBLL.cs" />
+    <Compile Include="BLLFormatoCampo\FormatoCampoBLL.cs" />
+    <Compile Include="BLLFormatoC\FormatoBLL.cs" />
+    <Compile Include="BLLFormatosDinamicos\FormatosDinamicosBLL.cs" />
+    <Compile Include="BLLFormato\FormatoBLL.cs" />
+    <Compile Include="BLLFormularios\EvolucionObjetivaBLL.cs" />
+    <Compile Include="BLLGrupoFam\GrupoFamBLL.cs" />
+    <Compile Include="BLLHorario\BLLSS_CC_Horario.cs" />
+    <Compile Include="BLLIndicador\IndicadorBLL.cs" />
+    <Compile Include="BLLMaestroDetalle\MaestroDetalleBLL.cs" />
+    <Compile Include="BLLMiscelaneoFormulario\MiscelaneoFormularioCronoBLL.cs" />
+    <Compile Include="BLLModulo\ModuloBLL.cs" />
+    <Compile Include="BLLNanda\NandaBLL.cs" />
+    <Compile Include="BLLNicActividad\NicActividadBLL.cs" />
+    <Compile Include="BLLNic\NicBLL.cs" />
+    <Compile Include="BLLNocIndicador\NocIndicadorBLL.cs" />
+    <Compile Include="BLLNocNanda\NocNandaBLL.cs" />
+    <Compile Include="BLLNocNic\NocNicBLL.cs" />
+    <Compile Include="BLLNoc\NocBLL.cs" />
+    <Compile Include="BLLNotificacionDetalle\NotificacionDetalleBLL.cs" />
+    <Compile Include="BLLNotificacion\NotificacionBLL.cs" />
+    <Compile Include="BLLOrdAtenPreexistencia\OrdAtenPreexistenciaBLL.cs" />
+    <Compile Include="BLLPacDoc\PacDocBLL.cs" />
+    <Compile Include="BLLParametro\ParametroBLL.cs" />
+    <Compile Include="BLLProcedimientoEjecucion\ProcedimientoEjecucionBLL.cs" />
+    <Compile Include="BLLProcedimientoInforme\ProcedimientoInformeBLL.cs" />
+    <Compile Include="BLLProcedimientoSpring\ProcedimientoSpringBLL.cs" />
+    <Compile Include="BLLProcMedDos\ProcMedDosBLL.cs" />
+    <Compile Include="BLLProcMed\ProcMedBLL.cs" />
+    <Compile Include="BLLProHistAdj\ProHistAdjBLL.cs" />
+    <Compile Include="BLLRecursos\RecursosBLL.cs" />
+    <Compile Include="BLLRegistrarAcompanante\RegistroAcompananteBLL.cs" />
+    <Compile Include="BLLSeguridadgrupo\SeguridadGrupoBLL.cs" />
+    <Compile Include="BLLServicios\ServiciosBLL.cs" />
+    <Compile Include="BLLSG_AgenteOpcion\SG_AgenteOpcionBLL.cs" />
+    <Compile Include="BLLSG_Agente\SG_AgenteBLL.cs" />
+    <Compile Include="BLLSG_Grupo\SG_GrupoBLL.cs" />
+    <Compile Include="BLLSG_Opcion\OpcionFormatoAsignacionBLL.cs" />
+    <Compile Include="BLLSG_Opcion\SG_OpcionBLL.cs" />
+    <Compile Include="BLLSSHCUbicacion\SSHCUbicacionBLL.cs" />
+    <Compile Include="BLLSS_FA_DevolucionProducto\SS_FA_DevolucionProductoBLL.cs" />
+    <Compile Include="BLLSS_FA_SolicitudProducto\SS_FA_SolicitudProductoBLL.cs" />
+    <Compile Include="BLLSS_HC_KardexEnfermeria\SS_HC_KardexEnfermeriaBLL.cs" />
+    <Compile Include="BLLTablaCampo\TablaCampoBLL.cs" />
+    <Compile Include="BLLTablaDatos\TablaDatosBLL.cs" />
+    <Compile Include="BLLTABLAFORMATOVALIDACION\VW_TABLAFORMATOVALIDACIONBLL.cs" />
+    <Compile Include="BLLTabla\TablaBLL.cs" />
+    <Compile Include="BLLTipoAtencion\TipoAtencionBLL.cs" />
+    <Compile Include="BLLCuidadoPreventivo\CuidadoPreventivoBLL.cs" />
+    <Compile Include="BLLGe_Varios\Ge_VariosBLL.cs" />
+    <Compile Include="BLLMedicamentos\MedicamentosBLL.cs" />
+    <Compile Include="BLLUnidadMedidaMinsa\UnidadMedidaMinsaBLL.cs" />
+    <Compile Include="BLLUnidadServicio\UnidadServicioBLL.cs" />
+    <Compile Include="BLLUnidad\UnidadBLL.cs" />
+    <Compile Include="BLLVWAsigMedico\VWAsigMedicoBLL.cs" />
+    <Compile Include="BLLVWESPECIALIDADMEDICO\VWEspecialidadMedicoBLL.cs" />
+    <Compile Include="BLLVW_ATENCIONPACIENTEMEDICAMENTOS\Vw_AtencionPacienteMedicamentoBLL.cs" />
+    <Compile Include="BLLVW_ATENCIONPACIENTE\Vw_AtencionPacienteBLL.cs" />
+    <Compile Include="BLLSeguimientoRiesgoDetalle\SeguimientoRiesgoDetalleBLL.cs" />
+    <Compile Include="BLLSeguimientoRiesgo\SeguimientoRiesgoBLL.cs" />
+    <Compile Include="BLLVW_CAMPOFORMATO\VW_FORMATOCAMPOBLL.cs" />
+    <Compile Include="BLLVW_CAMPOTABLA\VW_TABLACAMPOBLL.cs" />
+    <Compile Include="BLLVW_EmpresaSeguro\VW_EmpresaSeguroBLL.cs" />
+    <Compile Include="BLLVW_FORMATORECURSOCAMPO\Vw_FORMATORECURSOCAMPOBLL.cs" />
+    <Compile Include="BLLVw_Miscelaneo\Vw_MiscelaneoBLL.cs" />
+    <Compile Include="BLLVW_PERSONAPACIENTE\SP_SS_GE_PacienteBLL.cs" />
+    <Compile Include="BLLVW_PERSONAPACIENTE\Vw_PersonapacienteBLL.cs" />
+    <Compile Include="BLLDiagnostico\DiagnosticoBLL.cs" />
+    <Compile Include="BLLDiccionario\DiccionarioBLL.cs" />
+    <Compile Include="BLLDiccionario\IDiccionarioBLL.cs" />
+    <Compile Include="BLLFormularios\AnamnesisAFBLL.cs" />
+    <Compile Include="BLLFormularios\AnamnesisAPBLL.cs" />
+    <Compile Include="BLLFormularios\AnamnesisEABLL.cs" />
+    <Compile Include="BLLFormularios\DescansoMedicoBLL.cs" />
+    <Compile Include="BLLFormularios\DiagnosticoBLL.cs" />
+    <Compile Include="BLLFormularios\ExamenFisicoTriajeBLL.cs" />
+    <Compile Include="BLLFormularios\ExamenSolicitadoBLL.cs" />
+    <Compile Include="BLLFormularios\IAnamnesisEABLL.cs" />
+    <Compile Include="BLLFormularios\MedicamentoBLL.cs" />
+    <Compile Include="BLLFormularios\ProblemasBLL.cs" />
+    <Compile Include="BLLFormularios\ProximaAtencionBLL.cs" />
+    <Compile Include="BLLHC_CIAP2\HC_CIAP2BLL.cs" />
+    <Compile Include="BLLMiscelaneos\IMiscelaneosBLL.cs" />
+    <Compile Include="BLLMiscelaneos\MiscelaneosBLL.cs" />
+    <Compile Include="BLLPersonaMast\IPersonaMasBLL.cs" />
+    <Compile Include="BLLPersonaMast\PersonaMastBLL.cs" />
+    <Compile Include="BLLProcedimiento\ProcedimientoBLL.cs" />
+    <Compile Include="BLLSeguridadAutorizacion\SeguridadAutorizacionBLL.cs" />
+    <Compile Include="BLLSeguridadConceptos\SeguridadConceptosBLL.cs" />
+    <Compile Include="BLLSeguridadConcepto\ISeguridadConceptoBLL.cs" />
+    <Compile Include="BLLSeguridadConcepto\SeguridadConceptoBLL.cs" />
+    <Compile Include="BLLSEGURIDADPERFILUSUARIO\SeguridadPerfilUsuarioBLL.cs" />
+    <Compile Include="BLLSS_HC_CuerpoHumano\SS_HC_CuerpoHumanoBLL.cs" />
+    <Compile Include="BLLTablaMaestroConcepto\TablaMaestroConceptoBLL.cs" />
+    <Compile Include="BLLSeguridadgrupo\SeguridadGruposBLL.cs" />
+    <Compile Include="BLLUsuario\UsuarioBLL.cs" />
+    <Compile Include="BLLVW_ServicioPrestacion\VW_ServicioPrestacionBLL.cs" />
+    <Compile Include="BLLV_EpisodioAtenciones\V_EpisodioAtencionesBLL.cs" />
+    <Compile Include="BLLWH_ClaseFamilia\WH_ClaseFamiliaBLL.cs" />
+    <Compile Include="BLLWH_ClaseLinea\WH_ClaseLineaBLL.cs" />
+    <Compile Include="BLLWH_ClaseSubFamilia\WH_ClaseSubFamiliaBLL.cs" />
+    <Compile Include="BLLWH_Favoritos\wh_favoritosBLL.cs" />
+    <Compile Include="BLLWH_VALIDA\WH_VALIDABLL.cs" />
+    <Compile Include="BLL_ADICIONAL\AgrupadorAtencionVigenteBLL.cs" />
+    <Compile Include="ICategoriasBLL.cs" />
+    <Compile Include="CategoriasBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoluccionSalud.Entidades\SoluccionSalud.Entidades.csproj">
+      <Project>{94c20b56-b046-491e-952c-5df50a53591a}</Project>
+      <Name>SoluccionSalud.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.Repository\SoluccionSalud.Repository.csproj">
+      <Project>{1b2ee0da-b606-42b2-bc53-0073bd89bbe3}</Project>
+      <Name>SoluccionSalud.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

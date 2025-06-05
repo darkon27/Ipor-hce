@@ -1,0 +1,1828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicaElGolfModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SS_FA_DevolucionProducto">
+    <Key>
+      <PropertyRef Name="IdDevolucionProducto" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdDevolucionProducto" Type="int" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="250" />
+    <Property Name="EstadoDocumento" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="50" />
+    <Property Name="Version" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Web_ERPSALUD-DESA.dbo.SS_FA_DevolucionProductoDetalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SS_FA_DevolucionProductoDetalle">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdDevolucionProducto" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdDevolucionProducto" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Precision="20" Scale="6" />
+    <Property Name="Linea" Type="char" MaxLength="6" />
+    <Property Name="Familia" Type="char" MaxLength="6" />
+    <Property Name="SubFamilia" Type="char" MaxLength="6" />
+    <Property Name="TipoComponente" Type="char" MaxLength="1" />
+    <Property Name="CodigoComponente" Type="varchar" MaxLength="25" />
+    <Property Name="Medicamento" Type="varchar" MaxLength="250" />
+    <Property Name="GrupoMedicamento" Type="int" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="50" />
+    <Property Name="Version" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SS_FA_SolicitudProducto">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdSolicitudProducto" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdSolicitudProducto" Type="int" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="250" />
+    <Property Name="EstadoDocumento" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+    <Property Name="indicaciones" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="SS_FA_SolicitudProductoDetalle">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdSolicitudProducto" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdSolicitudProducto" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="UnidadReplicacionReferencia" Type="char" MaxLength="4" />
+    <Property Name="IdEpisodioAtencionReferencia" Type="bigint" />
+    <Property Name="IdPacienteReferencia" Type="int" />
+    <Property Name="EpisodioClinicoReferencia" Type="int" />
+    <Property Name="Cantidad" Type="decimal" Precision="20" Scale="6" />
+    <Property Name="Linea" Type="char" MaxLength="6" />
+    <Property Name="Familia" Type="char" MaxLength="6" />
+    <Property Name="SubFamilia" Type="char" MaxLength="6" />
+    <Property Name="TipoComponente" Type="char" MaxLength="1" />
+    <Property Name="CodigoComponente" Type="varchar" MaxLength="25" />
+    <Property Name="Medicamento" Type="varchar" MaxLength="250" />
+    <Property Name="GrupoMedicamento" Type="int" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+    <Property Name="indicaciones" Type="varchar" MaxLength="1000" />
+    <Property Name="SecuencialHCE" Type="varchar" MaxLength="20" />
+    <Property Name="LineaOrdenAtencion" Type="int" />
+  </EntityType>
+  <EntityType Name="SS_FA_Notificacion">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdNotificacion" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdNotificacion" Type="int" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="250" />
+    <Property Name="EstadoDocumento" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+    <Property Name="indicaciones" Type="varchar" MaxLength="1000" />
+    <Property Name="codigoauxiliar1" Type="varchar" MaxLength="500" />
+    <Property Name="codigoauxiliar2" Type="varchar" MaxLength="500" />
+    <Property Name="codigoauxiliar3" Type="varchar" MaxLength="500" />
+    <Property Name="codigoauxiliar4" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SS_FA_NotificacionDetalle">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdNotificacion" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdNotificacion" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Precision="20" Scale="6" />
+    <Property Name="Linea" Type="char" MaxLength="6" />
+    <Property Name="Familia" Type="char" MaxLength="6" />
+    <Property Name="SubFamilia" Type="char" MaxLength="6" />
+    <Property Name="TipoComponente" Type="char" MaxLength="1" />
+    <Property Name="CodigoComponente" Type="varchar" MaxLength="25" />
+    <Property Name="Medicamento" Type="varchar" MaxLength="250" />
+    <Property Name="GrupoMedicamento" Type="int" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+    <Property Name="indicaciones" Type="varchar" MaxLength="1000" />
+    <Property Name="codigoauxiliar1" Type="varchar" MaxLength="500" />
+    <Property Name="codigoauxiliar2" Type="varchar" MaxLength="500" />
+    <Property Name="codigoauxiliar3" Type="varchar" MaxLength="500" />
+    <Property Name="codigoauxiliar4" Type="varchar" MaxLength="500" />
+    <Property Name="SecuencialHCE" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="SS_HC_Actividad">
+    <Key>
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="IdActividad" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_ClasePAE">
+    <Key>
+      <PropertyRef Name="IdClasePAE" />
+    </Key>
+    <Property Name="IdClasePAE" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_DominioPAE">
+    <Key>
+      <PropertyRef Name="IdDominioPAE" />
+    </Key>
+    <Property Name="IdDominioPAE" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_EpisodioAtencionFormato">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdTransacciones" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdTransacciones" Type="int" Nullable="false" />
+    <Property Name="IdOpcion" Type="int" />
+    <Property Name="IdForm" Type="int" />
+    <Property Name="ConceptoFormulario" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SS_HC_FactorRelacionado">
+    <Key>
+      <PropertyRef Name="IdFactorRelacionado" />
+    </Key>
+    <Property Name="IdFactorRelacionado" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" />
+    <Property Name="CodigoPadre" Type="varchar" MaxLength="10" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="DescripcionCorta" Type="varchar" MaxLength="100" />
+    <Property Name="Nivel" Type="int" />
+    <Property Name="CadenaRecursiva" Type="varchar" MaxLength="150" />
+    <Property Name="Orden" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_FactorRelacionadoNanda">
+    <Key>
+      <PropertyRef Name="IdFRN" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdFactorRelacionado" />
+    </Key>
+    <Property Name="IdFRN" Type="int" Nullable="false" />
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="IdFactorRelacionado" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_IndicadorPAE">
+    <Key>
+      <PropertyRef Name="IdIndicadorPAE" />
+    </Key>
+    <Property Name="IdIndicadorPAE" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_KardexEnfermeria">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdOrdenAtencion" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="250" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Web_ERPSALUD-DESA.dbo.SS_HC_KardexEnfermeriaDetalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SS_HC_KardexEnfermeriaDetalle">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdOrdenAtencion" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="UnidadReplicacionReferencia" Type="char" MaxLength="4" />
+    <Property Name="IdEpisodioAtencionReferencia" Type="bigint" />
+    <Property Name="IdPacienteReferencia" Type="int" />
+    <Property Name="EpisodioClinicoReferencia" Type="int" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="FechaCorte" Type="datetime" />
+    <Property Name="HoraInicioProg" Type="datetime" />
+    <Property Name="HorasProgramadas" Type="varchar" MaxLength="250" />
+    <Property Name="HorasSuministradas" Type="varchar" MaxLength="250" />
+    <Property Name="EnfermeraSuministro" Type="varchar" MaxLength="250" />
+    <Property Name="Linea" Type="char" MaxLength="6" />
+    <Property Name="Familia" Type="char" MaxLength="6" />
+    <Property Name="SubFamilia" Type="char" MaxLength="6" />
+    <Property Name="TipoComponente" Type="char" MaxLength="1" />
+    <Property Name="CodigoComponente" Type="varchar" MaxLength="25" />
+    <Property Name="GrupoMedicamento" Type="int" />
+    <Property Name="SituacionRegistro" Type="int" />
+    <Property Name="Observacion" Type="varchar" MaxLength="250" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_NANDA">
+    <Key>
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdDominioPAE" />
+      <PropertyRef Name="IdClasePAE" />
+    </Key>
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" />
+    <Property Name="CodigoPadre" Type="varchar" MaxLength="10" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="DescripcionCorta" Type="varchar" MaxLength="100" />
+    <Property Name="TipoFactor" Type="int" />
+    <Property Name="Nivel" Type="int" />
+    <Property Name="CadenaRecursiva" Type="varchar" MaxLength="150" />
+    <Property Name="IdDominioPAE" Type="int" Nullable="false" />
+    <Property Name="IdClasePAE" Type="int" Nullable="false" />
+    <Property Name="Orden" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_NandaNoc">
+    <Key>
+      <PropertyRef Name="IdNanNoc" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+    </Key>
+    <Property Name="IdNanNoc" Type="int" Nullable="false" />
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Web_ERPSALUD-DESA.dbo.SS_HC_NIC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SS_HC_NIC">
+    <Key>
+      <PropertyRef Name="IdNIC" />
+    </Key>
+    <Property Name="IdNIC" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" />
+    <Property Name="CodigoPadre" Type="varchar" MaxLength="10" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="DescripcionCorta" Type="varchar" MaxLength="100" />
+    <Property Name="Nivel" Type="int" />
+    <Property Name="CadenaRecursiva" Type="varchar" MaxLength="150" />
+    <Property Name="Orden" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_NICActividad">
+    <Key>
+      <PropertyRef Name="IdNA" />
+      <PropertyRef Name="IdNic" />
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="IdNA" Type="int" Nullable="false" />
+    <Property Name="IdNic" Type="int" Nullable="false" />
+    <Property Name="IdActividad" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_NOC2">
+    <Key>
+      <PropertyRef Name="IdNoc" />
+    </Key>
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="CodigoPadre" Type="varchar" MaxLength="10" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" />
+    <Property Name="DescripcionCorta" Type="varchar" MaxLength="100" />
+    <Property Name="Nivel" Type="int" />
+    <Property Name="CadenaRecursiva" Type="varchar" MaxLength="150" />
+    <Property Name="Orden" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_NOCIndicador">
+    <Key>
+      <PropertyRef Name="IdNIN" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdIndicadorPAE" />
+    </Key>
+    <Property Name="IdNIN" Type="int" Nullable="false" />
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="IdIndicadorPAE" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_NocNic">
+    <Key>
+      <PropertyRef Name="IdNC" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdNic" />
+    </Key>
+    <Property Name="IdNC" Type="int" Nullable="false" />
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="IdNic" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Actividad">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdNic" />
+      <PropertyRef Name="Secuencia" />
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="int" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="IdNic" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="IdActividad" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_ActividadRealizacion">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdNic" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="int" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="IdNic" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" />
+    <Property Name="FechaHoraRealizacion" Type="datetime" Nullable="false" />
+    <Property Name="IdActividad" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Diagnostico">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="int" Nullable="false" />
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="IdDominioPAE" Type="int" Nullable="false" />
+    <Property Name="IdClasePAE" Type="int" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="250" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Indicador">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdIndicadorPAE" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="int" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="IdIndicadorPAE" Type="int" Nullable="false" />
+    <Property Name="PuntuacionInicial" Type="int" />
+    <Property Name="PuntuacionProgramada" Type="int" />
+    <Property Name="PuntuacionFinal" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Intervencion">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdNic" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="int" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="IdNic" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Objetivo">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="int" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="IdNanda" Type="int" Nullable="false" />
+    <Property Name="IdNoc" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Web_ERPSALUD-DESA.dbo.SS_HC_ProcedimientoInformeSPRING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SS_HC_ProcedimientoInformeSPRING">
+    <Key>
+      <PropertyRef Name="IdProcedimiento" />
+      <PropertyRef Name="RutaInforme" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="Paciente" />
+      <PropertyRef Name="CodigoOA" />
+      <PropertyRef Name="IdOrdenAtencion" />
+      <PropertyRef Name="LineaOA" />
+      <PropertyRef Name="FechaCreacion" />
+      <PropertyRef Name="UsuarioCreacion" />
+    </Key>
+    <Property Name="IdProcedimiento" Type="int" Nullable="false" />
+    <Property Name="NombreArchivo" Type="varchar" MaxLength="250" />
+    <Property Name="RutaInforme" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="Paciente" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="CodigoOA" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodigoComponente" Type="varchar" MaxLength="25" />
+    <Property Name="DescripcionComponente" Type="varchar" MaxLength="300" />
+    <Property Name="IdOrdenAtencion" Type="int" Nullable="false" />
+    <Property Name="LineaOA" Type="int" Nullable="false" />
+    <Property Name="TipoOrdenAtencion" Type="int" />
+    <Property Name="Medico" Type="varchar" MaxLength="300" />
+    <Property Name="Observacion" Type="varchar" MaxLength="300" />
+    <Property Name="FechaProcedimiento" Type="datetime" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="15" />
+    <Property Name="Accion" Type="varchar" MaxLength="15" />
+    <Property Name="Contador_filas" Type="int" />
+  </EntityType>
+  <EntityType Name="SS_HC_ProcesoPAE">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="int" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SS_HC_ProcesoPAEObservacion">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="int" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="int" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="150" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Web_ERPSALUD-DESA.dbo.VW_ATENCIONPACIENTEMEDICAMENTO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_ATENCIONPACIENTEMEDICAMENTO">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="IdUnidadMedida" Type="int" />
+    <Property Name="Linea" Type="char" MaxLength="6" />
+    <Property Name="Familia" Type="char" MaxLength="6" />
+    <Property Name="SubFamilia" Type="char" MaxLength="6" />
+    <Property Name="TipoComponente" Type="char" MaxLength="1" />
+    <Property Name="CodigoComponente" Type="varchar" MaxLength="25" />
+    <Property Name="IdVia" Type="int" />
+    <Property Name="Dosis" Type="varchar" MaxLength="250" />
+    <Property Name="DiasTratamiento" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Frecuencia" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Cantidad" Type="decimal" Precision="20" Scale="6" />
+    <Property Name="IndicadorEPS" Type="int" />
+    <Property Name="TipoReceta" Type="int" />
+    <Property Name="Forma" Type="int" />
+    <Property Name="GrupoMedicamento" Type="int" />
+    <Property Name="Comentario" Type="varchar" MaxLength="250" />
+    <Property Name="IndicadorAuditoria" Type="int" />
+    <Property Name="UsuarioAuditoria" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="Persona" Type="int" />
+    <Property Name="Origen" Type="char" MaxLength="4" />
+    <Property Name="NombreCompleto" Type="varchar" MaxLength="100" />
+    <Property Name="IngresoFechaRegistro" Type="datetime" />
+    <Property Name="IngresoAplicacionCodigo" Type="char" MaxLength="2" />
+    <Property Name="IngresoUsuario" Type="varchar" MaxLength="25" />
+    <Property Name="Celular" Type="varchar" MaxLength="15" />
+    <Property Name="EstadoPersona" Type="char" MaxLength="1" />
+    <Property Name="Medicamento" Type="varchar(max)" />
+    <Property Name="Cama" Type="varchar" MaxLength="1" />
+    <Property Name="CodigoOA" Type="varchar" MaxLength="1" />
+    <Property Name="Medico" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <Function Name="SP_SS_FA_DevolucionProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdDevolucionProducto" Type="int" Mode="In" />
+    <Parameter Name="NumeroDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="EstadoDocumento" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_FA_DevolucionProducto_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdDevolucionProducto" Type="int" Mode="In" />
+    <Parameter Name="NumeroDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="EstadoDocumento" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_FA_DevolucionProductoDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdDevolucionProducto" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+    <Parameter Name="Linea" Type="char" Mode="In" />
+    <Parameter Name="Familia" Type="char" Mode="In" />
+    <Parameter Name="SubFamilia" Type="char" Mode="In" />
+    <Parameter Name="TipoComponente" Type="char" Mode="In" />
+    <Parameter Name="CodigoComponente" Type="varchar" Mode="In" />
+    <Parameter Name="Medicamento" Type="varchar" Mode="In" />
+    <Parameter Name="GrupoMedicamento" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_FA_DevolucionProductoDetalle_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdDevolucionProducto" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+    <Parameter Name="Linea" Type="char" Mode="In" />
+    <Parameter Name="Familia" Type="char" Mode="In" />
+    <Parameter Name="SubFamilia" Type="char" Mode="In" />
+    <Parameter Name="TipoComponente" Type="char" Mode="In" />
+    <Parameter Name="CodigoComponente" Type="varchar" Mode="In" />
+    <Parameter Name="Medicamento" Type="varchar" Mode="In" />
+    <Parameter Name="GrupoMedicamento" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_FA_SolicitudProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdSolicitudProducto" Type="int" Mode="In" />
+    <Parameter Name="NumeroDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="EstadoDocumento" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="indicaciones" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_FA_SolicitudProductoDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdSolicitudProducto" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="UnidadReplicacionReferencia" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencionReferencia" Type="bigint" Mode="In" />
+    <Parameter Name="IdPacienteReferencia" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinicoReferencia" Type="int" Mode="In" />
+    <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+    <Parameter Name="Linea" Type="char" Mode="In" />
+    <Parameter Name="Familia" Type="char" Mode="In" />
+    <Parameter Name="SubFamilia" Type="char" Mode="In" />
+    <Parameter Name="TipoComponente" Type="char" Mode="In" />
+    <Parameter Name="CodigoComponente" Type="varchar" Mode="In" />
+    <Parameter Name="Medicamento" Type="varchar" Mode="In" />
+    <Parameter Name="GrupoMedicamento" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="indicaciones" Type="varchar" Mode="In" />
+    <Parameter Name="LineaOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="SecuencialHCE" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_FA_SolicitudProductoDetalle_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdSolicitudProducto" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="UnidadReplicacionReferencia" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencionReferencia" Type="bigint" Mode="In" />
+    <Parameter Name="IdPacienteReferencia" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinicoReferencia" Type="int" Mode="In" />
+    <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+    <Parameter Name="Linea" Type="char" Mode="In" />
+    <Parameter Name="Familia" Type="char" Mode="In" />
+    <Parameter Name="SubFamilia" Type="char" Mode="In" />
+    <Parameter Name="TipoComponente" Type="char" Mode="In" />
+    <Parameter Name="CodigoComponente" Type="varchar" Mode="In" />
+    <Parameter Name="Medicamento" Type="varchar" Mode="In" />
+    <Parameter Name="GrupoMedicamento" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_Actividad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdActividad" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="ACCION" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_Actividad_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdActividad" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Inicio" Type="int" Mode="In" />
+    <Parameter Name="NumeroFilas" Type="int" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_ClasePAE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdClasePAE" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="ACCION" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_ClasePAE_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdClasePAE" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Inicio" Type="int" Mode="In" />
+    <Parameter Name="NumeroFilas" Type="int" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_Dominio_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdDominioPAE" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Inicio" Type="int" Mode="In" />
+    <Parameter Name="NumeroFilas" Type="int" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_DominioPAE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdDominioPAE" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="ACCION" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_FACTOR_NANDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdFRN" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdFactorRelacionado" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_FactorRelacionado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdFactorRelacionado" Type="int" Mode="In" />
+    <Parameter Name="Codigo" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoPadre" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionCorta" Type="varchar" Mode="In" />
+    <Parameter Name="Nivel" Type="int" Mode="In" />
+    <Parameter Name="CadenaRecursiva" Type="varchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="ACCION" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_FactorRelacionado_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdFactorRelacionado" Type="int" Mode="In" />
+    <Parameter Name="Codigo" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoPadre" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionCorta" Type="varchar" Mode="In" />
+    <Parameter Name="Nivel" Type="int" Mode="In" />
+    <Parameter Name="CadenaRecursiva" Type="varchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="ACCION" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_FactorRelacionado_listarcombo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdFactorRelacionado" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="ACCION" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_FactorRelacionadoNanda_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdFRN" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdFactorRelacionado" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_IndicadorPAE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdIndicadorPAE" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="ACCION" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_IndicadorPAE_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdIndicadorPAE" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Inicio" Type="int" Mode="In" />
+    <Parameter Name="NumeroFilas" Type="int" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_KardexEnfermeria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_KardexEnfermeriaDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="UnidadReplicacionReferencia" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencionReferencia" Type="bigint" Mode="In" />
+    <Parameter Name="IdPacienteReferencia" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinicoReferencia" Type="int" Mode="In" />
+    <Parameter Name="Fecha" Type="datetime" Mode="In" />
+    <Parameter Name="FechaCorte" Type="datetime" Mode="In" />
+    <Parameter Name="HoraInicioProg" Type="datetime" Mode="In" />
+    <Parameter Name="HorasProgramadas" Type="varchar" Mode="In" />
+    <Parameter Name="HorasSuministradas" Type="varchar" Mode="In" />
+    <Parameter Name="EnfermeraSuministro" Type="varchar" Mode="In" />
+    <Parameter Name="Linea" Type="char" Mode="In" />
+    <Parameter Name="Familia" Type="char" Mode="In" />
+    <Parameter Name="SubFamilia" Type="char" Mode="In" />
+    <Parameter Name="TipoComponente" Type="char" Mode="In" />
+    <Parameter Name="CodigoComponente" Type="varchar" Mode="In" />
+    <Parameter Name="SituacionRegistro" Type="int" Mode="In" />
+    <Parameter Name="GrupoMedicamento" Type="int" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NANDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="Codigo" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoPadre" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionCorta" Type="varchar" Mode="In" />
+    <Parameter Name="TipoFactor" Type="int" Mode="In" />
+    <Parameter Name="Nivel" Type="int" Mode="In" />
+    <Parameter Name="CadenaRecursiva" Type="varchar" Mode="In" />
+    <Parameter Name="IdDominioPAE" Type="int" Mode="In" />
+    <Parameter Name="IdClasePAE" Type="int" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NANDAListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="Codigo" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoPadre" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionCorta" Type="varchar" Mode="In" />
+    <Parameter Name="TipoFactor" Type="int" Mode="In" />
+    <Parameter Name="Nivel" Type="int" Mode="In" />
+    <Parameter Name="CadenaRecursiva" Type="varchar" Mode="In" />
+    <Parameter Name="IdDominioPAE" Type="int" Mode="In" />
+    <Parameter Name="IdClasePAE" Type="int" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NIC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNIC" Type="int" Mode="In" />
+    <Parameter Name="Codigo" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoPadre" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionCorta" Type="varchar" Mode="In" />
+    <Parameter Name="Nivel" Type="int" Mode="In" />
+    <Parameter Name="CadenaRecursiva" Type="varchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NIC_ACTIVIDAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNA" Type="int" Mode="In" />
+    <Parameter Name="IdNic" Type="int" Mode="In" />
+    <Parameter Name="IdActividad" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NicActividades_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNA" Type="int" Mode="In" />
+    <Parameter Name="IdNic" Type="int" Mode="In" />
+    <Parameter Name="IdActividad" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NICListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNIC" Type="int" Mode="In" />
+    <Parameter Name="Codigo" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoPadre" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionCorta" Type="varchar" Mode="In" />
+    <Parameter Name="Nivel" Type="int" Mode="In" />
+    <Parameter Name="CadenaRecursiva" Type="varchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NOC_INDICADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNIN" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="IdIndicadorPAE" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NOC_LISTAR2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="Codigo" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoPadre" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionCorta" Type="varchar" Mode="In" />
+    <Parameter Name="Nivel" Type="int" Mode="In" />
+    <Parameter Name="CadenaRecursiva" Type="varchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NOC_NANDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNanNoc" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NOC_NIC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNC" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="IdNic" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NOC2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="Codigo" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoPadre" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionCorta" Type="varchar" Mode="In" />
+    <Parameter Name="Nivel" Type="int" Mode="In" />
+    <Parameter Name="CadenaRecursiva" Type="varchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NocIndicador_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNIN" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="IdIndicadorPAE" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NocNanda_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNanNoc" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_NocNic_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNC" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="IdNic" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_PAE_Actividad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="IdNic" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="IdActividad" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_PAE_ActividadRealizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="IdNic" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="FechaHoraRealizacion" Type="datetime" Mode="In" />
+    <Parameter Name="IdActividad" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_PAE_Diagnostico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdDominioPAE" Type="int" Mode="In" />
+    <Parameter Name="IdClasePAE" Type="int" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_PAE_DiagnosticoListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdDominioPAE" Type="int" Mode="In" />
+    <Parameter Name="IdClasePAE" Type="int" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_PAE_Indicador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="IdIndicadorPAE" Type="int" Mode="In" />
+    <Parameter Name="PuntuacionInicial" Type="int" Mode="In" />
+    <Parameter Name="PuntuacionProgramada" Type="int" Mode="In" />
+    <Parameter Name="PuntuacionFinal" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_PAE_Intervencion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="IdNic" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_PAE_Objetivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdNanda" Type="int" Mode="In" />
+    <Parameter Name="IdNoc" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdProcedimiento" Type="int" Mode="In" />
+    <Parameter Name="NombreArchivo" Type="varchar" Mode="In" />
+    <Parameter Name="RutaInforme" Type="varchar" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="Paciente" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoOA" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoComponente" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionComponente" Type="varchar" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="LineaOA" Type="int" Mode="In" />
+    <Parameter Name="TipoOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Medico" Type="varchar" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaProcedimiento" Type="datetime" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="Contador_filas" Type="int" Mode="In" />
+    <Parameter Name="Inicio" Type="int" Mode="In" />
+    <Parameter Name="NumeroFilas" Type="int" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_ProcesoPAE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_HC_ProcesoPAEObservacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="SecuenciaPAE" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="FechaRegistro" Type="datetime" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_VW_ATENCIONPACIENTEMEDICAMENTO_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="IdUnidadMedida" Type="int" Mode="In" />
+    <Parameter Name="Linea" Type="char" Mode="In" />
+    <Parameter Name="Familia" Type="char" Mode="In" />
+    <Parameter Name="SubFamilia" Type="char" Mode="In" />
+    <Parameter Name="TipoComponente" Type="char" Mode="In" />
+    <Parameter Name="CodigoComponente" Type="varchar" Mode="In" />
+    <Parameter Name="IdVia" Type="int" Mode="In" />
+    <Parameter Name="Dosis" Type="varchar" Mode="In" />
+    <Parameter Name="DiasTratamiento" Type="decimal" Mode="In" />
+    <Parameter Name="Frecuencia" Type="decimal" Mode="In" />
+    <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+    <Parameter Name="IndicadorEPS" Type="int" Mode="In" />
+    <Parameter Name="TipoReceta" Type="int" Mode="In" />
+    <Parameter Name="Forma" Type="int" Mode="In" />
+    <Parameter Name="GrupoMedicamento" Type="int" Mode="In" />
+    <Parameter Name="Comentario" Type="varchar" Mode="In" />
+    <Parameter Name="IndicadorAuditoria" Type="int" Mode="In" />
+    <Parameter Name="UsuarioAuditoria" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="Persona" Type="int" Mode="In" />
+    <Parameter Name="Origen" Type="char" Mode="In" />
+    <Parameter Name="NombreCompleto" Type="varchar" Mode="In" />
+    <Parameter Name="IngresoFechaRegistro" Type="datetime" Mode="In" />
+    <Parameter Name="IngresoAplicacionCodigo" Type="char" Mode="In" />
+    <Parameter Name="IngresoUsuario" Type="varchar" Mode="In" />
+    <Parameter Name="Celular" Type="varchar" Mode="In" />
+    <Parameter Name="EstadoPersona" Type="char" Mode="In" />
+    <Parameter Name="Medicamento" Type="varchar(max)" Mode="In" />
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="CodigoOA" Type="varchar" Mode="In" />
+    <Parameter Name="Medico" Type="varchar" Mode="In" />
+    <Parameter Name="Cama" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="ClinicaElGolfModelStoreContainer">
+    <EntitySet Name="SS_FA_DevolucionProducto" EntityType="Self.SS_FA_DevolucionProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_FA_SolicitudProducto" EntityType="Self.SS_FA_SolicitudProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_FA_SolicitudProductoDetalle" EntityType="Self.SS_FA_SolicitudProductoDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_FA_Notificacion" EntityType="Self.SS_FA_Notificacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_FA_NotificacionDetalle" EntityType="Self.SS_FA_NotificacionDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_Actividad" EntityType="Self.SS_HC_Actividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_ClasePAE" EntityType="Self.SS_HC_ClasePAE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_DominioPAE" EntityType="Self.SS_HC_DominioPAE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_EpisodioAtencionFormato" EntityType="Self.SS_HC_EpisodioAtencionFormato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_FactorRelacionado" EntityType="Self.SS_HC_FactorRelacionado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_FactorRelacionadoNanda" EntityType="Self.SS_HC_FactorRelacionadoNanda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_IndicadorPAE" EntityType="Self.SS_HC_IndicadorPAE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_KardexEnfermeria" EntityType="Self.SS_HC_KardexEnfermeria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_NANDA" EntityType="Self.SS_HC_NANDA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_NandaNoc" EntityType="Self.SS_HC_NandaNoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_NICActividad" EntityType="Self.SS_HC_NICActividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_NOC2" EntityType="Self.SS_HC_NOC2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_NOCIndicador" EntityType="Self.SS_HC_NOCIndicador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_NocNic" EntityType="Self.SS_HC_NocNic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_PAE_Actividad" EntityType="Self.SS_HC_PAE_Actividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_PAE_ActividadRealizacion" EntityType="Self.SS_HC_PAE_ActividadRealizacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_PAE_Diagnostico" EntityType="Self.SS_HC_PAE_Diagnostico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_PAE_Indicador" EntityType="Self.SS_HC_PAE_Indicador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_PAE_Intervencion" EntityType="Self.SS_HC_PAE_Intervencion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_PAE_Objetivo" EntityType="Self.SS_HC_PAE_Objetivo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_ProcesoPAE" EntityType="Self.SS_HC_ProcesoPAE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_ProcesoPAEObservacion" EntityType="Self.SS_HC_ProcesoPAEObservacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_FA_DevolucionProductoDetalle" EntityType="Self.SS_FA_DevolucionProductoDetalle" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [SS_FA_DevolucionProductoDetalle].[UnidadReplicacion] AS [UnidadReplicacion],
+              [SS_FA_DevolucionProductoDetalle].[IdEpisodioAtencion] AS [IdEpisodioAtencion],
+              [SS_FA_DevolucionProductoDetalle].[IdPaciente] AS [IdPaciente],
+              [SS_FA_DevolucionProductoDetalle].[EpisodioClinico] AS [EpisodioClinico],
+              [SS_FA_DevolucionProductoDetalle].[IdDevolucionProducto] AS [IdDevolucionProducto],
+              [SS_FA_DevolucionProductoDetalle].[Secuencia] AS [Secuencia],
+              [SS_FA_DevolucionProductoDetalle].[Cantidad] AS [Cantidad],
+              [SS_FA_DevolucionProductoDetalle].[Linea] AS [Linea],
+              [SS_FA_DevolucionProductoDetalle].[Familia] AS [Familia],
+              [SS_FA_DevolucionProductoDetalle].[SubFamilia] AS [SubFamilia],
+              [SS_FA_DevolucionProductoDetalle].[TipoComponente] AS [TipoComponente],
+              [SS_FA_DevolucionProductoDetalle].[CodigoComponente] AS [CodigoComponente],
+              [SS_FA_DevolucionProductoDetalle].[Medicamento] AS [Medicamento],
+              [SS_FA_DevolucionProductoDetalle].[GrupoMedicamento] AS [GrupoMedicamento],
+              [SS_FA_DevolucionProductoDetalle].[IdOrdenAtencion] AS [IdOrdenAtencion],
+              [SS_FA_DevolucionProductoDetalle].[Estado] AS [Estado],
+              [SS_FA_DevolucionProductoDetalle].[UsuarioCreacion] AS [UsuarioCreacion],
+              [SS_FA_DevolucionProductoDetalle].[FechaCreacion] AS [FechaCreacion],
+              [SS_FA_DevolucionProductoDetalle].[UsuarioModificacion] AS [UsuarioModificacion],
+              [SS_FA_DevolucionProductoDetalle].[FechaModificacion] AS [FechaModificacion],
+              [SS_FA_DevolucionProductoDetalle].[Accion] AS [Accion],
+              [SS_FA_DevolucionProductoDetalle].[Version] AS [Version]
+              FROM [dbo].[SS_FA_DevolucionProductoDetalle] AS [SS_FA_DevolucionProductoDetalle]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SS_HC_KardexEnfermeriaDetalle" EntityType="Self.SS_HC_KardexEnfermeriaDetalle" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [SS_HC_KardexEnfermeriaDetalle].[UnidadReplicacion] AS [UnidadReplicacion],
+              [SS_HC_KardexEnfermeriaDetalle].[IdEpisodioAtencion] AS [IdEpisodioAtencion],
+              [SS_HC_KardexEnfermeriaDetalle].[IdPaciente] AS [IdPaciente],
+              [SS_HC_KardexEnfermeriaDetalle].[EpisodioClinico] AS [EpisodioClinico],
+              [SS_HC_KardexEnfermeriaDetalle].[IdOrdenAtencion] AS [IdOrdenAtencion],
+              [SS_HC_KardexEnfermeriaDetalle].[Secuencia] AS [Secuencia],
+              [SS_HC_KardexEnfermeriaDetalle].[UnidadReplicacionReferencia] AS [UnidadReplicacionReferencia],
+              [SS_HC_KardexEnfermeriaDetalle].[IdEpisodioAtencionReferencia] AS [IdEpisodioAtencionReferencia],
+              [SS_HC_KardexEnfermeriaDetalle].[IdPacienteReferencia] AS [IdPacienteReferencia],
+              [SS_HC_KardexEnfermeriaDetalle].[EpisodioClinicoReferencia] AS [EpisodioClinicoReferencia],
+              [SS_HC_KardexEnfermeriaDetalle].[Fecha] AS [Fecha],
+              [SS_HC_KardexEnfermeriaDetalle].[FechaCorte] AS [FechaCorte],
+              [SS_HC_KardexEnfermeriaDetalle].[HoraInicioProg] AS [HoraInicioProg],
+              [SS_HC_KardexEnfermeriaDetalle].[HorasProgramadas] AS [HorasProgramadas],
+              [SS_HC_KardexEnfermeriaDetalle].[HorasSuministradas] AS [HorasSuministradas],
+              [SS_HC_KardexEnfermeriaDetalle].[EnfermeraSuministro] AS [EnfermeraSuministro],
+              [SS_HC_KardexEnfermeriaDetalle].[Linea] AS [Linea],
+              [SS_HC_KardexEnfermeriaDetalle].[Familia] AS [Familia],
+              [SS_HC_KardexEnfermeriaDetalle].[SubFamilia] AS [SubFamilia],
+              [SS_HC_KardexEnfermeriaDetalle].[TipoComponente] AS [TipoComponente],
+              [SS_HC_KardexEnfermeriaDetalle].[CodigoComponente] AS [CodigoComponente],
+              [SS_HC_KardexEnfermeriaDetalle].[GrupoMedicamento] AS [GrupoMedicamento],
+              [SS_HC_KardexEnfermeriaDetalle].[SituacionRegistro] AS [SituacionRegistro],
+              [SS_HC_KardexEnfermeriaDetalle].[Observacion] AS [Observacion],
+              [SS_HC_KardexEnfermeriaDetalle].[Estado] AS [Estado],
+              [SS_HC_KardexEnfermeriaDetalle].[UsuarioCreacion] AS [UsuarioCreacion],
+              [SS_HC_KardexEnfermeriaDetalle].[FechaCreacion] AS [FechaCreacion],
+              [SS_HC_KardexEnfermeriaDetalle].[UsuarioModificacion] AS [UsuarioModificacion],
+              [SS_HC_KardexEnfermeriaDetalle].[FechaModificacion] AS [FechaModificacion],
+              [SS_HC_KardexEnfermeriaDetalle].[Accion] AS [Accion],
+              [SS_HC_KardexEnfermeriaDetalle].[Version] AS [Version]
+              FROM [dbo].[SS_HC_KardexEnfermeriaDetalle] AS [SS_HC_KardexEnfermeriaDetalle]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SS_HC_NIC" EntityType="Self.SS_HC_NIC" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [SS_HC_NIC].[IdNIC] AS [IdNIC],
+              [SS_HC_NIC].[Codigo] AS [Codigo],
+              [SS_HC_NIC].[CodigoPadre] AS [CodigoPadre],
+              [SS_HC_NIC].[Descripcion] AS [Descripcion],
+              [SS_HC_NIC].[DescripcionCorta] AS [DescripcionCorta],
+              [SS_HC_NIC].[Nivel] AS [Nivel],
+              [SS_HC_NIC].[CadenaRecursiva] AS [CadenaRecursiva],
+              [SS_HC_NIC].[Orden] AS [Orden],
+              [SS_HC_NIC].[Estado] AS [Estado],
+              [SS_HC_NIC].[UsuarioCreacion] AS [UsuarioCreacion],
+              [SS_HC_NIC].[FechaCreacion] AS [FechaCreacion],
+              [SS_HC_NIC].[UsuarioModificacion] AS [UsuarioModificacion],
+              [SS_HC_NIC].[FechaModificacion] AS [FechaModificacion],
+              [SS_HC_NIC].[Accion] AS [Accion],
+              [SS_HC_NIC].[Version] AS [Version]
+              FROM [dbo].[SS_HC_NIC] AS [SS_HC_NIC]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SS_HC_ProcedimientoInformeSPRING" EntityType="Self.SS_HC_ProcedimientoInformeSPRING" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [SS_HC_ProcedimientoInformeSPRING].[IdProcedimiento] AS [IdProcedimiento],
+              [SS_HC_ProcedimientoInformeSPRING].[NombreArchivo] AS [NombreArchivo],
+              [SS_HC_ProcedimientoInformeSPRING].[RutaInforme] AS [RutaInforme],
+              [SS_HC_ProcedimientoInformeSPRING].[IdPaciente] AS [IdPaciente],
+              [SS_HC_ProcedimientoInformeSPRING].[Paciente] AS [Paciente],
+              [SS_HC_ProcedimientoInformeSPRING].[CodigoOA] AS [CodigoOA],
+              [SS_HC_ProcedimientoInformeSPRING].[CodigoComponente] AS [CodigoComponente],
+              [SS_HC_ProcedimientoInformeSPRING].[DescripcionComponente] AS [DescripcionComponente],
+              [SS_HC_ProcedimientoInformeSPRING].[IdOrdenAtencion] AS [IdOrdenAtencion],
+              [SS_HC_ProcedimientoInformeSPRING].[LineaOA] AS [LineaOA],
+              [SS_HC_ProcedimientoInformeSPRING].[TipoOrdenAtencion] AS [TipoOrdenAtencion],
+              [SS_HC_ProcedimientoInformeSPRING].[Medico] AS [Medico],
+              [SS_HC_ProcedimientoInformeSPRING].[Observacion] AS [Observacion],
+              [SS_HC_ProcedimientoInformeSPRING].[FechaProcedimiento] AS [FechaProcedimiento],
+              [SS_HC_ProcedimientoInformeSPRING].[FechaCreacion] AS [FechaCreacion],
+              [SS_HC_ProcedimientoInformeSPRING].[UsuarioCreacion] AS [UsuarioCreacion],
+              [SS_HC_ProcedimientoInformeSPRING].[FechaModificacion] AS [FechaModificacion],
+              [SS_HC_ProcedimientoInformeSPRING].[UsuarioModificacion] AS [UsuarioModificacion],
+              [SS_HC_ProcedimientoInformeSPRING].[Accion] AS [Accion],
+              [SS_HC_ProcedimientoInformeSPRING].[Contador_filas] AS [Contador_filas]
+              FROM [dbo].[SS_HC_ProcedimientoInformeSPRING] AS [SS_HC_ProcedimientoInformeSPRING]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_ATENCIONPACIENTEMEDICAMENTO" EntityType="Self.VW_ATENCIONPACIENTEMEDICAMENTO" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[UnidadReplicacion] AS [UnidadReplicacion],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IdEpisodioAtencion] AS [IdEpisodioAtencion],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IdPaciente] AS [IdPaciente],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[EpisodioClinico] AS [EpisodioClinico],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Secuencia] AS [Secuencia],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IdUnidadMedida] AS [IdUnidadMedida],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Linea] AS [Linea],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Familia] AS [Familia],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[SubFamilia] AS [SubFamilia],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[TipoComponente] AS [TipoComponente],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[CodigoComponente] AS [CodigoComponente],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IdVia] AS [IdVia],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Dosis] AS [Dosis],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[DiasTratamiento] AS [DiasTratamiento],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Frecuencia] AS [Frecuencia],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Cantidad] AS [Cantidad],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IndicadorEPS] AS [IndicadorEPS],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[TipoReceta] AS [TipoReceta],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Forma] AS [Forma],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[GrupoMedicamento] AS [GrupoMedicamento],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Comentario] AS [Comentario],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IndicadorAuditoria] AS [IndicadorAuditoria],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[UsuarioAuditoria] AS [UsuarioAuditoria],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[FechaCreacion] AS [FechaCreacion],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Accion] AS [Accion],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Estado] AS [Estado],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Persona] AS [Persona],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Origen] AS [Origen],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[NombreCompleto] AS [NombreCompleto],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IngresoFechaRegistro] AS [IngresoFechaRegistro],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IngresoAplicacionCodigo] AS [IngresoAplicacionCodigo],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[IngresoUsuario] AS [IngresoUsuario],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Celular] AS [Celular],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[EstadoPersona] AS [EstadoPersona],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Medicamento] AS [Medicamento],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Cama] AS [Cama],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[CodigoOA] AS [CodigoOA],
+              [VW_ATENCIONPACIENTEMEDICAMENTO].[Medico] AS [Medico]
+              FROM [dbo].[VW_ATENCIONPACIENTEMEDICAMENTO] AS [VW_ATENCIONPACIENTEMEDICAMENTO]
+            </DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClinicaElGolfModelStoreContainer" CdmEntityContainer="ClinicaElGolfEntities">
+    <EntitySetMapping Name="PersonaMast">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.PersonaMast">
+        <MappingFragment StoreEntitySet="PersonaMast">
+          <ScalarProperty Name="DocumentoMedicoTrama" ColumnName="DocumentoMedicoTrama" />
+          <ScalarProperty Name="TipoDocumentoMedicoTrama" ColumnName="TipoDocumentoMedicoTrama" />
+          <ScalarProperty Name="FechaOUHC" ColumnName="FechaOUHC" />
+          <ScalarProperty Name="UsuarioOUHC" ColumnName="UsuarioOUHC" />
+          <ScalarProperty Name="FuenteOUHC" ColumnName="FuenteOUHC" />
+          <ScalarProperty Name="ValidadoOUHC" ColumnName="ValidadoOUHC" />
+          <ScalarProperty Name="UsuarioUnificacion" ColumnName="UsuarioUnificacion" />
+          <ScalarProperty Name="FechaUnificacion" ColumnName="FechaUnificacion" />
+          <ScalarProperty Name="SituacionDuplicado" ColumnName="SituacionDuplicado" />
+          <ScalarProperty Name="FEC_MOD_TRIGGER" ColumnName="FEC_MOD_TRIGGER" />
+          <ScalarProperty Name="IndicadorUnificado" ColumnName="IndicadorUnificado" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="Origen" ColumnName="Origen" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Busqueda" ColumnName="Busqueda" />
+          <ScalarProperty Name="GrupoEmpresarial" ColumnName="GrupoEmpresarial" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="CodigoBarras" ColumnName="CodigoBarras" />
+          <ScalarProperty Name="EsCliente" ColumnName="EsCliente" />
+          <ScalarProperty Name="EsProveedor" ColumnName="EsProveedor" />
+          <ScalarProperty Name="EsEmpleado" ColumnName="EsEmpleado" />
+          <ScalarProperty Name="EsOtro" ColumnName="EsOtro" />
+          <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="CiudadNacimiento" ColumnName="CiudadNacimiento" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="NivelInstruccion" ColumnName="NivelInstruccion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="DocumentoFiscal" ColumnName="DocumentoFiscal" />
+          <ScalarProperty Name="DocumentoIdentidad" ColumnName="DocumentoIdentidad" />
+          <ScalarProperty Name="CarnetExtranjeria" ColumnName="CarnetExtranjeria" />
+          <ScalarProperty Name="DocumentoMilitarFA" ColumnName="DocumentoMilitarFA" />
+          <ScalarProperty Name="TipoBrevete" ColumnName="TipoBrevete" />
+          <ScalarProperty Name="Brevete" ColumnName="Brevete" />
+          <ScalarProperty Name="Pasaporte" ColumnName="Pasaporte" />
+          <ScalarProperty Name="NombreEmergencia" ColumnName="NombreEmergencia" />
+          <ScalarProperty Name="DireccionEmergencia" ColumnName="DireccionEmergencia" />
+          <ScalarProperty Name="TelefonoEmergencia" ColumnName="TelefonoEmergencia" />
+          <ScalarProperty Name="BancoMonedaLocal" ColumnName="BancoMonedaLocal" />
+          <ScalarProperty Name="TipoCuentaLocal" ColumnName="TipoCuentaLocal" />
+          <ScalarProperty Name="CuentaMonedaLocal" ColumnName="CuentaMonedaLocal" />
+          <ScalarProperty Name="BancoMonedaExtranjera" ColumnName="BancoMonedaExtranjera" />
+          <ScalarProperty Name="TipoCuentaExtranjera" ColumnName="TipoCuentaExtranjera" />
+          <ScalarProperty Name="CuentaMonedaExtranjera" ColumnName="CuentaMonedaExtranjera" />
+          <ScalarProperty Name="PersonaAnt" ColumnName="PersonaAnt" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="ClasePersonaCodigo" ColumnName="ClasePersonaCodigo" />
+          <ScalarProperty Name="PersonaClasificacion" ColumnName="PersonaClasificacion" />
+          <ScalarProperty Name="EnfermedadGraveFlag" ColumnName="EnfermedadGraveFlag" />
+          <ScalarProperty Name="IngresoFechaRegistro" ColumnName="IngresoFechaRegistro" />
+          <ScalarProperty Name="IngresoAplicacionCodigo" ColumnName="IngresoAplicacionCodigo" />
+          <ScalarProperty Name="IngresoUsuario" ColumnName="IngresoUsuario" />
+          <ScalarProperty Name="PYMEFlag" ColumnName="PYMEFlag" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="TipoPersonaUsuario" ColumnName="TipoPersonaUsuario" />
+          <ScalarProperty Name="DireccionReferencia" ColumnName="DireccionReferencia" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="ParentescoEmergencia" ColumnName="ParentescoEmergencia" />
+          <ScalarProperty Name="CelularEmergencia" ColumnName="CelularEmergencia" />
+          <ScalarProperty Name="LugarNacimiento" ColumnName="LugarNacimiento" />
+          <ScalarProperty Name="SuspensionFonaviFlag" ColumnName="SuspensionFonaviFlag" />
+          <ScalarProperty Name="FlagRepetido" ColumnName="FlagRepetido" />
+          <ScalarProperty Name="CodDiscamec" ColumnName="CodDiscamec" />
+          <ScalarProperty Name="FecIniDiscamec" ColumnName="FecIniDiscamec" />
+          <ScalarProperty Name="FecFinDiscamec" ColumnName="FecFinDiscamec" />
+          <ScalarProperty Name="CodLicArma" ColumnName="CodLicArma" />
+          <ScalarProperty Name="MarcaArma" ColumnName="MarcaArma" />
+          <ScalarProperty Name="SerieArma" ColumnName="SerieArma" />
+          <ScalarProperty Name="InicioArma" ColumnName="InicioArma" />
+          <ScalarProperty Name="VencimientoArma" ColumnName="VencimientoArma" />
+          <ScalarProperty Name="SeguroDiscamec" ColumnName="SeguroDiscamec" />
+          <ScalarProperty Name="CorrelativoSCTR" ColumnName="CorrelativoSCTR" />
+          <ScalarProperty Name="CuentaMonedaExtranjera_tmp" ColumnName="CuentaMonedaExtranjera_tmp" />
+          <ScalarProperty Name="CuentaMonedaLocal_tmp" ColumnName="CuentaMonedaLocal_tmp" />
+          <ScalarProperty Name="FlagActualizacion" ColumnName="FlagActualizacion" />
+          <ScalarProperty Name="TarjetadeCredito" ColumnName="TarjetadeCredito" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="EsPaciente" ColumnName="EsPaciente" />
+          <ScalarProperty Name="EsEmpresa" ColumnName="EsEmpresa" />
+          <ScalarProperty Name="Persona_Old" ColumnName="Persona_Old" />
+          <ScalarProperty Name="personanew" ColumnName="personanew" />
+          <ScalarProperty Name="cmp" ColumnName="cmp" />
+          <ScalarProperty Name="SUNATNacionalidad" ColumnName="SUNATNacionalidad" />
+          <ScalarProperty Name="SUNATVia" ColumnName="SUNATVia" />
+          <ScalarProperty Name="SUNATZona" ColumnName="SUNATZona" />
+          <ScalarProperty Name="SUNATUbigeo" ColumnName="SUNATUbigeo" />
+          <ScalarProperty Name="SUNATDomiciliado" ColumnName="SUNATDomiciliado" />
+          <ScalarProperty Name="IndicadorAutogenerado" ColumnName="IndicadorAutogenerado" />
+          <ScalarProperty Name="RutaFirma" ColumnName="RutaFirma" />
+          <ScalarProperty Name="TipoDocumentoIdentidad" ColumnName="TipoDocumentoIdentidad" />
+          <ScalarProperty Name="IdPersonaUnificado" ColumnName="IdPersonaUnificado" />
+          <ScalarProperty Name="idpersona_ok" ColumnName="idpersona_ok" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="rangoEtario" ColumnName="rangoEtario" />
+          <ScalarProperty Name="TipoMedico" ColumnName="TipoMedico" />
+          <ScalarProperty Name="Correcion" ColumnName="Correcion" />
+          <ScalarProperty Name="IdEmpresaAnteriorUnificacion" ColumnName="IdEmpresaAnteriorUnificacion" />
+          <ScalarProperty Name="brevete_fecvcto" ColumnName="brevete_fecvcto" />
+          <ScalarProperty Name="carnetextranjeria_fecvcto" ColumnName="carnetextranjeria_fecvcto" />
+          <ScalarProperty Name="Estado_BK" ColumnName="Estado_BK" />
+          <ScalarProperty Name="Estado_Bks" ColumnName="Estado_Bks" />
+          <ScalarProperty Name="IndicadorVinculada" ColumnName="IndicadorVinculada" />
+          <ScalarProperty Name="PaisEmisor" ColumnName="PaisEmisor" />
+          <ScalarProperty Name="CodigoLDN" ColumnName="CodigoLDN" />
+          <ScalarProperty Name="SunatConvenio" ColumnName="SunatConvenio" />
+          <ScalarProperty Name="IndicadorRegistroManual" ColumnName="IndicadorRegistroManual" />
+          <ScalarProperty Name="IndicadorFallecido" ColumnName="IndicadorFallecido" />
+          <ScalarProperty Name="IndicadorSinCorreo" ColumnName="IndicadorSinCorreo" />
+          <ScalarProperty Name="CorreoFacturacionElectronica" ColumnName="CorreoFacturacionElectronica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_SS_HC_ATENCIONES_SOA" FunctionName="ClinicaElGolfModel.Store.SS_HC_ATENCIONES_SOA" />
+    <FunctionImportMapping FunctionImportName="SP_HCE_ITListarValidacionEmergencia" FunctionName="ClinicaElGolfModel.Store.SP_HCE_ITListarValidacionEmergencia" />
+    <FunctionImportMapping FunctionImportName="SP_HCE_SPRINGRECETAConsultaExternaV2" FunctionName="ClinicaElGolfModel.Store.SP_HCE_SPRINGRECETAConsultaExternaV2" />
+    <EntitySetMapping Name="VW_ATENCIONPACIENTE_GENERAL">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.VW_ATENCIONPACIENTE_GENERAL">
+        <MappingFragment StoreEntitySet="VW_ATENCIONPACIENTE_GENERAL">
+          <ScalarProperty Name="NumeroFila" ColumnName="NumeroFila" />
+          <ScalarProperty Name="Contador" ColumnName="Contador" />
+          <ScalarProperty Name="CodigoEpisodioClinico" ColumnName="CodigoEpisodioClinico" />
+          <ScalarProperty Name="SecuenciaHCE" ColumnName="SecuenciaHCE" />
+          <ScalarProperty Name="IdEpisodioAtencionHCE" ColumnName="IdEpisodioAtencionHCE" />
+          <ScalarProperty Name="EpisodioClinicoHCE" ColumnName="EpisodioClinicoHCE" />
+          <ScalarProperty Name="IdPacienteHCE" ColumnName="IdPacienteHCE" />
+          <ScalarProperty Name="UnidadReplicacionHCE" ColumnName="UnidadReplicacionHCE" />
+          <ScalarProperty Name="Diagnostico" ColumnName="Diagnostico" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+          <ScalarProperty Name="FechaOrden" ColumnName="FechaOrden" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="EstadoEpiAtencion" ColumnName="EstadoEpiAtencion" />
+          <ScalarProperty Name="FechaAtencion" ColumnName="FechaAtencion" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="EpisodioAtencion" ColumnName="EpisodioAtencion" />
+          <ScalarProperty Name="IdPersonalSalud" ColumnName="IdPersonalSalud" />
+          <ScalarProperty Name="IdUnidadServicio" ColumnName="IdUnidadServicio" />
+          <ScalarProperty Name="IdEstablecimientoSalud" ColumnName="IdEstablecimientoSalud" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacionEC" ColumnName="UnidadReplicacionEC" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+          <ScalarProperty Name="EstadoEpiClinico" ColumnName="EstadoEpiClinico" />
+          <ScalarProperty Name="FechaCierreEpiClinico" ColumnName="FechaCierreEpiClinico" />
+          <ScalarProperty Name="EstadoPersona" ColumnName="EstadoPersona" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="EsEmpresa" ColumnName="EsEmpresa" />
+          <ScalarProperty Name="EsPaciente" ColumnName="EsPaciente" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="LugarNacimiento" ColumnName="LugarNacimiento" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="NivelInstruccion" ColumnName="NivelInstruccion" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="PersonaAnt" ColumnName="PersonaAnt" />
+          <ScalarProperty Name="IndicadorExamenPrincipal" ColumnName="IndicadorExamenPrincipal" />
+          <ScalarProperty Name="IndicadorCirugia" ColumnName="IndicadorCirugia" />
+          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="Compania" ColumnName="Compania" />
+          <ScalarProperty Name="ComponenteNombre" ColumnName="ComponenteNombre" />
+          <ScalarProperty Name="Componente" ColumnName="Componente" />
+          <ScalarProperty Name="TipoOrdenAtencion" ColumnName="TipoOrdenAtencion" />
+          <ScalarProperty Name="IdEmpresaAseguradora" ColumnName="IdEmpresaAseguradora" />
+          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+          <ScalarProperty Name="TipoAtencion" ColumnName="TipoAtencion" />
+          <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+          <ScalarProperty Name="IndicadorSeguro" ColumnName="IndicadorSeguro" />
+          <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+          <ScalarProperty Name="IdProcedimiento" ColumnName="IdProcedimiento" />
+          <ScalarProperty Name="IdConsultaExterna" ColumnName="IdConsultaExterna" />
+          <ScalarProperty Name="LineaHospitalizacion" ColumnName="LineaHospitalizacion" />
+          <ScalarProperty Name="IdHospitalizacion" ColumnName="IdHospitalizacion" />
+          <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="MedicoNombre" ColumnName="MedicoNombre" />
+          <ScalarProperty Name="PacienteNombre" ColumnName="PacienteNombre" />
+          <ScalarProperty Name="CodigoHCAnterior" ColumnName="CodigoHCAnterior" />
+          <ScalarProperty Name="CodigoHC" ColumnName="CodigoHC" />
+          <ScalarProperty Name="TipoOrdenAtencionNombre" ColumnName="TipoOrdenAtencionNombre" />
+          <ScalarProperty Name="Cama" ColumnName="Cama" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
+          <ScalarProperty Name="TipoPacienteNombre" ColumnName="TipoPacienteNombre" />
+          <ScalarProperty Name="NombreEspecialidad" ColumnName="NombreEspecialidad" />
+          <ScalarProperty Name="Origen" ColumnName="Origen" />
+          <ScalarProperty Name="CitaHora" ColumnName="CitaHora" />
+          <ScalarProperty Name="CitaFecha" ColumnName="CitaFecha" />
+          <ScalarProperty Name="CitaTipo" ColumnName="CitaTipo" />
+          <ScalarProperty Name="tipoListado" ColumnName="tipoListado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_SS_GE_PacienteSpring" FunctionName="ClinicaElGolfModel.Store.SP_SS_GE_PacienteSpring" />
+    <FunctionImportMapping FunctionImportName="USP_FirmarTriajeSpring" FunctionName="ClinicaElGolfModel.Store.SP_FirmarTriajeSpring" />
+    <FunctionImportMapping FunctionImportName="Sp_TriajeHceSpring" FunctionName="ClinicaElGolfModel.Store.Sp_TriajeHceSpring" />
+    <EntitySetMapping Name="SS_CE_Triaje">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_CE_Triaje">
+        <MappingFragment StoreEntitySet="SS_CE_Triaje">
+          <ScalarProperty Name="alergiacontacto" ColumnName="alergiacontacto" />
+          <ScalarProperty Name="usuariofirma" ColumnName="usuariofirma" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="IndAprobacionTriaje" ColumnName="IndAprobacionTriaje" />
+          <ScalarProperty Name="IndCopiaCE" ColumnName="IndCopiaCE" />
+          <ScalarProperty Name="IndAprobacionAlergia" ColumnName="IndAprobacionAlergia" />
+          <ScalarProperty Name="indalergiacontacto" ColumnName="indalergiacontacto" />
+          <ScalarProperty Name="indalergiaalimento" ColumnName="indalergiaalimento" />
+          <ScalarProperty Name="indproblematransfusion" ColumnName="indproblematransfusion" />
+          <ScalarProperty Name="indtransfusionessanguineas" ColumnName="indtransfusionessanguineas" />
+          <ScalarProperty Name="medicamentoregular5via" ColumnName="medicamentoregular5via" />
+          <ScalarProperty Name="medicamentoregular5frecuencia" ColumnName="medicamentoregular5frecuencia" />
+          <ScalarProperty Name="medicamentoregular5dosis" ColumnName="medicamentoregular5dosis" />
+          <ScalarProperty Name="medicamentoregular5" ColumnName="medicamentoregular5" />
+          <ScalarProperty Name="medicamentoregular4via" ColumnName="medicamentoregular4via" />
+          <ScalarProperty Name="medicamentoregular4frecuencia" ColumnName="medicamentoregular4frecuencia" />
+          <ScalarProperty Name="medicamentoregular4dosis" ColumnName="medicamentoregular4dosis" />
+          <ScalarProperty Name="medicamentoregular4" ColumnName="medicamentoregular4" />
+          <ScalarProperty Name="medicamentoregular3via" ColumnName="medicamentoregular3via" />
+          <ScalarProperty Name="medicamentoregular3frecuencia" ColumnName="medicamentoregular3frecuencia" />
+          <ScalarProperty Name="medicamentoregular3dosis" ColumnName="medicamentoregular3dosis" />
+          <ScalarProperty Name="medicamentoregular3" ColumnName="medicamentoregular3" />
+          <ScalarProperty Name="medicamentoregular2via" ColumnName="medicamentoregular2via" />
+          <ScalarProperty Name="medicamentoregular2frecuencia" ColumnName="medicamentoregular2frecuencia" />
+          <ScalarProperty Name="medicamentoregular2dosis" ColumnName="medicamentoregular2dosis" />
+          <ScalarProperty Name="medicamentoregular2" ColumnName="medicamentoregular2" />
+          <ScalarProperty Name="medicamentoregular1via" ColumnName="medicamentoregular1via" />
+          <ScalarProperty Name="medicamentoregular1frecuencia" ColumnName="medicamentoregular1frecuencia" />
+          <ScalarProperty Name="medicamentoregular1dosis" ColumnName="medicamentoregular1dosis" />
+          <ScalarProperty Name="medicamentoregular1" ColumnName="medicamentoregular1" />
+          <ScalarProperty Name="indmedicamentoregular" ColumnName="indmedicamentoregular" />
+          <ScalarProperty Name="alergiamedicamento5" ColumnName="alergiamedicamento5" />
+          <ScalarProperty Name="alergiamedicamento4" ColumnName="alergiamedicamento4" />
+          <ScalarProperty Name="alergiamedicamento3" ColumnName="alergiamedicamento3" />
+          <ScalarProperty Name="alergiamedicamento2" ColumnName="alergiamedicamento2" />
+          <ScalarProperty Name="alergiamedicamento1" ColumnName="alergiamedicamento1" />
+          <ScalarProperty Name="indalergiamedicamento" ColumnName="indalergiamedicamento" />
+          <ScalarProperty Name="EstadoDocumentoAnterior" ColumnName="EstadoDocumentoAnterior" />
+          <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+          <ScalarProperty Name="AntcedentesAlergias" ColumnName="AntcedentesAlergias" />
+          <ScalarProperty Name="Sintomas" ColumnName="Sintomas" />
+          <ScalarProperty Name="TiempoEnfermedad" ColumnName="TiempoEnfermedad" />
+          <ScalarProperty Name="SaturacionMaxima" ColumnName="SaturacionMaxima" />
+          <ScalarProperty Name="SaturacionMinima" ColumnName="SaturacionMinima" />
+          <ScalarProperty Name="Temperatura" ColumnName="Temperatura" />
+          <ScalarProperty Name="Respiracion" ColumnName="Respiracion" />
+          <ScalarProperty Name="Pulso" ColumnName="Pulso" />
+          <ScalarProperty Name="PresionMaxima" ColumnName="PresionMaxima" />
+          <ScalarProperty Name="PresionMinima" ColumnName="PresionMinima" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="EstadoDocumento" ColumnName="EstadoDocumento" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="NivelTriaje" ColumnName="NivelTriaje" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="IdTriaje" ColumnName="IdTriaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_CE_TriajeAntecedentesAlergias">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_CE_TriajeAntecedentesAlergias">
+        <MappingFragment StoreEntitySet="SS_CE_TriajeAntecedentesAlergias">
+          <ScalarProperty Name="indalergiacontacto" ColumnName="indalergiacontacto" />
+          <ScalarProperty Name="indalergiaalimento" ColumnName="indalergiaalimento" />
+          <ScalarProperty Name="indproblematransfusion" ColumnName="indproblematransfusion" />
+          <ScalarProperty Name="indtransfusionessanguineas" ColumnName="indtransfusionessanguineas" />
+          <ScalarProperty Name="medicamentoregular5via" ColumnName="medicamentoregular5via" />
+          <ScalarProperty Name="medicamentoregular5frecuencia" ColumnName="medicamentoregular5frecuencia" />
+          <ScalarProperty Name="medicamentoregular5dosis" ColumnName="medicamentoregular5dosis" />
+          <ScalarProperty Name="medicamentoregular5" ColumnName="medicamentoregular5" />
+          <ScalarProperty Name="medicamentoregular4via" ColumnName="medicamentoregular4via" />
+          <ScalarProperty Name="medicamentoregular4frecuencia" ColumnName="medicamentoregular4frecuencia" />
+          <ScalarProperty Name="medicamentoregular4dosis" ColumnName="medicamentoregular4dosis" />
+          <ScalarProperty Name="medicamentoregular4" ColumnName="medicamentoregular4" />
+          <ScalarProperty Name="medicamentoregular3via" ColumnName="medicamentoregular3via" />
+          <ScalarProperty Name="medicamentoregular3frecuencia" ColumnName="medicamentoregular3frecuencia" />
+          <ScalarProperty Name="medicamentoregular3dosis" ColumnName="medicamentoregular3dosis" />
+          <ScalarProperty Name="medicamentoregular3" ColumnName="medicamentoregular3" />
+          <ScalarProperty Name="medicamentoregular2via" ColumnName="medicamentoregular2via" />
+          <ScalarProperty Name="medicamentoregular2frecuencia" ColumnName="medicamentoregular2frecuencia" />
+          <ScalarProperty Name="medicamentoregular2dosis" ColumnName="medicamentoregular2dosis" />
+          <ScalarProperty Name="medicamentoregular2" ColumnName="medicamentoregular2" />
+          <ScalarProperty Name="medicamentoregular1via" ColumnName="medicamentoregular1via" />
+          <ScalarProperty Name="medicamentoregular1frecuencia" ColumnName="medicamentoregular1frecuencia" />
+          <ScalarProperty Name="medicamentoregular1dosis" ColumnName="medicamentoregular1dosis" />
+          <ScalarProperty Name="medicamentoregular1" ColumnName="medicamentoregular1" />
+          <ScalarProperty Name="indmedicamentoregular" ColumnName="indmedicamentoregular" />
+          <ScalarProperty Name="alergiamedicamento5" ColumnName="alergiamedicamento5" />
+          <ScalarProperty Name="alergiamedicamento4" ColumnName="alergiamedicamento4" />
+          <ScalarProperty Name="alergiamedicamento3" ColumnName="alergiamedicamento3" />
+          <ScalarProperty Name="alergiamedicamento2" ColumnName="alergiamedicamento2" />
+          <ScalarProperty Name="alergiamedicamento1" ColumnName="alergiamedicamento1" />
+          <ScalarProperty Name="indalergiamedicamento" ColumnName="indalergiamedicamento" />
+          <ScalarProperty Name="idpaciente" ColumnName="idpaciente" />
+          <ScalarProperty Name="idordenatencion" ColumnName="idordenatencion" />
+          <ScalarProperty Name="idtriaje" ColumnName="idtriaje" />
+          <ScalarProperty Name="idalergia" ColumnName="idalergia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_CE_TriajeControl">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_CE_TriajeControl">
+        <MappingFragment StoreEntitySet="SS_CE_TriajeControl">
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="IndicadorRetorno" ColumnName="IndicadorRetorno" />
+          <ScalarProperty Name="EstadoDocumentoAnterior" ColumnName="EstadoDocumentoAnterior" />
+          <ScalarProperty Name="EstadoDocumento" ColumnName="EstadoDocumento" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="FechaControl" ColumnName="FechaControl" />
+          <ScalarProperty Name="Secuencial" ColumnName="Secuencial" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_CE_TriajeFirma">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_CE_TriajeFirma">
+        <MappingFragment StoreEntitySet="SS_CE_TriajeFirma">
+          <ScalarProperty Name="IdEpisodioTriajeHCE" ColumnName="IdEpisodioTriajeHCE" />
+          <ScalarProperty Name="TamanoImagen" ColumnName="TamanoImagen" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="RutaFoto" ColumnName="RutaFoto" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="IdTriaje" ColumnName="IdTriaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

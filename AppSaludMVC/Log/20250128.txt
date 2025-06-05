@@ -1,0 +1,156 @@
+ASP.reportes_visorreporteshce_aspx 11:31:45
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 11:37:42
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 11:54:10
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 12:10:14
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 12:11:21
+Page_Init - Referencia a objeto no establecida como instancia de un objeto.
+
+ASP.reportes_visorreporteshce_aspx 12:37:19
+Page_Init - El índice no es válido. (Excepción de HRESULT: 0x8002000B (DISP_E_BADINDEX))
+
+ASP.reportes_visorreporteshce_aspx 12:55:45
+Page_Init - El índice no es válido. (Excepción de HRESULT: 0x8002000B (DISP_E_BADINDEX))
+
+ASP.reportes_visorreporteshce_aspx 13:03:53
+Page_Init - El índice no es válido. (Excepción de HRESULT: 0x8002000B (DISP_E_BADINDEX))
+
+ASP.reportes_visorreporteshce_aspx 13:08:46
+Page_Init - El índice no es válido. (Excepción de HRESULT: 0x8002000B (DISP_E_BADINDEX))
+
+ASP.reportes_visorreporteshce_aspx 13:17:25
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 13:31:04
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 13:32:21
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 15:43:28
+Page_Init - El informe no tiene tablas.
+
+ASP.reportes_visorreporteshce_aspx 15:44:13
+Page_Init - El informe no tiene tablas.
+
+ASP.reportes_visorreporteshce_aspx 15:46:27
+Page_Init - El informe no tiene tablas.
+
+ASP.reportes_visorreporteshce_aspx 15:51:32
+Page_Init - El informe no tiene tablas.
+
+ASP.reportes_visorreporteshce_aspx 15:56:01
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:07:04
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:08:57
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:10:12
+Page_Init - Ruta de acceso del archivo de informe no válida.
+
+ASP.reportes_visorreporteshce_aspx 16:17:56
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:26:19
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:27:38
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:43:00
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:44:23
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:47:33
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:20:07
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:38:36
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:40:11
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:41:30
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:44:11
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:47:16
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:48:34
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:50:26
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:53:19
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:58:55
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:00:05
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:02:16
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:02:58
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:03:42
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:07:03
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:08:11
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:09:20
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 19:54:36
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 20:45:19
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 20:51:10
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 20:53:26
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 21:01:28
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 21:07:13
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 21:09:58
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 21:11:13
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 21:26:18
+Page_Init - Subproceso anulado.
+

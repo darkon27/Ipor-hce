@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEABAC3B-A6F4-46C0-8A02-5023957EBFDE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoluccionSalud.Service</RootNamespace>
+    <AssemblyName>SoluccionSalud.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proyectos\ServiciosSalud\ServiciosSalud\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccionesServiceRules\ServiciosRules.cs" />
+    <Compile Include="ActividadesService\SvcActividades.cs" />
+    <Compile Include="AC_SucursalService\SvcAC_Sucursal.cs" />
+    <Compile Include="ADICIONAL_Service\SvcAgrupadorAtencionVigente.cs" />
+    <Compile Include="AsigMedicoService\SvcAsigMedico.cs" />
+    <Compile Include="AtencionService\SvcCuidadoPreventivo.cs" />
+    <Compile Include="AtencionService\SvcTipoAtencion.cs" />
+    <Compile Include="AuditoriaImpresionDetalleService\SvcAuditoriaImpresionDetalle.cs" />
+    <Compile Include="AuditoriaImpresionService\SvcAuditoriaImpresion.cs" />
+    <Compile Include="AuditoriaService\SvcAuditoria.cs" />
+    <Compile Include="CAMPOFORMATOSERVICE\SVCCAMPOFORMATO.cs" />
+    <Compile Include="CAMPOTABLASERVICE\SVCCAMPOTABLA.cs" />
+    <Compile Include="Categorias\SvcCategorias.cs" />
+    <Compile Include="CategoriaUnidadServicioService\SvcCategoriaUnidadServicio.cs" />
+    <Compile Include="CatUnidServAtencionService\SvcCatUnidServAtencion.cs" />
+    <Compile Include="ClaseService\SvcClase.cs" />
+    <Compile Include="ClasificadorMovimientoService\SvcClasificadorMovimiento.cs" />
+    <Compile Include="CoberturaService\SvcCobertura.cs" />
+    <Compile Include="companyownerService\Svccompanyowner.cs" />
+    <Compile Include="ComponenteBaseService\SvcComponenteBase.cs" />
+    <Compile Include="ControlAtributoService\SvcControlAtributo.cs" />
+    <Compile Include="ControlComponenteService\SvcControlComponente.cs" />
+    <Compile Include="ControlValidacionService\SvcControlValidacion.cs" />
+    <Compile Include="CuidadoPreventivoService\SvcCuidadoPreventivo.cs" />
+    <Compile Include="DetalleMiscelaneoService\SvcDetalleMiscelaneo.cs" />
+    <Compile Include="DetalleMiscelaneoService\SvcMiscelaneoHeader.cs" />
+    <Compile Include="DevolucionProducto\svcSS_FA_DevolucionProducto.cs" />
+    <Compile Include="DiagnosticoService\SvcDiagnostico.cs" />
+    <Compile Include="DiccionarioService\SvcDiccionario.cs" />
+    <Compile Include="DominioService\SvcDominio.cs" />
+    <Compile Include="EpisodioAtencionService\SvcEpisodioAtencion.cs" />
+    <Compile Include="EpisodioClinicoService\SvcEpisodioClinico.cs" />
+    <Compile Include="EspecialidadOrdenMedicaService\SvcEspecialidadOrdenMedica.cs" />
+    <Compile Include="EspecialidadService\SvcEspecialidad.cs" />
+    <Compile Include="EstablecimientoService\SvcEstablecimiento.cs" />
+    <Compile Include="FactorRelacionadoNandaService\SvcFactorRelacionadoNanda.cs" />
+    <Compile Include="FactorRelacionadoService\SvcFactorRelacionado.cs" />
+    <Compile Include="FactorRelacionadoService\SvcFactorRelacionadoCombos.cs" />
+    <Compile Include="FavoritoCodigoService\SvcFavoritoCodigo.cs" />
+    <Compile Include="FavoritoDetalleService\SvcFavoritoDetalle.cs" />
+    <Compile Include="FavoritoNumeroService\SvcFavoritoNumero.cs" />
+    <Compile Include="FavoritoService\Svcfavorito.cs" />
+    <Compile Include="FormatoCampoService\SvcFormatoCampo.cs" />
+    <Compile Include="FormatoCService\SvcFormato.cs" />
+    <Compile Include="FormatoDinamico\SvcFormatosDinamicos.cs" />
+    <Compile Include="FormatoService\SvcFormato.cs" />
+    <Compile Include="FormulariosService\SvcAnamnesisAFService.cs" />
+    <Compile Include="FormulariosService\SvcAnamnesisAPService.cs" />
+    <Compile Include="FormulariosService\SvcAnamnesisEAService.cs" />
+    <Compile Include="FormulariosService\SvcDescansoMedicoService.cs" />
+    <Compile Include="FormulariosService\SvcDiagnosticoService.cs" />
+    <Compile Include="FormulariosService\SvcEvolucionObjetivaService.cs" />
+    <Compile Include="FormulariosService\SvcExamenFisicoTriajeService.cs" />
+    <Compile Include="FormulariosService\SvcExamenSolicitadoService.cs" />
+    <Compile Include="FormulariosService\SvcFormularioAnamnesisAP.cs" />
+    <Compile Include="FormulariosService\SvcFormularios.cs" />
+    <Compile Include="FormulariosService\SvcMedicamentoService.cs" />
+    <Compile Include="FormulariosService\SvcProblemasService.cs" />
+    <Compile Include="FormulariosService\SvcProximaAtencionService.cs" />
+    <Compile Include="Formularios\SvcEnfermedadActual.cs" />
+    <Compile Include="Ge_VariosService\SvcGe_Varios.cs" />
+    <Compile Include="GrupoFamService\SvcGrupoFam.cs" />
+    <Compile Include="HC_CIAP2Service\SvcHC_CIAP2.cs" />
+    <Compile Include="HorarioService\SvcSS_CC_Horario.cs" />
+    <Compile Include="IndicadorService\SvcIndicador.cs" />
+    <Compile Include="KardexEnfermeria\svcSS_HC_KardexEnfermeria.cs" />
+    <Compile Include="MaestroDetalleService\SvcMaestroDetalle.cs" />
+    <Compile Include="MedicamentosService\SvcMedicamentos.cs" />
+    <Compile Include="MiscelaneoFormularioService\SvcMiscelaneoFormularioCrono.cs" />
+    <Compile Include="MiscelaneosService\SvcMiscelaneos.cs" />
+    <Compile Include="ModuloService\SvcModulo.cs" />
+    <Compile Include="NandaService\SvcNanda.cs" />
+    <Compile Include="NicActividadService\SvcNicActividad.cs" />
+    <Compile Include="NicService\SvcNic.cs" />
+    <Compile Include="NocIndicadorService\SvcNocIndicador.cs" />
+    <Compile Include="NocNandaService\SvcNocNanda.cs" />
+    <Compile Include="NocNicService\SvcNocNic.cs" />
+    <Compile Include="NocService\SvcNoc.cs" />
+    <Compile Include="NotificacionDetalleService\SvcNotificacionDetalle.cs" />
+    <Compile Include="NotificacionService\SvcNotificacion.cs" />
+    <Compile Include="OrdAtenPreexistenciaService\SvcOrdAtenPreexistencia.cs" />
+    <Compile Include="PacDocService\SvcPacDoc.cs" />
+    <Compile Include="PAEDiagnostico\SvcDiagnosticoPAE.cs" />
+    <Compile Include="ParametroService\SvcParametro.cs" />
+    <Compile Include="PersonaMastService\SvcDiccionario.cs" />
+    <Compile Include="ProcedimientoEjecucionService\SvcProcedimientoEjecucion.cs" />
+    <Compile Include="ProcedimientoInformeService\SvcProcedimientoInforme.cs" />
+    <Compile Include="ProcedimientoService\SvcProcedimiento.cs" />
+    <Compile Include="ProcedimientoService\SvcProcedimientoMedico.cs" />
+    <Compile Include="ProcedimientoSpring\Svc_ProcedimientoInformeSPRING.cs" />
+    <Compile Include="ProcMedDosService\SvcProcMedDos.cs" />
+    <Compile Include="ProcMedService\SvcProcMed.cs" />
+    <Compile Include="ProHistAdjService\SvcProHistAdj.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosService\SvcRecursos.cs" />
+    <Compile Include="RegistrarAcompananteService\SvcRegistroAcompanante.cs" />
+    <Compile Include="ReglasServicios\modelCliente.cs" />
+    <Compile Include="ReglasServicios\SvcReglasServicios.cs" />
+    <Compile Include="SeguimientoRiesgoDetalleService\SvcSeguimientoRiesgoDetalle.cs" />
+    <Compile Include="SeguimientoRiesgoService\SvcSeguimientoRiesgo.cs" />
+    <Compile Include="SeguridadAutorizacionService\SvcSeguridadAutorizacion.cs" />
+    <Compile Include="SeguridadConceptoService\SvcSeguridadConcepto.cs" />
+    <Compile Include="SeguridadGrupoService\SvcSeguridadGrupo.cs" />
+    <Compile Include="SeguridadPerfilUsuarioService\SvcSeguridadPerfilUsuario.cs" />
+    <Compile Include="SeguridadService\SvcSeguridadConcepto.cs" />
+    <Compile Include="ServiciosAlternoSOA\SOA_AtencionesSpring.cs" />
+    <Compile Include="ServiciosService\SvcServicios.cs" />
+    <Compile Include="SG_AgenteOpcionService\SvcSG_AgenteOpcion.cs" />
+    <Compile Include="SG_AgenteService\SvcSG_Agente.cs" />
+    <Compile Include="SG_GrupoService\SvcSG_Grupo.cs" />
+    <Compile Include="SG_OpcionService\SvcOpcionFormatoAsignacion.cs" />
+    <Compile Include="SG_OpcionService\SvcSG_Opcion.cs" />
+    <Compile Include="SSHCUbicacionService\SvcSSHCUbicacion.cs" />
+    <Compile Include="SS_FA_SolicitudProductos\svcSS_FA_SolicitudProducto.cs" />
+    <Compile Include="SS_HC_CuerpoHumanoService\SvcSS_HC_CuerpoHumano.cs" />
+    <Compile Include="SS_VW_VALIDAService\SvcSS_VW_VALIDA.cs" />
+    <Compile Include="TablaCampoService\SvcTablaCampo.cs" />
+    <Compile Include="TablaDatosService\SvcTablaDatos.cs" />
+    <Compile Include="TABLAFORMATOVALIDACIONService\SvcTABLAFORMATOVALIDACION.cs" />
+    <Compile Include="TablaMaestroConceptoService\SvcTablaMaestroConcepto.cs" />
+    <Compile Include="TablaService\SvcTabla.cs" />
+    <Compile Include="UnidadMedidaMinsaService\SvcUnidadMedidaMinsa.cs" />
+    <Compile Include="UnidadService\SvcUnidad.cs" />
+    <Compile Include="UnidadServicioService\SvcUnidadServicio.cs" />
+    <Compile Include="UsuarioService\SvcUsuario.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VWAsigMedicoService\SvcVWAsigMedico.cs" />
+    <Compile Include="VWEspecialidadMedicoService\SvcVWEspecialidadMedico.cs" />
+    <Compile Include="VW_ATENCIONPACIENTEMEDICAMENTOS\svcVw_AtencionPacienteMedicamento.cs" />
+    <Compile Include="VW_ATENCIONPACIENTEService\SvcVw_AtencionPaciente.cs" />
+    <Compile Include="VW_EMPRESASEGURO\SvcVW_EMPRESASEGURO.cs" />
+    <Compile Include="VW_FORMATORECURSOCAMPOService\SvcVw_FormatoRecursoCampo.cs" />
+    <Compile Include="Vw_MiscelaneoService\SvcVw_Miscelaneo.cs" />
+    <Compile Include="VW_PERSONAPACIENTEService\SP_SS_GE_PacienteService.cs" />
+    <Compile Include="VW_PERSONAPACIENTEService\SvcVw_Personapaciente.cs" />
+    <Compile Include="VW_ServicioPrestacionService\SvcVW_ServicioPrestacion.cs" />
+    <Compile Include="V_EpisodioAtencionesService\SvcV_EpisodioAtenciones.cs" />
+    <Compile Include="Web References\ReglasLocal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WH_ClaseFamiliaService\SvcWH_ClaseFamilia.cs" />
+    <Compile Include="WH_ClaseLineaService\SvcWH_ClaseLinea.cs" />
+    <Compile Include="WH_ClaseSubFamiliaService\SvcWH_ClaseSubFamilia.cs" />
+    <Compile Include="WH_FavoritosService\SvcVW_FavoritosService.cs" />
+    <Compile Include="_FormularioNuevo\SvcEpicrisis2Service.cs" />
+    <Compile Include="_FormularioNuevo\SvcEpisodioNotificaciones.cs" />
+    <Compile Include="_FormularioNuevo\SvcAlergia.cs" />
+    <Compile Include="_FormularioNuevo\SvcAlergiaService.cs" />
+    <Compile Include="_FormularioNuevo\SvcAnamnesisAFFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcAnestesia4.cs" />
+    <Compile Include="_FormularioNuevo\SvcAntecedentesFisiologicoPediatricoFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcAntecedentesPersonalesIAdulFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcAntecedentesPersonalesINFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcApoyoDiagnosticoFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcBalanceHidroelectro.cs" />
+    <Compile Include="_FormularioNuevo\SvcContrarreferencia2FEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcDescansoMedicoServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcDiagnosticoFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEnfermedadActualServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEpisodioTriaje.cs" />
+    <Compile Include="_FormularioNuevo\SvcEvolucionMedica.cs" />
+    <Compile Include="_FormularioNuevo\SvcEpicrisis1_FEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcNotaEnfermeriaServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcSolicitudTransfusionalFE2Service.cs" />
+    <Compile Include="_FormularioNuevo\SvcTriajeEmergenciaFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcNotaIngresoService.cs" />
+    <Compile Include="_FormularioNuevo\SvcEpicrisis3Service.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaAldreteFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaAltaCirugiaAmbulatoriaServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaBromageFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaGlasgowServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaNortonFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaRamsayFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaSedacionRassServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaStewartServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEscalaWoodDownesServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcEvaluacionDolorEvaAdultosFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcEvaluacionDolorEvaNeonatosPrematuros_FEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcEvaluacionDolorEvaNiniosFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcEvaluacionGradoDependenciaFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcEvolucionObjetivaFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcEvolucionObstetricaPuerperio_FE.cs" />
+    <Compile Include="_FormularioNuevo\SvcExamenClinicoServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcExamenSolicitadoServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcFichaAnestesia2Service.cs" />
+    <Compile Include="_FormularioNuevo\SvcFichaAnestesia5Service.cs" />
+    <Compile Include="_FormularioNuevo\SvcFormularios.cs" />
+    <Compile Include="_FormularioNuevo\SvcFuncionesVitalesFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcHojaRecienNacidoFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcInformeAltaFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcInmunizacionesNinioDetalle.cs" />
+    <Compile Include="_FormularioNuevo\SvcInterConsultaFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcKardex3FEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcMedicamentoFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcMedicamentoKardex.cs" />
+    <Compile Include="_FormularioNuevo\SvcMonitoreoObsFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcOftalmologicoFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcPartograma.cs" />
+    <Compile Include="_FormularioNuevo\SvcPatologicosGeneralesFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcPreOperatorio1Service.cs" />
+    <Compile Include="_FormularioNuevo\SvcPreOperatorio2Service.cs" />
+    <Compile Include="_FormularioNuevo\SvcProximaAtencionFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcReferencia_FEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcResumen_Parto_FE.cs" />
+    <Compile Include="_FormularioNuevo\SvcRetiroVoluntarioFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcSeguridadCirugiaFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcSeguridadCirugiaPausaFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcSolucitudTransfusionalFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcTriajeAntAlergia.cs" />
+    <Compile Include="_FormularioNuevo\SvcValoracionAMFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcValoracionFuncionalAMFE.cs" />
+    <Compile Include="_FormularioNuevo\SvcValoracionMentalAMFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcValoracionSocioFamAMFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcVigilanciaCateterPerifericoFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcVigilanciaCateterUrinarioFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcVigilanciaDispositivosFEService.cs" />
+    <Compile Include="_FormularioNuevo\SvcVigilanciaVentilacionMecanicaFEService.cs" />
+    <Compile Include="_FormularioNuevo\Svc_AntePerGinecoObstetricosFEService.cs" />
+    <Compile Include="_FormularioNuevo\Svc_EpidemiologiaCovid19ServiceFE.cs" />
+    <Compile Include="_FormularioNuevo\Svc_ResumendelParto505_2FEService.cs" />
+    <Compile Include="_FormularioNuevo\Svc_ResumendelParto505_3FEService.cs" />
+    <Compile Include="_FormularioNuevo\SvnAnestesia_1_Service.cs" />
+    <Compile Include="_FormularioNuevo\SvnAnestesia_3_Service.cs" />
+    <Compile Include="_FormularioNuevo\SvnAntecendentesPersonalesFisiologicosService.cs" />
+    <Compile Include="_FormularioNuevo\SvnOrdenIntervencionQuirurgicaService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoluccionSalud.Business.Rule\SoluccionSalud.Business.Rule.csproj">
+      <Project>{fb2ecd68-2a0d-4e75-ac9b-61735e5d8561}</Project>
+      <Name>SoluccionSalud.Business.Rule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.Bussines\SoluccionSalud.Bussines.csproj">
+      <Project>{b18afd41-6d38-4168-8a55-28cbc43d9e37}</Project>
+      <Name>SoluccionSalud.Bussines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.Entidades\SoluccionSalud.Entidades.csproj">
+      <Project>{94c20b56-b046-491e-952c-5df50a53591a}</Project>
+      <Name>SoluccionSalud.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.RepositoryFormulario\SoluccionSalud.RepositoryFormulario.csproj">
+      <Project>{3cf56f08-414e-49e5-952a-cd88a840952c}</Project>
+      <Name>SoluccionSalud.RepositoryFormulario</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.SOA.Bussines\SoluccionSalud.SOA.Bussines.csproj">
+      <Project>{93c995a8-be6e-442e-bf46-77ca3bea83c2}</Project>
+      <Name>SoluccionSalud.SOA.Bussines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.SOA.Entidades\SoluccionSalud.SOA.Entidades.csproj">
+      <Project>{3e2caffa-6059-4750-ab6d-f3a5f129eb2d}</Project>
+      <Name>SoluccionSalud.SOA.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReglasLocal\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReglasLocal\ReglasSaludService.wsdl" />
+    <None Include="Web References\ReglasLocal\ReglasSaludServiceImplService.wsdl" />
+    <None Include="Web References\WebReference\AV_SOA_Service.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference\ServiciosSalud.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.10.2.62/SOAService/ServiciosSalud.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://10.10.2.62/SOAService/ServiciosSalud.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SoluccionSalud_Service_WebReference_ServiciosSalud</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8181/WebService/ReglasSaludService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReglasLocal\</RelPath>
+      <UpdateFromURL>http://localhost:8181/WebService/ReglasSaludService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SoluccionSalud_Service_ReglasLocal_ReglasSaludServiceImplService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

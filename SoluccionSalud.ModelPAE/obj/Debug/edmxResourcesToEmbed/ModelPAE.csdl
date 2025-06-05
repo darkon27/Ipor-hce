@@ -1,0 +1,1597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicaElGolfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ConexModelPAE" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SS_HC_Actividad" EntityType="ClinicaElGolfModel.SS_HC_Actividad" />
+    <EntitySet Name="SS_HC_DominioPAE" EntityType="ClinicaElGolfModel.SS_HC_DominioPAE" />
+    <EntitySet Name="SS_HC_FactorRelacionado" EntityType="ClinicaElGolfModel.SS_HC_FactorRelacionado" />
+    <EntitySet Name="SS_HC_FactorRelacionadoNanda" EntityType="ClinicaElGolfModel.SS_HC_FactorRelacionadoNanda" />
+    <EntitySet Name="SS_HC_IndicadorPAE" EntityType="ClinicaElGolfModel.SS_HC_IndicadorPAE" />
+    <EntitySet Name="SS_HC_NANDA" EntityType="ClinicaElGolfModel.SS_HC_NANDA" />
+    <EntitySet Name="SS_HC_NandaNoc" EntityType="ClinicaElGolfModel.SS_HC_NandaNoc" />
+    <EntitySet Name="SS_HC_NICActividad" EntityType="ClinicaElGolfModel.SS_HC_NICActividad" />
+    <EntitySet Name="SS_HC_NOC2" EntityType="ClinicaElGolfModel.SS_HC_NOC2" />
+    <EntitySet Name="SS_HC_NOCIndicador" EntityType="ClinicaElGolfModel.SS_HC_NOCIndicador" />
+    <EntitySet Name="SS_HC_NocNic" EntityType="ClinicaElGolfModel.SS_HC_NocNic" />
+    <EntitySet Name="SS_HC_PAE_Diagnostico" EntityType="ClinicaElGolfModel.SS_HC_PAE_Diagnostico" />
+    <EntitySet Name="SS_HC_NIC" EntityType="ClinicaElGolfModel.SS_HC_NIC" />
+    <FunctionImport Name="SP_SS_HC_Actividad" ReturnType="Collection(Int32)">
+      <Parameter Name="IdActividad" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_Actividad_LISTAR" EntitySet="SS_HC_Actividad" ReturnType="Collection(ClinicaElGolfModel.SS_HC_Actividad)">
+      <Parameter Name="IdActividad" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Inicio" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFilas" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_ClasePAE" ReturnType="Collection(Int32)">
+      <Parameter Name="IdClasePAE" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_ClasePAE_LISTAR" EntitySet="SS_HC_ClasePAE" ReturnType="Collection(ClinicaElGolfModel.SS_HC_ClasePAE)">
+      <Parameter Name="IdClasePAE" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Inicio" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFilas" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_Dominio_LISTAR" EntitySet="SS_HC_DominioPAE" ReturnType="Collection(ClinicaElGolfModel.SS_HC_DominioPAE)">
+      <Parameter Name="IdDominioPAE" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Inicio" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFilas" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_DominioPAE" ReturnType="Collection(Int32)">
+      <Parameter Name="IdDominioPAE" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_FACTOR_NANDA" ReturnType="Collection(Int32)">
+      <Parameter Name="IdFRN" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdFactorRelacionado" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_FactorRelacionado" ReturnType="Collection(Int32)">
+      <Parameter Name="IdFactorRelacionado" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="CodigoPadre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="DescripcionCorta" Mode="In" Type="String" />
+      <Parameter Name="Nivel" Mode="In" Type="Int32" />
+      <Parameter Name="CadenaRecursiva" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_FactorRelacionado_LISTAR" EntitySet="SS_HC_FactorRelacionado" ReturnType="Collection(ClinicaElGolfModel.SS_HC_FactorRelacionado)">
+      <Parameter Name="IdFactorRelacionado" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="CodigoPadre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="DescripcionCorta" Mode="In" Type="String" />
+      <Parameter Name="Nivel" Mode="In" Type="Int32" />
+      <Parameter Name="CadenaRecursiva" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_FactorRelacionadoNanda_LISTAR" EntitySet="SS_HC_FactorRelacionadoNanda" ReturnType="Collection(ClinicaElGolfModel.SS_HC_FactorRelacionadoNanda)">
+      <Parameter Name="IdFRN" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdFactorRelacionado" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_IndicadorPAE" ReturnType="Collection(Int32)">
+      <Parameter Name="IdIndicadorPAE" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_IndicadorPAE_LISTAR" EntitySet="SS_HC_IndicadorPAE" ReturnType="Collection(ClinicaElGolfModel.SS_HC_IndicadorPAE)">
+      <Parameter Name="IdIndicadorPAE" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Inicio" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFilas" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NANDA" ReturnType="Collection(Int32)">
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="CodigoPadre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="DescripcionCorta" Mode="In" Type="String" />
+      <Parameter Name="TipoFactor" Mode="In" Type="Int32" />
+      <Parameter Name="Nivel" Mode="In" Type="Int32" />
+      <Parameter Name="CadenaRecursiva" Mode="In" Type="String" />
+      <Parameter Name="IdDominioPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdClasePAE" Mode="In" Type="Int32" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NANDAListar" EntitySet="SS_HC_NANDA" ReturnType="Collection(ClinicaElGolfModel.SS_HC_NANDA)">
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="CodigoPadre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="DescripcionCorta" Mode="In" Type="String" />
+      <Parameter Name="TipoFactor" Mode="In" Type="Int32" />
+      <Parameter Name="Nivel" Mode="In" Type="Int32" />
+      <Parameter Name="CadenaRecursiva" Mode="In" Type="String" />
+      <Parameter Name="IdDominioPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdClasePAE" Mode="In" Type="Int32" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NIC" ReturnType="Collection(Int32)">
+      <Parameter Name="IdNIC" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="CodigoPadre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="DescripcionCorta" Mode="In" Type="String" />
+      <Parameter Name="Nivel" Mode="In" Type="Int32" />
+      <Parameter Name="CadenaRecursiva" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NIC_ACTIVIDAD" ReturnType="Collection(Int32)">
+      <Parameter Name="IdNA" Mode="In" Type="Int32" />
+      <Parameter Name="IdNic" Mode="In" Type="Int32" />
+      <Parameter Name="IdActividad" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NicActividades_LISTAR" EntitySet="SS_HC_NICActividad" ReturnType="Collection(ClinicaElGolfModel.SS_HC_NICActividad)">
+      <Parameter Name="IdNA" Mode="In" Type="Int32" />
+      <Parameter Name="IdNic" Mode="In" Type="Int32" />
+      <Parameter Name="IdActividad" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NICListar" EntitySet="SS_HC_NIC" ReturnType="Collection(ClinicaElGolfModel.SS_HC_NIC)">
+      <Parameter Name="IdNIC" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="CodigoPadre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="DescripcionCorta" Mode="In" Type="String" />
+      <Parameter Name="Nivel" Mode="In" Type="Int32" />
+      <Parameter Name="CadenaRecursiva" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NOC_INDICADOR" ReturnType="Collection(Int32)">
+      <Parameter Name="IdNIN" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdIndicadorPAE" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NOC_LISTAR2" EntitySet="SS_HC_NOC2" ReturnType="Collection(ClinicaElGolfModel.SS_HC_NOC2)">
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="CodigoPadre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="DescripcionCorta" Mode="In" Type="String" />
+      <Parameter Name="Nivel" Mode="In" Type="Int32" />
+      <Parameter Name="CadenaRecursiva" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NOC_NANDA" ReturnType="Collection(Int32)">
+      <Parameter Name="IdNanNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NOC_NIC" ReturnType="Collection(Int32)">
+      <Parameter Name="IdNC" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdNic" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NOC2" ReturnType="Collection(Int32)">
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="CodigoPadre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="DescripcionCorta" Mode="In" Type="String" />
+      <Parameter Name="Nivel" Mode="In" Type="Int32" />
+      <Parameter Name="CadenaRecursiva" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NocIndicador_LISTAR" EntitySet="SS_HC_NOCIndicador" ReturnType="Collection(ClinicaElGolfModel.SS_HC_NOCIndicador)">
+      <Parameter Name="IdNIN" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdIndicadorPAE" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NocNanda_LISTAR" EntitySet="SS_HC_NandaNoc" ReturnType="Collection(ClinicaElGolfModel.SS_HC_NandaNoc)">
+      <Parameter Name="IdNanNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_NocNic_LISTAR" EntitySet="SS_HC_NocNic" ReturnType="Collection(ClinicaElGolfModel.SS_HC_NocNic)">
+      <Parameter Name="IdNC" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdNic" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_PAE_Diagnostico" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdDominioPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdClasePAE" Mode="In" Type="Int32" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_PAE_DiagnosticoListar" EntitySet="SS_HC_PAE_Diagnostico" ReturnType="Collection(ClinicaElGolfModel.SS_HC_PAE_Diagnostico)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdDominioPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdClasePAE" Mode="In" Type="Int32" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="SS_HC_ClasePAE" EntityType="ClinicaElGolfModel.SS_HC_ClasePAE" />
+    <FunctionImport Name="SP_SS_HC_FactorRelacionado_listarcombo" EntitySet="SS_HC_FactorRelacionado" ReturnType="Collection(ClinicaElGolfModel.SS_HC_FactorRelacionado)">
+      <Parameter Name="IdFactorRelacionado" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_FA_SolicitudProducto" EntityType="ClinicaElGolfModel.SS_FA_SolicitudProducto" />
+    <FunctionImport Name="SP_SS_FA_SolicitudProducto" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdSolicitudProducto" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="indicaciones" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_HC_KardexEnfermeria" EntityType="ClinicaElGolfModel.SS_HC_KardexEnfermeria" />
+    <FunctionImport Name="SP_SS_HC_KardexEnfermeria" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_VW_ATENCIONPACIENTEMEDICAMENTO_Listar" EntitySet="VW_ATENCIONPACIENTEMEDICAMENTO" ReturnType="Collection(ClinicaElGolfModel.VW_ATENCIONPACIENTEMEDICAMENTO)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="IdUnidadMedida" Mode="In" Type="Int32" />
+      <Parameter Name="Linea" Mode="In" Type="String" />
+      <Parameter Name="Familia" Mode="In" Type="String" />
+      <Parameter Name="SubFamilia" Mode="In" Type="String" />
+      <Parameter Name="TipoComponente" Mode="In" Type="String" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="IdVia" Mode="In" Type="Int32" />
+      <Parameter Name="Dosis" Mode="In" Type="String" />
+      <Parameter Name="DiasTratamiento" Mode="In" Type="Decimal" />
+      <Parameter Name="Frecuencia" Mode="In" Type="Decimal" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+      <Parameter Name="TipoReceta" Mode="In" Type="Int32" />
+      <Parameter Name="Forma" Mode="In" Type="Int32" />
+      <Parameter Name="GrupoMedicamento" Mode="In" Type="Int32" />
+      <Parameter Name="Comentario" Mode="In" Type="String" />
+      <Parameter Name="IndicadorAuditoria" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioAuditoria" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="Persona" Mode="In" Type="Int32" />
+      <Parameter Name="Origen" Mode="In" Type="String" />
+      <Parameter Name="NombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="IngresoFechaRegistro" Mode="In" Type="DateTime" />
+      <Parameter Name="IngresoAplicacionCodigo" Mode="In" Type="String" />
+      <Parameter Name="IngresoUsuario" Mode="In" Type="String" />
+      <Parameter Name="Celular" Mode="In" Type="String" />
+      <Parameter Name="EstadoPersona" Mode="In" Type="String" />
+      <Parameter Name="Medicamento" Mode="In" Type="String" />
+      <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+      <Parameter Name="CodigoOA" Mode="In" Type="String" />
+      <Parameter Name="Medico" Mode="In" Type="String" />
+      <Parameter Name="Cama" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="VW_ATENCIONPACIENTEMEDICAMENTO" EntityType="ClinicaElGolfModel.VW_ATENCIONPACIENTEMEDICAMENTO" />
+    <EntitySet Name="SS_FA_DevolucionProducto" EntityType="ClinicaElGolfModel.SS_FA_DevolucionProducto" />
+    <FunctionImport Name="SP_SS_FA_DevolucionProducto" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdDevolucionProducto" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_HC_EpisodioAtencionFormato" EntityType="ClinicaElGolfModel.SS_HC_EpisodioAtencionFormato" />
+    <FunctionImport Name="SP_SS_FA_DevolucionProducto_Listar" EntitySet="SS_FA_DevolucionProducto" ReturnType="Collection(ClinicaElGolfModel.SS_FA_DevolucionProducto)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdDevolucionProducto" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_FA_DevolucionProductoDetalle" EntityType="ClinicaElGolfModel.SS_FA_DevolucionProductoDetalle" />
+    <FunctionImport Name="SP_SS_FA_DevolucionProductoDetalle" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdDevolucionProducto" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="Linea" Mode="In" Type="String" />
+      <Parameter Name="Familia" Mode="In" Type="String" />
+      <Parameter Name="SubFamilia" Mode="In" Type="String" />
+      <Parameter Name="TipoComponente" Mode="In" Type="String" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="Medicamento" Mode="In" Type="String" />
+      <Parameter Name="GrupoMedicamento" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_FA_DevolucionProductoDetalle_Listar" EntitySet="SS_FA_DevolucionProductoDetalle" ReturnType="Collection(ClinicaElGolfModel.SS_FA_DevolucionProductoDetalle)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdDevolucionProducto" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="Linea" Mode="In" Type="String" />
+      <Parameter Name="Familia" Mode="In" Type="String" />
+      <Parameter Name="SubFamilia" Mode="In" Type="String" />
+      <Parameter Name="TipoComponente" Mode="In" Type="String" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="Medicamento" Mode="In" Type="String" />
+      <Parameter Name="GrupoMedicamento" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_FA_SolicitudProductoDetalle" EntityType="ClinicaElGolfModel.SS_FA_SolicitudProductoDetalle" />
+    <FunctionImport Name="SP_SS_FA_SolicitudProductoDetalle" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdSolicitudProducto" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacionReferencia" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencionReferencia" Mode="In" Type="Int64" />
+      <Parameter Name="IdPacienteReferencia" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinicoReferencia" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="Linea" Mode="In" Type="String" />
+      <Parameter Name="Familia" Mode="In" Type="String" />
+      <Parameter Name="SubFamilia" Mode="In" Type="String" />
+      <Parameter Name="TipoComponente" Mode="In" Type="String" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="Medicamento" Mode="In" Type="String" />
+      <Parameter Name="GrupoMedicamento" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="indicaciones" Mode="In" Type="String" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="SecuencialHCE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_FA_SolicitudProductoDetalle_Listar" EntitySet="SS_FA_SolicitudProductoDetalle" ReturnType="Collection(ClinicaElGolfModel.SS_FA_SolicitudProductoDetalle)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdSolicitudProducto" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacionReferencia" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencionReferencia" Mode="In" Type="Int64" />
+      <Parameter Name="IdPacienteReferencia" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinicoReferencia" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="Linea" Mode="In" Type="String" />
+      <Parameter Name="Familia" Mode="In" Type="String" />
+      <Parameter Name="SubFamilia" Mode="In" Type="String" />
+      <Parameter Name="TipoComponente" Mode="In" Type="String" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="Medicamento" Mode="In" Type="String" />
+      <Parameter Name="GrupoMedicamento" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_HC_PAE_Actividad" EntityType="ClinicaElGolfModel.SS_HC_PAE_Actividad" />
+    <EntitySet Name="SS_HC_PAE_ActividadRealizacion" EntityType="ClinicaElGolfModel.SS_HC_PAE_ActividadRealizacion" />
+    <EntitySet Name="SS_HC_PAE_Indicador" EntityType="ClinicaElGolfModel.SS_HC_PAE_Indicador" />
+    <EntitySet Name="SS_HC_PAE_Intervencion" EntityType="ClinicaElGolfModel.SS_HC_PAE_Intervencion" />
+    <EntitySet Name="SS_HC_PAE_Objetivo" EntityType="ClinicaElGolfModel.SS_HC_PAE_Objetivo" />
+    <EntitySet Name="SS_HC_ProcesoPAE" EntityType="ClinicaElGolfModel.SS_HC_ProcesoPAE" />
+    <EntitySet Name="SS_HC_ProcesoPAEObservacion" EntityType="ClinicaElGolfModel.SS_HC_ProcesoPAEObservacion" />
+    <FunctionImport Name="SP_SS_HC_PAE_Actividad" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdNic" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="IdActividad" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_PAE_Indicador" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdIndicadorPAE" Mode="In" Type="Int32" />
+      <Parameter Name="PuntuacionInicial" Mode="In" Type="Int32" />
+      <Parameter Name="PuntuacionProgramada" Mode="In" Type="Int32" />
+      <Parameter Name="PuntuacionFinal" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_PAE_Intervencion" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdNic" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_PAE_Objetivo" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_ProcesoPAE" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_ProcesoPAEObservacion" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="FechaRegistro" Mode="In" Type="DateTime" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_HC_PAE_ActividadRealizacion" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaPAE" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdNanda" Mode="In" Type="Int32" />
+      <Parameter Name="IdNoc" Mode="In" Type="Int32" />
+      <Parameter Name="IdNic" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="FechaHoraRealizacion" Mode="In" Type="DateTime" />
+      <Parameter Name="IdActividad" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_HC_KardexEnfermeriaDetalle" EntityType="ClinicaElGolfModel.SS_HC_KardexEnfermeriaDetalle" />
+    <FunctionImport Name="SP_SS_HC_KardexEnfermeriaDetalle" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacionReferencia" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencionReferencia" Mode="In" Type="Int64" />
+      <Parameter Name="IdPacienteReferencia" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinicoReferencia" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaCorte" Mode="In" Type="DateTime" />
+      <Parameter Name="HoraInicioProg" Mode="In" Type="DateTime" />
+      <Parameter Name="HorasProgramadas" Mode="In" Type="String" />
+      <Parameter Name="HorasSuministradas" Mode="In" Type="String" />
+      <Parameter Name="EnfermeraSuministro" Mode="In" Type="String" />
+      <Parameter Name="Linea" Mode="In" Type="String" />
+      <Parameter Name="Familia" Mode="In" Type="String" />
+      <Parameter Name="SubFamilia" Mode="In" Type="String" />
+      <Parameter Name="TipoComponente" Mode="In" Type="String" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="SituacionRegistro" Mode="In" Type="Int32" />
+      <Parameter Name="GrupoMedicamento" Mode="In" Type="Int32" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_HC_ProcedimientoInformeSPRING" EntityType="ClinicaElGolfModel.SS_HC_ProcedimientoInformeSPRING" />
+    <FunctionImport Name="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" EntitySet="SS_HC_ProcedimientoInformeSPRING" ReturnType="Collection(ClinicaElGolfModel.SS_HC_ProcedimientoInformeSPRING)">
+      <Parameter Name="IdProcedimiento" Mode="In" Type="Int32" />
+      <Parameter Name="NombreArchivo" Mode="In" Type="String" />
+      <Parameter Name="RutaInforme" Mode="In" Type="String" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Paciente" Mode="In" Type="String" />
+      <Parameter Name="CodigoOA" Mode="In" Type="String" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="DescripcionComponente" Mode="In" Type="String" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOA" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Medico" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="FechaProcedimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="Contador_filas" Mode="In" Type="Int32" />
+      <Parameter Name="Inicio" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFilas" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="SS_HC_Actividad">
+    <Key>
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="IdActividad" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_DominioPAE">
+    <Key>
+      <PropertyRef Name="IdDominioPAE" />
+    </Key>
+    <Property Name="IdDominioPAE" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_FactorRelacionado">
+    <Key>
+      <PropertyRef Name="IdFactorRelacionado" />
+    </Key>
+    <Property Name="IdFactorRelacionado" Type="Int32" Nullable="false" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoPadre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="DescripcionCorta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nivel" Type="Int32" />
+    <Property Name="CadenaRecursiva" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Orden" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_FactorRelacionadoNanda">
+    <Key>
+      <PropertyRef Name="IdFRN" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdFactorRelacionado" />
+    </Key>
+    <Property Name="IdFRN" Type="Int32" Nullable="false" />
+    <Property Name="IdNanda" Type="Int32" Nullable="false" />
+    <Property Name="IdFactorRelacionado" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_IndicadorPAE">
+    <Key>
+      <PropertyRef Name="IdIndicadorPAE" />
+    </Key>
+    <Property Name="IdIndicadorPAE" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_NANDA">
+    <Key>
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdDominioPAE" />
+      <PropertyRef Name="IdClasePAE" />
+    </Key>
+    <Property Name="IdNanda" Type="Int32" Nullable="false" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoPadre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="DescripcionCorta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TipoFactor" Type="Int32" />
+    <Property Name="Nivel" Type="Int32" />
+    <Property Name="CadenaRecursiva" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IdDominioPAE" Type="Int32" Nullable="false" />
+    <Property Name="IdClasePAE" Type="Int32" Nullable="false" />
+    <Property Name="Orden" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_NandaNoc">
+    <Key>
+      <PropertyRef Name="IdNanNoc" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+    </Key>
+    <Property Name="IdNanNoc" Type="Int32" Nullable="false" />
+    <Property Name="IdNanda" Type="Int32" Nullable="false" />
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_NICActividad">
+    <Key>
+      <PropertyRef Name="IdNA" />
+      <PropertyRef Name="IdNic" />
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="IdNA" Type="Int32" Nullable="false" />
+    <Property Name="IdNic" Type="Int32" Nullable="false" />
+    <Property Name="IdActividad" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_NOC2">
+    <Key>
+      <PropertyRef Name="IdNoc" />
+    </Key>
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoPadre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DescripcionCorta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nivel" Type="Int32" />
+    <Property Name="CadenaRecursiva" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Orden" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_NOCIndicador">
+    <Key>
+      <PropertyRef Name="IdNIN" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdIndicadorPAE" />
+    </Key>
+    <Property Name="IdNIN" Type="Int32" Nullable="false" />
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="IdIndicadorPAE" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_NocNic">
+    <Key>
+      <PropertyRef Name="IdNC" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdNic" />
+    </Key>
+    <Property Name="IdNC" Type="Int32" Nullable="false" />
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="IdNic" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Diagnostico">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+    </Key>
+    <Property Name="UnidadReplicacion" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" Type="String" />
+    <Property Name="IdEpisodioAtencion" Nullable="false" Type="Int64" />
+    <Property Name="IdPaciente" Nullable="false" Type="Int32" />
+    <Property Name="EpisodioClinico" Nullable="false" Type="Int32" />
+    <Property Name="IdOrdenAtencion" Nullable="false" Type="Int32" />
+    <Property Name="SecuenciaPAE" Nullable="false" Type="Int32" />
+    <Property Name="IdNanda" Nullable="false" Type="Int32" />
+    <Property Name="IdDominioPAE" Nullable="false" Type="Int32" />
+    <Property Name="IdClasePAE" Nullable="false" Type="Int32" />
+    <Property Name="Observacion" MaxLength="250" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" MaxLength="25" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="FechaCreacion" Precision="3" Type="DateTime" />
+    <Property Name="UsuarioModificacion" MaxLength="25" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="FechaModificacion" Precision="3" Type="DateTime" />
+    <Property Name="Accion" MaxLength="25" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Version" MaxLength="25" FixedLength="false" Unicode="false" Type="String" />
+  </EntityType>
+  <EntityType Name="SS_HC_NIC">
+    <Key>
+      <PropertyRef Name="IdNIC" />
+    </Key>
+    <Property Name="IdNIC" Type="Int32" Nullable="false" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoPadre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="DescripcionCorta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nivel" Type="Int32" />
+    <Property Name="CadenaRecursiva" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Orden" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_ClasePAE">
+    <Key>
+      <PropertyRef Name="IdClasePAE" />
+    </Key>
+    <Property Name="IdClasePAE" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_FA_SolicitudProducto">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdSolicitudProducto" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="IdSolicitudProducto" Type="Int32" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Observacion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoDocumento" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="indicaciones" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_KardexEnfermeria">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdOrdenAtencion" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
+    <Property Name="Observacion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_ATENCIONPACIENTEMEDICAMENTO">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="IdUnidadMedida" Type="Int32" />
+    <Property Name="Linea" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Familia" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="SubFamilia" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="TipoComponente" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CodigoComponente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IdVia" Type="Int32" />
+    <Property Name="Dosis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DiasTratamiento" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Frecuencia" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Cantidad" Type="Decimal" Precision="20" Scale="6" />
+    <Property Name="IndicadorEPS" Type="Int32" />
+    <Property Name="TipoReceta" Type="Int32" />
+    <Property Name="Forma" Type="Int32" />
+    <Property Name="GrupoMedicamento" Type="Int32" />
+    <Property Name="Comentario" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IndicadorAuditoria" Type="Int32" />
+    <Property Name="UsuarioAuditoria" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="Persona" Type="Int32" />
+    <Property Name="Origen" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IngresoFechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="IngresoAplicacionCodigo" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="IngresoUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoPersona" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Medicamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Cama" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoOA" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Medico" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_FA_DevolucionProducto">
+    <Key>
+      <PropertyRef Name="IdDevolucionProducto" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="IdDevolucionProducto" Type="Int32" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Observacion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoDocumento" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_EpisodioAtencionFormato">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdTransacciones" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="IdTransacciones" Type="Int32" Nullable="false" />
+    <Property Name="IdOpcion" Type="Int32" />
+    <Property Name="IdForm" Type="Int32" />
+    <Property Name="ConceptoFormulario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SS_FA_DevolucionProductoDetalle">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdDevolucionProducto" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="IdDevolucionProducto" Type="Int32" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Decimal" Precision="20" Scale="6" />
+    <Property Name="Linea" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Familia" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="SubFamilia" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="TipoComponente" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CodigoComponente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Medicamento" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GrupoMedicamento" Type="Int32" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_FA_SolicitudProductoDetalle">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdSolicitudProducto" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="IdSolicitudProducto" Type="Int32" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="UnidadReplicacionReferencia" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencionReferencia" Type="Int64" />
+    <Property Name="IdPacienteReferencia" Type="Int32" />
+    <Property Name="EpisodioClinicoReferencia" Type="Int32" />
+    <Property Name="Cantidad" Type="Decimal" Precision="20" Scale="6" />
+    <Property Name="Linea" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Familia" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="SubFamilia" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="TipoComponente" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CodigoComponente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Medicamento" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GrupoMedicamento" Type="Int32" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="indicaciones" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="SecuencialHCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LineaOrdenAtencion" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Actividad">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdNic" />
+      <PropertyRef Name="Secuencia" />
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="IdNanda" Type="Int32" Nullable="false" />
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="IdNic" Type="Int32" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="IdActividad" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_ActividadRealizacion">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdNic" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="IdNanda" Type="Int32" Nullable="false" />
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="IdNic" Type="Int32" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" />
+    <Property Name="FechaHoraRealizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdActividad" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Indicador">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdIndicadorPAE" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="IdNanda" Type="Int32" Nullable="false" />
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="IdIndicadorPAE" Type="Int32" Nullable="false" />
+    <Property Name="PuntuacionInicial" Type="Int32" />
+    <Property Name="PuntuacionProgramada" Type="Int32" />
+    <Property Name="PuntuacionFinal" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Intervencion">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+      <PropertyRef Name="IdNic" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="IdNanda" Type="Int32" Nullable="false" />
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="IdNic" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_PAE_Objetivo">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+      <PropertyRef Name="IdNanda" />
+      <PropertyRef Name="IdNoc" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="IdNanda" Type="Int32" Nullable="false" />
+    <Property Name="IdNoc" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_ProcesoPAE">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_ProcesoPAEObservacion">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="SecuenciaPAE" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="SecuenciaPAE" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Observacion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_KardexEnfermeriaDetalle">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+      <PropertyRef Name="IdOrdenAtencion" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="UnidadReplicacionReferencia" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencionReferencia" Type="Int64" />
+    <Property Name="IdPacienteReferencia" Type="Int32" />
+    <Property Name="EpisodioClinicoReferencia" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="FechaCorte" Type="DateTime" Precision="3" />
+    <Property Name="HoraInicioProg" Type="DateTime" Precision="3" />
+    <Property Name="HorasProgramadas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="HorasSuministradas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EnfermeraSuministro" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Linea" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Familia" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="SubFamilia" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="TipoComponente" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CodigoComponente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="GrupoMedicamento" Type="Int32" />
+    <Property Name="SituacionRegistro" Type="Int32" />
+    <Property Name="Observacion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_HC_ProcedimientoInformeSPRING">
+    <Key>
+      <PropertyRef Name="IdProcedimiento" />
+      <PropertyRef Name="RutaInforme" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="Paciente" />
+      <PropertyRef Name="CodigoOA" />
+      <PropertyRef Name="IdOrdenAtencion" />
+      <PropertyRef Name="LineaOA" />
+      <PropertyRef Name="FechaCreacion" />
+      <PropertyRef Name="UsuarioCreacion" />
+    </Key>
+    <Property Name="IdProcedimiento" Type="Int32" Nullable="false" />
+    <Property Name="NombreArchivo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RutaInforme" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="Paciente" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoOA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoComponente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DescripcionComponente" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
+    <Property Name="LineaOA" Type="Int32" Nullable="false" />
+    <Property Name="TipoOrdenAtencion" Type="Int32" />
+    <Property Name="Medico" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="FechaProcedimiento" Type="DateTime" Precision="3" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Accion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Contador_filas" Type="Int32" />
+  </EntityType>
+</Schema>

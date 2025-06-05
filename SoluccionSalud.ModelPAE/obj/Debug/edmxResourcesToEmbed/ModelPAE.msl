@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClinicaElGolfModelStoreContainer" CdmEntityContainer="ConexModelPAE">
+    <EntitySetMapping Name="SS_HC_Actividad">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_Actividad">
+        <MappingFragment StoreEntitySet="SS_HC_Actividad">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_DominioPAE">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_DominioPAE">
+        <MappingFragment StoreEntitySet="SS_HC_DominioPAE">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdDominioPAE" ColumnName="IdDominioPAE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_FactorRelacionado">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_FactorRelacionado">
+        <MappingFragment StoreEntitySet="SS_HC_FactorRelacionado">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="CadenaRecursiva" ColumnName="CadenaRecursiva" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoPadre" ColumnName="CodigoPadre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdFactorRelacionado" ColumnName="IdFactorRelacionado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_FactorRelacionadoNanda">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_FactorRelacionadoNanda">
+        <MappingFragment StoreEntitySet="SS_HC_FactorRelacionadoNanda">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdFactorRelacionado" ColumnName="IdFactorRelacionado" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+          <ScalarProperty Name="IdFRN" ColumnName="IdFRN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_IndicadorPAE">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_IndicadorPAE">
+        <MappingFragment StoreEntitySet="SS_HC_IndicadorPAE">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdIndicadorPAE" ColumnName="IdIndicadorPAE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_NANDA">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_NANDA">
+        <MappingFragment StoreEntitySet="SS_HC_NANDA">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="IdClasePAE" ColumnName="IdClasePAE" />
+          <ScalarProperty Name="IdDominioPAE" ColumnName="IdDominioPAE" />
+          <ScalarProperty Name="CadenaRecursiva" ColumnName="CadenaRecursiva" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="TipoFactor" ColumnName="TipoFactor" />
+          <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoPadre" ColumnName="CodigoPadre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_NandaNoc">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_NandaNoc">
+        <MappingFragment StoreEntitySet="SS_HC_NandaNoc">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+          <ScalarProperty Name="IdNanNoc" ColumnName="IdNanNoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_NICActividad">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_NICActividad">
+        <MappingFragment StoreEntitySet="SS_HC_NICActividad">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+          <ScalarProperty Name="IdNic" ColumnName="IdNic" />
+          <ScalarProperty Name="IdNA" ColumnName="IdNA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_NOC2">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_NOC2">
+        <MappingFragment StoreEntitySet="SS_HC_NOC2">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="CadenaRecursiva" ColumnName="CadenaRecursiva" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="CodigoPadre" ColumnName="CodigoPadre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_NOCIndicador">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_NOCIndicador">
+        <MappingFragment StoreEntitySet="SS_HC_NOCIndicador">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdIndicadorPAE" ColumnName="IdIndicadorPAE" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+          <ScalarProperty Name="IdNIN" ColumnName="IdNIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_NocNic">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_NocNic">
+        <MappingFragment StoreEntitySet="SS_HC_NocNic">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdNic" ColumnName="IdNic" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+          <ScalarProperty Name="IdNC" ColumnName="IdNC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_PAE_Diagnostico">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_PAE_Diagnostico">
+        <MappingFragment StoreEntitySet="SS_HC_PAE_Diagnostico">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="IdClasePAE" ColumnName="IdClasePAE" />
+          <ScalarProperty Name="IdDominioPAE" ColumnName="IdDominioPAE" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+          <ScalarProperty Name="SecuenciaPAE" ColumnName="SecuenciaPAE" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_NIC">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_NIC">
+        <MappingFragment StoreEntitySet="SS_HC_NIC">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="CadenaRecursiva" ColumnName="CadenaRecursiva" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoPadre" ColumnName="CodigoPadre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdNIC" ColumnName="IdNIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_Actividad" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_Actividad" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_Actividad_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_Actividad_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_ClasePAE" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_ClasePAE" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_ClasePAE_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_ClasePAE_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_Dominio_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_Dominio_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_DominioPAE" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_DominioPAE" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_FACTOR_NANDA" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_FACTOR_NANDA" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_FactorRelacionado" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_FactorRelacionado" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_FactorRelacionado_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_FactorRelacionado_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_FactorRelacionadoNanda_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_FactorRelacionadoNanda_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_IndicadorPAE" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_IndicadorPAE" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_IndicadorPAE_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_IndicadorPAE_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NANDA" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NANDA" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NANDAListar" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NANDAListar" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NIC" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NIC" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NIC_ACTIVIDAD" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NIC_ACTIVIDAD" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NicActividades_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NicActividades_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NICListar" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NICListar" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NOC_INDICADOR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NOC_INDICADOR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NOC_LISTAR2" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NOC_LISTAR2" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NOC_NANDA" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NOC_NANDA" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NOC_NIC" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NOC_NIC" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NOC2" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NOC2" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NocIndicador_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NocIndicador_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NocNanda_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NocNanda_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_NocNic_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_NocNic_LISTAR" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_PAE_Diagnostico" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_PAE_Diagnostico" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_PAE_DiagnosticoListar" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_PAE_DiagnosticoListar" />
+    <EntitySetMapping Name="SS_HC_ClasePAE">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_ClasePAE">
+        <MappingFragment StoreEntitySet="SS_HC_ClasePAE">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdClasePAE" ColumnName="IdClasePAE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_FactorRelacionado_listarcombo" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_FactorRelacionado_listarcombo" />
+    <EntitySetMapping Name="SS_FA_SolicitudProducto">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_FA_SolicitudProducto">
+        <MappingFragment StoreEntitySet="SS_FA_SolicitudProducto">
+          <ScalarProperty Name="indicaciones" ColumnName="indicaciones" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EstadoDocumento" ColumnName="EstadoDocumento" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+          <ScalarProperty Name="IdSolicitudProducto" ColumnName="IdSolicitudProducto" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_FA_SolicitudProducto" FunctionName="ClinicaElGolfModel.Store.SP_SS_FA_SolicitudProducto" />
+    <EntitySetMapping Name="SS_HC_KardexEnfermeria">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_KardexEnfermeria">
+        <MappingFragment StoreEntitySet="SS_HC_KardexEnfermeria">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_KardexEnfermeria" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_KardexEnfermeria" />
+    <FunctionImportMapping FunctionImportName="SP_VW_ATENCIONPACIENTEMEDICAMENTO_Listar" FunctionName="ClinicaElGolfModel.Store.SP_VW_ATENCIONPACIENTEMEDICAMENTO_Listar" />
+    <EntitySetMapping Name="VW_ATENCIONPACIENTEMEDICAMENTO">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.VW_ATENCIONPACIENTEMEDICAMENTO">
+        <MappingFragment StoreEntitySet="VW_ATENCIONPACIENTEMEDICAMENTO">
+          <ScalarProperty Name="Medico" ColumnName="Medico" />
+          <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
+          <ScalarProperty Name="Cama" ColumnName="Cama" />
+          <ScalarProperty Name="Medicamento" ColumnName="Medicamento" />
+          <ScalarProperty Name="EstadoPersona" ColumnName="EstadoPersona" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="IngresoUsuario" ColumnName="IngresoUsuario" />
+          <ScalarProperty Name="IngresoAplicacionCodigo" ColumnName="IngresoAplicacionCodigo" />
+          <ScalarProperty Name="IngresoFechaRegistro" ColumnName="IngresoFechaRegistro" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Origen" ColumnName="Origen" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioAuditoria" ColumnName="UsuarioAuditoria" />
+          <ScalarProperty Name="IndicadorAuditoria" ColumnName="IndicadorAuditoria" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="GrupoMedicamento" ColumnName="GrupoMedicamento" />
+          <ScalarProperty Name="Forma" ColumnName="Forma" />
+          <ScalarProperty Name="TipoReceta" ColumnName="TipoReceta" />
+          <ScalarProperty Name="IndicadorEPS" ColumnName="IndicadorEPS" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Frecuencia" ColumnName="Frecuencia" />
+          <ScalarProperty Name="DiasTratamiento" ColumnName="DiasTratamiento" />
+          <ScalarProperty Name="Dosis" ColumnName="Dosis" />
+          <ScalarProperty Name="IdVia" ColumnName="IdVia" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="TipoComponente" ColumnName="TipoComponente" />
+          <ScalarProperty Name="SubFamilia" ColumnName="SubFamilia" />
+          <ScalarProperty Name="Familia" ColumnName="Familia" />
+          <ScalarProperty Name="Linea" ColumnName="Linea" />
+          <ScalarProperty Name="IdUnidadMedida" ColumnName="IdUnidadMedida" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_FA_DevolucionProducto">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_FA_DevolucionProducto">
+        <MappingFragment StoreEntitySet="SS_FA_DevolucionProducto">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EstadoDocumento" ColumnName="EstadoDocumento" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+          <ScalarProperty Name="IdDevolucionProducto" ColumnName="IdDevolucionProducto" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_FA_DevolucionProducto" FunctionName="ClinicaElGolfModel.Store.SP_SS_FA_DevolucionProducto" />
+    <EntitySetMapping Name="SS_HC_EpisodioAtencionFormato">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_EpisodioAtencionFormato">
+        <MappingFragment StoreEntitySet="SS_HC_EpisodioAtencionFormato">
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="ConceptoFormulario" ColumnName="ConceptoFormulario" />
+          <ScalarProperty Name="IdForm" ColumnName="IdForm" />
+          <ScalarProperty Name="IdOpcion" ColumnName="IdOpcion" />
+          <ScalarProperty Name="IdTransacciones" ColumnName="IdTransacciones" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_FA_DevolucionProducto_Listar" FunctionName="ClinicaElGolfModel.Store.SP_SS_FA_DevolucionProducto_Listar" />
+    <EntitySetMapping Name="SS_FA_DevolucionProductoDetalle">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_FA_DevolucionProductoDetalle">
+        <MappingFragment StoreEntitySet="SS_FA_DevolucionProductoDetalle">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="GrupoMedicamento" ColumnName="GrupoMedicamento" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="Medicamento" ColumnName="Medicamento" />
+          <ScalarProperty Name="TipoComponente" ColumnName="TipoComponente" />
+          <ScalarProperty Name="SubFamilia" ColumnName="SubFamilia" />
+          <ScalarProperty Name="Familia" ColumnName="Familia" />
+          <ScalarProperty Name="Linea" ColumnName="Linea" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="IdDevolucionProducto" ColumnName="IdDevolucionProducto" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_FA_DevolucionProductoDetalle" FunctionName="ClinicaElGolfModel.Store.SP_SS_FA_DevolucionProductoDetalle" />
+    <FunctionImportMapping FunctionImportName="SP_SS_FA_DevolucionProductoDetalle_Listar" FunctionName="ClinicaElGolfModel.Store.SP_SS_FA_DevolucionProductoDetalle_Listar" />
+    <EntitySetMapping Name="SS_FA_SolicitudProductoDetalle">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_FA_SolicitudProductoDetalle">
+        <MappingFragment StoreEntitySet="SS_FA_SolicitudProductoDetalle">
+          <ScalarProperty Name="SecuencialHCE" ColumnName="SecuencialHCE" />
+          <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+          <ScalarProperty Name="indicaciones" ColumnName="indicaciones" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="GrupoMedicamento" ColumnName="GrupoMedicamento" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="Medicamento" ColumnName="Medicamento" />
+          <ScalarProperty Name="TipoComponente" ColumnName="TipoComponente" />
+          <ScalarProperty Name="SubFamilia" ColumnName="SubFamilia" />
+          <ScalarProperty Name="Familia" ColumnName="Familia" />
+          <ScalarProperty Name="Linea" ColumnName="Linea" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="EpisodioClinicoReferencia" ColumnName="EpisodioClinicoReferencia" />
+          <ScalarProperty Name="IdPacienteReferencia" ColumnName="IdPacienteReferencia" />
+          <ScalarProperty Name="IdEpisodioAtencionReferencia" ColumnName="IdEpisodioAtencionReferencia" />
+          <ScalarProperty Name="UnidadReplicacionReferencia" ColumnName="UnidadReplicacionReferencia" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="IdSolicitudProducto" ColumnName="IdSolicitudProducto" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_FA_SolicitudProductoDetalle" FunctionName="ClinicaElGolfModel.Store.SP_SS_FA_SolicitudProductoDetalle" />
+    <FunctionImportMapping FunctionImportName="SP_SS_FA_SolicitudProductoDetalle_Listar" FunctionName="ClinicaElGolfModel.Store.SP_SS_FA_SolicitudProductoDetalle_Listar" />
+    <EntitySetMapping Name="SS_HC_PAE_Actividad">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_PAE_Actividad">
+        <MappingFragment StoreEntitySet="SS_HC_PAE_Actividad">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="IdNic" ColumnName="IdNic" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="SecuenciaPAE" ColumnName="SecuenciaPAE" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_PAE_ActividadRealizacion">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_PAE_ActividadRealizacion">
+        <MappingFragment StoreEntitySet="SS_HC_PAE_ActividadRealizacion">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+          <ScalarProperty Name="FechaHoraRealizacion" ColumnName="FechaHoraRealizacion" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="IdNic" ColumnName="IdNic" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="SecuenciaPAE" ColumnName="SecuenciaPAE" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_PAE_Indicador">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_PAE_Indicador">
+        <MappingFragment StoreEntitySet="SS_HC_PAE_Indicador">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="PuntuacionFinal" ColumnName="PuntuacionFinal" />
+          <ScalarProperty Name="PuntuacionProgramada" ColumnName="PuntuacionProgramada" />
+          <ScalarProperty Name="PuntuacionInicial" ColumnName="PuntuacionInicial" />
+          <ScalarProperty Name="IdIndicadorPAE" ColumnName="IdIndicadorPAE" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="SecuenciaPAE" ColumnName="SecuenciaPAE" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_PAE_Intervencion">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_PAE_Intervencion">
+        <MappingFragment StoreEntitySet="SS_HC_PAE_Intervencion">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdNic" ColumnName="IdNic" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="SecuenciaPAE" ColumnName="SecuenciaPAE" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_PAE_Objetivo">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_PAE_Objetivo">
+        <MappingFragment StoreEntitySet="SS_HC_PAE_Objetivo">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdNoc" ColumnName="IdNoc" />
+          <ScalarProperty Name="IdNanda" ColumnName="IdNanda" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="SecuenciaPAE" ColumnName="SecuenciaPAE" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_ProcesoPAE">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_ProcesoPAE">
+        <MappingFragment StoreEntitySet="SS_HC_ProcesoPAE">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="SecuenciaPAE" ColumnName="SecuenciaPAE" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_HC_ProcesoPAEObservacion">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_ProcesoPAEObservacion">
+        <MappingFragment StoreEntitySet="SS_HC_ProcesoPAEObservacion">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="SecuenciaPAE" ColumnName="SecuenciaPAE" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_PAE_Actividad" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_PAE_Actividad" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_PAE_Indicador" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_PAE_Indicador" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_PAE_Intervencion" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_PAE_Intervencion" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_PAE_Objetivo" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_PAE_Objetivo" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_ProcesoPAE" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_ProcesoPAE" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_ProcesoPAEObservacion" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_ProcesoPAEObservacion" />
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_PAE_ActividadRealizacion" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_PAE_ActividadRealizacion" />
+    <EntitySetMapping Name="SS_HC_KardexEnfermeriaDetalle">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_KardexEnfermeriaDetalle">
+        <MappingFragment StoreEntitySet="SS_HC_KardexEnfermeriaDetalle">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="SituacionRegistro" ColumnName="SituacionRegistro" />
+          <ScalarProperty Name="GrupoMedicamento" ColumnName="GrupoMedicamento" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="TipoComponente" ColumnName="TipoComponente" />
+          <ScalarProperty Name="SubFamilia" ColumnName="SubFamilia" />
+          <ScalarProperty Name="Familia" ColumnName="Familia" />
+          <ScalarProperty Name="Linea" ColumnName="Linea" />
+          <ScalarProperty Name="EnfermeraSuministro" ColumnName="EnfermeraSuministro" />
+          <ScalarProperty Name="HorasSuministradas" ColumnName="HorasSuministradas" />
+          <ScalarProperty Name="HorasProgramadas" ColumnName="HorasProgramadas" />
+          <ScalarProperty Name="HoraInicioProg" ColumnName="HoraInicioProg" />
+          <ScalarProperty Name="FechaCorte" ColumnName="FechaCorte" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="EpisodioClinicoReferencia" ColumnName="EpisodioClinicoReferencia" />
+          <ScalarProperty Name="IdPacienteReferencia" ColumnName="IdPacienteReferencia" />
+          <ScalarProperty Name="IdEpisodioAtencionReferencia" ColumnName="IdEpisodioAtencionReferencia" />
+          <ScalarProperty Name="UnidadReplicacionReferencia" ColumnName="UnidadReplicacionReferencia" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_KardexEnfermeriaDetalle" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_KardexEnfermeriaDetalle" />
+    <EntitySetMapping Name="SS_HC_ProcedimientoInformeSPRING">
+      <EntityTypeMapping TypeName="ClinicaElGolfModel.SS_HC_ProcedimientoInformeSPRING">
+        <MappingFragment StoreEntitySet="SS_HC_ProcedimientoInformeSPRING">
+          <ScalarProperty Name="Contador_filas" ColumnName="Contador_filas" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaProcedimiento" ColumnName="FechaProcedimiento" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Medico" ColumnName="Medico" />
+          <ScalarProperty Name="TipoOrdenAtencion" ColumnName="TipoOrdenAtencion" />
+          <ScalarProperty Name="LineaOA" ColumnName="LineaOA" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="DescripcionComponente" ColumnName="DescripcionComponente" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="RutaInforme" ColumnName="RutaInforme" />
+          <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+          <ScalarProperty Name="IdProcedimiento" ColumnName="IdProcedimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" FunctionName="ClinicaElGolfModel.Store.SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" />
+  </EntityContainerMapping>
+</Mapping>

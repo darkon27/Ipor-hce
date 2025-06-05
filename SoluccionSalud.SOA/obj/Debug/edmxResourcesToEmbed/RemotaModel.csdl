@@ -1,0 +1,801 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicaElGolfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PersonaMast">
+    <Key>
+      <PropertyRef Name="Persona" />
+    </Key>
+    <Property Name="Persona" Type="Int32" Nullable="false" />
+    <Property Name="Origen" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Busqueda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GrupoEmpresarial" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="TipoDocumento" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Documento" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CodigoBarras" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+    <Property Name="EsCliente" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EsProveedor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EsEmpleado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EsOtro" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TipoPersona" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+    <Property Name="CiudadNacimiento" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Nacionalidad" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EstadoCivil" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NivelInstruccion" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="190" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoPostal" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Provincia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Departamento" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentoFiscal" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="DocumentoIdentidad" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CarnetExtranjeria" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="DocumentoMilitarFA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="TipoBrevete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Brevete" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+    <Property Name="Pasaporte" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+    <Property Name="NombreEmergencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DireccionEmergencia" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoEmergencia" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="BancoMonedaLocal" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TipoCuentaLocal" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CuentaMonedaLocal" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="BancoMonedaExtranjera" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TipoCuentaExtranjera" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CuentaMonedaExtranjera" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PersonaAnt" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="CorreoElectronico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClasePersonaCodigo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="PersonaClasificacion" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="EnfermedadGraveFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IngresoFechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="IngresoAplicacionCodigo" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="IngresoUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PYMEFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UltimoUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="UltimaFechaModif" Type="DateTime" Precision="3" />
+    <Property Name="TipoPersonaUsuario" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="DireccionReferencia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ParentescoEmergencia" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="CelularEmergencia" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LugarNacimiento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SuspensionFonaviFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FlagRepetido" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CodDiscamec" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FecIniDiscamec" Type="DateTime" Precision="3" />
+    <Property Name="FecFinDiscamec" Type="DateTime" Precision="3" />
+    <Property Name="CodLicArma" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MarcaArma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SerieArma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="InicioArma" Type="DateTime" Precision="3" />
+    <Property Name="VencimientoArma" Type="DateTime" Precision="3" />
+    <Property Name="SeguroDiscamec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CorrelativoSCTR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CuentaMonedaExtranjera_tmp" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="CuentaMonedaLocal_tmp" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="FlagActualizacion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TarjetadeCredito" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Pais" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="EsPaciente" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="EsEmpresa" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Persona_Old" Type="Int32" />
+    <Property Name="personanew" Type="Int32" />
+    <Property Name="cmp" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SUNATNacionalidad" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="SUNATVia" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="SUNATZona" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="SUNATUbigeo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="SUNATDomiciliado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IndicadorAutogenerado" Type="Int32" />
+    <Property Name="RutaFirma" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDocumentoIdentidad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IdPersonaUnificado" Type="Int32" />
+    <Property Name="idpersona_ok" Type="Int32" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="rangoEtario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMedico" Type="Int32" />
+    <Property Name="Correcion" Type="Int32" />
+    <Property Name="IdEmpresaAnteriorUnificacion" Type="Int32" />
+    <Property Name="brevete_fecvcto" Type="DateTime" Precision="3" />
+    <Property Name="carnetextranjeria_fecvcto" Type="DateTime" Precision="3" />
+    <Property Name="Estado_BK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Estado_Bks" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IndicadorVinculada" Type="Int32" />
+    <Property Name="PaisEmisor" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CodigoLDN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="SunatConvenio" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IndicadorRegistroManual" Type="Int32" />
+    <Property Name="IndicadorFallecido" Type="Int32" />
+    <Property Name="IndicadorSinCorreo" Type="Int32" />
+    <Property Name="CorreoFacturacionElectronica" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="IndicadorUnificado" Type="Int32" />
+    <Property Name="FEC_MOD_TRIGGER" Type="DateTime" Precision="3" />
+    <Property Name="SituacionDuplicado" Type="Int32" />
+    <Property Name="FechaUnificacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioUnificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ValidadoOUHC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FuenteOUHC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UsuarioOUHC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaOUHC" Type="DateTime" Precision="3" />
+    <Property Name="TipoDocumentoMedicoTrama" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentoMedicoTrama" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="ClinicaElGolfEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PersonaMast" EntityType="Self.PersonaMast" />
+    <FunctionImport Name="USP_SS_HC_ATENCIONES_SOA" EntitySet="VW_ATENCIONPACIENTE_GENERAL" ReturnType="Collection(ClinicaElGolfModel.VW_ATENCIONPACIENTE_GENERAL)">
+      <Parameter Name="tipoListado" Mode="In" Type="String" />
+      <Parameter Name="CitaTipo" Mode="In" Type="String" />
+      <Parameter Name="CitaFecha" Mode="In" Type="DateTime" />
+      <Parameter Name="Origen" Mode="In" Type="String" />
+      <Parameter Name="NombreEspecialidad" Mode="In" Type="String" />
+      <Parameter Name="TipoPacienteNombre" Mode="In" Type="String" />
+      <Parameter Name="CodigoOA" Mode="In" Type="String" />
+      <Parameter Name="Cama" Mode="In" Type="String" />
+      <Parameter Name="TipoOrdenAtencionNombre" Mode="In" Type="String" />
+      <Parameter Name="CodigoHC" Mode="In" Type="String" />
+      <Parameter Name="PacienteNombre" Mode="In" Type="String" />
+      <Parameter Name="MedicoNombre" Mode="In" Type="String" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdHospitalizacion" Mode="In" Type="Int32" />
+      <Parameter Name="IdCita" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="TipoPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Componente" Mode="In" Type="String" />
+      <Parameter Name="Compania" Mode="In" Type="String" />
+      <Parameter Name="Sucursal" Mode="In" Type="String" />
+      <Parameter Name="EstadoPersona" Mode="In" Type="String" />
+      <Parameter Name="EstadoEpiClinico" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="UnidadReplicacionEC" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstablecimientoSalud" Mode="In" Type="Int32" />
+      <Parameter Name="IdUnidadServicio" Mode="In" Type="Int32" />
+      <Parameter Name="IdPersonalSalud" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="FechaRegistro" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaAtencion" Mode="In" Type="DateTime" />
+      <Parameter Name="EstadoEpiAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+      <Parameter Name="CodigoHCAnterior" Mode="In" Type="String" />
+      <Parameter Name="IndicadorCirugia" Mode="In" Type="Int32" />
+      <Parameter Name="IndicadorExamenPrincipal" Mode="In" Type="Int32" />
+      <Parameter Name="IndicadorSeguro" Mode="In" Type="Int32" />
+      <Parameter Name="Modalidad" Mode="In" Type="Int32" />
+      <Parameter Name="sexo" Mode="In" Type="String" />
+      <Parameter Name="EstadoCivil" Mode="In" Type="String" />
+      <Parameter Name="NivelInstruccion" Mode="In" Type="String" />
+      <Parameter Name="EsPaciente" Mode="In" Type="String" />
+      <Parameter Name="EsEmpresa" Mode="In" Type="String" />
+      <Parameter Name="Inicio" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFilas" Mode="In" Type="Int32" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="VW_ATENCIONPACIENTE_GENERAL" EntityType="ClinicaElGolfModel.VW_ATENCIONPACIENTE_GENERAL" />
+    <FunctionImport Name="SP_HCE_ITListarValidacionEmergencia" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdConsultaExterna" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Linea" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOrdenMedica" Mode="In" Type="Int32" />
+      <Parameter Name="Componente" Mode="In" Type="String" />
+      <Parameter Name="TipoInterConsulta" Mode="In" Type="Int32" />
+      <Parameter Name="Medico" Mode="In" Type="Int32" />
+      <Parameter Name="Especialidad" Mode="In" Type="Int32" />
+      <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="MedicoResponsable" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="SecuenciaHCE" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="Version" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_HCE_SPRINGRECETAConsultaExternaV2" ReturnType="Collection(Int32)">
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOA" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Componente" Mode="In" Type="String" />
+      <Parameter Name="Unidadmedida" Mode="In" Type="Int32" />
+      <Parameter Name="linea" Mode="In" Type="String" />
+      <Parameter Name="Familia" Mode="In" Type="String" />
+      <Parameter Name="Subfamilia" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="String" />
+      <Parameter Name="Via" Mode="In" Type="Int32" />
+      <Parameter Name="Dosis" Mode="In" Type="String" />
+      <Parameter Name="Diastratamiento" Mode="In" Type="String" />
+      <Parameter Name="Frecuencia" Mode="In" Type="String" />
+      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="IndicacionEspecifica" Mode="In" Type="String" />
+      <Parameter Name="lineamax" Mode="In" Type="Int32" />
+      <Parameter Name="TIPOORDENATENCION" Mode="In" Type="Int32" />
+      <Parameter Name="SecuenciaHCE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_FirmarTriajeSpring" ReturnType="Collection(Int32)">
+      <Parameter Name="IdTriaje" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo" Mode="In" Type="Int32" />
+      <Parameter Name="RutaFoto" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="TamanoImagen" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspisodioTriajeHCE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_GE_PacienteSpring" ReturnType="Collection(Int32)">
+      <Parameter Name="Persona" Mode="In" Type="Int32" />
+      <Parameter Name="ApellidoPaterno" Mode="In" Type="String" />
+      <Parameter Name="ApellidoMaterno" Mode="In" Type="String" />
+      <Parameter Name="NombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="TipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="Documento" Mode="In" Type="String" />
+      <Parameter Name="CodigoBarras" Mode="In" Type="String" />
+      <Parameter Name="EsCliente" Mode="In" Type="String" />
+      <Parameter Name="EsEmpleado" Mode="In" Type="String" />
+      <Parameter Name="EsOtro" Mode="In" Type="String" />
+      <Parameter Name="TipoPersona" Mode="In" Type="String" />
+      <Parameter Name="EsProveedor" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="CiudadNacimiento" Mode="In" Type="String" />
+      <Parameter Name="Sexo" Mode="In" Type="String" />
+      <Parameter Name="Nacionalidad" Mode="In" Type="String" />
+      <Parameter Name="EstadoCivil" Mode="In" Type="String" />
+      <Parameter Name="NivelInstruccion" Mode="In" Type="String" />
+      <Parameter Name="Direccion" Mode="In" Type="String" />
+      <Parameter Name="CodigoPostal" Mode="In" Type="String" />
+      <Parameter Name="Provincia" Mode="In" Type="String" />
+      <Parameter Name="Departamento" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="DocumentoFiscal" Mode="In" Type="String" />
+      <Parameter Name="DocumentoIdentidad" Mode="In" Type="String" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+      <Parameter Name="edad" Mode="In" Type="Int32" />
+      <Parameter Name="rangoEtario" Mode="In" Type="String" />
+      <Parameter Name="TipoMedico" Mode="In" Type="Int32" />
+      <Parameter Name="Correcion" Mode="In" Type="Int32" />
+      <Parameter Name="EsPaciente" Mode="In" Type="String" />
+      <Parameter Name="EsEmpresa" Mode="In" Type="String" />
+      <Parameter Name="Pais" Mode="In" Type="String" />
+      <Parameter Name="FlagActualizacion" Mode="In" Type="String" />
+      <Parameter Name="CuentaMonedaLocal_tmp" Mode="In" Type="String" />
+      <Parameter Name="CuentaMonedaExtranjera_tmp" Mode="In" Type="String" />
+      <Parameter Name="CorrelativoSCTR" Mode="In" Type="String" />
+      <Parameter Name="SeguroDiscamec" Mode="In" Type="String" />
+      <Parameter Name="CodDiscamec" Mode="In" Type="String" />
+      <Parameter Name="FecIniDiscamec" Mode="In" Type="DateTime" />
+      <Parameter Name="FecFinDiscamec" Mode="In" Type="DateTime" />
+      <Parameter Name="LugarNacimiento" Mode="In" Type="String" />
+      <Parameter Name="Celular" Mode="In" Type="String" />
+      <Parameter Name="CelularEmergencia" Mode="In" Type="String" />
+      <Parameter Name="ParentescoEmergencia" Mode="In" Type="String" />
+      <Parameter Name="DireccionReferencia" Mode="In" Type="String" />
+      <Parameter Name="UltimaFechaModif" Mode="In" Type="DateTime" />
+      <Parameter Name="TipoPersonaUsuario" Mode="In" Type="String" />
+      <Parameter Name="UltimoUsuario" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+      <Parameter Name="DireccionEmergencia" Mode="In" Type="String" />
+      <Parameter Name="TelefonoEmergencia" Mode="In" Type="String" />
+      <Parameter Name="BancoMonedaLocal" Mode="In" Type="String" />
+      <Parameter Name="TipoCuentaLocal" Mode="In" Type="String" />
+      <Parameter Name="CuentaMonedaLocal" Mode="In" Type="String" />
+      <Parameter Name="BancoMonedaExtranjera" Mode="In" Type="String" />
+      <Parameter Name="TipoCuentaExtranjera" Mode="In" Type="String" />
+      <Parameter Name="CuentaMonedaExtranjera" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="EnfermedadGraveFlag" Mode="In" Type="String" />
+      <Parameter Name="IngresoFechaRegistro" Mode="In" Type="DateTime" />
+      <Parameter Name="IngresoAplicacionCodigo" Mode="In" Type="String" />
+      <Parameter Name="IngresoUsuario" Mode="In" Type="String" />
+      <Parameter Name="PYMEFlag" Mode="In" Type="String" />
+      <Parameter Name="Paciente" Mode="In" Type="Int32" />
+      <Parameter Name="TipoPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Raza" Mode="In" Type="String" />
+      <Parameter Name="AreaLaboral" Mode="In" Type="String" />
+      <Parameter Name="Ocupacion" Mode="In" Type="String" />
+      <Parameter Name="CodigoHC" Mode="In" Type="String" />
+      <Parameter Name="CodigoHCAnterior" Mode="In" Type="String" />
+      <Parameter Name="CodigoHCSecundario" Mode="In" Type="String" />
+      <Parameter Name="TipoAlmacenamiento" Mode="In" Type="String" />
+      <Parameter Name="TipoHistoria" Mode="In" Type="String" />
+      <Parameter Name="TipoSituacion" Mode="In" Type="String" />
+      <Parameter Name="IdUbicacion" Mode="In" Type="Int32" />
+      <Parameter Name="LugarProcedencia" Mode="In" Type="String" />
+      <Parameter Name="RutaFoto" Mode="In" Type="String" />
+      <Parameter Name="EstadoPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFile" Mode="In" Type="Int32" />
+      <Parameter Name="Servicio" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="IndicadorAsistencia" Mode="In" Type="Int32" />
+      <Parameter Name="CantidadAsistencia" Mode="In" Type="Int32" />
+      <Parameter Name="UbicacionHHCC" Mode="In" Type="Int32" />
+      <Parameter Name="IndicadorMigradoSiteds" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroCaja" Mode="In" Type="String" />
+      <Parameter Name="IndicadorCodigoBarras" Mode="In" Type="Int32" />
+      <Parameter Name="IDPACIENTE_OK" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoAsegurado" Mode="In" Type="String" />
+      <Parameter Name="NumeroPoliza" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroCertificado" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoProducto" Mode="In" Type="String" />
+      <Parameter Name="CodigoPlan" Mode="In" Type="String" />
+      <Parameter Name="TipoParentesco" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoBeneficio" Mode="In" Type="String" />
+      <Parameter Name="Situacion" Mode="In" Type="Int32" />
+      <Parameter Name="TomoActual" Mode="In" Type="Int32" />
+      <Parameter Name="IndicadorHistoriaFisica" Mode="In" Type="Int32" />
+      <Parameter Name="DescripcionHistoria" Mode="In" Type="String" />
+      <Parameter Name="PersonaAnt" Mode="In" Type="String" />
+      <Parameter Name="Nombres" Mode="In" Type="String" />
+      <Parameter Name="Busqueda" Mode="In" Type="String" />
+      <Parameter Name="IdPersonal" Mode="In" Type="Int32" />
+      <Parameter Name="AtencionLugar" Mode="In" Type="String" />
+      <Parameter Name="Atencion" Mode="In" Type="String" />
+      <Parameter Name="IdEstablecimientoIngreso" Mode="In" Type="String" />
+      <Parameter Name="IdServicioIngreso" Mode="In" Type="String" />
+      <Parameter Name="Prestacion" Mode="In" Type="String" />
+      <Parameter Name="Destino" Mode="In" Type="String" />
+      <Parameter Name="NroAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="Monto" Mode="In" Type="Decimal" />
+      <Parameter Name="FechaIngresoHosp" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaCorteHosp" Mode="In" Type="DateTime" />
+      <Parameter Name="Establecimiento01" Mode="In" Type="String" />
+      <Parameter Name="ReferenciaHoja01" Mode="In" Type="String" />
+      <Parameter Name="Establecimiento02" Mode="In" Type="String" />
+      <Parameter Name="ReferenciaHoja02" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_SS_GE_PacienteSpring" ReturnType="Collection(Int32)">
+      <Parameter Name="Persona" Mode="In" Type="Int32" />
+      <Parameter Name="ApellidoPaterno" Mode="In" Type="String" />
+      <Parameter Name="ApellidoMaterno" Mode="In" Type="String" />
+      <Parameter Name="NombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="TipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="Documento" Mode="In" Type="String" />
+      <Parameter Name="CodigoBarras" Mode="In" Type="String" />
+      <Parameter Name="EsCliente" Mode="In" Type="String" />
+      <Parameter Name="EsEmpleado" Mode="In" Type="String" />
+      <Parameter Name="EsOtro" Mode="In" Type="String" />
+      <Parameter Name="TipoPersona" Mode="In" Type="String" />
+      <Parameter Name="EsProveedor" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="CiudadNacimiento" Mode="In" Type="String" />
+      <Parameter Name="Sexo" Mode="In" Type="String" />
+      <Parameter Name="Nacionalidad" Mode="In" Type="String" />
+      <Parameter Name="EstadoCivil" Mode="In" Type="String" />
+      <Parameter Name="NivelInstruccion" Mode="In" Type="String" />
+      <Parameter Name="Direccion" Mode="In" Type="String" />
+      <Parameter Name="CodigoPostal" Mode="In" Type="String" />
+      <Parameter Name="Provincia" Mode="In" Type="String" />
+      <Parameter Name="Departamento" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="DocumentoFiscal" Mode="In" Type="String" />
+      <Parameter Name="DocumentoIdentidad" Mode="In" Type="String" />
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+      <Parameter Name="edad" Mode="In" Type="Int32" />
+      <Parameter Name="rangoEtario" Mode="In" Type="String" />
+      <Parameter Name="TipoMedico" Mode="In" Type="Int32" />
+      <Parameter Name="Correcion" Mode="In" Type="Int32" />
+      <Parameter Name="EsPaciente" Mode="In" Type="String" />
+      <Parameter Name="EsEmpresa" Mode="In" Type="String" />
+      <Parameter Name="Pais" Mode="In" Type="String" />
+      <Parameter Name="FlagActualizacion" Mode="In" Type="String" />
+      <Parameter Name="CuentaMonedaLocal_tmp" Mode="In" Type="String" />
+      <Parameter Name="CuentaMonedaExtranjera_tmp" Mode="In" Type="String" />
+      <Parameter Name="CorrelativoSCTR" Mode="In" Type="String" />
+      <Parameter Name="SeguroDiscamec" Mode="In" Type="String" />
+      <Parameter Name="CodDiscamec" Mode="In" Type="String" />
+      <Parameter Name="FecIniDiscamec" Mode="In" Type="DateTime" />
+      <Parameter Name="FecFinDiscamec" Mode="In" Type="DateTime" />
+      <Parameter Name="LugarNacimiento" Mode="In" Type="String" />
+      <Parameter Name="Celular" Mode="In" Type="String" />
+      <Parameter Name="CelularEmergencia" Mode="In" Type="String" />
+      <Parameter Name="ParentescoEmergencia" Mode="In" Type="String" />
+      <Parameter Name="DireccionReferencia" Mode="In" Type="String" />
+      <Parameter Name="UltimaFechaModif" Mode="In" Type="DateTime" />
+      <Parameter Name="TipoPersonaUsuario" Mode="In" Type="String" />
+      <Parameter Name="UltimoUsuario" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+      <Parameter Name="DireccionEmergencia" Mode="In" Type="String" />
+      <Parameter Name="TelefonoEmergencia" Mode="In" Type="String" />
+      <Parameter Name="BancoMonedaLocal" Mode="In" Type="String" />
+      <Parameter Name="TipoCuentaLocal" Mode="In" Type="String" />
+      <Parameter Name="CuentaMonedaLocal" Mode="In" Type="String" />
+      <Parameter Name="BancoMonedaExtranjera" Mode="In" Type="String" />
+      <Parameter Name="TipoCuentaExtranjera" Mode="In" Type="String" />
+      <Parameter Name="CuentaMonedaExtranjera" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="EnfermedadGraveFlag" Mode="In" Type="String" />
+      <Parameter Name="IngresoFechaRegistro" Mode="In" Type="DateTime" />
+      <Parameter Name="IngresoAplicacionCodigo" Mode="In" Type="String" />
+      <Parameter Name="IngresoUsuario" Mode="In" Type="String" />
+      <Parameter Name="PYMEFlag" Mode="In" Type="String" />
+      <Parameter Name="Paciente" Mode="In" Type="Int32" />
+      <Parameter Name="TipoPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Raza" Mode="In" Type="String" />
+      <Parameter Name="AreaLaboral" Mode="In" Type="String" />
+      <Parameter Name="Ocupacion" Mode="In" Type="String" />
+      <Parameter Name="CodigoHC" Mode="In" Type="String" />
+      <Parameter Name="CodigoHCAnterior" Mode="In" Type="String" />
+      <Parameter Name="CodigoHCSecundario" Mode="In" Type="String" />
+      <Parameter Name="TipoAlmacenamiento" Mode="In" Type="String" />
+      <Parameter Name="TipoHistoria" Mode="In" Type="String" />
+      <Parameter Name="TipoSituacion" Mode="In" Type="String" />
+      <Parameter Name="IdUbicacion" Mode="In" Type="Int32" />
+      <Parameter Name="LugarProcedencia" Mode="In" Type="String" />
+      <Parameter Name="RutaFoto" Mode="In" Type="String" />
+      <Parameter Name="EstadoPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFile" Mode="In" Type="Int32" />
+      <Parameter Name="Servicio" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="IndicadorAsistencia" Mode="In" Type="Int32" />
+      <Parameter Name="CantidadAsistencia" Mode="In" Type="Int32" />
+      <Parameter Name="UbicacionHHCC" Mode="In" Type="Int32" />
+      <Parameter Name="IndicadorMigradoSiteds" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroCaja" Mode="In" Type="String" />
+      <Parameter Name="IndicadorCodigoBarras" Mode="In" Type="Int32" />
+      <Parameter Name="IDPACIENTE_OK" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoAsegurado" Mode="In" Type="String" />
+      <Parameter Name="NumeroPoliza" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroCertificado" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoProducto" Mode="In" Type="String" />
+      <Parameter Name="CodigoPlan" Mode="In" Type="String" />
+      <Parameter Name="TipoParentesco" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoBeneficio" Mode="In" Type="String" />
+      <Parameter Name="Situacion" Mode="In" Type="Int32" />
+      <Parameter Name="TomoActual" Mode="In" Type="Int32" />
+      <Parameter Name="IndicadorHistoriaFisica" Mode="In" Type="Int32" />
+      <Parameter Name="DescripcionHistoria" Mode="In" Type="String" />
+      <Parameter Name="PersonaAnt" Mode="In" Type="String" />
+      <Parameter Name="Nombres" Mode="In" Type="String" />
+      <Parameter Name="Busqueda" Mode="In" Type="String" />
+      <Parameter Name="IdPersonal" Mode="In" Type="Int32" />
+      <Parameter Name="AtencionLugar" Mode="In" Type="String" />
+      <Parameter Name="Atencion" Mode="In" Type="String" />
+      <Parameter Name="IdEstablecimientoIngreso" Mode="In" Type="String" />
+      <Parameter Name="IdServicioIngreso" Mode="In" Type="String" />
+      <Parameter Name="Prestacion" Mode="In" Type="String" />
+      <Parameter Name="Destino" Mode="In" Type="String" />
+      <Parameter Name="NroAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="Monto" Mode="In" Type="Decimal" />
+      <Parameter Name="FechaIngresoHosp" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaCorteHosp" Mode="In" Type="DateTime" />
+      <Parameter Name="Establecimiento01" Mode="In" Type="String" />
+      <Parameter Name="ReferenciaHoja01" Mode="In" Type="String" />
+      <Parameter Name="Establecimiento02" Mode="In" Type="String" />
+      <Parameter Name="ReferenciaHoja02" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_FirmarTriajeSpring" ReturnType="Collection(Int32)">
+      <Parameter Name="IdTriaje" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo" Mode="In" Type="Int32" />
+      <Parameter Name="RutaFoto" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="TamanoImagen" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspisodioTriajeHCE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_TriajeHceSpring" ReturnType="Collection(Int32)">
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="Hora" Mode="In" Type="Time" />
+      <Parameter Name="NivelTriaje" Mode="In" Type="Int32" />
+      <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UnidadReplicaciom" Mode="In" Type="String" />
+      <Parameter Name="PresionMinima" Mode="In" Type="Int32" />
+      <Parameter Name="PresionMaxima" Mode="In" Type="Int32" />
+      <Parameter Name="Pulso" Mode="In" Type="Int32" />
+      <Parameter Name="Respiracion" Mode="In" Type="Int32" />
+      <Parameter Name="Temperatura" Mode="In" Type="Decimal" />
+      <Parameter Name="SaturacionMaxima" Mode="In" Type="Decimal" />
+      <Parameter Name="Sintomas" Mode="In" Type="String" />
+      <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="IndAproTriaje" Mode="In" Type="Int32" />
+      <Parameter Name="Sucursal" Mode="In" Type="String" />
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdEpisodioTriajeHCE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="SS_CE_Triaje" EntityType="ClinicaElGolfModel.SS_CE_Triaje" />
+    <EntitySet Name="SS_CE_TriajeAntecedentesAlergias" EntityType="ClinicaElGolfModel.SS_CE_TriajeAntecedentesAlergias" />
+    <EntitySet Name="SS_CE_TriajeControl" EntityType="ClinicaElGolfModel.SS_CE_TriajeControl" />
+    <EntitySet Name="SS_CE_TriajeFirma" EntityType="ClinicaElGolfModel.SS_CE_TriajeFirma" />
+    <AssociationSet Name="FK_SS_CE_TriajeControl" Association="ClinicaElGolfModel.FK_SS_CE_TriajeControl">
+      <End Role="SS_CE_Triaje" EntitySet="SS_CE_Triaje" />
+      <End Role="SS_CE_TriajeControl" EntitySet="SS_CE_TriajeControl" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="VW_ATENCIONPACIENTE_GENERAL">
+    <Key>
+      <PropertyRef Name="tipoListado" />
+      <PropertyRef Name="Origen" />
+      <PropertyRef Name="IdOrdenAtencion" />
+      <PropertyRef Name="LineaOrdenAtencion" />
+      <PropertyRef Name="IdHospitalizacion" />
+      <PropertyRef Name="LineaHospitalizacion" />
+      <PropertyRef Name="IndicadorCirugia" />
+      <PropertyRef Name="IndicadorExamenPrincipal" />
+      <PropertyRef Name="Contador" />
+      <PropertyRef Name="NumeroFila" />
+    </Key>
+    <Property Name="tipoListado" Type="String" Nullable="false" MaxLength="21" FixedLength="false" Unicode="false" />
+    <Property Name="CitaTipo" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CitaFecha" Type="DateTime" Precision="3" />
+    <Property Name="CitaHora" Type="DateTime" Precision="3" />
+    <Property Name="Origen" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="NombreEspecialidad" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="TipoPacienteNombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoOA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="Cama" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TipoOrdenAtencionNombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoHC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoHCAnterior" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PacienteNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MedicoNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
+    <Property Name="LineaOrdenAtencion" Type="Int32" Nullable="false" />
+    <Property Name="IdHospitalizacion" Type="Int32" Nullable="false" />
+    <Property Name="LineaHospitalizacion" Type="Int32" Nullable="false" />
+    <Property Name="IdConsultaExterna" Type="Int32" />
+    <Property Name="IdProcedimiento" Type="Int32" />
+    <Property Name="Modalidad" Type="Int32" />
+    <Property Name="IndicadorSeguro" Type="Int32" />
+    <Property Name="IdCita" Type="Int32" />
+    <Property Name="IdPaciente" Type="Int32" />
+    <Property Name="TipoPaciente" Type="Int32" />
+    <Property Name="TipoAtencion" Type="Int32" />
+    <Property Name="IdEspecialidad" Type="Int32" />
+    <Property Name="IdEmpresaAseguradora" Type="Int32" />
+    <Property Name="TipoOrdenAtencion" Type="Int32" />
+    <Property Name="Componente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ComponenteNombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Compania" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IdMedico" Type="Int32" />
+    <Property Name="IndicadorCirugia" Type="Int32" Nullable="false" />
+    <Property Name="IndicadorExamenPrincipal" Type="Int32" Nullable="false" />
+    <Property Name="PersonaAnt" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+    <Property Name="EstadoCivil" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NivelInstruccion" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="190" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDocumento" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Documento" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="LugarNacimiento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoPostal" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Provincia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Departamento" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CorreoElectronico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EsPaciente" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="EsEmpresa" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Pais" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="EstadoPersona" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FechaCierreEpiClinico" Type="DateTime" Precision="3" />
+    <Property Name="EstadoEpiClinico" Type="Int32" />
+    <Property Name="UnidadReplicacion" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="UnidadReplicacionEC" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" />
+    <Property Name="EpisodioClinico" Type="Int32" />
+    <Property Name="IdEstablecimientoSalud" Type="Int32" />
+    <Property Name="IdUnidadServicio" Type="Int32" />
+    <Property Name="IdPersonalSalud" Type="Int32" />
+    <Property Name="EpisodioAtencion" Type="Int64" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="FechaAtencion" Type="DateTime" Precision="3" />
+    <Property Name="EstadoEpiAtencion" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaFin" Type="DateTime" Precision="3" />
+    <Property Name="FechaOrden" Type="DateTime" Precision="3" />
+    <Property Name="Comentarios" Type="Int32" />
+    <Property Name="Observaciones" Type="Int32" />
+    <Property Name="Diagnostico" Type="Int32" />
+    <Property Name="UnidadReplicacionHCE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdPacienteHCE" Type="Int32" />
+    <Property Name="EpisodioClinicoHCE" Type="Int32" />
+    <Property Name="IdEpisodioAtencionHCE" Type="Int64" />
+    <Property Name="SecuenciaHCE" Type="Int32" />
+    <Property Name="CodigoEpisodioClinico" Type="Int32" />
+    <Property Name="Contador" Type="Int32" Nullable="false" />
+    <Property Name="NumeroFila" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SS_CE_Triaje">
+    <Key>
+      <PropertyRef Name="IdTriaje" />
+    </Key>
+    <Property Name="IdTriaje" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="Hora" Type="Time" Precision="7" />
+    <Property Name="IdPaciente" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="NivelTriaje" Type="Int32" />
+    <Property Name="Observacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IdOrdenAtencion" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="EstadoDocumento" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="UnidadReplicacion" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="PresionMinima" Type="Int32" />
+    <Property Name="PresionMaxima" Type="Int32" />
+    <Property Name="Pulso" Type="Int32" />
+    <Property Name="Respiracion" Type="Int32" />
+    <Property Name="Temperatura" Type="Decimal" Precision="20" Scale="6" />
+    <Property Name="SaturacionMinima" Type="Decimal" Precision="20" Scale="6" />
+    <Property Name="SaturacionMaxima" Type="Decimal" Precision="20" Scale="6" />
+    <Property Name="TiempoEnfermedad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sintomas" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AntcedentesAlergias" Type="String" MaxLength="2000" FixedLength="true" Unicode="false" />
+    <Property Name="Especialidad" Type="Int32" />
+    <Property Name="EstadoDocumentoAnterior" Type="Int32" />
+    <Property Name="indalergiamedicamento" Type="Int32" />
+    <Property Name="alergiamedicamento1" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="alergiamedicamento2" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="alergiamedicamento3" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="alergiamedicamento4" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="alergiamedicamento5" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="indmedicamentoregular" Type="Int32" />
+    <Property Name="medicamentoregular1" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular1dosis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular1frecuencia" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular1via" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular2" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular2dosis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular2frecuencia" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular2via" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular3" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular3dosis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular3frecuencia" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular3via" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular4" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular4dosis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular4frecuencia" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular4via" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular5" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular5dosis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular5frecuencia" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular5via" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="indtransfusionessanguineas" Type="Int32" />
+    <Property Name="indproblematransfusion" Type="Int32" />
+    <Property Name="indalergiaalimento" Type="Int32" />
+    <Property Name="indalergiacontacto" Type="Int32" />
+    <Property Name="IndAprobacionAlergia" Type="Int32" />
+    <Property Name="IndCopiaCE" Type="Int32" />
+    <Property Name="IndAprobacionTriaje" Type="Int32" />
+    <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="usuariofirma" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="alergiacontacto" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SS_CE_TriajeControl" Relationship="ClinicaElGolfModel.FK_SS_CE_TriajeControl" FromRole="SS_CE_Triaje" ToRole="SS_CE_TriajeControl" />
+  </EntityType>
+  <EntityType Name="SS_CE_TriajeAntecedentesAlergias">
+    <Key>
+      <PropertyRef Name="idalergia" />
+    </Key>
+    <Property Name="idalergia" Type="Decimal" Nullable="false" Precision="14" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idtriaje" Type="Decimal" Precision="14" Scale="0" />
+    <Property Name="idordenatencion" Type="Decimal" Precision="14" Scale="0" />
+    <Property Name="idpaciente" Type="Decimal" Precision="14" Scale="0" />
+    <Property Name="indalergiamedicamento" Type="Int32" />
+    <Property Name="alergiamedicamento1" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="alergiamedicamento2" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="alergiamedicamento3" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="alergiamedicamento4" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="alergiamedicamento5" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="indmedicamentoregular" Type="Int32" />
+    <Property Name="medicamentoregular1" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular1dosis" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular1frecuencia" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular1via" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular2" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular2dosis" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular2frecuencia" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular2via" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular3" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular3dosis" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular3frecuencia" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular3via" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular4" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular4dosis" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular4frecuencia" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular4via" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular5" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular5dosis" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular5frecuencia" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="medicamentoregular5via" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="indtransfusionessanguineas" Type="Int32" />
+    <Property Name="indproblematransfusion" Type="Int32" />
+    <Property Name="indalergiaalimento" Type="Int32" />
+    <Property Name="indalergiacontacto" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SS_CE_TriajeControl">
+    <Key>
+      <PropertyRef Name="IdDocumento" />
+      <PropertyRef Name="Secuencial" />
+    </Key>
+    <Property Name="IdDocumento" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="Secuencial" Type="Int32" Nullable="false" />
+    <Property Name="FechaControl" Type="DateTime" Precision="3" />
+    <Property Name="Observacion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IdUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoDocumento" Type="Int32" />
+    <Property Name="EstadoDocumentoAnterior" Type="Int32" />
+    <Property Name="IndicadorRetorno" Type="Int32" />
+    <Property Name="Periodo" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="UnidadReplicacion" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="SS_CE_Triaje" Relationship="ClinicaElGolfModel.FK_SS_CE_TriajeControl" FromRole="SS_CE_TriajeControl" ToRole="SS_CE_Triaje" />
+  </EntityType>
+  <EntityType Name="SS_CE_TriajeFirma">
+    <Key>
+      <PropertyRef Name="IdTriaje" />
+      <PropertyRef Name="Tipo" />
+    </Key>
+    <Property Name="IdTriaje" Type="Int32" Nullable="false" />
+    <Property Name="Tipo" Type="Int32" Nullable="false" />
+    <Property Name="RutaFoto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="TamanoImagen" Type="Int32" />
+    <Property Name="IdEpisodioTriajeHCE" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_SS_CE_TriajeControl">
+    <End Type="ClinicaElGolfModel.SS_CE_Triaje" Role="SS_CE_Triaje" Multiplicity="1" />
+    <End Type="ClinicaElGolfModel.SS_CE_TriajeControl" Role="SS_CE_TriajeControl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SS_CE_Triaje">
+        <PropertyRef Name="IdTriaje" />
+      </Principal>
+      <Dependent Role="SS_CE_TriajeControl">
+        <PropertyRef Name="IdDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

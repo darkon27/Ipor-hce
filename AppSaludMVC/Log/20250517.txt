@@ -1,0 +1,52 @@
+ASP.reportes_visorreporteshce_aspx 19:37:45
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 19:41:38
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 19:44:26
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 19:47:05
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 21:51:30
+Page_Init - El sistema no puede encontrar la ruta especificada.
+
+ASP.reportes_visorreporteshce_aspx 21:53:35
+Page_Init - El sistema no puede encontrar la ruta especificada.
+
+ASP.reportes_visorreporteshce_aspx 22:17:31
+Page_Init - La conversión especificada no es válida.
+
+ASP.reportes_visorreporteshce_aspx 22:19:10
+Page_Init - La conversión especificada no es válida.
+
+ASP.reportes_visorreporteshce_aspx 22:20:46
+Page_Init - El valor no puede ser nulo.
+Nombre del parámetro: url
+
+ASP.reportes_visorreporteshce_aspx 22:21:02
+Page_Init - La conversión especificada no es válida.
+
+ASP.reportes_visorreporteshce_aspx 22:39:28
+Page_Init - El sistema no puede encontrar la ruta especificada.
+
+ASP.reportes_visorreporteshce_aspx 22:50:06
+Page_Init - El sistema no puede encontrar la ruta especificada.
+
+ASP.reportes_visorreporteshce_aspx 23:09:41
+Page_Init - An error occurred while executing the command definition. See the inner exception for details.
+
+ASP.reportes_visorreporteshce_aspx 23:20:31
+Page_Init - An error occurred while executing the command definition. See the inner exception for details.
+
+ASP.reportes_visorreporteshce_aspx 23:22:10
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 23:22:33
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 23:31:59
+Page_Init - Subproceso anulado.
+

@@ -1,0 +1,14 @@
+D:\Desarrollo\SANNA\PRODUCCION\sanna-hce\SoluccionSalud.SOA.Entidades\bin\Debug\SoluccionSalud.SOA.Entidades.dll
+D:\Desarrollo\SANNA\PRODUCCION\sanna-hce\SoluccionSalud.SOA.Entidades\bin\Debug\SoluccionSalud.SOA.Entidades.pdb
+D:\Desarrollo\SANNA\PRODUCCION\sanna-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.dll
+D:\Desarrollo\SANNA\PRODUCCION\sanna-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.pdb
+D:\Desarrollo\SANNA\PRODUCCION\sanna-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.csprojResolveAssemblyReference.cache
+D:\Proyecto\IPOR\Ipor-hce\SoluccionSalud.SOA.Entidades\bin\Debug\SoluccionSalud.SOA.Entidades.dll
+D:\Proyecto\IPOR\Ipor-hce\SoluccionSalud.SOA.Entidades\bin\Debug\SoluccionSalud.SOA.Entidades.pdb
+D:\Proyecto\IPOR\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.dll
+D:\Proyecto\IPOR\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.pdb
+D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA.Entidades\bin\Debug\SoluccionSalud.SOA.Entidades.dll
+D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA.Entidades\bin\Debug\SoluccionSalud.SOA.Entidades.pdb
+D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.csprojResolveAssemblyReference.cache
+D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.dll
+D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.pdb

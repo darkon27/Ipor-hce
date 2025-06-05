@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ThinkNet.Unity</id>
+    <version>1.0.0</version>
+    <title>ThinkNet.Unity</title>
+    <authors>Sunsoft Studio(mail:young.han@foxmail.com)</authors>
+    <owners>Sunsoft Studio(mail:young.han@foxmail.com)</owners>
+    <licenseUrl>http://thinknet.codeplex.com/license</licenseUrl>
+    <projectUrl>http://thinknet.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ThinkNet integration with Microsoft.Practices.Unity.</description>
+    <summary>ThinkNet integration with Microsoft.Practices.Unity.</summary>
+    <copyright>Copyright © 2015 Sunsoft Studio</copyright>
+    <tags>ThinkNet</tags>
+    <dependencies>
+      <dependency id="Unity" version="2.1.505.2" />
+      <dependency id="Unity.Interception" version="2.1.505.2" />
+      <dependency id="ThinkNet" version="2.5.0" />
+    </dependencies>
+  </metadata>
+</package>

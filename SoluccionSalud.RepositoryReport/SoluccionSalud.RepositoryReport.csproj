@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD140CAA-2995-48CA-B261-24307A68388F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoluccionSalud.RepositoryReport</RootNamespace>
+    <AssemblyName>SoluccionSalud.RepositoryReport</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeFirstStoreFunctions">
+      <HintPath>..\packages\EntityFramework.CodeFirstStoreFunctions.1.0.0\lib\net45\CodeFirstStoreFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\rptViewAgrupadorEdit.cs" />
+    <Compile Include="Entidades\rptViewAlergias_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewAnamnesisAFEdit.cs" />
+    <Compile Include="Entidades\rptViewAnamnesisAPEdit.cs" />
+    <Compile Include="Entidades\rptViewAnamnesisEAEdit.cs" />
+    <Compile Include="Entidades\rptViewAnamnesis_AFAM_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewAntecedentesPersonalesFisiologicos_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewAntecedentesPersonalesPatologicosGenerales_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewAntFisiologicoPediatricoFEEdit.cs" />
+    <Compile Include="Entidades\rptViewApoyoDiagnostico_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewContrarReferencia_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewCuidadosPreventivoEdit.cs" />
+    <Compile Include="Entidades\rptViewDescansoMedico_FE_Edit.cs" />
+    <Compile Include="Entidades\rptViewDiagnosticoEdit.cs" />
+    <Compile Include="Entidades\rptViewDiagnostico_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewDieta_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewEmitirDescansoMedicoEdit.cs" />
+    <Compile Include="Entidades\rptViewEmitirDescansoMedicoFEEdit.cs" />
+    <Compile Include="Entidades\rptViewEscalaAltaCirugiaAmbulatoriaFEEdit.cs" />
+    <Compile Include="Entidades\rptViewEscalaStewart_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewEvolucionMedica_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewEvolucionObjetivaEdit.cs" />
+    <Compile Include="Entidades\rptViewExamenApoyoDiagnostico_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewExamenFisicoRegionalEdit.cs" />
+    <Compile Include="Entidades\rptViewExamenSolicitadoEdit.cs" />
+    <Compile Include="Entidades\rptViewExamenTriajeFisicoEdit.cs" />
+    <Compile Include="Entidades\rptViewImnunizaionNinio_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewInmunizacionAdulto_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewInterconsulta_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewMedicamentoEdit.cs" />
+    <Compile Include="Entidades\rptViewMedicamentos_Epi2_FE_Edit.cs" />
+    <Compile Include="Entidades\rptViewMedicamentos_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewProximaAtencionEdit.cs" />
+    <Compile Include="Entidades\rptViewProximaAtencion_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewReferencia_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewSeguridadCirugia_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewSolicitarReferenciaEdit.cs" />
+    <Compile Include="Entidades\rptViewSolicitudProductoEdit.cs" />
+    <Compile Include="Entidades\rptViewSolicitudTransfusional_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewSolucitudTransfusional_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewValoracionAM_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewValoracionMentalAM_FEEdit.cs" />
+    <Compile Include="Entidades\rptViewValoracionSocioFamAM_FEEdit.cs" />
+    <Compile Include="Entidades\rptView_ValoracionFuncionalAM_FEEdit.cs" />
+    <Compile Include="Entidades\SS_HC_EscalaStewart_FEEdit.cs" />
+    <Compile Include="ModelReportes.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelReportes.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelReportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelReportes.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes-Service\ServiceReportes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModelReportes.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelReportes.Context.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="ModelReportes.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelReportes.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelReportes.edmx.diagram">
+      <DependentUpon>ModelReportes.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoluccionSalud.Entidades\SoluccionSalud.Entidades.csproj">
+      <Project>{94c20b56-b046-491e-952c-5df50a53591a}</Project>
+      <Name>SoluccionSalud.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

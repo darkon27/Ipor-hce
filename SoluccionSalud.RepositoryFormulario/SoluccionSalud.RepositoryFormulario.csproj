@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CF56F08-414E-49E5-952A-CD88A840952C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoluccionSalud.RepositoryFormulario</RootNamespace>
+    <AssemblyName>SoluccionSalud.RepositoryFormulario</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Agregados\temporal\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL_Formularios\Anestesia_1_FERepository.cs" />
+    <Compile Include="DAL_Formularios\Anestesia_3_FERepository.cs" />
+    <Compile Include="DAL_Formularios\Epicrisis2FERepository.cs" />
+    <Compile Include="DAL_Formularios\EpidemiologiaCovid19FERepository.cs" />
+    <Compile Include="DAL_Formularios\EpisodioNotificacionesRepository.cs" />
+    <Compile Include="DAL_Formularios\EpisodioTriajeRepository.cs" />
+    <Compile Include="DAL_Formularios\EvolucionMedicaFEReposity.cs" />
+    <Compile Include="DAL_Formularios\Epicrisis_1_FERepository.cs" />
+    <Compile Include="DAL_Formularios\NotaEnfermeriaFERepository.cs" />
+    <Compile Include="DAL_Formularios\OrdenIntervencionQuirurgica_FERepository.cs" />
+    <Compile Include="DAL_Formularios\ResumendelParto2FERepository.cs" />
+    <Compile Include="DAL_Formularios\ResumendelParto3FERepository.cs" />
+    <Compile Include="DAL_Formularios\SolicitudTransfusionalFE2Repository.cs" />
+    <Compile Include="DAL_Formularios\SS_HC_FuncionesVitales_FEClaas.cs" />
+    <Compile Include="DAL_Formularios\SvcReferencia_FEService.cs" />
+    <Compile Include="DAL_Formularios\TriajeEmergenciaFERepository.cs" />
+    <Compile Include="DAL_Formularios\TriajeAlergiaRepository.cs" />
+    <Compile Include="DAL_Formularios\AlergiaRepository.cs" />
+    <Compile Include="DAL_Formularios\AnamnesisAFFERepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL_Formularios\Anam_AP_PatologicosGeneralesFERepository.cs" />
+    <Compile Include="DAL_Formularios\Anestesia4FERepository.cs" />
+    <Compile Include="DAL_Formularios\AntecedentesFisiologicoPediatricoFERepository.cs" />
+    <Compile Include="DAL_Formularios\AntecedentesPersonalesFisiologicos_FERepository.cs" />
+    <Compile Include="DAL_Formularios\AntecedentesPersonalesIAdulFERepository.cs" />
+    <Compile Include="DAL_Formularios\AntecedentesPersonalesINFERepository.cs" />
+    <Compile Include="DAL_Formularios\AntePerGinecoObstetricosFERepository.cs" />
+    <Compile Include="DAL_Formularios\ApoyoDiagnosticoFERepository.cs" />
+    <Compile Include="DAL_Formularios\BalanceHidroelectroFERepository.cs" />
+    <Compile Include="DAL_Formularios\Contrarreferencia2FERepository.cs" />
+    <Compile Include="DAL_Formularios\DALFormularios.cs" />
+    <Compile Include="DAL_Formularios\DescansoMedicoFERepository.cs" />
+    <Compile Include="DAL_Formularios\DiagnosticoFERepository.cs" />
+    <Compile Include="DAL_Formularios\Diagnostico_FERepository.cs" />
+    <Compile Include="DAL_Formularios\EnfermedadActualFERepository.cs" />
+    <Compile Include="DAL_Formularios\NotaIngresoFERepository.cs" />
+    <Compile Include="DAL_Formularios\Epicrisis3FERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaAldreteFERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaAltaCirugiaAmbulatoriaFERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaBromageFERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaGlasgowFERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaNortonFERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaRamsayFERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaSedacionRassFERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaStewartFERepository.cs" />
+    <Compile Include="DAL_Formularios\EscalaWoodDownesFERepository.cs" />
+    <Compile Include="DAL_Formularios\EvaluacionDolorEvaAdultosFERepository.cs" />
+    <Compile Include="DAL_Formularios\EvaluacionDolorEvaNeonatosPrematurosFERepository.cs" />
+    <Compile Include="DAL_Formularios\EvaluacionDolorEvaNiniosFERepository.cs" />
+    <Compile Include="DAL_Formularios\EvaluacionGradoDependenciaFERepository.cs" />
+    <Compile Include="DAL_Formularios\EvolucionObjetivaFERepository.cs" />
+    <Compile Include="DAL_Formularios\EvolucionObstetricaPuerperioFERepository.cs" />
+    <Compile Include="DAL_Formularios\ExamenClinicoFERepository.cs" />
+    <Compile Include="DAL_Formularios\ExamenSolicitadoFERepository.cs" />
+    <Compile Include="DAL_Formularios\FichaAnestesia2FERepository.cs" />
+    <Compile Include="DAL_Formularios\FichaAnestesia5FERepository.cs" />
+    <Compile Include="DAL_Formularios\FuncionesVitalesFERepository.cs" />
+    <Compile Include="DAL_Formularios\HojaRecienNacidoFERepository.cs" />
+    <Compile Include="DAL_Formularios\InformeAltaFERepository.cs" />
+    <Compile Include="DAL_Formularios\InmunizacionesNinioDetalleRepository.cs" />
+    <Compile Include="DAL_Formularios\InterConsultaFERepository.cs" />
+    <Compile Include="DAL_Formularios\Kardex3FERepository.cs" />
+    <Compile Include="DAL_Formularios\MedicamentoFERepository.cs" />
+    <Compile Include="DAL_Formularios\MedicamentoKardexRepository.cs" />
+    <Compile Include="DAL_Formularios\MonitoreoObsFERepository.cs" />
+    <Compile Include="DAL_Formularios\OftalmologicoFERepository.cs" />
+    <Compile Include="DAL_Formularios\PartogramaFERepository.cs" />
+    <Compile Include="DAL_Formularios\PreOperatorio1FERepository.cs" />
+    <Compile Include="DAL_Formularios\PreOperatorio2FERepository.cs" />
+    <Compile Include="DAL_Formularios\ProximaAtencionFERepository.cs" />
+    <Compile Include="DAL_Formularios\Referencia_FERepository.cs" />
+    <Compile Include="DAL_Formularios\ResumenPartoFERepository.cs" />
+    <Compile Include="DAL_Formularios\RetiroVoluntarioFERepository.cs" />
+    <Compile Include="DAL_Formularios\SeguridadCirugiaFERepository.cs" />
+    <Compile Include="DAL_Formularios\SeguridadCirugiaPausaFERepository.cs" />
+    <Compile Include="DAL_Formularios\SolucitudTransfusionalFERepository.cs" />
+    <Compile Include="DAL_Formularios\ValoracionAMFERepository.cs" />
+    <Compile Include="DAL_Formularios\ValoracionFuncionalAMFERepository.cs" />
+    <Compile Include="DAL_Formularios\ValoracionMentalAMFERepository.cs" />
+    <Compile Include="DAL_Formularios\ValoracionSocioFamAMFERepository.cs" />
+    <Compile Include="DAL_Formularios\VigilanciaCateterPerifericoFERepository.cs" />
+    <Compile Include="DAL_Formularios\VigilanciaCateterUrinarioFERepository.cs" />
+    <Compile Include="DAL_Formularios\VigilanciaDispositivosFERepository.cs" />
+    <Compile Include="DAL_Formularios\VigilanciaVentilacionMecanicaFERepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResumendelParto505_2FERepository.cs" />
+    <Compile Include="Service References\HceServiceSub_\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoluccionSalud.Entidades\SoluccionSalud.Entidades.csproj">
+      <Project>{94c20b56-b046-491e-952c-5df50a53591a}</Project>
+      <Name>SoluccionSalud.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.ModelFormularios\SoluccionSalud.ModelFormularios.csproj">
+      <Project>{1dc8d9b0-bbdc-40dd-aa87-9e7b096ec8b0}</Project>
+      <Name>SoluccionSalud.ModelFormularios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.Model\SoluccionSalud.Model.csproj">
+      <Project>{ceef6129-25ba-4e74-b82c-af525aa8be07}</Project>
+      <Name>SoluccionSalud.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.Repository\SoluccionSalud.Repository.csproj">
+      <Project>{1b2ee0da-b606-42b2-bc53-0073bd89bbe3}</Project>
+      <Name>SoluccionSalud.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.SOA.Entidades\SoluccionSalud.SOA.Entidades.csproj">
+      <Project>{3E2CAFFA-6059-4750-AB6D-F3A5F129EB2D}</Project>
+      <Name>SoluccionSalud.SOA.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.SOA\SoluccionSalud.SOA.csproj">
+      <Project>{CFE7060A-69E6-4A2B-8458-53399DAF0634}</Project>
+      <Name>SoluccionSalud.SOA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RepositoryForm\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\HceServiceSub_\SoaService.wsdl" />
+    <None Include="Service References\HceServiceSub_\SoluccionSalud.RepositoryFormulario.HceServiceSub_.Formulario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HceServiceSub_\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HceServiceSub_\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HceServiceSub_\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HceServiceSub_\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

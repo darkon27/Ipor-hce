@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B2EE0DA-B606-42B2-BC53-0073BD89BBE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoluccionSalud.Repository</RootNamespace>
+    <AssemblyName>SoluccionSalud.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AppSaludMVC\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DALActividades\actividadesRepository.cs" />
+    <Compile Include="DALAC_Sucursal\AC_SucursalRepository.cs" />
+    <Compile Include="DALAsigMedico\AsigMedicoRepository.cs" />
+    <Compile Include="DALAuditoriaImpresionDetalle\AuditoriaImpresionDetalleRepository.cs" />
+    <Compile Include="DALAuditoriaImpresion\AuditoriaImpresionRepository.cs" />
+    <Compile Include="DALAuditoria\AuditoriaRepository.cs" />
+    <Compile Include="DALCAMPOFORMATO\CampoFormatoRepository.cs" />
+    <Compile Include="DALCAMPOTABLA\CampoTablaRepository.cs" />
+    <Compile Include="DALCategorias\CategoriasRepository.cs" />
+    <Compile Include="DALCategorias\ICategoriasRepository.cs" />
+    <Compile Include="DALCategoriaUnidadServicio\CatUnidadServicioRepository.cs" />
+    <Compile Include="DALCatUnidServAtencion\CatUnidServAtencionRepository.cs" />
+    <Compile Include="DALClase\claseRepository.cs" />
+    <Compile Include="DALClasificadorMovimiento\ClasificadorMovimientoBaseRepository.cs" />
+    <Compile Include="DALCobertura\CoberturaBaseRepository.cs" />
+    <Compile Include="DALcompanyowner\companyownerRepository.cs" />
+    <Compile Include="DALComponenteBase\ComponenteBaseRepository.cs" />
+    <Compile Include="DALControlAtributo\ControlAtributoRepository.cs" />
+    <Compile Include="DALControlComponente\ControlComponenteRepository.cs" />
+    <Compile Include="DALControlValidacion\ControlValidacionRepository.cs" />
+    <Compile Include="DALCuidadoPreventivo\CuidadoPreventivoRepository.cs" />
+    <Compile Include="DALDetalleMiscelaneo\DetalleMiscelaneoRepository.cs" />
+    <Compile Include="DALDetalleMiscelaneo\MiscelaneoHeaderRepository.cs" />
+    <Compile Include="DALDiagnosticoPAE\DiagnosticoPAERepository.cs" />
+    <Compile Include="DALDiagnostico\DiagnosticoRepository.cs" />
+    <Compile Include="DALDiagnostico\IDiagnosticoRepository.cs" />
+    <Compile Include="DALDiccionario\IDiccionarioRepository.cs" />
+    <Compile Include="DALDiccionario\DiccionarioRepository.cs" />
+    <Compile Include="DALDominio\dominioRepository.cs" />
+    <Compile Include="DALEpisodioAtencion\EpisodioAtencionRepository.cs" />
+    <Compile Include="DALEpisodioClinico\EpisodioClinicoRepository.cs" />
+    <Compile Include="DALEspecialidadOrdenMedica\EspecialidadOrdenMedicaRepository.cs" />
+    <Compile Include="DALEspecialidad\EspecialidadRepository.cs" />
+    <Compile Include="DALEstablecimiento\EstablecimientoRepository.cs" />
+    <Compile Include="DALFactorRelacionadoNanda\FactorRelacionadoNandaRepository.cs" />
+    <Compile Include="DALFACTORRELACIONADO\ComboFactorRelacionadoRepository.cs" />
+    <Compile Include="DALFACTORRELACIONADO\FactorRelacionadoRepository.cs" />
+    <Compile Include="DALFavoritoCodigo\FavoritoCodigoRepository.cs" />
+    <Compile Include="DALFavoritoDetalle\FavoritoDetalleRepository.cs" />
+    <Compile Include="DALFavoritoNumero\FavoritoNumeroRepository.cs" />
+    <Compile Include="DALFavorito\FavoritoRepository.cs" />
+    <Compile Include="DALFormatoCampo\FormatoCampoRepository.cs" />
+    <Compile Include="DALFormatoCons\FormatosDinamicosRepository.cs" />
+    <Compile Include="DALFormatoC\FormatoRepository.cs" />
+    <Compile Include="DALFormato\FormatoBaseRepository.cs" />
+    <Compile Include="DALFormularios\AnamnesisAFRepository.cs" />
+    <Compile Include="DALFormularios\AnamnesisAPRepository.cs" />
+    <Compile Include="DALFormularios\AnamnesisEARepository.cs" />
+    <Compile Include="DALFormularios\DescansoMedicoRepository.cs" />
+    <Compile Include="DALFormularios\DiagnosticoRepository.cs" />
+    <Compile Include="DALFormularios\EvolucionObjetivaRepository.cs" />
+    <Compile Include="DALFormularios\ExamenFisicoTriajeRepository.cs" />
+    <Compile Include="DALFormularios\ExamenSolicitadoRepository.cs" />
+    <Compile Include="DALFormularios\IAnamnesisAPRepository.cs" />
+    <Compile Include="DALFormularios\IAnamnesisEARepository.cs" />
+    <Compile Include="DALFormularios\IDiagnosticoRepository.cs" />
+    <Compile Include="DALFormularios\IExamenFisicoTriajeRepository.cs" />
+    <Compile Include="DALFormularios\MedicamentoRepository.cs" />
+    <Compile Include="DALFormularios\objMyObjectList.cs" />
+    <Compile Include="DALFormularios\ProblemasRepository.cs" />
+    <Compile Include="DALFormularios\ProximaAtencionRepository.cs" />
+    <Compile Include="DALGe_Varios\Ge_VariosRepository.cs" />
+    <Compile Include="DALGrupoFam\GrupoFamRepository.cs" />
+    <Compile Include="DALHC_CIAP2\HC_CIAP2Repository.cs" />
+    <Compile Include="DALHC_CIAP2\IHC_CIAP2Repository.cs" />
+    <Compile Include="DALHorario\SS_CC_HorarioRepository.cs" />
+    <Compile Include="DALIndicador\indicadorRepository.cs" />
+    <Compile Include="DALMaestroDetalle\MaestroDetalleRepository.cs" />
+    <Compile Include="DALMedicamentos\MedicamentosRepository.cs" />
+    <Compile Include="DALMiscelaneoFormulario\MiscelaneoFormularioCrono.cs" />
+    <Compile Include="DALMiscelaneos\IMiscDetalleRepository.cs" />
+    <Compile Include="DALMiscelaneos\IMiscelaneosRepository.cs" />
+    <Compile Include="DALMiscelaneos\MiscDetalleRepository.cs" />
+    <Compile Include="DALMiscelaneos\MiscelaneosRepository.cs" />
+    <Compile Include="DALModulo\ModuloRepository.cs" />
+    <Compile Include="DALNANDA\NandaRepository.cs" />
+    <Compile Include="DALNicActividad\NicActividadRepository.cs" />
+    <Compile Include="DALNIC\NicRepository.cs" />
+    <Compile Include="DALNocIndicador\NocIndicadorRepository.cs" />
+    <Compile Include="DALNocNanda\NocNandaRepository.cs" />
+    <Compile Include="DALNocNic\NocNicRepository.cs" />
+    <Compile Include="DALNOC\NocRepository.cs" />
+    <Compile Include="DALNotficacion\NotificacionRepository.cs" />
+    <Compile Include="DALNotificacionDetalle\NotificacionDetalleRepository.cs" />
+    <Compile Include="DALOrdAtenPreexistencia\OrdAtenPreexistenciaRepository.cs" />
+    <Compile Include="DALPacDoc\PacDocRepository.cs" />
+    <Compile Include="DALParametrosMast\ParametroRepository.cs" />
+    <Compile Include="DALPersonaMast\IPersonaMastRepository.cs" />
+    <Compile Include="DALPersonaMast\PersonaMastRepository.cs" />
+    <Compile Include="DALProcedimientoEjecucion\ProcedimientoEjecucionRepository.cs" />
+    <Compile Include="DALProcedimientoInforme\ProcedimientoInformeRepository.cs" />
+    <Compile Include="DALProcedimiento\IProcedimientoRepository.cs" />
+    <Compile Include="DALProcedimiento\ProcedimientoRepository.cs" />
+    <Compile Include="DALProcMedicoDos\ProcMedDosRepository.cs" />
+    <Compile Include="DALProcMedico\ProcMedRepository.cs" />
+    <Compile Include="DALProHistAdj\ProcHistAdjRepository.cs" />
+    <Compile Include="DALRecursos\RecursosRepository.cs" />
+    <Compile Include="DALRegistrarAcompanante\RegistroAcompananteRepository.cs" />
+    <Compile Include="DALSeguimientoRiesgoDetalle\SeguimientoRiesgoDetalleRepository.cs" />
+    <Compile Include="DALSeguimientoRiesgo\SeguimientoRiesgoRepository.cs" />
+    <Compile Include="DALSeguridadAutorizacion\SeguridadAutorizacionRepository.cs" />
+    <Compile Include="DALSeguridadConcepto\SeguridadConceptoRepository.cs" />
+    <Compile Include="DALSeguridadGrupo\SeguridadGrupoRepository.cs" />
+    <Compile Include="DALSEGURIDADPERFILUSUARIO\SeguridadPerfilUsuarioRepository.cs" />
+    <Compile Include="DALSeguridad\ISeguridadRepository.cs" />
+    <Compile Include="DALSeguridad\SeguridadRepository.cs" />
+    <Compile Include="DALServicios\ServiciosRepository.cs" />
+    <Compile Include="DALSG_AgenteOpcion\SG_AgenteOpcionRepository.cs" />
+    <Compile Include="DALSG_Agente\SG_AgenteRepository.cs" />
+    <Compile Include="DALSG_Grupo\SG_GrupoRepository.cs" />
+    <Compile Include="DALSG_Opcion\OpcionFormatoAsignacionRepository.cs" />
+    <Compile Include="DALSG_Opcion\SG_OpcionRepository.cs" />
+    <Compile Include="DALSSHCUbicacion\SSHCUbicacionRepository.cs" />
+    <Compile Include="DALSS_FA_DevolucionProducto\SS_FA_DevolucionProductoRepository.cs" />
+    <Compile Include="DALSS_FA_SolicitudProducto\SS_FA_SolicitudProductoRepository.cs" />
+    <Compile Include="DALSS_HC_CuerpoHumano\SS_HC_CuerpoHumanoRepository.cs" />
+    <Compile Include="DALSS_HC_DOMINIO\DALSS_HC_DOMINIORepository.cs" />
+    <Compile Include="DALSS_HC_KardexEnfermeria\SS_HC_KardexEnfermeriaRepository.cs" />
+    <Compile Include="DALTablaCampo\TablaCampoRepository.cs" />
+    <Compile Include="DALTablaDatos\TablaDatosRepository.cs" />
+    <Compile Include="DALTABLAFORMATOVALIDACION\VW_TABLAFORMATOVALIDACIONRepository.cs" />
+    <Compile Include="DALTablaMaestroConcepto\TablaMaestroConceptoRepository.cs" />
+    <Compile Include="DALTabla\TablaRepository.cs" />
+    <Compile Include="DALTipoAtencion\TipoAtencionBaseRepository.cs" />
+    <Compile Include="DALUnidadMedidaMinsa\UnidadMedidaMinsaRepository.cs" />
+    <Compile Include="DALUnidadServicio\UnidadServicioRepository.cs" />
+    <Compile Include="DALUnidad\UnidadRepository.cs" />
+    <Compile Include="DALUsuario\IUsuarioRepository.cs" />
+    <Compile Include="DALUsuario\UsuarioRepository.cs" />
+    <Compile Include="DALVWAsigMedico\VWAsigMedicoRepository.cs" />
+    <Compile Include="DALVWEmpresaSeguro\VW_EmpresaSeguroBaseRepository.cs" />
+    <Compile Include="DALVWEspecialidadMedico\VWEspecialidadMedicoRepository.cs" />
+    <Compile Include="DALVW_ATENCIONPACIENTEMEDICAMENTOS\Vw_AtencionPacienteMedicamentoRepository.cs" />
+    <Compile Include="DALVW_ATENCIONPACIENTE\Vw_AtencionPacienteRepository.cs" />
+    <Compile Include="DALVW_FORMATORECURSOCAMPO\Vw_FORMATORECURSOCAMPO.cs" />
+    <Compile Include="DALVW_FORMATORECURSOCAMPO\Vw_FormatoRecursoCampoRepository.cs" />
+    <Compile Include="DALvw_miscelaneo\vw_miscelaneoRepository.cs" />
+    <Compile Include="DALVW_PERSONAPACIENTE\SP_SS_GE_PacienteRepository.cs" />
+    <Compile Include="DALVW_PERSONAPACIENTE\Vw_PersonapacienteRepository.cs" />
+    <Compile Include="DALVW_ServicioPrestacion\VW_ServicioPrestacionRepository.cs" />
+    <Compile Include="DALV_EpisodioAtenciones\V_EpisodioAtencionesRepository.cs" />
+    <Compile Include="DALWH_ClaseFamilia\WH_ClaseFamiliaRepository.cs" />
+    <Compile Include="DALWH_ClaseLinea\WH_ClaseLineaRepository.cs" />
+    <Compile Include="DALWH_ClaseSubFamilia\WH_ClaseSubFamiliaRepository.cs" />
+    <Compile Include="DALWH_Favoritos\WH_FavoritosRepository.cs" />
+    <Compile Include="DALWH_VALIDA\WH_VALIDA.cs" />
+    <Compile Include="DAL_ADICIONAL\AgrupadorAtencionVigenteRepository.cs" />
+    <Compile Include="DAL_PSpring\ProcedimientoSpringRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AuditGenerico.cs" />
+    <Compile Include="Repository\GenericDataRepository.cs" />
+    <Compile Include="Repository\IAuditGenerico.cs" />
+    <Compile Include="Repository\IMantenimiento.cs" />
+    <Compile Include="Repository\LogValidationErrors.cs" />
+    <Compile Include="Repository\OracleType.cs" />
+    <Compile Include="Repository\Parameter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoluccionSalud.Entidades\SoluccionSalud.Entidades.csproj">
+      <Project>{94c20b56-b046-491e-952c-5df50a53591a}</Project>
+      <Name>SoluccionSalud.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.ModelPAE\SoluccionSalud.ModelPAE.csproj">
+      <Project>{f10f7559-b21b-4fb0-afb9-57340c7c3970}</Project>
+      <Name>SoluccionSalud.ModelPAE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.Model\SoluccionSalud.Model.csproj">
+      <Project>{ceef6129-25ba-4e74-b82c-af525aa8be07}</Project>
+      <Name>SoluccionSalud.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoluccionSalud.RepositoryReport\SoluccionSalud.RepositoryReport.csproj">
+      <Project>{bd140caa-2995-48ca-b261-24307a68388f}</Project>
+      <Name>SoluccionSalud.RepositoryReport</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DALResultadosEsperados\" />
+    <Folder Include="DALResumenParto\" />
+    <Folder Include="DALSS_HC_NANDA\" />
+    <Folder Include="DAL\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

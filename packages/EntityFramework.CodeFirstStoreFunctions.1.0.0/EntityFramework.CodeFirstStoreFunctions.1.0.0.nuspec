@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>EntityFramework.CodeFirstStoreFunctions</id>
+    <version>1.0.0</version>
+    <title>Support for store functions for Entity Framework 6.1.1+ Code First.</title>
+    <authors>Pawel "moozzyk" Kadluczka</authors>
+    <owners>Pawel "moozzyk" Kadluczka</owners>
+    <licenseUrl>https://codefirstfunctions.codeplex.com/license</licenseUrl>
+    <projectUrl>https://codefirstfunctions.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Support for store functions (table valued functions, scalar user defined functions and stored procedures) for Entity Framework 6.1.1+ Code First.</description>
+    <summary>Support for store functions (table valued functions, scalar user defined functions and stored procedures) for Entity Framework 6.1.1+ Code First.</summary>
+    <language>en-US</language>
+    <tags>EF6 EF6.1 EF Entity Framework Entity-Framework EntityFramework 6.1 Store Functions TVFs TVF table valued functions stored procedure sprocs proc scalar UDF UDFs user defined Code First CodeFirst moozzyk blog.3d-logic.com</tags>
+    <dependencies>
+      <dependency id="EntityFramework" version="[6.1.1, 7.0)" />
+    </dependencies>
+  </metadata>
+</package>

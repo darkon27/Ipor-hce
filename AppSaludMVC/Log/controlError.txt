@@ -1,0 +1,264 @@
+AppSaludMVC.Controllers.LoginController 00:31:40
+Ingresar - LoginController - Metodo: ENTRAR
+
+AppSaludMVC.Controllers.LoginController 00:32:13
+Ingresar - LoginController - Metodo: ENTRAR
+
+AppSaludMVC.Controllers.LoginController 00:37:59
+Ingresar - LoginController - Metodo: ENTRAR
+
+AppSaludMVC.Controllers.LoginController 11:00:58
+Ingresar - LoginController - Metodo: ENTRAR
+
+AppSaludMVC.Controllers.HClinicaController 10:34:42
+CCEPF005_Save_AntePerGinecoObstetricos - Attaching an entity of type 'SoluccionSalud.Entidades.Entidades.SS_HC_AntePerGinecoObstetricos_FE' failed because another entity of the same type already has the same primary key value. This can happen when using the 'Attach' method or setting the state of an entity to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values. This may be because some entities are new and have not yet received database-generated key values. In this case use the 'Add' method or the 'Added' entity state to track the graph and then set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate.
+
+AppSaludMVC.Controllers.HClinicaController 10:42:51
+CCEPF005_Save_AntePerGinecoObstetricos - Attaching an entity of type 'SoluccionSalud.Entidades.Entidades.SS_HC_AntePerGinecoObstetricos_FE' failed because another entity of the same type already has the same primary key value. This can happen when using the 'Attach' method or setting the state of an entity to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values. This may be because some entities are new and have not yet received database-generated key values. In this case use the 'Add' method or the 'Added' entity state to track the graph and then set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate.
+
+AppSaludMVC.Controllers.HClinicaController 11:01:38
+CCEPF005_Save_AntePerGinecoObstetricos - Attaching an entity of type 'SoluccionSalud.Entidades.Entidades.SS_HC_AntePerGinecoObstetricos_FE' failed because another entity of the same type already has the same primary key value. This can happen when using the 'Attach' method or setting the state of an entity to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values. This may be because some entities are new and have not yet received database-generated key values. In this case use the 'Add' method or the 'Added' entity state to track the graph and then set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate.
+
+AppSaludMVC.Controllers.HClinicaController 15:33:01
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 15:57:20
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 16:16:23
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 16:18:27
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 16:21:58
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 16:30:09
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 16:48:07
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 16:57:07
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:01:23
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:07:07
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:20:46
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:23:43
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:34:58
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:40:27
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 18:06:50
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 18:07:56
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 18:09:28
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 18:15:15
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 10:38:17
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 10:40:07
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 16:32:20
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:11:45
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:18:06
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:20:53
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:43:41
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 17:44:28
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 18:03:01
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 14:34:55
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 14:37:47
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 14:49:13
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 15:13:33
+CCEPF327_Save_OrdenIntervencionQuirurgica - Attaching an entity of type 'SoluccionSalud.Entidades.Entidades.SS_HC_OrdenIntervencionQuirurgicaCab_FE' failed because another entity of the same type already has the same primary key value. This can happen when using the 'Attach' method or setting the state of an entity to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values. This may be because some entities are new and have not yet received database-generated key values. In this case use the 'Add' method or the 'Added' entity state to track the graph and then set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate.
+
+AppSaludMVC.Controllers.HClinicaController 15:25:13
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 15:59:27
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 16:02:26
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:21:08
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:21:50
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:23:20
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:25:14
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:27:11
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:28:08
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:31:48
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:45:03
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:54:12
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:56:20
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 02:58:14
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 03:06:04
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 03:07:35
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 03:14:15
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 03:32:00
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 03:34:32
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 03:36:22
+CCEPF327_Save_OrdenIntervencionQuirurgica - Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions.
+
+AppSaludMVC.Controllers.HClinicaController 10:31:15
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 11:31:37
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 11:49:10
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 11:50:18
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 11:56:31
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 12:03:34
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 10:44:43
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 10:45:32
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 10:47:58
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 10:50:31
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 10:51:05
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 10:52:02
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 10:52:36
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 11:16:50
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 11:18:00
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 11:20:10
+CCEPF327_Save_OrdenIntervencionQuirurgica - The property 'UnidadReplicacion' is part of the object's key information and cannot be modified. 
+
+AppSaludMVC.Controllers.HClinicaController 12:02:37
+CCEPF327_Save_OrdenIntervencionQuirurgica - Member 'CurrentValues' cannot be called for the entity of type 'SS_HC_OrdenIntervencionQuirurgicaCab_FE' because the entity does not exist in the context. To add an entity to the context call the Add or Attach method of DbSet<SS_HC_OrdenIntervencionQuirurgicaCab_FE>.
+
+AppSaludMVC.Controllers.HClinicaController 12:04:10
+CCEPF327_Save_OrdenIntervencionQuirurgica - Member 'CurrentValues' cannot be called for the entity of type 'SS_HC_OrdenIntervencionQuirurgicaCab_FE' because the entity does not exist in the context. To add an entity to the context call the Add or Attach method of DbSet<SS_HC_OrdenIntervencionQuirurgicaCab_FE>.
+
+AppSaludMVC.Controllers.HClinicaController 12:16:48
+CCEPF327_Save_OrdenIntervencionQuirurgica - Member 'CurrentValues' cannot be called for the entity of type 'SS_HC_OrdenIntervencionQuirurgicaCab_FE' because the entity does not exist in the context. To add an entity to the context call the Add or Attach method of DbSet<SS_HC_OrdenIntervencionQuirurgicaCab_FE>.
+
+AppSaludMVC.Controllers.HClinicaController 16:16:44
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error al procesar mantenimiento
+
+AppSaludMVC.Controllers.HClinicaController 16:18:53
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error al procesar mantenimiento
+
+AppSaludMVC.Controllers.HClinicaController 15:13:46
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error al procesar mantenimiento
+
+AppSaludMVC.Controllers.HClinicaController 15:58:27
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error al procesar mantenimiento
+
+AppSaludMVC.Controllers.HClinicaController 16:03:42
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error al procesar mantenimiento
+
+AppSaludMVC.Controllers.HClinicaController 16:08:34
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error al procesar mantenimiento
+
+AppSaludMVC.Controllers.HClinicaController 16:25:51
+CCEPF327_Save_OrdenIntervencionQuirurgica - An error occurred while updating the entries. See the inner exception for details.
+
+AppSaludMVC.Controllers.HClinicaController 16:27:54
+CCEPF327_Save_OrdenIntervencionQuirurgica - An error occurred while updating the entries. See the inner exception for details.
+
+AppSaludMVC.Controllers.HClinicaController 15:32:22
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error reading integer. Unexpected token: Boolean. Path '[0].flagHospitalaria', line 1, position 222.
+
+AppSaludMVC.Controllers.HClinicaController 15:36:08
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error reading integer. Unexpected token: Boolean. Path '[0].flagHospitalaria', line 1, position 221.
+
+AppSaludMVC.Controllers.HClinicaController 15:42:48
+CCEPF327_Save_OrdenIntervencionQuirurgica - Error reading integer. Unexpected token: Boolean. Path '[0].flagHospitalaria', line 1, position 219.
+

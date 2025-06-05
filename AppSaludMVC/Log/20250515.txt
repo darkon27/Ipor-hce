@@ -1,0 +1,12 @@
+ASP.reportes_visorreporteshce_aspx 10:33:04
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 10:34:13
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 10:35:16
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 10:37:09
+Page_Init - Subproceso anulado.
+

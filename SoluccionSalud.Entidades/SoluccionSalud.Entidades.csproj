@@ -1,0 +1,1666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94C20B56-B046-491E-952C-5DF50A53591A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoluccionSalud.Entidades</RootNamespace>
+    <AssemblyName>SoluccionSalud.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proyectos\ServiciosSalud\ServiciosSalud\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\AC_Accionista.cs" />
+    <Compile Include="Entidades\AC_Sucursal.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\AC_SucursalGrupo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\AlergiasDetalleViewModel.cs" />
+    <Compile Include="Entidades\APLICACIONESMAST.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\AV_SOA_Service.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\A_SP_SS_HCE_ListaServiciosAuxiliares_Result.cs" />
+    <Compile Include="Entidades\BE_ANTECEDPERSONALES.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\BE_ENFERMEDADACTUAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\BE_EPICRISIS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\BE_MedicamentoAlta_FE.cs" />
+    <Compile Include="Entidades\BE_MedicamentoEpicrisis_FE.cs" />
+    <Compile Include="Entidades\BE_Medicamento_FE.cs" />
+    <Compile Include="Entidades\ChartModel.cs" />
+    <Compile Include="Entidades\CM_CO_ClasificacionComponente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_Componente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_ComponenteGrupoCaracteristica.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_Establecimiento.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_ListaBase.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_ListaBaseComponente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestro.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestroAsociado.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestroConcepto.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestroDetalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestroDetalleConcepto.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\companyowner.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CuerpoHumano.cs" />
+    <Compile Include="Entidades\CW_VisorHistoria.cs" />
+    <Compile Include="Entidades\DataBandeja.cs" />
+    <Compile Include="Entidades\EMPLEADOMAST.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ENTITY_GENERALHCE.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\ENTITY_GLOBAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\ENTITY_MENSAJES.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\ExamenQur.cs" />
+    <Compile Include="Entidades\GE_ClasificadorMovimiento.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\GE_Varios.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_FlujoProceso.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_Medicamento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\HC_Proceso.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_RuleGetCollectionStore.cs" />
+    <Compile Include="Entidades\HC_SubProceso.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_SubProcesoHijo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_SubProcesoSelector.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\MA_MiscelaneosDetalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\MA_MiscelaneosDetalleRule.cs" />
+    <Compile Include="Entidades\MA_MiscelaneosHeader.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ModelCliente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\ModelEntity.cs" />
+    <Compile Include="Entidades\ModelEntity1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ModelEntityGen.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ModelFormularios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ModelPAE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Orden.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\ParametrosMast.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PERSONAMAST.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptHojaRecienNacido_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAgrupador.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAlergias_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAnamnesisAF.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAnamnesisAP.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAnamnesisEA.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAnamnesis_AFAM_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAnestesia4_Farmacos_Detalle_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAnestesia4_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAntecedentesPersGinecObstetrico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAntecedentesPersonalesFisiologicos_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAntecedentesPersonalesPatologicosGenerales_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewAntFisiologicoPediatricoFE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewApoyoDiagnostico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewBalanceHidroElectroliticoDetalle1_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewBalanceHidroElectroliticoDetalle2_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewBalanceHidroElectrolitico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewCabezeraAntecedenAlergias_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewContrarReferencia_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewCuidadosPreventivo.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewDiagnostico.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewDiagnostico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewDieta_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewDolorEvaAdulto_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewDolorEvaNinios_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEmitirDescansoMedico.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEmitirDescansoMedico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpicrisis2_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpicrisis3_Diagnostico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpicrisis3_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpicrisis3_Principal_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpicrisis3_Secundaria_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpicrisis_1FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpidemiologiaDetalleCasos_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpidemiologiaDetalleLugar_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEpidemiologia_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaAldrete_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaAltaCirugiaAmbulatoria_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaBromage_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaGlasgow_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaNorton_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaRamsay_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaSedacionRass_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaStewart_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEscalaWoodDownes_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEvaluacionDolorEvaNeonatosPrematuros_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEvolucionMedica_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEvolucionObjetiva.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewEvolucionObstetricaPuerperio_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewExamenApoyoDiagnostico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewExamenClinico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewExamenFisicoRegional.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewExamenSolicitado.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewExamenTriajeFisico.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewExamen_Kardex_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewFichaAnestesia2.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewFichaAnestesia5.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewFichaAnestesia_1_DiagnosticoDetalle_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewFichaAnestesia_1_ExamenesDetalle_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewFichaAnestesia_1_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewFichaAnestesia_3_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewFuncionesVitales_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewGradoDependencia_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewInformeAlta_DatosGenerales_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewInformeAlta_Mat.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewInformeAlta_Med.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewInformeAlta_proxCita.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewInmunizacionAdulto_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewInmunizacionNinio_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewInterconsulta_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewInterConsulta_Kardex_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewKardex1.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewKardex1_Detalle1.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewKardex3.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewMedicamento.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewMedicamentos_Epi2_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewMedicamentos_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewNotaEnfermeria_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewNota_Ingreso_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewOftalmologia_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewOrdenInterQuiruDiagnosticoDetalle_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewOrdenInterQuiruExamenApoyoDetalle_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewOrdenInterQuirurgica_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewPartograma_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewPreOperatorio2.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewPreOperatorio_1_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewProximaAtencion.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewProximaAtencion_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewReferencia_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewResumenParto2_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewResumenParto3_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewResumenParto_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewResumenParto_FE_Det.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewRetiroVoluntario_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewSeguridadCirugiaEntrada_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewSeguridadCirugia_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewSolicitarReferencia.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewSolicitudProducto.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewSolicitudTransfusional_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewTocolosisInduccionAcentuacion_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewTriajeAlergias_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewTriajeEmergencia_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewValoracionAM_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewValoracionMentalAM_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewValoracionSocioFamAM_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewVigilanciaCateterPeriferico_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewVigilanciaCateterUrinario_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewVigilanciaDispositivos_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewVigilanciaVentilacionMecanica_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptViewVigilancia_Dispositivos_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\rptView_ValoracionFuncionalAM_FE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\RPT_AntecedentesPersGinecObstetrico_Reportes_Result.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SEGURIDADAUTORIZACIONE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SEGURIDADCONCEPTO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SEGURIDADGRUPO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SEGURIDADPERFILUSUARIO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_Agente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_AgenteOpcion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_Grupo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_Modulo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_Objeto.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_Opcion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_PerfilUsuario.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_Sistema.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_TipoObjeto.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\sisConstante.cs" />
+    <Compile Include="Entidades\sisSesion.cs" />
+    <Compile Include="Entidades\SP_Alergia_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_AnamnesisAFListar_FE_Result.cs" />
+    <Compile Include="Entidades\SP_Anam_AP_PatologicosGeneralesDetalleListar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_Anam_AP_PatologicosGeneralesListar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_AntecedentesPersonalesIAdulDetalleListar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_AntecedentesPersonalesIAdulListarFE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_AntecedentesPersonalesINDetalleListar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_AntecedentesPersonalesINListarFE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_AntePerGinecoObstetricosListarFE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_EvolucionMedica_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_HC_Nota_Ingreso_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_HC_TriajeEmergencia_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_HC_Triaje_Ant_Alergia_FE_Listar1_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_HC_Triaje_Ant_Alergia_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_HC_Triaje_Ant_Alergia_FE_Listar_Result1.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_IndicacionesListarFE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_ListarAlergiaDetalle_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_ListarBandejaTriaje_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_OrdenInterQuirurgicaListarFE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_ProximaAtencionListar_Result1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_GenerarLlamado_Result.cs" />
+    <Compile Include="Entidades\SP_SS_GE_EspecialidadOrdenMedica_Lista_Result.cs" />
+    <Compile Include="Entidades\SP_SS_GE_Especialidad_listar_Result.cs" />
+    <Compile Include="Entidades\SP_SS_GE_MedicamentoAlta_FEListar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_GE_MedicamentoListar_Result.cs" />
+    <Compile Include="Entidades\SP_SS_GE_Medicamento_FEListarEPICRISIS_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_GE_Medicamento_FEListar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Anestesia_Farmacos_Detalle_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Anestesia_Farmaco_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_AntecedentesPersonalesINDetalleListar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_AntePerGinecoObstetricosCatalogoCirugia_Listar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_ApoyoDiagnosticoFileListar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_BalanceHidroElectDetalle_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_BalanceHidroElect_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_BANDEJA_NOTIFI_EPISODIO_HEADER_LISTAR_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_EpicrisisFE_2_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Epicrisis_1_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Epicrisis_3_Diagnosticos_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Epicrisis_3_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Epicrisis_3_Principal_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Epicrisis_3_Secundario_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_ImpresionHC_LISTAR_Result.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_InformeAltaAPD_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_InformeAltaDiagAlt_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_InformeAltaDiagIng_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_InformeAltaProxCita_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_InterConsultaSalida_Lista_Result.cs" />
+    <Compile Include="Entidades\SP_SS_HC_Kardex1_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Monitoreo_Obs_Ing_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Monitoreo_Obs_Listar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_PartogramaDetalleListar_FE_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_Partograma_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_HC_SolucionesAdministradas_FE_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SP_SS_Medicamento_Programacion_Kardex_Listar_Result.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_AD_OrdenAtencion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_AD_OrdenAtencionDetalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_AD_OrdenAtencionPreexistencia.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_CC_Horario.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_CE_DICCIONARIO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\SS_CE_TriajeFirma.cs" />
+    <Compile Include="Entidades\SS_CE_TriajeViewModel.cs" />
+    <Compile Include="Entidades\SS_CHE_VistaSeguridad.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_FA_DevolucionProducto.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_FA_DevolucionProductoDetalle.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_FA_NotificacionDetalle.cs" />
+    <Compile Include="Entidades\SS_FA_SolicitudProducto.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_FA_SolicitudProductoDetalle.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_ComponentePrestacion.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_Diagnostico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_EmpresaSeguro.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_Especialidad.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_EspecialidadMedico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_EspecialidadOrdenMedica.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_Paciente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_PAGINA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_PAGINADETALLE.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_ProcedimientoMedico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_ProcedimientoMedicoDos.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_Servicio.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_ServicioPrestacion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_TipoAtencion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_FA_Notificacion.cs" />
+    <Compile Include="Entidades\SS_HCE_ConsultaExterna.cs" />
+    <Compile Include="Entidades\SS_HCE_RecetaConsultaExterna.cs" />
+    <Compile Include="Entidades\SS_HC_Actividad.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AgrupadorAtencionVigente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AlergiaDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Alergia_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AF.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AFAM.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AFAM_CAB_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AFAM_Enfermedad.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AFAM_Enfermedad_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AFAM_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AF_Enfermedad.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AF_Enfermedad_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AF_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AP.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AP_Detalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_EA.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_EA_Sintoma.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anam_AP_PatologicosGeneralesDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anam_AP_PatologicosGenerales_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AnatomiaPatologica.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AnestesiaDiagnosticoDetalle_FE.cs" />
+    <Compile Include="Entidades\SS_HC_AnestesiaExamenApoyoDetalle_FE.cs" />
+    <Compile Include="Entidades\SS_HC_Anestesia_Farmacos_Detalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anestesia_Farmaco_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AntecedentesPersonalesFisiologicos_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AntecedentesPersonalesIAdulDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AntecedentesPersonalesIAdul_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AntecedentesPersonalesINDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AntecedentesPersonalesIN_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AntePerGinecoObstetricosCatalogoCirugia_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AntePerGinecoObstetricos_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Ant_Fisiologico_Pediatrico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ApoyoDiagnosticoDet_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ApoyoDiagnosticoFile_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ApoyoDiagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Apoyo_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AsignacionMedico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AuditRoyal.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_BalanceHidroElectDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_BalanceHidroElect_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_BANDEJA_NOTIFI_DETALLE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_BANDEJA_NOTIFI_HEADER.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_CatalogoUnidadServicio.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_CatalogoUnidadServicio_TipoAtencion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_CIAP2.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ClasePAE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_CONTRARREFERENCIA2FE.cs" />
+    <Compile Include="Entidades\SS_HC_CONTRARREFERENCIA_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_CONTRARREFERENCIA_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ControlAtributo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ControlComponente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ControlValidacion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_CuerpoHumano.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_CuidadoPreventivo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_DescansoMedico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_DescansoMedico_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_DescansoMedico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Diagnostico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_DominioPAE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EnfermedadActualDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EnfermedadActual_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ENFER_VIGI_CateterPeriferico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ENFER_VIGI_CATETERURINARIO_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ENFER_VIGI_VentilacionMecanica_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epicrisis_1_Detalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epicrisis_1_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epicrisis_2_Detalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epicrisis_2_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epicrisis_3.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epicrisis_3_Diagnostico.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epicrisis_3_Diag_Principal.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epicrisis_3_Diag_Secundaria.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpidemiologiaDetalleCasos_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpidemiologiaDetalleLugar_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Epidemiologia_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioAtencion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioAtenciones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioAtencionFormato.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioAtencionMaster.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioClinico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioNotificaciones_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioTriaje.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EscalaAldrete_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EscalaAltaCirugiaAmbulatoria_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EscalaBromage_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EscalaNorton_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EscalaRamsay_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EscalaSedacionRass_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EscalaStewart_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EscalaWoodDownes_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Escala_Glasgow_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EstablecimientoSalud.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EvaluacionNeonatos_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Evaluacion_DolorEvaAdultos_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Evaluacion_DolorEvaNeonatosPrematuros_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Evaluacion_DolorEvaNinios_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Evaluacion_GradoDependencia_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EvolucionMedica_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EvolucionObjetiva.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EvolucionObstetricaPuerperio_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenClinico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenFisico_Regional.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenFisico_Triaje.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenSolicitado.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenSolicitadoDet_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenSolicitadoFE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenSolicitado_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Examen_Kardex_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FactorRelacionado.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FactorRelacionadoNanda.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Favorito.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FavoritoCodigoId.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FavoritoDetalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FavoritoNumero.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FichaAnestesia_1_FE.cs" />
+    <Compile Include="Entidades\SS_HC_FichaAnestesia_2_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FichaAnestesia_3_FE.cs" />
+    <Compile Include="Entidades\SS_HC_FichaAnestesia_5_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Ficha_Anestesia_2_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Ficha_Anestesia_5_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Formato.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FormatoAsignacion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FormatoCampo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FormatoCodigoId.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FormatoRecursoCampo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_FuncionesVitales_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_GINECOOBSTETRICOS_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_GrupoFamiliar.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_HojaRecienNacidoDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_HojaRecienNacido_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Imagen.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ImpresionHC.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ImpresionHC_Detalle.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Indicaciones.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Indicaciones_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_IndicadorPAE.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InformeAltaAPD_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InformeAltaDiagAlt_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InformeAltaDiagIng_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InformeAltaProxCita_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InformeAlta_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InformeAlta_Examen_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InformeAlta_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InformeConsultaExterna_FE.cs" />
+    <Compile Include="Entidades\SS_HC_InterConsulta_Epricrisis3_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InterConsulta_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_InterConsulta_Kardex_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_IntervencionQuirurgica.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Kardex1_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Kardex3FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_KardexEnfermeria.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_KardexEnfermeriaDetalle.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Medicamento.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_MedicamentoAlta_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Medicamento_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Medicamento_FE_Epi2.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Medicamento_Kardex.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Medicamento_Kardex_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Monitoreo_Obs_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Monitoreo_Obs_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Monitoreo_Obs_Ing_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NANDA.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NandaNoc.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NIC.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NICActividad.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NOC.cs" />
+    <Compile Include="Entidades\SS_HC_NOC2.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NOCIndicador.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NocNic.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NotaIngreso_Diagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NotaIngreso_ExamenApoyo_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NotasEnfermeria_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_NotasIngreso_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Nota_Ingreso_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Oftalmologico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_OrdenInterQuiruDiagnosticoDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_OrdenInterQuiruExamenApoyoDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_OrdenIntervencionQuirurgicaCab_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PacienteDocumentos.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PAE_Actividad.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PAE_ActividadRealizacion.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PAE_Diagnostico.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PAE_Indicador.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PAE_Intervencion.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PAE_Objetivo.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PartogramaDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Partograma_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PatologiaClinica.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PersonalSalud.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Prescripcion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Pre_Operatorio_1_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Pre_Operatorio_2_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Problema.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Procedimiento.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcedimientoEjecucion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcedimientoInforme.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcedimientoInformeSPRING.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcedimientoPrueba.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Proceso.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcesoPAE.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcesoPAEObservacion.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcesoSelector.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProximaAtencion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProximaAtencionDiagnostico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProximaAtencionDiagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProximaAtencion_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ReferenciaDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Referencia_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_RegistroAcompanante.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_RESPARTO_EMB_ACT_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_RESPARTO_EMB_ANT_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_RESUMEN_PARTO_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_RESUMEN_PARTO_FE_2.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_RESUMEN_PARTO_FE_3.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_RetiroVoluntario_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SeccionFormato.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SeguimientoRiesgo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SeguimientoRiesgoDetalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SeguridadCirugia_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SeguridadCirugia_Pausa_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SolicitudTransfusional_2_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SolucionesAdministradas_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SolucitudTransfusionalDiagnostico_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SolucitudTransfusional_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Tabla.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_TablaCampo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_TriajeEmergencia_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Triaje_Ant_AlergiaDetalle_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Triaje_Ant_Alergia_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Ubicacion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_UnidadMedida.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_UnidadMedidaMinsa.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_UnidadServicio.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ValoracionAM_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ValoracionFuncionalAM_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ValoracionMentalAM_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ValoracionSocioFamAM_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_VIGILANCIA_DISPOSITIVOS_FE.cs">
+      <DependentUpon>ModelFormularios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_IT_SaludAnamnesisIngreso.cs" />
+    <Compile Include="Entidades\SS_IT_SaludDiagnosticoIngreso.cs" />
+    <Compile Include="Entidades\SS_IT_SaludInformePROCIngreso.cs" />
+    <Compile Include="Entidades\SS_IT_SaludInformeRutaIngreso.cs" />
+    <Compile Include="Entidades\SS_IT_SaludOFTALMOLOGICOIngreso.cs" />
+    <Compile Include="Entidades\SS_IT_SaludProcedimientoIngreso.cs" />
+    <Compile Include="Entidades\SS_IT_SaludRecetaIndicacionesGENIngreso.cs" />
+    <Compile Include="Entidades\SS_IT_SaludRecetaIngreso.cs" />
+    <Compile Include="Entidades\SS_SG_MaestroCobertura.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_VW_VALIDA.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SY_SeguridadAutorizaciones.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\UnidadesMast.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\USUARIO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ViewResponse.cs" />
+    <Compile Include="Entidades\VW_ATENCIONPACIENTE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_ATENCIONPACIENTEMEDICAMENTO.cs">
+      <DependentUpon>ModelPAE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_ATENCIONPACIENTE_GENERAL.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\vw_favoritos.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_FORMATOCAMPO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_FORMATORECURSOCAMPO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\vw_Imprimir_HC_GRILLA.cs">
+      <DependentUpon>ModelEntityGen.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\vw_Miscelaneos.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_PERSONAPACIENTE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_SA_PR_REP_ListaServiciosAuxiliares.cs" />
+    <Compile Include="Entidades\VW_ServicioPrestacion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_SS_GE_EMPRESASEGURO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_SS_GE_ESPECIALIDADMEDICO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_SS_HCE_VisorAnamnesis.cs" />
+    <Compile Include="Entidades\VW_SS_HCE_VisorDescansoMedico.cs" />
+    <Compile Include="Entidades\VW_SS_HCE_VisorDiagnostico.cs" />
+    <Compile Include="Entidades\VW_SS_HCE_VisorProcedimiento.cs" />
+    <Compile Include="Entidades\VW_SS_HCE_VisorReceta.cs" />
+    <Compile Include="Entidades\VW_SS_HC_ASIGNACIONMEDICO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_SS_HC_TABLAFORMATO_VALIDACION.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_SS_IT_ProcesoHistoriaAdjunta.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VW_TABLACAMPO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\V_EpisodioAtenciones.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_AlmacenMast.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ClaseFamilia.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ClaseLinea.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ClaseSubFamilia.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_Condicion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ItemAlmacen.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ItemAlmacenLote.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ItemMast.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ItemProcedencia.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ItemTipo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_LoteEquivalente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\IGenericDataRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Entidades\ModelEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelEntity1.cs</LastGenOutput>
+    </None>
+    <None Include="Entidades\ModelEntityGen.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelEntityGen.cs</LastGenOutput>
+    </None>
+    <None Include="Entidades\ModelFormularios.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelFormularios.cs</LastGenOutput>
+    </None>
+    <None Include="Entidades\ModelPAE.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelPAE.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,72 @@
+ASP.reportes_visorreporteshce_aspx 15:43:41
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 16:29:01
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:45:32
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 16:53:30
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:54:39
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 16:55:20
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 17:04:50
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:07:06
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:08:10
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:19:39
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 17:47:39
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 17:54:09
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:13:10
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 18:13:38
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 18:21:08
+Page_Init - El índice no es válido. (Excepción de HRESULT: 0x8002000B (DISP_E_BADINDEX))
+
+ASP.reportes_visorreporteshce_aspx 18:36:35
+Page_Init - El índice no es válido. (Excepción de HRESULT: 0x8002000B (DISP_E_BADINDEX))
+
+ASP.reportes_visorreporteshce_aspx 18:37:50
+Page_Init - El índice no es válido. (Excepción de HRESULT: 0x8002000B (DISP_E_BADINDEX))
+
+ASP.reportes_visorreporteshce_aspx 18:41:01
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 19:05:43
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 19:06:31
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 19:14:55
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 19:27:38
+Page_Init - Faltan los valores del parámetro.
+
+ASP.reportes_visorreporteshce_aspx 19:30:05
+Page_Init - Subproceso anulado.
+
+ASP.reportes_visorreporteshce_aspx 19:34:53
+Page_Init - Faltan los valores del parámetro.
+

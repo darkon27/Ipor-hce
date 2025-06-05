@@ -15,6 +15,7 @@ CREATE OR ALTER FUNCTION [dbo].[FUN_DetalleIndicaciones](@IdConsultaExterna INT 
         end
 
 GO
+
 CREATE OR ALTER FUNCTION [dbo].[UFN_DIAGNOSTICO_FE]
 (
     @IdConsultaExterna INT = NULL
@@ -389,7 +390,8 @@ AS
 
 GO
 
-CREATE OR ALTER PROC [dbo].[A_SP_SS_HCE_VisorHistoria] --'2019-05-08' ,'2019-05-08','10002094'
+CREATE OR ALTER PROC [dbo].[A_SP_SS_HCE_VisorHistoria] 
+--'2019-05-08' ,'2019-05-08','10002094'
 	@FechaInicio	datetime=null,
 	@FechaFin		datetime=null,
 	@Documento		varchar(20)=null,

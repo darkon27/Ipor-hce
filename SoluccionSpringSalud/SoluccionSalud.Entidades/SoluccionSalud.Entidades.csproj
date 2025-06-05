@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94C20B56-B046-491E-952C-5DF50A53591A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoluccionSalud.Entidades</RootNamespace>
+    <AssemblyName>SoluccionSalud.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\APLICACIONESMAST.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\AV_SOA_Service.cs" />
+    <Compile Include="Entidades\BE_ANTECEDPERSONALES.cs" />
+    <Compile Include="Entidades\BE_ENFERMEDADACTUAL.cs" />
+    <Compile Include="Entidades\BE_EPICRISIS.cs" />
+    <Compile Include="Entidades\CM_CO_TablaMaestro.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestroAsociado.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestroConcepto.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestroDetalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CM_CO_TablaMaestroDetalleConcepto.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\EMPLEADOMAST.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ENTITY_GLOBAL.cs" />
+    <Compile Include="Entidades\HC_FlujoProceso.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_Proceso.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_SubProceso.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_SubProcesoHijo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\HC_SubProcesoSelector.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\MA_MiscelaneosDetalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\MA_MiscelaneosHeader.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ModelCliente.cs" />
+    <Compile Include="Entidades\ModelEntity.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entidades\Orden.cs" />
+    <Compile Include="Entidades\PERSONAMAST.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SEGURIDADAUTORIZACIONE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SEGURIDADCONCEPTO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SEGURIDADGRUPO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SEGURIDADPERFILUSUARIO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SG_Opcion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_AD_OrdenAtencion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_AD_OrdenAtencionDetalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_CE_DICCIONARIO.cs" />
+    <Compile Include="Entidades\SS_GE_Diagnostico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_Paciente.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_PAGINA.cs" />
+    <Compile Include="Entidades\SS_GE_PAGINADETALLE.cs" />
+    <Compile Include="Entidades\SS_GE_ProcedimientoMedico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_ProcedimientoMedicoDos.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_Servicio.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_ServicioPrestacion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_GE_TipoAtencion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AF.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AF_Enfermedad.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AP.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_AP_Detalle.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_EA.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Anamnesis_EA_Sintoma.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_AnatomiaPatologica.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Diagnostico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioAtencion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EpisodioClinico.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_EstablecimientoSalud.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenFisico_Triaje.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ExamenSolicitado.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Imagen.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_IntervencionQuirurgica.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Medicamento.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PatologiaClinica.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_PersonalSalud.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Prescripcion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Problema.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Procedimiento.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcedimientoPrueba.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Proceso.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_ProcesoSelector.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Seccion.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_SeccionCampo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Selector.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_Tabla.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_TablaCampo.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_UnidadMedida.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SS_HC_UnidadServicio.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\UnidadesMast.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\USUARIO.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WH_ItemMast.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\IGenericDataRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Entidades\ModelEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelEntity.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

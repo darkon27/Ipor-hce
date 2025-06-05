@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ThinkNet</id>
+    <version>2.5.0</version>
+    <title>ThinkNet</title>
+    <authors>Sunsoft Studio(mail:young.han@foxmail.com)</authors>
+    <owners>Sunsoft Studio(mail:young.han@foxmail.com)</owners>
+    <licenseUrl>http://thinknet.codeplex.com/license</licenseUrl>
+    <projectUrl>http://thinknet.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An open-source framework can help you develop ddd+cqrs style applications. Support event-sourcing, multithreading, distribution.
+Also an infrastructure utility library. contains IoC, Cache, logging, Serialization...</description>
+    <summary>An open-source framework can help you develop ddd+cqrs style applications.</summary>
+    <copyright>Copyright © 2015 Sunsoft Studio</copyright>
+    <tags>DDD CQRS EDA ES</tags>
+  </metadata>
+</package>
