@@ -31,3 +31,13 @@ D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\Microso
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.Componentes\obj\Debug\SoluccionSalud.Componentes.csprojResolveAssemblyReference.cache
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.Componentes\obj\Debug\SoluccionSalud.Componentes.dll
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.Componentes\obj\Debug\SoluccionSalud.Componentes.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\SoluccionSalud.Componentes.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\SoluccionSalud.Componentes.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\Newtonsoft.Json.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\obj\Debug\SoluccionSalud.Componentes.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Componentes\obj\Debug\SoluccionSalud.Componentes.pdb

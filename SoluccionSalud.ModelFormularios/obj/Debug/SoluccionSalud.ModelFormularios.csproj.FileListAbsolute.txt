@@ -37,3 +37,16 @@ D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\En
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.ModelFormularios\obj\Debug\SoluccionSalud.ModelFormularios.csprojResolveAssemblyReference.cache
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.ModelFormularios\obj\Debug\SoluccionSalud.ModelFormularios.dll
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.ModelFormularios\obj\Debug\SoluccionSalud.ModelFormularios.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\SoluccionSalud.ModelFormularios.dll.config
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\SoluccionSalud.ModelFormularios.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\SoluccionSalud.ModelFormularios.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\EntityFramework.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\EntityFramework.SqlServer.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\SoluccionSalud.Entidades.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\Newtonsoft.Json.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\SoluccionSalud.Entidades.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\EntityFramework.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\bin\Debug\EntityFramework.SqlServer.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\obj\Debug\SoluccionSalud.ModelFormularios.csprojResolveAssemblyReference.cache
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\obj\Debug\SoluccionSalud.ModelFormularios.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.ModelFormularios\obj\Debug\SoluccionSalud.ModelFormularios.pdb

@@ -34,3 +34,15 @@ D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA\bin\Debug\EntityFramework
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA\obj\Debug\SoluccionSalud.SOA.csprojResolveAssemblyReference.cache
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA\obj\Debug\SoluccionSalud.SOA.dll
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA\obj\Debug\SoluccionSalud.SOA.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\SoluccionSalud.SOA.dll.config
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\SoluccionSalud.SOA.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\SoluccionSalud.SOA.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\EntityFramework.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\EntityFramework.SqlServer.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\SoluccionSalud.SOA.Entidades.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\SoluccionSalud.SOA.Entidades.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\EntityFramework.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\bin\Debug\EntityFramework.SqlServer.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\obj\Debug\SoluccionSalud.SOA.csprojResolveAssemblyReference.cache
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\obj\Debug\SoluccionSalud.SOA.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA\obj\Debug\SoluccionSalud.SOA.pdb

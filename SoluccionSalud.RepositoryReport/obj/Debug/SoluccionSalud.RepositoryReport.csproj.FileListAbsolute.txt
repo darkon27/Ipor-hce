@@ -40,3 +40,17 @@ D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\En
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.RepositoryReport\obj\Debug\SoluccionSalud.RepositoryReport.csprojResolveAssemblyReference.cache
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.RepositoryReport\obj\Debug\SoluccionSalud.RepositoryReport.dll
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.RepositoryReport\obj\Debug\SoluccionSalud.RepositoryReport.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\SoluccionSalud.RepositoryReport.dll.config
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\SoluccionSalud.RepositoryReport.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\SoluccionSalud.RepositoryReport.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\CodeFirstStoreFunctions.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\EntityFramework.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\EntityFramework.SqlServer.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\SoluccionSalud.Entidades.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\Newtonsoft.Json.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\SoluccionSalud.Entidades.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\EntityFramework.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\bin\Debug\EntityFramework.SqlServer.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\obj\Debug\SoluccionSalud.RepositoryReport.csprojResolveAssemblyReference.cache
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\obj\Debug\SoluccionSalud.RepositoryReport.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.RepositoryReport\obj\Debug\SoluccionSalud.RepositoryReport.pdb

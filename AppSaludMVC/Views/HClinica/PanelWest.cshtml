@@ -5,7 +5,7 @@
     ViewBag.Title = "Simple TreePanel";
     Layout = "";
     var X = Html.X();
-    var indicaTriaje = SoluccionSalud.Entidades.Entidades.ENTITY_GLOBAL.Instance.COD_BANDEJA=="TRIAJE"?true:false;
+    var indicaTriaje = SoluccionSalud.Entidades.Entidades.ENTITY_GLOBAL.Instance.COD_BANDEJA == "TRIAJE" ? true : false;
     //var containerId = "Center1";
     //var text = "3461";
     var lol = SoluccionSalud.Entidades.Entidades.ENTITY_GLOBAL.Instance.OPCION_PADRE;
@@ -120,6 +120,26 @@
 
     };
 
+    function eventoViewReportAntWest() {
+        var vista = 'HCReportes/HCEVisorHistorialAnt';
+        var container = 'Center1';
+
+        Ext.net.DirectMethod.request({
+            url: '@(Url.Action("VisorHCEReportes2"))',
+            params: {
+                idPaciente: 0,
+                idOrdenAtencion: 0,
+                codFormato: 0,
+                codigoOA: 0,
+                Accion: 'VER',
+                nombrePaciente: 0,
+                Form: vista,
+                FormContainer: container
+
+            }
+        });
+    }
+
     function eventoViewReportWest() {
         var vista = 'HCReportes/HCEVisorIndicacionesPDF';
         var container = 'Center1';
@@ -180,7 +200,7 @@
         });
     }
 
-      function eventoViewHistoriaClinicaWest() {
+    function eventoViewHistoriaClinicaWest() {
         var vista = 'HCReportes/HCEHistoriaClinicaHCE';
         var container = 'centerPanels';
 
@@ -248,7 +268,7 @@
 
  X.Panel()
         .AutoScroll(true)
-     //  .LayoutConfig(new VBoxLayoutConfig() { Align = VBoxAlign.Center, Pack = BoxPack.Center })
+        //  .LayoutConfig(new VBoxLayoutConfig() { Align = VBoxAlign.Center, Pack = BoxPack.Center })
      .ID("PanelMainMP")
      .TopBar(
                 X.Toolbar()
@@ -264,8 +284,8 @@
                         X.ToolbarFill(),
 
 
-                                  Html.X().Button().Text("").Html("<text style='color:#15498b';>Historia Clínica</text>")
-                                                            //.Text("Reportes")
+                                  Html.X().Button().Text("").Html("<text style='color:#15498b';>Historial</text>")
+        //.Text("Reportes")
                                                             .ID("btnHCEHCWest").Hidden(indicaTriaje)
                                                     .Icon(Icon.FolderTable).Width(100)
                                                         .ToolTip("Historia Clínica")
@@ -276,8 +296,8 @@
 
 
                                Html.X().Button().Text("").Html("<text style='color:#15498b';>Bitácora</text>")
-                                                //.Text("Reportes")
-                                                .ID("btnHCEBitacoraWest").Hidden(false)
+        //.Text("Reportes")
+                                                .ID("btnHCEBitacoraWest").Hidden(true)
                                             .Icon(Icon.FolderTable).Width(70)
                                             .ToolTip("Vista de la Bitácora")
                                             .Listeners(l =>
@@ -287,7 +307,7 @@
 
                                ,
                                 Html.X().Button()
-                                    //.Text("Reportes")
+        //.Text("Reportes")
                                     .ID("btnHCEAlergiaeWest")
                                         .Icon(Icon.FlagRed).Hidden(!flagAlergia)
                                     .ToolTip("Alergias")
@@ -297,13 +317,22 @@
                                     })
                                            ,
                                 Html.X().Button()
-                                    //.Text("Reportes")
+        //.Text("Reportes")
                                     .ID("btnHCEAlergiaeWest02")
                                         .Icon(Icon.FlagWhite).Hidden(flagAlergia)
                                     .ToolTip("Alergias").Enable(true),
-
+                                    Html.X().Button()
+        //.Text("Reportes")
+                                        .ID("btnHCEReporteAntWest")
+                                                .Icon(Icon.BookPrevious).Hidden(indicaTriaje)
+                                        .ToolTip("Vista de historial antiguo")
+                                        .Listeners(l =>
+                                        {
+                                            l.Click.Handler = "eventoViewReportAntWest();";
+                                        })
+                                               ,
                                    Html.X().Button()
-                                    //.Text("Reportes")
+        //.Text("Reportes")
                                     .ID("btnHCEReporteWest")
                                         .Icon(Icon.Report).Hidden(indicaTriaje)
                                     .ToolTip("Vista de los Informes de Procedimiento Spring")
@@ -339,7 +368,7 @@
      )
     .Items(
         Html.X().TreePanel()
-                //.BodyStyle("border: none;")
+        //.BodyStyle("border: none;")
                 .Border(false)
                 .Layout(LayoutType.Fit)
                 .ID("TreeWest")
@@ -375,7 +404,7 @@
                 .Root(
                     Html.X().Node().NodeID(Model.OPCION_PADRE)
                         .Text((Model.OPCION_PADRE != null ? (Model.PERFILACTUAL + "").Trim() : "OPCIONES NO DETERMINADAS")).Expanded(true)
-                // .Text(("MACROPROCESOS HCE"))
+        // .Text(("MACROPROCESOS HCE"))
                 )
                      .Listeners(l =>
                      {
@@ -404,36 +433,36 @@
                    })
 
     //,
-    //    Html.X().TreePanel()
-    ////.StyleHtmlCls("TreePanelBody-RS")
-    //    .Border(false)
-    //    .Layout(LayoutType.Fit)
-    //            .ID("TreeWestBitacora")
-    //            .Store(
-    //                Html.X().TreeStore().ID("TSBita")
-    //                .AutoLoad(true)
-    //                    .Proxy(
-    //                          Html.X().AjaxProxy().Url(Url.Action("ArbolMacroProcesosBitacora"))
-    //                    )
-    //            )
-    //            .RootVisible(false)
-    //            .Root(
-    //                Html.X().Node().NodeID("root")
-    //                    .Text((Model.OPCION_PADRE != null ? (Model.PERFILACTUAL + "-BITACORA").Trim() : "OPCIONES NO DETERMINADAS"))
-    //// .Text(("MACROPROCESOS HCE"))
-    //            )
-    //            .Expand(true)
-    //            .DirectEvents(ev =>
-    //                        {
-    //                            ev.Select.Url = "HClinica/LoadFormatoBitacora";
-    //                            //ev.Select.Url = "HClinica/validarCambiosFormulario";
-    //                            ev.Select.Method = HttpMethod.GET;
-    //                            ev.Select.ExtraParams.Add(new
-    //                                                {
-    //                                                    node = JRawValue.From("record.data.id"),
-    //                                                    containerId = "Center1"
-    //                                                });
-    //                        })
+        //    Html.X().TreePanel()
+        ////.StyleHtmlCls("TreePanelBody-RS")
+        //    .Border(false)
+        //    .Layout(LayoutType.Fit)
+        //            .ID("TreeWestBitacora")
+        //            .Store(
+        //                Html.X().TreeStore().ID("TSBita")
+        //                .AutoLoad(true)
+        //                    .Proxy(
+        //                          Html.X().AjaxProxy().Url(Url.Action("ArbolMacroProcesosBitacora"))
+        //                    )
+        //            )
+        //            .RootVisible(false)
+        //            .Root(
+        //                Html.X().Node().NodeID("root")
+        //                    .Text((Model.OPCION_PADRE != null ? (Model.PERFILACTUAL + "-BITACORA").Trim() : "OPCIONES NO DETERMINADAS"))
+        //// .Text(("MACROPROCESOS HCE"))
+        //            )
+        //            .Expand(true)
+        //            .DirectEvents(ev =>
+        //                        {
+        //                            ev.Select.Url = "HClinica/LoadFormatoBitacora";
+        //                            //ev.Select.Url = "HClinica/validarCambiosFormulario";
+        //                            ev.Select.Method = HttpMethod.GET;
+        //                            ev.Select.ExtraParams.Add(new
+        //                                                {
+        //                                                    node = JRawValue.From("record.data.id"),
+        //                                                    containerId = "Center1"
+        //                                                });
+        //                        })
 
     )
 )
