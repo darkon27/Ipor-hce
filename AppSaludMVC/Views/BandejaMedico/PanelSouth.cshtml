@@ -10,6 +10,8 @@
     var selActualEpiClinico = null;
     var selActualEpiAtencion = null;
     var selActualAccion = null;
+
+
     var template = '<span style="color:{0};">{1}</span>';
     var change = function (value) {
         return Ext.String.format(template, (value > 0) ? "green" : "red", value);
@@ -121,13 +123,23 @@
 )
 
 @(Html.X().GridPanel()
+        // .Title("Customers")
+         //.Scroll(ScrollMode.Both)
+         //.AutoScroll(true)
+        //.Width(600)
+        //.Height(160)
          .ID("GridPanel1")
          .Layout(Ext.Net.LayoutType.Fit)
          .Margins("0 0 2 2")
          .Border(false)
          .AutoScroll(true)
          .TopBar(Html.X().Toolbar()
-                .Items(                
+                .Items(
+        // Html.X().Button()
+        //     .Text("Bitácora")
+        //    .Icon(Icon.Film),
+        // .Handler("this.up('grid').store.insert(0, new Person());this.up('grid').editingPlugin.startEdit(0, 0);"),
+        //  Html.X().ToolbarSeparator(),                      
                         X.Checkbox()
                         .FieldLabel("Procesos")
                         .LabelWidth(50)
@@ -143,13 +155,44 @@
                        Html.X().ComboBox()
                               .ID("comboProceso")
                               .Editable(true)
+                              //.MinWidth(200)
                               .DisplayField("DESCRIPCION")
                               .ValueField("CONCEPTO")                              
+                              //.MinLengthText("280")
+                              //.MinLength(300)
                               .StoreID("StoreComboProcesos")
-                              .Width(150)                             
+                              //.FieldLabel("Procesos")
+                              .Width(150)
+                             
                               .QueryMode(DataLoadMode.Local)
+                             // .TriggerAction(TriggerAction.Query)
                               .TriggerAction(TriggerAction.All)
-                              .EmptyText("Seleccione un Proceso").Disabled(true),                          
+                              .EmptyText("Seleccione un Proceso").Disabled(true),
+                            /*.Listeners(ls =>
+                                ls.Select.Handler = "alert('TEST'+App.comboProceso.y);"
+                            )*/
+                            /*.Items(
+                                    new ListItem("Diagnósticos", "BE"),
+                                    new ListItem("Consultas", "BR")
+                                 ),*/
+                                              //Html.X().ToolbarSeparator(),
+                            /*
+                            Html.X().ComboBox()
+                                    .ID("comboServicio")
+                                    .Editable(false)
+                                    .FieldLabel("Servicio")
+                                        .Width(150)
+                                         .LabelWidth(50)
+                                    .QueryMode(DataLoadMode.Local)
+                                    .TriggerAction(TriggerAction.All)
+                                    .EmptyText("Select a country")
+                                    .Listeners(ls =>
+                                        ls.Select.Handler = "App.ComboBoxCity.clearValue(); App.ComboBoxCity.getStore().load()"
+                                      )
+                                    .Items(
+                                          new ListItem("Servicio1", "BE"),
+                                           new ListItem("Servicio2", "BR")
+                                       ),*/
                          Html.X().ToolbarSeparator(),
                          X.Checkbox()
                          .FieldLabel("Prof. de Salud")
@@ -165,11 +208,16 @@
                          .Checked(true),                           
                          Html.X().ComboBox()
                                   .ID("comboPersonal")
-                                  .Width(100)                                   
-                                  .Editable(false)                             
+                                  .Width(100)
+                                   
+                                  .Editable(false)
+                                  //.FieldLabel("Prof. de Salud")                                   
                                   .QueryMode(DataLoadMode.Local)
                                   .TriggerAction(TriggerAction.All)
                                   .EmptyText("Seleccione una opción")
+        //.Listeners(ls =>
+        //  ls.Select.Handler = "App.ComboBoxCity.clearValue(); App.ComboBoxCity.getStore().load()")
+
                                   .Items(
                                         new ListItem("Médicos", "BE"),
                                         new ListItem("Enfermera", "BR")
@@ -191,8 +239,12 @@
                                         .ID("txtBuscar")                                                                                 
                                         .Width(120)
                                         .Disabled(true),
+                                        //.LabelWidth(50)
+                                        //.FieldLabel("Buscar"),
                                 Html.X().ToolbarSeparator(),
                                    X.Checkbox()
+                                    //.FieldLabel("Desde")
+                                     //.LabelWidth(50)
                                      .ID("chkFecha")
                                       .Listeners(l => l.Change.Handler = @"var checkAll = #{chkFecha}.getValue();
                                       if(checkAll){     
@@ -245,7 +297,35 @@
                                                                 fechaDesde = JRawValue.From("App.dfDesde.getValue()"),
                                                                 fechaHasta = JRawValue.From("App.dfHasta.getValue()"),
                                                             });
-                                              }),                       
+                                              }),
+                           // Html.X().Button()
+                           //         .Text("Nuevo Epis.")
+                           //         .Icon(Icon.ShapeSquareAdd)
+                           //         .ID("cmdNuevoEpisodio")
+                           //         .DirectEvents(directEvents =>
+                           //                             {
+                           //                                 directEvents.Click.Url = "HClinica/EstadoClinico";
+                           //                                 directEvents.Click.EventMask.Msg = "Loading...";
+                           //                                 directEvents.Click.ExtraParams.Add(new
+                           //                                 {
+                           //                                     selection = "",
+                           //                                     accion = "Nuevo"
+                           //                                 });
+                           //                             }),
+                           //Html.X().Button()
+                           //         .Text("Nueva Aten.")
+                           //         .Icon(Icon.ShapeSquareGo)
+                           //         .ID("cmdContinuaEpisodio")
+                           //         .DirectEvents(directEvents =>
+                           //                         {
+                           //                             directEvents.Click.Url = "HClinica/EstadoClinico";
+                           //                             directEvents.Click.EventMask.Msg = "Loading...";
+                           //                             directEvents.Click.ExtraParams.Add(new
+                           //                             {
+                           //                                 selection = JRawValue.From("App.TxtSeleccion.getValue()"),
+                           //                                 accion = "Continuar" 
+                           //                             });
+                           //                         }),
                             Html.X().Button()
                                     .Text("Ver")
                                     .ID("cmdVer")
@@ -253,6 +333,7 @@
                                         .Listeners(l =>
                                         {
                                             l.Click.Handler =
+                                                // "aRecordMast.add(App.GridPanel1.getSelectionSubmit().getSelectionModelField().getValue());"; 
                                                 "VisorWindows();";
                                     })
                 )
@@ -273,6 +354,7 @@
                                                                             .IDProperty("Accion")))))
                     
         .Parameters(ps => 
+                    //ps.Add(new StoreParameter("grupo", Model.GRUPO, ParameterMode.Value)),
                     ps.Add(
                     new{
                         start = 0,
@@ -297,7 +379,9 @@
                             fields.Add(Html.X().ModelField().Name("MotivoConsulta"));
                             //fields.Add(Html.X().ModelField().Name("FechaNacimiento"));                                                        
                             fields.Add(Html.X().ModelField().Name("Accion"));
-                            fields.Add(Html.X().ModelField().Name("FechaRegistro"));                               
+                            fields.Add(Html.X().ModelField().Name("FechaRegistro"));
+                            
+                             
                         })))))
 
 
@@ -305,9 +389,12 @@
         {
             columnModel.Columns.Add(Html.X().Column().Text("EpisodioClinico").DataIndex("EpisodioClinico").Width(100).Hidden(true));
             columnModel.Columns.Add(Html.X().Column().Text("IdEpisodioAtencion").DataIndex("IdEpisodioAtencion").Width(100).Hidden(true));
+            
+            //columnModel.Columns.Add(Html.X().Column().Text("Paciente").DataIndex("Persona").Width(100).Hidden(true));
             columnModel.Columns.Add(Html.X().Column().Text("Atiende").DataIndex("PersonalSaludNombre").Width(250));
             columnModel.Columns.Add(Html.X().Column().Text("Especialidad").DataIndex("especialidadNombre").Width(250));
             columnModel.Columns.Add(Html.X().Column().Text("Diagnostico").DataIndex("MotivoConsulta").Width(300));
+            //columnModel.Columns.Add(Html.X().Column().Text("Fecha").DataIndex("FechaNacimiento").Width(100));                        
             columnModel.Columns.Add(Html.X().Column().Text("Form").DataIndex("Accion").Width(100).Hidden(true));
             columnModel.Columns.Add(Html.X().Column().Text("Fecha de registro").DataIndex("FechaRegistro").Width(120));
 

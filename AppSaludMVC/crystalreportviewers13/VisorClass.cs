@@ -11,10 +11,7 @@ namespace AppSaludMVC.Controllers
         public string tipoDocumento { get; set; }
         public string Documento { get; set; }
         public string IdOrdenAtencion { get; set; }
-
         public string cod_sucursal { get; set; }
-
-
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
     }

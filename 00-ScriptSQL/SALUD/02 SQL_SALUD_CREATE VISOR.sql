@@ -1,5 +1,5 @@
-
 GO
+
 CREATE OR ALTER FUNCTION [dbo].[FUN_DetalleIndicaciones](@IdConsultaExterna INT =NULL,@Secuendial INT =NULL )
         returns varchar(max)
             as
@@ -13,7 +13,6 @@ CREATE OR ALTER FUNCTION [dbo].[FUN_DetalleIndicaciones](@IdConsultaExterna INT 
 			WHERE A.IdConsultaExterna=@IdConsultaExterna and A.Secuencial= @Secuendial
             return @variable
         end
-
 GO
 
 CREATE OR ALTER FUNCTION [dbo].[UFN_DIAGNOSTICO_FE]

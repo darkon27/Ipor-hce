@@ -6,7 +6,6 @@ using System.Web.UI;
 using Ext.Net;
 using Ext.Net.MVC;
 using SoluccionSalud.Entidades.Entidades;
-//using SoluccionSalud.RepositoryReport;
 
 namespace AppSaludMVC.Controllers
 {

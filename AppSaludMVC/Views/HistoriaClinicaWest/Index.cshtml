@@ -22,8 +22,7 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Web Fonts  -->
-    <!-- Vendor CSS
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css" />-->
+    <!-- Vendor CSS -->
     <link href="~/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/assets/vendor/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="~/assets/vendor/magnific-popup/magnific-popup.css" />
@@ -108,7 +107,7 @@
         <div class="col-lg-6 col-sm-5">
             <div class="panel-body">
                 <div class="row">
-                    <div  id="PacienteDiv">
+                    <div id="PacienteDiv">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Paciente </label>
@@ -117,31 +116,31 @@
                             </div>
                         </div>
                     </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label class="control-label">Sucursal </label>
-                                <select class="form-control" id="cboSucursal"></select>
-                            </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label">Sucursal </label>
+                            <select class="form-control" id="cboSucursal"></select>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <label class="control-label">Fecha Inicio</label>
-                                <input type="date" id="TxtFechaInicio" name="website" class="form-control" />
-                            </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label">Fecha Inicio</label>
+                            <input type="date" id="TxtFechaInicio" name="website" class="form-control" />
                         </div>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <label class="control-label">Fecha Fin</label>
-                                <input type="date" id="TxtFechaFin" name="website" class="form-control" />
-                            </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label">Fecha Fin</label>
+                            <input type="date" id="TxtFechaFin" name="website" class="form-control" />
                         </div>
-                        <div class="col-sm-2">
-                            <div class="form-group">
-                                <br />
-                                <button type="submit" class="btn btn-primary none" id="BtnBuscarOAS">Buscar</button>
-                            </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <br />
+                            <button type="submit" class="btn btn-primary none" id="BtnBuscarOAS">Buscar</button>
                         </div>
-                    </div><br />
+                    </div>
+                </div><br />
                 <div class="row">
                     <div class="col-lg-5">
                         <ul class="simple-bullet-list mb-sm center">
@@ -184,19 +183,29 @@
                             <th style="font-size: 10px;">Especialidad</th>
                             <th style="font-size: 10px;" class="center hidden-phone">Estado</th>
 
-                            @*<th style="font-size: 10px;">PRO</th>
-                                <th style="font-size: 10px;">LAB</th>
-                                <th style="font-size: 10px;">IMG</th>*@
-
-
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
 
             </div>
+            <div class="panel-body">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Historia Oncológica</h2>
+                    </header>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" disabled=disabled id="TxtHistoriaOncologica" rows="10" placeholder="Type your message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-
         <div class="col-md-6">
             <section class="panel">
 
@@ -311,6 +320,54 @@
 
                                                             </div>
                                                         </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Cabeza</label>
+                                                                <input type="text" disabled=disabled disabled=disabled name="firstname" id="TxtCabeza" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Cuello</label>
+                                                                <input type="text" disabled=disabled disabled=disabled name="firstname" id="TxtCuello" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Torax</label>
+                                                                <input type="text" disabled=disabled disabled=disabled name="firstname" id="TxtTorax" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Abdomen</label>
+                                                                <input type="text" disabled=disabled disabled=disabled name="firstname" id="TxtAbdomen" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Genitourinario</label>
+                                                                <input type="text" disabled=disabled disabled=disabled name="firstname" id="TxtGenitourinario" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Musc Esqueletico</label>
+                                                                <input type="text" disabled=disabled disabled=disabled name="firstname" id="TxtEsqueletico" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Neurológico</label>
+                                                                <input type="text" disabled=disabled disabled=disabled name="firstname" id="TxtNeurologico" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Otros</label>
+                                                                <input type="text" disabled=disabled disabled=disabled name="firstname" id="TxtOtros" class="form-control" />
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="row">
 
@@ -324,22 +381,6 @@
                                                     </div>
                                                 </div>
                                             </section>
-                                            <section class="panel">
-                                                <header class="panel-heading">
-                                                    <h2 class="panel-title">Antecedentes de Importancia</h2>
-                                                </header>
-                                                <div class="panel-body">
-                                                    <div class="row">
-                                                        <div class="col-sm-12">
-                                                            <div class="form-group">
-                                                                <textarea class="form-control" disabled=disabled disabled=disabled id="TxtAntecedentes" rows="5" placeholder="Type your message"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-
-
                                         </div>
                                         <div id="Ananmesis2" class="tab-pane ">
                                             <section class="panel">
@@ -1050,8 +1091,9 @@
                                    $('#PacienteDiv').hide();
                                    var html = '<button class="btn btn-primary"  data-toggle="tooltip" data-placement="top"  data-codigo="' + data + '" title="Consultar OA" id="BtnShow" type="button"><i class="fa fa-eye "></i></button>' +
                                   '<button  class="btn btn-dark"  data-toggle="tooltip" data-placement="top"  data-codigo="' + data + '" title="Copiar" id="BtnCopiar" type="button" ><i class="fa fa-file "></i></button>';
-
-                               }
+                               }                               
+                               // Aquí sí usas el objeto completo de la fila
+                               $("#TxtHistoriaOncologica").val(full.CodigoDiagnostico);
                                return '<div class="btn-group">' + html + '</div>'; // Asegura que los botones estén en la misma línea
                            }
                        },
@@ -1468,6 +1510,14 @@
             $("#TxtDMFecFin").val("");
             $("#TxtIPBreveResumen").val("");
 
+            $("#TxtCabeza").val("");
+            $("#TxtCuello").val("");
+            $("#TxtTorax").val("");
+            $("#TxtAbdomen").val("");
+            $("#TxtGenitourinario").val("");
+            $("#TxtEsqueletico").val("");
+            $("#TxtNeurologico").val("");
+            $("#TxtOtros").val("");
         }
 
 
@@ -1511,7 +1561,7 @@
                                 if (Dato2.sexo == "F") { $("#TxtSexo").val("Femenino"); } else if (Dato2.sexo == "M") { $("#TxtSexo").val("Masculino"); }
                                 $("#TxtFechaConsulta").val(Dato2.CitaFecha);
                                 $("#TxtOA").val(Dato2.CodigoOA);
-
+                                //$("#TxtHistoriaOncologica").val(Dato2.CodigoDiagnostico);                                
                                 var resRe = respJson[i].list_VW_SS_HCE_VisorReceta;
                                 $("#dataTable2").html("");
                                 $("#dataTable2").html(
@@ -1539,10 +1589,6 @@
                                     var DatoRecera = resRe[i3];
                                     console.log(DatoRecera.IndicacionesEsp);
                                     console.log(resRe[i3]);
-                                    //if (DatoRecera.Componente == "") {
-                                    //    $("#dataTable2").html("");
-                                    //    $("#containerValidaReceta").show();
-                                    //} else {
                                     $("#containerValidaReceta").hide();
 
                                     $("#dataTable2 tbody").append("<tr>" +
@@ -1570,7 +1616,7 @@
                                 if (Dato2.sexo == "F") { $("#TxtSexo").val("Femenino"); } else if (Dato2.sexo == "M") { $("#TxtSexo").val("Masculino"); }
                                 $("#TxtFechaConsulta").val(Dato2.CitaFecha);
                                 $("#TxtOA").val(Dato2.CodigoOA);
-
+                                //$("#TxtHistoriaOncologica").val(Dato2.CodigoDiagnostico);
                                 var resRe = respJson[i].list_VW_SS_HCE_VisorReceta;
                                 $("#dataTable2").html("");
                                 $("#dataTable2").html(
@@ -1597,12 +1643,7 @@
                                     var DatoRecera = resRe[i3];
                                     console.log(DatoRecera.IndicacionesEsp);
                                     console.log(resRe[i3]);
-                                    //if (DatoRecera.Componente == "") {
-                                    //    $("#dataTable2").html("");
-                                    //    $("#containerValidaReceta").show();
-                                    //} else {
                                     $("#containerValidaReceta").hide();
-
                                     $("#dataTable2 tbody").append("<tr>" +
                                         "<td>" + DatoRecera.DCI + "</td>" +
                                         "<td>" + DatoRecera.LIN + "</td>" +
@@ -1690,7 +1731,6 @@
                                     }
                                 } else if (Dato.Descripcion == "Antecedente") {
 
-
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtAntecedentes").val(Dato.ValorCadena);
 
@@ -1712,7 +1752,62 @@
                                     } else {
                                         $("#TxtExamenFisico").val(Dato.ValorNumerico);
                                     }
+                                } else if (Dato.Descripcion == "Cabeza") {
+                                    if (Dato.TipoDato == "T") {
+                                        $("#TxtCabeza").val(Dato.ValorCadena);
 
+                                    } else {
+                                        $("#TxtCabeza").val(Dato.ValorNumerico);
+                                    }
+                                } else if (Dato.Descripcion == "Cuello") {
+                                    if (Dato.TipoDato == "T") {
+                                        $("#TxtCuello").val(Dato.ValorCadena);
+
+                                    } else {
+                                        $("#TxtCuello").val(Dato.ValorNumerico);
+                                    }
+                                } else if (Dato.Descripcion == "Torax") {
+                                    if (Dato.TipoDato == "T") {
+                                        $("#TxtTorax").val(Dato.ValorCadena);
+
+                                    } else {
+                                        $("#TxtTorax").val(Dato.ValorNumerico);
+                                    }
+                                } else if (Dato.Descripcion == "Abdomen") {
+                                    if (Dato.TipoDato == "T") {
+                                        $("#TxtAbdomen").val(Dato.ValorCadena);
+
+                                    } else {
+                                        $("#TxtAbdomen").val(Dato.ValorNumerico);
+                                    }
+                                } else if (Dato.Descripcion == "Genitourinario") {
+                                    if (Dato.TipoDato == "T") {
+                                        $("#TxtGenitourinario").val(Dato.ValorCadena);
+
+                                    } else {
+                                        $("#TxtGenitourinario").val(Dato.ValorNumerico);
+                                    }
+                                } else if (Dato.Descripcion == "Musc Esqueletico") {
+                                    if (Dato.TipoDato == "T") {
+                                        $("#TxtEsqueletico").val(Dato.ValorCadena);
+
+                                    } else {
+                                        $("#TxtEsqueletico").val(Dato.ValorNumerico);
+                                    }
+                                } else if (Dato.Descripcion == "Neurológico") {
+                                    if (Dato.TipoDato == "T") {
+                                        $("#TxtNeurologico").val(Dato.ValorCadena);
+
+                                    } else {
+                                        $("#TxtNeurologico").val(Dato.ValorNumerico);
+                                    }
+                                } else if (Dato.Descripcion == "Otros") {
+                                    if (Dato.TipoDato == "T") {
+                                        $("#TxtOtros").val(Dato.ValorCadena);
+
+                                    } else {
+                                        $("#TxtOtros").val(Dato.ValorNumerico);
+                                    }
                                 } else if (Dato.Descripcion == "Tiempo Transcurrido") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtTipoEnfermedad").val(Dato.ValorCadena);
@@ -1743,10 +1838,6 @@
 
                                             $("#TxtFC02").val((parseInt(TxtPeso.value, 10) / ((parseInt(TxtFC.value, 10) / 100) * (parseInt(TxtFC.value, 10) / 100))).toFixed(2).toString());
                                         }
-
-
-                                        //  if (Txpeso.length)
-                                        //$("#TxtFC").val(TxtFC / Txpeso);
 
                                     } else {
                                         $("#TxtFC").val(Dato.ValorNumerico);

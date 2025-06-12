@@ -10108,10 +10108,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:24</publishTime>
     </File>
     <File Include="bin/AppSaludMVC.dll">
-      <publishTime>05/17/2025 10:03:39</publishTime>
+      <publishTime>06/11/2025 10:25:32</publishTime>
     </File>
     <File Include="bin/AppSaludMVC.pdb">
-      <publishTime>05/17/2025 10:03:39</publishTime>
+      <publishTime>06/11/2025 10:25:31</publishTime>
     </File>
     <File Include="bin/CrystalDecisions.CrystalReports.Design.dll">
       <publishTime>10/19/2014 06:46:20</publishTime>
@@ -10327,106 +10327,106 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:28</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Bussines.dll">
-      <publishTime>05/17/2025 09:46:14</publishTime>
+      <publishTime>06/05/2025 17:23:41</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Bussines.pdb">
-      <publishTime>05/17/2025 09:46:14</publishTime>
+      <publishTime>06/05/2025 17:23:41</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Componentes.dll">
-      <publishTime>05/17/2025 09:46:04</publishTime>
+      <publishTime>06/05/2025 17:23:18</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Componentes.pdb">
-      <publishTime>05/17/2025 09:46:04</publishTime>
+      <publishTime>06/05/2025 17:23:18</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Entidades.dll">
-      <publishTime>05/17/2025 09:46:05</publishTime>
+      <publishTime>06/05/2025 17:23:21</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Entidades.dll.config">
       <publishTime>11/03/2022 11:53:35</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Entidades.pdb">
-      <publishTime>05/17/2025 09:46:05</publishTime>
+      <publishTime>06/05/2025 17:23:21</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Model.dll">
-      <publishTime>05/17/2025 09:46:08</publishTime>
+      <publishTime>06/05/2025 17:23:28</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Model.dll.config">
       <publishTime>11/03/2022 11:53:36</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Model.pdb">
-      <publishTime>05/17/2025 09:46:08</publishTime>
+      <publishTime>06/05/2025 17:23:27</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.ModelFormularios.dll">
-      <publishTime>05/17/2025 09:46:11</publishTime>
+      <publishTime>06/05/2025 17:23:33</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.ModelFormularios.dll.config">
       <publishTime>11/03/2022 11:53:36</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.ModelFormularios.pdb">
-      <publishTime>05/17/2025 09:46:11</publishTime>
+      <publishTime>06/05/2025 17:23:33</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.ModelPAE.dll">
-      <publishTime>05/17/2025 09:46:10</publishTime>
+      <publishTime>06/05/2025 17:23:29</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.ModelPAE.dll.config">
       <publishTime>11/03/2022 11:53:37</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.ModelPAE.pdb">
-      <publishTime>05/17/2025 09:46:10</publishTime>
+      <publishTime>06/05/2025 17:23:29</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Repository.dll">
-      <publishTime>05/17/2025 09:46:12</publishTime>
+      <publishTime>06/05/2025 17:23:37</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Repository.dll.config">
       <publishTime>11/03/2022 11:53:37</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Repository.pdb">
-      <publishTime>05/17/2025 09:46:12</publishTime>
+      <publishTime>06/05/2025 17:23:37</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.RepositoryFormulario.dll">
-      <publishTime>05/17/2025 09:46:15</publishTime>
+      <publishTime>06/05/2025 17:23:42</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.RepositoryFormulario.pdb">
-      <publishTime>05/17/2025 09:46:15</publishTime>
+      <publishTime>06/05/2025 17:23:42</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.RepositoryReport.dll">
-      <publishTime>05/17/2025 09:46:10</publishTime>
+      <publishTime>06/05/2025 17:23:30</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.RepositoryReport.dll.config">
       <publishTime>11/03/2022 11:53:38</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.RepositoryReport.pdb">
-      <publishTime>05/17/2025 09:46:10</publishTime>
+      <publishTime>06/05/2025 17:23:30</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Service.dll">
-      <publishTime>05/17/2025 09:46:20</publishTime>
+      <publishTime>06/05/2025 17:24:08</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Service.dll.config">
       <publishTime>11/03/2022 11:53:39</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.Service.pdb">
-      <publishTime>05/17/2025 09:46:20</publishTime>
+      <publishTime>06/05/2025 17:24:07</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.SOA.Bussines.dll">
-      <publishTime>05/17/2025 09:46:06</publishTime>
+      <publishTime>06/05/2025 17:23:35</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.SOA.Bussines.pdb">
-      <publishTime>05/17/2025 09:46:06</publishTime>
+      <publishTime>06/05/2025 17:23:34</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.SOA.dll">
-      <publishTime>05/17/2025 09:46:04</publishTime>
+      <publishTime>06/05/2025 17:23:22</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.SOA.dll.config">
       <publishTime>11/03/2022 11:53:39</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.SOA.Entidades.dll">
-      <publishTime>05/17/2025 09:46:04</publishTime>
+      <publishTime>06/05/2025 17:23:18</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.SOA.Entidades.pdb">
-      <publishTime>05/17/2025 09:46:04</publishTime>
+      <publishTime>06/05/2025 17:23:17</publishTime>
     </File>
     <File Include="bin/SoluccionSalud.SOA.pdb">
-      <publishTime>05/17/2025 09:46:04</publishTime>
+      <publishTime>06/05/2025 17:23:22</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>09/14/2023 14:55:58</publishTime>
@@ -13423,7 +13423,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:22</publishTime>
     </File>
     <File Include="resources/css/examples03.css">
-      <publishTime>05/15/2025 22:32:57</publishTime>
+      <publishTime>05/15/2024 11:03:54</publishTime>
     </File>
     <File Include="resources/css/main.css">
       <publishTime>05/15/2024 10:55:22</publishTime>
@@ -13825,7 +13825,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/03/2025 11:31:41</publishTime>
     </File>
     <File Include="resources/images/logohce.png">
-      <publishTime>04/09/2025 19:32:03</publishTime>
+      <publishTime>05/30/2025 17:24:03</publishTime>
     </File>
     <File Include="resources/images/logohce1.png">
       <publishTime>05/15/2024 10:55:22</publishTime>
@@ -14565,11 +14565,38 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/BandejaMedico/AboutView.cshtml">
       <publishTime>05/15/2024 10:55:19</publishTime>
     </File>
+    <File Include="Views/BandejaMedico/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
+    <File Include="Views/BandejaMedico/Account/ExternalLoginFailure.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
+    <File Include="Views/BandejaMedico/Account/Login.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
+    <File Include="Views/BandejaMedico/Account/Manage.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
+    <File Include="Views/BandejaMedico/Account/Register.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
+    <File Include="Views/BandejaMedico/Account/_ChangePasswordPartial.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
+    <File Include="Views/BandejaMedico/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
+    <File Include="Views/BandejaMedico/Account/_RemoveExternalLoginsPartial.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
+    <File Include="Views/BandejaMedico/Account/_SetPasswordPartial.cshtml">
+      <publishTime>05/15/2024 10:55:19</publishTime>
+    </File>
     <File Include="Views/BandejaMedico/ActosMedicos/CCEP9000_View.cshtml">
       <publishTime>05/15/2024 11:03:54</publishTime>
     </File>
     <File Include="Views/BandejaMedico/ActosMedicos/CCEP9001_View.cshtml">
-      <publishTime>05/15/2025 22:41:08</publishTime>
+      <publishTime>07/21/2024 11:37:13</publishTime>
     </File>
     <File Include="Views/BandejaMedico/ActosMedicos/CCEP9002_View.cshtml">
       <publishTime>07/21/2024 11:37:25</publishTime>
@@ -14677,7 +14704,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:19</publishTime>
     </File>
     <File Include="Views/BandejaMedico/Index.cshtml">
-      <publishTime>05/15/2025 12:30:00</publishTime>
+      <publishTime>05/15/2024 10:55:19</publishTime>
     </File>
     <File Include="Views/BandejaMedico/Kardex/CCEP9920_View.cshtml">
       <publishTime>05/15/2024 10:55:19</publishTime>
@@ -14698,13 +14725,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:19</publishTime>
     </File>
     <File Include="Views/BandejaMedico/PanelNorth.cshtml">
-      <publishTime>05/15/2025 23:09:04</publishTime>
+      <publishTime>05/15/2024 10:55:19</publishTime>
     </File>
     <File Include="Views/BandejaMedico/PanelNorthEmergencia.cshtml">
       <publishTime>05/15/2024 10:55:19</publishTime>
     </File>
     <File Include="Views/BandejaMedico/PanelSouth.cshtml">
-      <publishTime>05/15/2025 22:45:06</publishTime>
+      <publishTime>05/15/2024 10:55:19</publishTime>
     </File>
     <File Include="Views/BandejaMedico/PanelWest.cshtml">
       <publishTime>05/15/2024 10:55:19</publishTime>
@@ -15754,7 +15781,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:20</publishTime>
     </File>
     <File Include="Views/HClinica/FormulariosExtras/CCEPF319_View.cshtml">
-      <publishTime>05/15/2025 14:21:20</publishTime>
+      <publishTime>05/15/2024 10:55:20</publishTime>
     </File>
     <File Include="Views/HClinica/FormulariosExtras/CCEPF323_1_View.cshtml">
       <publishTime>05/15/2024 10:55:20</publishTime>
@@ -16165,10 +16192,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:19</publishTime>
     </File>
     <File Include="Views/Login/Index.cshtml">
-      <publishTime>05/15/2025 12:30:53</publishTime>
+      <publishTime>08/22/2024 12:27:39</publishTime>
     </File>
     <File Include="Views/Login/Preferencia.cshtml">
-      <publishTime>05/15/2025 12:28:34</publishTime>
+      <publishTime>05/15/2024 10:55:20</publishTime>
     </File>
     <File Include="Views/LoginPaciente/Index.cshtml">
       <publishTime>04/19/2020 23:55:55</publishTime>
@@ -16261,10 +16288,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:20</publishTime>
     </File>
     <File Include="Views/Shared/_BaseLayout.cshtml">
-      <publishTime>05/15/2025 12:28:54</publishTime>
+      <publishTime>05/15/2024 11:03:54</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/15/2025 12:29:12</publishTime>
+      <publishTime>05/15/2024 10:55:20</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>05/15/2024 10:55:20</publishTime>
@@ -16327,7 +16354,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2024 10:55:20</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/17/2025 09:46:34</publishTime>
+      <publishTime>06/06/2025 19:08:25</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>01/10/2017 15:47:47</publishTime>

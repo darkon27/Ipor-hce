@@ -1,5 +1,9 @@
 ﻿html body {
     padding: 0px;
+    /*
+	background  : url(/resources/images/bgnoise.png) 0 0 repeat;
+        background: url(/resources/images/fondohce.png) 0 0 repeat;
+    */
     background: url(/resources/images/FONDO-LOGIN.png) 0 0 repeat;
     background-size: 100% 100%;
     background-attachment: fixed;

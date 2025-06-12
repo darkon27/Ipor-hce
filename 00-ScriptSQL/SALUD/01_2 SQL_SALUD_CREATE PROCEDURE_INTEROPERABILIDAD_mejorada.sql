@@ -1,232 +1,311 @@
 
 GO
 
-CREATE OR ALTER PROCEDURE [dbo].[SP_SS_IT_SALUDConsultaExterna]
-(
-   @IDordenatencion INT,
-   @LineaOrdenAtencionConsulta INT,
-   @UnidadReplicacion VARCHAR(15), 
-   @IDPaciente INT,
-   @Secuencia INT,
-   @Usuario VARCHAR(25),
-   @FechaCreacion DATETIME,
-   @TipoOrdenAtencion INT
-)
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SET XACT_ABORT ON;
 
-    DECLARE @IdMedico INT, @Especialidad INT, @IdConsultorio INT, @IdCita INT, 
-            @IdCitaEstadoDocumento INT, @IDMAXConsultaExterna INT, 
-            @SecuencialMaxCita INT, @EstadoDocumentoOA INT, @SecuencialMaxOA INT, 
-            @Existe INT, @IDPROCEDIMIENTO INT, @MAXPROCCONTROL INT, 
-            @Intentar BIT = 1, @NroIntentos INT = 0;
+--CREATE OR ALTER PROCEDURE [dbo].[SP_SS_IT_SALUDConsultaExterna]
+--/*  
+--'**********************************************************************************      
+--'* Permite visualizar los errores de ejecucion del SP de Consulta Externa  
+--'* Input :  @    
+--'* Output : <vacio>      
+--'* Creado por : Mitsuo
+--'* Fec Creación : 20/11/2017      
+--'* Fec Actualización : 27/02/2018 Responsable : Mitsuo     
+--'* Motivo : Visualizar el Log de Error.      
+--'**********************************************************************************   
+--*/  
+--(
+--   @IDordenatencion int,
+--   @LineaOrdenAtencionConsulta int,
+--   @UnidadReplicacion varchar(15), 
+--   @IDPaciente int,
+--   @Secuencia int,
+--   @Usuario varchar(25),
+--   @Fechacreacion datetime,
+--   @TipoOrdenAtencion int
+--)
+--AS
+--BEGIN
+--SET XACT_ABORT ON
+----BEGIN DISTRIBUTED TRANSACTION
+----Begin Transaction;
+--	DECLARE @IdMedico INT, @Especialidad INT, @IdConsultorio INT, @IdCita INT, @IdCitaEstadoDocumento INT, 
+--			@IdMaxConsultaExterna INT, @SecuencialMaxCita INT, @ESTADODocumentoOA INT, @SecuencialMaxOA INT, @ll_retorno INT, @intentar INT,
+--			@nrointentos INT, @EXISTE INT, @IDPROCEDIMIENTO INT,@MAXPROCCONTROL INT, @oacambio INT, @p_devhce  INT,@MAXCONEXTCONTROL INT
+--	DECLARE @OBS VARCHAR(30),@OBSATE VARCHAR(30)
+		 
+----iNICIAN CAMBIOS DE SP
+--   IF @TipoOrdenAtencion=1
+--   BEGIN
 
-    IF @TipoOrdenAtencion = 1
-    BEGIN
-        -- Validar existencia previa
-        SELECT TOP 1 @Existe = 1
-        FROM SS_CE_ConsultaExterna WITH(NOLOCK)
-        WHERE IdOrdenAtencion = @IDordenatencion
-          AND LineaOrdenAtencion = @LineaOrdenAtencionConsulta 
-          AND Estado = 2;
+--	SELECT @EXISTE = IdConsultaExterna FROM SS_CE_ConsultaExterna WITH(NOLOCK)
+--	WHERE IdOrdenAtencion = @IDordenatencion AND LineaOrdenAtencion = @LineaOrdenAtencionConsulta 
+--	AND Estado = 2 and @TipoOrdenAtencion = 1
+	
+--	PRINT 'VALIDA  '
 
-        IF @Existe IS NULL
-        BEGIN
-            -- Obtener datos necesarios
-            SELECT TOP 1 
-                @IdMedico = C.IdMedico,
-                @Especialidad = H.IdEspecialidad,
-                @IdConsultorio = H.IdConsultorio,
-                @IdCita = C.IdCita,
-                @IdCitaEstadoDocumento = C.EstadoDocumento
-            FROM SS_CC_Horario H WITH(NOLOCK)
-            INNER JOIN SS_CC_Cita C ON C.IdHorario = H.IdHorario
-            INNER JOIN SS_AD_OrdenAtencionDetalle D ON D.IdCita = C.IdCita
-            WHERE D.IdOrdenAtencion = @IDordenatencion
-              AND D.Linea = @LineaOrdenAtencionConsulta;
 
-            -- Insertar nueva Consulta Externa con control de concurrencia
-            WHILE @NroIntentos < 5 AND @Intentar = 1
-            BEGIN
-                SET @NroIntentos += 1;
-                SET @Intentar = 0;
+--	SET @ll_retorno = 0 
+--	SET @OBS ='Estado En Atencion HCE'
+--	SET @OBSATE ='Nueva Consulta Externa HCE'
 
-                SELECT @IDMAXConsultaExterna = ISNULL(MAX(IdConsultaExterna),0) + 1
-                FROM SS_CE_ConsultaExterna WITH(UPDLOCK, HOLDLOCK);
 
-                BEGIN TRY
-                    INSERT INTO SS_CE_ConsultaExterna
-                    (
-                        IdConsultaExterna, IdCita, IdOrdenAtencion, LineaOrdenAtencion,
-                        Consultorio, Medico, Especialidad, FechaConsulta, IndicadorSeguimiento,
-                        IdConsultaExternaInicial, EstadoDocumento, Estado, UsuarioCreacion,
-                        FechaCreacion, IndicadorFirmaAlta, TipoConsulta
-                    )
-                    VALUES
-                    (
-                        @IDMAXConsultaExterna, @IdCita, @IDordenatencion, @LineaOrdenAtencionConsulta,
-                        @IdConsultorio, @IdMedico, @Especialidad, @FechaCreacion, 1,
-                        @IDMAXConsultaExterna, 1, 2, @Usuario,
-                        @FechaCreacion, 2, 1
-                    );
-                END TRY
-                BEGIN CATCH
-                    IF ERROR_NUMBER() IN (2627, 515) -- PK Violation o NOT NULL Violation
-                        SET @Intentar = 1;
-                    ELSE
-                        THROW;
-                END CATCH
-            END
+--	IF @EXISTE > 0
+--	BEGIN
+--		SET @ll_retorno = -1
+--		SET @OBS ='Modificacion En Atencion HCE'
+--		SET @OBSATE ='Modificacion Consulta Externa HCE'
+--		PRINT 'EXISTE'
+--	END
 
-            IF @Intentar = 0
-            BEGIN
-                -- Actualizar OA principal
-                UPDATE SS_AD_OrdenAtencion
-                SET IdConsultaExternaPrincipal = @IDMAXConsultaExterna
-                WHERE IdOrdenAtencion = @IDordenatencion
-                  AND IdConsultaExternaPrincipal IS NULL;
+--	--IF @ll_retorno = 0 
+--	--BEGIN
+--		SELECT  @IdMedico = SS_CC_Cita.IdMedico, 
+--				@Especialidad = SS_CC_Horario.IdEspecialidad , 
+--				@IdConsultorio = SS_CC_Horario.IdConsultorio , 
+--				@IdCita = SS_CC_Cita.IdCita , 
+--				@IdCitaEstadoDocumento = SS_CC_Cita.EstadoDocumento 
+--		FROM SS_CC_Horario WITH(NOLOCK)
+--		INNER JOIN SS_CC_Cita ON SS_CC_Cita.IdHorario = SS_CC_Horario.IdHorario
+--		INNER JOIN SS_AD_OrdenAtencionDetalle ON SS_AD_OrdenAtencionDetalle.IdCita =SS_CC_Cita.IdCita
+--		WHERE SS_AD_OrdenAtencionDetalle.IdOrdenAtencion = @IDordenatencion 
+--			AND SS_AD_OrdenAtencionDetalle.Linea = @LineaOrdenAtencionConsulta 
 
-                -- Actualizar Cita a "En Atención"
-                UPDATE SS_CC_Cita
-                SET EstadoDocumentoAnterior = 3, EstadoDocumento = 4
-                WHERE IdCita = @IdCita;
+--		PRINT 'IdMedico'
+--	--END
 
-                -- Insertar control de la cita
-                SELECT @SecuencialMaxCita = ISNULL(MAX(Secuencial),0) + 1
-                FROM SS_CC_CitaControl
-                WHERE IdDocumento = @IdCita;
+--	--IF @ll_retorno = 0 
+--	--BEGIN
+--		SET @nrointentos = 0
+--		SET @intentar = 1
 
-                INSERT INTO SS_CC_CitaControl
-                (
-                    IdDocumento, Secuencial, FechaControl, Observacion,
-                    IdUsuario, EstadoDocumento, EstadoDocumentoAnterior,
-                    IndicadorRetorno, Estado, UsuarioCreacion, FechaCreacion
-                )
-                VALUES
-                (
-                    @IdCita, @SecuencialMaxCita, @FechaCreacion, 'Estado En Atención HCE',
-                    @Usuario, 4, 3, 1, 2, @Usuario, @FechaCreacion
-                );
+--		WHILE @nrointentos < 5 and @intentar = 1
+--		BEGIN
 
-                -- Actualizar Estado de OA
-                SELECT @EstadoDocumentoOA = EstadoDocumento
-                FROM SS_AD_OrdenAtencion WITH(NOLOCK)
-                WHERE IdOrdenAtencion = @IDordenatencion;
+--			SET @nrointentos = @nrointentos + 1
+--			SET @intentar = 0
 
-                UPDATE SS_AD_OrdenAtencion
-                SET EstadoDocumentoAnterior = @EstadoDocumentoOA,
-                    EstadoDocumento = 2
-                WHERE IdOrdenAtencion = @IDordenatencion;
+--			IF @ll_retorno = 0 
+--				BEGIN
 
-                -- Insertar control de la OA
-                SELECT @SecuencialMaxOA = ISNULL(MAX(Secuencial),0) + 1
-                FROM SS_AD_OrdenAtencionControl
-                WHERE IdDocumento = @IDordenatencion;
+--				SELECT @IDMAXConsultaExterna = ISNULL(MAX(ISNULL(IdConsultaExterna,0)),0) +1
+--				FROM SS_CE_ConsultaExterna
 
-                INSERT INTO SS_AD_OrdenAtencionControl
-                (
-                    IdDocumento, Secuencial, FechaControl, Observacion,
-                    IdUsuario, EstadoDocumento, EstadoDocumentoAnterior,
-                    IndicadorRetorno, Estado, UsuarioCreacion, FechaCreacion
-                )
-                VALUES
-                (
-                    @IDordenatencion, @SecuencialMaxOA, @FechaCreacion, 'Estado en Proceso HCE',
-                    @Usuario, 2, @EstadoDocumentoOA, 1, 2, @Usuario, @FechaCreacion
-                );
+  
+--				END
+--			ELSE
+--				BEGIN
+--				SET @IDMAXConsultaExterna =	@EXISTE					
+				
+--				UPDATE SS_CE_ConsultaExterna SET EstadoDocumento=1, EstadoDocumentoAnterior=2 WHERE IdConsultaExterna= @IDMAXConsultaExterna;
+				
+--				END
 
-                -- Insertar control de la consulta externa
-                INSERT INTO SS_CE_ConsultaExternaControl
-                (
-                    IdDocumento, Secuencial, FechaControl, Observacion,
-                    IdUsuario, EstadoDocumento, IndicadorRetorno, Estado,
-                    UsuarioCreacion, FechaCreacion
-                )
-                VALUES
-                (
-                    @IDMAXConsultaExterna, 1, @FechaCreacion, 'Nueva Consulta Externa HCE',
-                    @Usuario, 1, 1, 2, @Usuario, @FechaCreacion
-                );
+--			IF @ll_retorno = 0 
+--				BEGIN
+--					INSERT INTO SS_CE_ConsultaExterna 
+--					(	IdConsultaExterna , IdCita , IdOrdenAtencion , LineaOrdenAtencion , Consultorio , Medico , Especialidad , 
+--						FechaConsulta , IndicadorSeguimiento , IdConsultaExternaInicial , EstadoDocumento , Estado , UsuarioCreacion , FechaCreacion , IndicadorFirmaAlta , 
+--						TipoConsulta ) 
+--					Values 
+--					(	@IDMAXConsultaExterna , @IDcita , @IDordenatencion , @LineaOrdenAtencionConsulta , @IDconsultorio , @IdMedico , @Especialidad , @FechaCreacion , 1 , @IDMAXConsultaExterna , 
+--						1 , 2 , @Usuario , @FechaCreacion , 2 , 1 ) 
+				
+--					PRINT 'SS_CE_ConsultaExterna'
+--				END
 
-                -- Ocultar Consulta en la OA
-                UPDATE SS_AD_OrdenAtencionDetalle
-                SET IndicadorOcultarConsulta = 1
-                WHERE IdOrdenAtencion = @IDordenatencion
-                  AND Linea = @LineaOrdenAtencionConsulta;
+--		END
+--	--END 
 
-                UPDATE SS_AD_OrdenAtencion
-                SET IndicadorOcultarOA = 1
-                WHERE IdOrdenAtencion = @IDordenatencion;
-            END
-        END
-    END
-    ELSE
-    BEGIN
-        -- Procedimientos en otro tipo de orden
-        SELECT @Existe = COUNT(*)
-        FROM SS_PR_Procedimiento WITH(NOLOCK)
-        WHERE IdOrdenAtencion = @IDordenatencion
-          AND LineaOrdenAtencion = @LineaOrdenAtencionConsulta
-          AND Estado = 2;
+--	--IF @ll_retorno = 0 
+--	--BEGIN
+--		IF @intentar = 0	
+--		BEGIN
+--			UPDATE SS_AD_OrdenAtencion SET 
+--				IdConsultaExternaPrincipal = @IDMAXConsultaExterna 
+--			Where IdOrdenAtencion = @IDOrdenATENCION AND 
+--			IdConsultaExternaPrincipal IS NULL 
 
-        IF @Existe = 0
-        BEGIN
-            -- Obtener info
-            SELECT TOP 1 
-                @IdMedico = C.IdMedico,
-                @Especialidad = H.IdEspecialidad,
-                @IdConsultorio = H.IdConsultorio,
-                @IdCita = C.IdCita
-            FROM SS_CC_Horario H WITH(NOLOCK)
-            INNER JOIN SS_CC_Cita C ON C.IdHorario = H.IdHorario
-            INNER JOIN SS_AD_OrdenAtencionDetalle D ON D.IdCita = C.IdCita
-            WHERE D.IdOrdenAtencion = @IDordenatencion
-              AND D.Linea = @LineaOrdenAtencionConsulta;
+--			UPDATE SS_CC_Cita SET
+--				EstadoDocumentoAnterior =3 , EstadoDocumento =4 
+--			WHERE SS_CC_Cita.IdCita = @IDcita
 
-            -- Insertar Procedimiento
-            SELECT @IDPROCEDIMIENTO = ISNULL(MAX(IdProcedimiento),0) + 1
-            FROM SS_PR_Procedimiento WITH(UPDLOCK, HOLDLOCK);
+--			SELECT @SecuencialMaxCita = ISNULL(MAX(ISNULL(Secuencial,0)),0) +1
+--			FROM SS_CC_CitaControl 
+--			WHERE IdDocumento = @IdCita 
+		
+--			INSERT INTO SS_CC_CitaControl 
+--			(	IdDocumento , Secuencial , FechaControl , Observacion , IdUsuario , EstadoDocumento , EstadoDocumentoAnterior , 
+--			IndicadorRetorno , Estado , UsuarioCreacion , FechaCreacion ) 
+--			VALUES 
+--			(	@IdCita, @SecuencialMaxCita, @FechaCreacion, @OBS, @Usuario, 4, 3, 1, 2, @Usuario, @FechaCreacion )
 
-            INSERT INTO SS_PR_Procedimiento
-            (
-                IdProcedimiento, IdMaestroProcedimiento, FechaProcedimiento,
-                IdOrdenAtencion, LineaOrdenAtencion, IdCita, Especialidad, Medico,
-                EstadoDocumento, Estado, UsuarioCreacion, FechaCreacion,
-                IndicadorAutorizacion, RutaFormatoAutorizacion,
-                IndicadorPreparacion, IndicadorRM, IndAdicionarComponente, Consultorio
-            )
-            VALUES
-            (
-                @IDPROCEDIMIENTO, 0, @FechaCreacion, @IDordenatencion, @LineaOrdenAtencionConsulta,
-                ISNULL(@IdCita, (SELECT MAX(IdCita) + 1 FROM SS_CC_Cita WITH(NOLOCK))),
-                @Especialidad, @IdMedico, 1, 2, @Usuario, @FechaCreacion,
-                0, '', 0, 1, 0, @IdConsultorio
-            );
+--			SELECT @ESTADODocumentoOA = EstadoDocumento
+--			FROM SS_AD_OrdenAtencion WITH(NOLOCK)
+--			WHERE IdOrdenAtencion = @IDORDENATENCION
 
-            -- Insertar control
-            SELECT @MAXPROCCONTROL = ISNULL(MAX(Secuencial),0) + 1
-            FROM SS_PR_ProcedimientoControl
-            WHERE IdDocumento = @IDPROCEDIMIENTO;
+--			UPDATE SS_AD_OrdenAtencion SET
+--				EstadoDocumentoAnterior = @EstadoDocumentoOA, 
+--				EstadoDocumento = 2 
+--			WHERE IdOrdenAtencion = @IdOrdenAtencion 
 
-            INSERT INTO SS_PR_ProcedimientoControl
-            (
-                IdDocumento, Secuencial, FechaControl, Observacion,
-                IdUsuario, EstadoDocumento, EstadoDocumentoAnterior,
-                IndicadorRetorno, Periodo, Estado,
-                UsuarioCreacion, FechaCreacion
-            )
-            VALUES
-            (
-                @IDPROCEDIMIENTO, @MAXPROCCONTROL, @FechaCreacion, 'Nuevo Procedimiento ITHCE',
-                @Usuario, 1, NULL, 1, 1, 2,
-                @Usuario, @FechaCreacion
-            );
-        END
-    END
-END
-GO
+--			SELECT @SecuencialMaxOA = ISNULL(MAX(ISNULL(Secuencial,0)),0) +1
+--			FROM SS_AD_OrdenAtencionControl 
+--			WHERE IdDocumento = @IdOrdenAtencion 
+
+--			INSERT INTO SS_AD_OrdenAtencionControl 
+--			(	IdDocumento , Secuencial , FechaControl , Observacion , IdUsuario , EstadoDocumento , EstadoDocumentoAnterior , 
+--			IndicadorRetorno , Estado , UsuarioCreacion , FechaCreacion ) 
+--			VALUES 
+--			(	@IDORDENATENCION , @SecuencialMaxOA , @FECHACREACION , 'Estado en Proceso HCE' , @Usuario , 2 , @EstadoDocumentoOA , 1 , 2 , @Usuario , @FechaCreacion ) 
+
+
+			
+--			SELECT @MAXCONEXTCONTROL = ISNULL(MAX(ISNULL(Secuencial,0)),0) +1
+--			FROM SS_CE_ConsultaExternaControl 
+--			WHERE IdDocumento = @IDMAXConsultaExterna 
+
+--			INSERT INTO SS_CE_ConsultaExternaControl 
+--			(	IdDocumento , Secuencial , FechaControl , Observacion , IdUsuario , EstadoDocumento , IndicadorRetorno , Estado , UsuarioCreacion , FechaCreacion ) 
+--			VALUES
+--			(	@IDMAXConsultaExterna , @MAXCONEXTCONTROL , @FechaCreacion , @OBSATE , @Usuario , 1 , 1 , 2 , @Usuario , @FechaCreacion ) 
+
+--			UPDATE SS_AD_OrdenAtencionDetalle SET
+--				IndicadorOcultarConsulta = 1 
+--			WHERE IdOrdenAtencion = @IdOrdenAtencion AND Linea =@LineaOrdenAtencionConsulta 
+
+--			UPDATE SS_AD_OrdenAtencion SET 
+--				IndicadorOcultarOA =1 
+--			WHERE IdOrdenAtencion = @IDORDENATENCION
+
+
+--			SELECT @p_devhce = IsNull( ValorNumerico, 1)
+--			FROM SG_Opcion
+--			WHERE CodigoOpcion = 'P_HC_DEVHHMM'
+--			AND TipoOpcion = 'P'
+
+--			IF @p_devhce = 2 
+--			BEGIN 
+--				SELECT @oacambio = COUNT ( 1 ) 
+--				FROM SS_AD_OrdenAtencionCambio 
+--				WITH ( NOLOCK ) 
+--				WHERE --SS_AD_OrdenAtencionCambio.Periodo <= 201905 AND 
+--				SS_AD_OrdenAtencionCambio.TipoTabla ='O' AND SS_AD_OrdenAtencionCambio.IdTabla =@IDORDENATENCION 
+--					AND SS_AD_OrdenAtencionCambio.IndicadorProcesado =1 
+		
+--				IF @oacambio = 0 OR @oacambio IS NULL
+--				begin
+--					INSERT INTO SS_AD_OrdenAtencionCambio ( Periodo , TipoTabla , IdTabla , FechaCambio , IndicadorProcesado ) 
+--					VALUES ( year(getdate()) * 100 + MONTH(getdate()) , 'O' , @IDORDENATENCION , getdate() , 1 ) 
+--				end 
+--			END    
+
+--		END--FIN DE INTENTAR = 0
+
+--	--END 
+--   END --AÑADIDO PARA EL IF SUPERIOR DE CONSULTA
+--  ELSE --@TipoOrdenAtencion<>1 AND @TipoOrdenAtencion IS NOT NULL
+--  BEGIN 
+  
+--	SELECT @EXISTE = COUNT( IdProcedimiento )FROM SS_PR_Procedimiento WITH(NOLOCK) WHERE SS_PR_Procedimiento.IdOrdenAtencion = @IDordenatencion
+--		AND SS_PR_Procedimiento.LineaOrdenAtencion = @LineaOrdenAtencionConsulta AND Estado = 2 
+--		--SELECT count ( SS_PR_Procedimiento.IdProcedimiento ) FROM SS_PR_Procedimiento WHERE SS_PR_Procedimiento.IdOrdenAtencion =4168942  AND SS_PR_Procedimiento.LineaOrdenAtencion =1 
+--	IF @EXISTE =0
+--	BEGIN 
+ 
+--		SELECT @IdMedico = SS_CC_Cita.IdMedico, 
+--				@Especialidad = SS_CC_Horario.IdEspecialidad , 
+--				@IdConsultorio = SS_CC_Horario.IdConsultorio , 
+--				@IdCita = SS_CC_Cita.IdCita , 
+--				@IdCitaEstadoDocumento = SS_CC_Cita.EstadoDocumento 
+--		FROM SS_CC_Horario WITH(NOLOCK)
+--		INNER JOIN SS_CC_Cita WITH(NOLOCK) ON SS_CC_Cita.IdHorario = SS_CC_Horario.IdHorario
+--		INNER JOIN SS_AD_OrdenAtencionDetalle WITH(NOLOCK) ON SS_AD_OrdenAtencionDetalle.IdCita =SS_CC_Cita.IdCita
+--		WHERE SS_AD_OrdenAtencionDetalle.IdOrdenAtencion = @IDordenatencion AND SS_AD_OrdenAtencionDetalle.Linea = @LineaOrdenAtencionConsulta 
+	   
+--		SELECT @IDPROCEDIMIENTO = ISNULL(MAX(ISNULL(IdProcedimiento,0)),0) +1
+--		FROM SS_PR_Procedimiento 
+	
+--		INSERT INTO SS_PR_Procedimiento ( IdProcedimiento , IdMaestroProcedimiento , FechaProcedimiento , IdOrdenAtencion , LineaOrdenAtencion , IdCita ,
+--		Especialidad , medico , EstadoDocumento , Estado , UsuarioCreacion , FechaCreacion , IndicadorAutorizacion , RutaFormatoAutorizacion , 
+--		IndicadorPreparacion , IndicadorRM , IndAdicionarComponente , Consultorio , IndicadorAtencion )
+--		VALUES ( @IDPROCEDIMIENTO , 0 , @Fechacreacion , @IDordenatencion , @LineaOrdenAtencionConsulta ,(case when @IdCita is null then (select max(IdCita)+1 from SS_CC_Cita) else @IdCita end )  , @Especialidad , @IdMedico , 1 , 2 ,
+--		@Usuario , @Fechacreacion, 0 , '' , 0 , 1 , 0 , @IdConsultorio, 1 ) 
+
+
+--		SELECT @MAXPROCCONTROL = ISNULL(MAX(ISNULL(Secuencial,0)),0) +1
+--		FROM SS_PR_ProcedimientoControl WITH(NOLOCK) 
+--		WHERE IdDocumento = @IDPROCEDIMIENTO 
+
+--		INSERT INTO SS_PR_ProcedimientoControl
+--		( IdDocumento , Secuencial , FechaControl , Observacion , IdUsuario , EstadoDocumento , 
+--		EstadoDocumentoAnterior , IndicadorRetorno , Periodo , Estado , UsuarioCreacion , FechaCreacion , 
+--		UsuarioModificacion , FechaModificacion ) VALUES ( @IDPROCEDIMIENTO , @MAXPROCCONTROL , @Fechacreacion, 
+--		'Nuevo Procedimiento ITHCE' , @Usuario , 1 , NULL , 1 , 1 , 2 , @Usuario , @Fechacreacion , 
+--		@Usuario , @Fechacreacion ) 
+				
+--		update SS_AD_OrdenAtencionDetalle SET IndicadorProcedimiento =2 
+--		WHERE ( SS_AD_OrdenAtencionDetalle.IdOrdenAtencion =@IDordenatencion )
+--		AND ( SS_AD_OrdenAtencionDetalle.Linea =@LineaOrdenAtencionConsulta ) 
+
+--	/*AÑADIDO PARA MODIFICAR CUANDO NO TIENE CITA 16OCTUBRE2019*/
+--	BEGIN
+--		if  isnull(@IdCita,0)=0
+--				begin
+--				select @IdCita=0
+--				end 
+--				else 	
+--				begin
+--			/*AÑADIDO PARA MODIFICAR CUANDO NO TIENE CITA16OCTUBRE2019*/
+--				UPDATE SS_CC_Cita SET EstadoDocumentoAnterior =@IdCitaEstadoDocumento , EstadoDocumento =4 
+--				WHERE SS_CC_Cita.IdCita =@IdCita
+			
+			
+--				SELECT @SecuencialMaxCita = ISNULL(MAX(ISNULL(Secuencial,0)),0) +1
+--				FROM SS_CC_CitaControl 
+--				WHERE IdDocumento = @IdCita 
+		
+
+--				INSERT INTO SS_CC_CitaControl 
+--				(	IdDocumento , Secuencial , FechaControl , Observacion , IdUsuario , EstadoDocumento , 
+--				EstadoDocumentoAnterior , IndicadorRetorno , Estado , UsuarioCreacion , FechaCreacion ,UsuarioModificacion,FechaModificacion) 
+--				VALUES 
+--				(	@IdCita, @SecuencialMaxCita, @FechaCreacion, 'Estado En Atencion HCE', @Usuario, 4, 3, 1, 2, @Usuario, @FechaCreacion, @Usuario, @FechaCreacion )
+--				end --16OCTUBRE2019
+--				END --16OCTUBRE2019
+			
+
+--		SELECT @p_devhce = IsNull( ValorNumerico, 1)
+--		FROM SG_Opcion
+--		WHERE CodigoOpcion = 'P_HC_DEVHHMM'
+--		AND TipoOpcion = 'P'
+
+--		IF @p_devhce = 2 
+--		BEGIN 
+--			SELECT @oacambio = COUNT ( 1 ) 
+--			FROM SS_AD_OrdenAtencionCambio 
+--			WITH ( NOLOCK ) 
+--			WHERE --SS_AD_OrdenAtencionCambio.Periodo <= 201905 AND 
+--			SS_AD_OrdenAtencionCambio.TipoTabla ='O' AND SS_AD_OrdenAtencionCambio.IdTabla =@IDORDENATENCION 
+--			AND SS_AD_OrdenAtencionCambio.IndicadorProcesado =1 
+		
+--			IF @oacambio = 0 OR @oacambio IS NULL
+--			begin
+
+--				INSERT INTO SS_AD_OrdenAtencionCambio ( Periodo , TipoTabla , IdTabla , FechaCambio , IndicadorProcesado ) 
+--				VALUES (year(getdate()) * 100 + MONTH(getdate()) , 'O' , @IDORDENATENCION , getdate() , 1 ) 
+--			end 
+--		END 
+--	END
+--   END
+
+	 
+--   If @@TRANCOUNT > 0    
+
+--   SET XACT_ABORT OFF
+-- END 
+ 
+--GO
 
 CREATE OR ALTER PROCEDURE [dbo].[SP_SS_IT_SALUDAtendidoConsultaExterna]
 (

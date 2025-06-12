@@ -302,101 +302,116 @@ namespace AppSaludMVC.Controllers
         public JsonResult getUsers()
         {
             Log.Information("HistoriaClinicaWestController - getUsers - Entrar");
-            List<MA_MiscelaneosDetalle> links = ENTITY_GLOBAL.Instance.Links.Where(x => x.CodigoElemento.Trim() == ENTITY_GLOBAL.Instance.UnidadReplicacion).ToList();
 
-            SetDNI();
-            var link = links[0].ValorCodigo1.Trim();
-            URL_SERVER = link;
-
-            List<SS_HC_Diagnostico_FE> list = new List<SS_HC_Diagnostico_FE>();
-            HttpClient clienteHttp = new HttpClient();
-            VisorClass visor = new VisorClass();
-            visor.Accion = 1;
-            //  visor.cod_sucursal = cod_sucursal;
-            visor.cod_sucursal = ENTITY_GLOBAL.Instance.Sucursal;
-            visor.Documento = documento;
-            visor.tipoDocumento = TipoDocumento;
-            clienteHttp.BaseAddress = new Uri(URL_SERVER);
-            var request = clienteHttp.PostAsync("Consulta/ListarVisorHistoria", visor, new JsonMediaTypeFormatter()).Result;
-            if (request.IsSuccessStatusCode)
+            try
             {
-                var resultString = request.Content.ReadAsStringAsync().Result;
+                List<MA_MiscelaneosDetalle> links = ENTITY_GLOBAL.Instance.Links
+                    .Where(x => x.CodigoElemento.Trim() == ENTITY_GLOBAL.Instance.UnidadReplicacion)
+                    .ToList();
 
-                string Jsons = Newtonsoft.Json.JsonConvert.SerializeObject(request);
-                JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-                CW_VisorHistoria item = jsonSerializer.Deserialize<CW_VisorHistoria>(Jsons);
-                List<CW_VisorHistoria> Resultado = (List<CW_VisorHistoria>)Newtonsoft.Json.JsonConvert.DeserializeObject(resultString, typeof(List<CW_VisorHistoria>));
-
-                ENTITY_GLOBAL.listaresponsehc = Resultado;
-
-                var arrayOfLines = JArray.Parse(resultString);
-                foreach (var a in arrayOfLines)
+                if (links == null || links.Count == 0)
                 {
-                    int nu = 0;
+                    return Json(new { error = "No se encontró el link de la unidad de replicación." }, JsonRequestBehavior.AllowGet);
+                }
+
+                SetDNI();
+
+                string link = links[0].ValorCodigo1.Trim();
+                URL_SERVER = link;
+
+                var visor = new VisorClass
+                {
+                    Accion = 1,
+                    cod_sucursal = ENTITY_GLOBAL.Instance.Sucursal,
+                    Documento = documento,
+                    tipoDocumento = TipoDocumento
+                };
+
+                var clienteHttp = new HttpClient { BaseAddress = new Uri(URL_SERVER) };
+                var request = clienteHttp.PostAsync("Consulta/ListarVisorHistoria", visor, new JsonMediaTypeFormatter()).Result;
+
+                if (!request.IsSuccessStatusCode)
+                {
+                    return Json(new { error = "Error al obtener datos del servidor remoto." }, JsonRequestBehavior.AllowGet);
+                }
+
+                string resultString = request.Content.ReadAsStringAsync().Result;
+                var arrayOfLines = JArray.Parse(resultString);
+
+                List<SS_HC_Diagnostico_FE> list = new List<SS_HC_Diagnostico_FE>();
+
+                int nu = 0;
+                foreach (var item in arrayOfLines)
+                {
                     try
                     {
-                        SS_HC_Diagnostico_FE d = new SS_HC_Diagnostico_FE();
-                        d.IdPaciente = 1;
-                        d.Observacion = a["CodigoOA"].ToString();
-                        d.CitaFecha = a["CitaFecha"].ToString();
-                        d.Secuencia = Convert.ToInt32(a["LineaOrdenAtencion"]);
-                        d.Sucursal = a["Sucursal"].ToString();
-                        d.Origen = a["Origen"].ToString();
-                        //  d.CodigoDiagnostico = a["CodigoDiagnostico"].ToString();
-                        //  d.FechaRegistro. = Convert.ToDateTime(a["FechaCita"]);                        
-                        d.UnidadReplicacion = a["NombreEspecialidad"].ToString();
-                        d.UsuarioCreacion = a["TipoAtencionDescX"].ToString();
-                        d.UsuarioModificacion = a["PacienteNombre"].ToString();
-                        d.IndicadorAntecedente = Convert.ToInt32(a["IdOrdenAtencion"]);
-                        d.TipoAntecedente = Convert.ToInt32(a["IdOrdenAtencion"]) + "|" + Convert.ToInt32(a["LineaOrdenAtencion"]) + "|" + a["Sucursal"].ToString() + "|" + a["TipoAtencionDescX"].ToString();
+                        var diagnostico = new SS_HC_Diagnostico_FE
+                        {
+                            IdPaciente = 1,
+                            Observacion = item["CodigoOA"] != null ? item["CodigoOA"].ToString() : string.Empty,
+                            CitaFecha = item["CitaFecha"] != null ? item["CitaFecha"].ToString() : string.Empty,
+                            Secuencia = item["LineaOrdenAtencion"] != null ? Convert.ToInt32(item["LineaOrdenAtencion"]) : 0,
+                            Sucursal = item["Sucursal"] != null ? item["Sucursal"].ToString() : string.Empty,
+                            Origen = item["Origen"] != null ? item["Origen"].ToString() : string.Empty,
+                            CodigoDiagnostico = item["NivelInstruccion"] != null ? item["NivelInstruccion"].ToString() : string.Empty,
+                            UnidadReplicacion = item["NombreEspecialidad"] != null ? item["NombreEspecialidad"].ToString() : string.Empty,
+                            UsuarioCreacion = item["TipoAtencionDescX"] != null ? item["TipoAtencionDescX"].ToString() : string.Empty,
+                            UsuarioModificacion = item["PacienteNombre"] != null ? item["PacienteNombre"].ToString() : string.Empty,
+                            IndicadorAntecedente = item["IdOrdenAtencion"] != null ? Convert.ToInt32(item["IdOrdenAtencion"]) : 0,
+                            TipoAntecedente = string.Format("{0}|{1}|{2}|{3}",
+                                item["IdOrdenAtencion"] != null ? item["IdOrdenAtencion"].ToString() : "0",
+                                item["LineaOrdenAtencion"] != null ? item["LineaOrdenAtencion"].ToString() : "0",
+                                item["Sucursal"] != null ? item["Sucursal"].ToString() : "",
+                                item["TipoAtencionDescX"] != null ? item["TipoAtencionDescX"].ToString() : "")
+                        };
 
-                        //d.EpisodioClinico = Convert.ToInt32(a["EpisodioClinicoHCE"]);
-                        //d.IdDiagnostico = Convert.ToInt32(a["IDEPISODIOAtencionHCE"]);
-                        //d.IdDiagnosticoValoracion = Convert.ToInt32(a["IdPacienteHCE"]);
-                        if (ENTITY_GLOBAL.Instance.COPIADO_DISABLED == "BN")
+                        diagnostico.IndicadorNuevo = ENTITY_GLOBAL.Instance.COPIADO_DISABLED == "BN" ? 1 : 0;
+
+                        diagnostico.Estado = item["EstadoEpiAtencion"] != null ? Convert.ToInt32(item["EstadoEpiAtencion"]) : 0;
+
+                        list.Add(diagnostico);
+
+                        // Procesar edad y nombre del paciente solo para la primera iteración
+                        if (nu == 0)
                         {
-                            d.IndicadorNuevo = 1;
-                        }
-                        else
-                        {
-                            d.IndicadorNuevo = 0;
-                        }
-                        if (a["EstadoEpiAtencion"] == null)
-                        {
-                            d.Estado = 0;
-                        }
-                        else
-                        {
-                            d.Estado = Convert.ToInt32(a["EstadoEpiAtencion"]);
+                            DateTime birthday = item["FechaNacimiento"] != null
+                                ? Convert.ToDateTime(item["FechaNacimiento"])
+                                : DateTime.MinValue;
+
+                            int age = 0;
+                            if (birthday != DateTime.MinValue)
+                            {
+                                DateTime now = DateTime.Today;
+                                age = now.Year - birthday.Year;
+                                if (now.Month < birthday.Month || (now.Month == birthday.Month && now.Day < birthday.Day))
+                                {
+                                    age--;
+                                }
+                            }
+
+                            ViewBag.TxtEdadPaciente = age;
+                            ViewBag.TxtPacienteOA = diagnostico.UsuarioModificacion;
                         }
 
-                        list.Add(d);
+                        nu++;
                     }
-                    catch (Exception e)
+                    catch (Exception exItem)
                     {
-                        Log.Information("HistoriaClinicaWestController - getUsers - Bloque Catch");
-                        Log.Error(e, e.Message);
-                    }
-                    nu++;
-                    if (nu == 1)
-                    {
-                        var birthday = Convert.ToDateTime(a["FechaNacimiento"]);
-                        DateTime now = DateTime.Today;
-                        int age = now.Year - birthday.Year;
-
-                        if (now.Month < birthday.Month || (now.Month == birthday.Month && now.Day < birthday.Day))//not had bday this year yet
-                            age--;
-
-                        ViewBag.TxtEdadPaciente = age;
-                        var PacienteNombre = list[0].UsuarioModificacion;
-                        ViewBag.TxtPacienteOA = PacienteNombre;
+                        Log.Error(exItem, "Error procesando línea del resultado en getUsers");
                     }
                 }
+
+               // ENTITY_GLOBAL.listaresponsehc = list;
+                //object json = new { data = list };
+                return Json(new { data = list }, JsonRequestBehavior.AllowGet);
+                //object json = new { data = list };
+                //return Json(json, JsonRequestBehavior.AllowGet);
             }
-
-            object json = new { data = list };
-            return Json(json, JsonRequestBehavior.AllowGet);
-
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error general en getUsers");
+                return Json(new { error = "Ocurrió un error inesperado: " + ex.Message }, JsonRequestBehavior.AllowGet);
+            }
         }
 
         //[HttpPost]

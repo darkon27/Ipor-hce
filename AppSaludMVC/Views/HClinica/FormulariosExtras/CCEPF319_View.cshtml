@@ -5,10 +5,13 @@
     ViewBag.Title = "Portal - Ext.NET MVC Examples";
     Layout = "~/Views/Shared/_BaseLayout.cshtml";
     var X = Html.X();
+
+
     var indicaVisiblePrint = SoluccionSalud.Entidades.Entidades.ENTITY_GLOBAL.Instance.INDICA_VISIBLE_IMPRESION;
     var visibleImpresion = (indicaVisiblePrint == 2/* && Model.Accion == "UPDATE"*/ ? true : false);
     var isVista = (Model.Accion == "VISTA" ? true : false);
     var isNuevo = (Model.Accion == "NUEVO" ? true : false);
+    //var visibleImpresion = (Model.Accion == "UPDATE" ? true : false);
     var indicaModoLectura = !(Model.Accion == "NUEVO" ? true :
                             (Model.Accion == "UPDATE" ? true :
                             (Model.Accion == "DELETE" ? false :
@@ -26,12 +29,14 @@
         otros = "";
     }
     var MENS_NUMERO = "No se permite un valor negativo.";
+
     var DESC_ADD1 = "Diagnóstico de ingreso";
     var DESC_ADD2 = "Intervención Quirúrjica";
     var DESC_ADD4 = "Diagnóstico";
     var DESC_ADD3 = "Apoyo al diagnóstico";
     var COLOR_BLUE01 = "#284A89";
     var grilla_Actual = "";
+    //var nombreMedico = SoluccionSalud.Entidades.Entidades.ENTITY_GLOBAL.Instance.MedicoNombre;
 
 
 }
@@ -75,7 +80,9 @@
                 App.Dias.setValue(null);
             }
         }
-        
+
+
+
         function eventoValidaReglaGen(PARAM_ACCION, PARAM_REGLA, numRegla) {
             var APMiscelaneos = new Array();
             var MA_MiscelaneosDetalle = {
@@ -130,6 +137,9 @@
         var pctChange = function (value) {
             return Ext.String.format(template, (value > 0) ? "green" : "red", value + "%");
         };
+
+
+
 
         var onSuccess = function (data) {
             App.btnOnEdit.setVisible(true);
@@ -218,6 +228,9 @@
                 Cristerios_Hospitalizacion: App.Cristerios_Hospitalizacion.getValue(),
                 Comentarios: App.Comentarios.getValue(),
                 Version: App.txtTipAtencion.getValue()
+                //Estado: App.Estado.getValue()
+
+
             };
 
             ArrayList0.push(HC_Epicrisis_3);
@@ -2159,6 +2172,8 @@
                                                          //.Text("Bienes/servicios")
                                                          .Handler("parent.App.txtEventoBienes.setValue('FILTRO_X'); eventoDesactivarSeleccionPrincipal(App.IdbtnActivoPrincipal);")
                                                           .Icon(Icon.PluginGo).Hidden(true))),
+
+
                             X.Component().Height(8),
                             X.Container().Layout(LayoutType.HBox)
                             .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
@@ -2172,13 +2187,31 @@
                                                          #{txtTipAtencion}.setDisabled(false);
                                                     }else{
                                                         #{txtTipAtencion}.setDisabled(false);
-                                                        #{txtTipAtencion}.setValue(null);                                                       
+                                                        #{txtTipAtencion}.setValue(null);
+                                                       
+                                                       
                                                     }"),
+
+
                                                    X.TextField().Width(600)
                                                  .ID("txtTipAtencion").MaxLength(25)
                                                    .Value(Model.Version)
                                                  .Disabled(otros.Length > 0 ? false : true)
+
+
+
+
+
+
                                    ),
+
+
+
+
+
+
+
+
                                                           X.FieldSet().ID("fsDescanso8")
                      .ColumnWidth(0.4).Collapsible(true).AutoScroll(true)
                      .Title("Diagnóstico")
@@ -2194,6 +2227,8 @@
                     {
                         d.LabelAlign = LabelAlign.Left;
                     })
+
+
                     .Items(
 
                            X.Container().Layout(LayoutType.HBox).MarginSpec("00 00 00 00")
@@ -2205,7 +2240,11 @@
                                       X.Component().Height(10),
                                      Html.X().Container().Layout(LayoutType.HBox)
                                      .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
+
+
                                      ),
+
+
                                 X.TextField()
                                                 .ID("RecepcionaRecurso2")
                                                 .Listeners(l =>
@@ -2216,6 +2255,11 @@
                                                  X.ComboBox().ID("DeterminacionDiagnostica").Hidden(true).Value(1),
                                               X.ComboBox().ID("IdDiagnosticoPrincipal").Hidden(true).Value(1),
                                               X.ComboBox().ID("GradoAfeccion").Hidden(true).Value(1),
+
+
+
+
+
                             X.GridPanel()
                                                 .ID("grillaSecundario")
                                                 .Border(true).PaddingSpec("6")
@@ -2348,12 +2392,23 @@
                                                          .Handler("parent.App.txtEventoBienes.setValue('FILTRO_X'); eventoDesactivarSeleccionSecundario(App.IdbtnActivoSecundario);")
                                                           .Icon(Icon.PluginGo).Hidden(true)
                                                          )))
+
+
+
+
+
+
+
                ),
+
                X.FieldSet().Height(400)
                                         .ID("fsExamenPreferencial").MarginSpec("05 05 05 05")
                                         .ColumnWidth(0.4)
                                         .FieldDefaults(d => { d.LabelAlign = LabelAlign.Left; })
                                         .Items(
+
+
+
                                          X.Component().Height(5),
                                          X.Container().Layout(LayoutType.HBox)
                                          .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
@@ -2362,6 +2417,7 @@
                                              X.TextAreaFor(m => m.Antecedentes_Importancia).FieldLabel("Antecedentes de Importancia")
                                              .Width(800).LabelWidth(130)
                                          ),
+
                                          X.Component().Height(5),
                                          X.Container().Layout(LayoutType.HBox)
                                          .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
@@ -2370,6 +2426,7 @@
                                              X.TextAreaFor(m => m.Examen_Fisico).FieldLabel("Examen Físico")
                                              .Width(800).LabelWidth(130)
                                          ),
+
                                          X.Component().Height(5),
                                          X.Container().Layout(LayoutType.HBox)
                                          .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
@@ -2377,7 +2434,11 @@
                                              X.Component().Width(50),
                                              X.TextAreaFor(m => m.Plantrabajo_Inicial).FieldLabel("Plan de trabajo Inicial")
                                              .Width(800).LabelWidth(130)
+
                                          ),
+
+
+
                                          X.Component().Height(5),
                                          X.Container().Layout(LayoutType.HBox)
                                          .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
@@ -2385,7 +2446,9 @@
                                              X.Component().Width(50),
                                              X.TextAreaFor(m => m.Cristerios_Hospitalizacion).FieldLabel("Cristerios de Hospitalización")
                                              .Width(800).LabelWidth(130)
+
                                          ),
+
                                          X.Component().Height(5),
                                          X.Container().Layout(LayoutType.HBox)
                                          .LayoutConfig(new HBoxLayoutConfig { Align = HBoxAlign.Top })
@@ -2393,8 +2456,31 @@
                                              X.Component().Width(50),
                                              X.TextAreaFor(m => m.Comentarios).FieldLabel("Comentarios")
                                              .Width(800).LabelWidth(130)
+
                                          )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                          ),
+
+
+
+
+
                 ////////ADD PARA MSGS/////
                 X.TextArea().ID("taAlerts")
                 .Border(false)
@@ -2416,7 +2502,9 @@
                                     X.Label().Html("<font  size='3.9em'; color='red'><b>&#161;</b></font>"),
                                     X.Label().Html("<font  size='1.9em'; color='red'>) Verificar los errores presentados</font>")
                                 ),
+
                                 X.ToolbarFill(),
+
                                 X.Button()
                                 .Text("Imprimir")
                                 .Icon(Icon.Report)
@@ -2430,7 +2518,9 @@
                              .ID("btnImpresionHC")
                              .Handler("eventoVisorReporte('HC');")
                                 ,
+
                 X.ToolbarSpacer().Width(40),
+
                                 X.Button()
                                 .Text("Guardar").Icon(Icon.Disk)
                                 .ID("cmdGuardar").Hidden(indicaModoLectura)
@@ -2452,20 +2542,26 @@
                                 .ID("btnCancel").Hidden(indicaModoLectura)
                                 .Icon(Icon.Cancel)
                                 .OnClientClick("eventoCancelar(this.up('form'));"),
+
                             X.Button()
                                 .Text("Editar")
                                 .ID("btnOnEdit")
                                 .Icon(Icon.ApplicationFormEdit)
                                 .Hidden(true)
                                 .Handler("eventoOnEditar(App.btnOnEdit);")
+
                          ))
                          .Listeners(l =>
                          {
                              l.FieldChange.Handler = "setIndicaCambios(true);";
                          }
                         )
+
                 );
         }
         )
+
+
     )
+
 }
