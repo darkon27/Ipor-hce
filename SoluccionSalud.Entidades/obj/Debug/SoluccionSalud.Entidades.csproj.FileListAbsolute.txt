@@ -38,5 +38,6 @@ C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Entidades\bin\Debug\
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Entidades\bin\Debug\Newtonsoft.Json.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Entidades\bin\Debug\EntityFramework.xml
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Entidades\obj\Debug\SoluccionSalud.Entidades.csprojResolveAssemblyReference.cache
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Entidades\obj\Debug\SoluccionSalud.Entidades.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Entidades\obj\Debug\SoluccionSalud.Entidades.pdb

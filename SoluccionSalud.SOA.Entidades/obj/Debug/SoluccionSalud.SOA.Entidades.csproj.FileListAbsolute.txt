@@ -14,5 +14,6 @@ D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\Soluc
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.pdb
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA.Entidades\bin\Debug\SoluccionSalud.SOA.Entidades.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA.Entidades\bin\Debug\SoluccionSalud.SOA.Entidades.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.csprojResolveAssemblyReference.cache
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.SOA.Entidades\obj\Debug\SoluccionSalud.SOA.Entidades.pdb

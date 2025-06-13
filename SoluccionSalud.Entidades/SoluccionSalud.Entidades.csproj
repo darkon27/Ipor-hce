@@ -737,6 +737,7 @@
     <Compile Include="Entidades\SS_AD_OrdenAtencion.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\SS_AD_OrdenAtencionAttach.cs" />
     <Compile Include="Entidades\SS_AD_OrdenAtencionDetalle.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>

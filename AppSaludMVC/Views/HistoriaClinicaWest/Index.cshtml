@@ -1815,23 +1815,24 @@
                                     } else {
                                         $("#TxtTipoEnfermedad").val(Dato.ValorNumerico);
                                     }
-                                } else if (Dato.Descripcion == "PA") {
+                                } else if (Dato.Descripcion == "P.A. (Max/Min)") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtPA").val(Dato.ValorCadena);
 
                                     } else {
                                         $("#TxtPA").val(Dato.ValorNumerico);
                                     }
-                                } else if (Dato.Descripcion == "SATURACION") {
+                                } else if (Dato.Descripcion == "Sat. de Oxigeno") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtSat").val(Dato.ValorCadena);
 
                                     } else {
                                         $("#TxtSat").val(Dato.ValorNumerico);
                                     }
-                                } else if (Dato.Descripcion == "Talla") {
+                                } else if (Dato.Descripcion == "Talla (CM)") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtFC").val(Dato.ValorCadena);
+                                        console.log(existeP);
                                         if (existeP) {
                                             console.log(TxtFC.value)
                                             console.log(TxtPeso.value)
@@ -1842,22 +1843,30 @@
                                     } else {
                                         $("#TxtFC").val(Dato.ValorNumerico);
                                         $("#TxtFC02").val("");
+
+                                        if (existeP) {
+                                            console.log(TxtFC.value)
+                                            console.log(TxtPeso.value)
+
+                                            $("#TxtFC02").val((parseInt(TxtPeso.value, 10) / ((parseInt(TxtFC.value, 10) / 100) * (parseInt(TxtFC.value, 10) / 100))).toFixed(2).toString());
+                                        }
                                     }
 
-                                } else if (Dato.Descripcion == "FR") {
+                                } else if (Dato.Descripcion == "Frec. Respiratoria") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtFR").val(Dato.ValorCadena);
                                     } else {
                                         $("#TxtFR").val(Dato.ValorNumerico);
                                     }
-                                } else if (Dato.Descripcion == "PA MIN") {
+                                } else if (Dato.Descripcion == "P.A. (Max/Min)") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtmmHg").val(Dato.ValorCadena);
                                     } else {
                                         $("#TxtmmHg").val(Dato.ValorNumerico);
                                     }
 
-                                } else if (Dato.Descripcion == "Peso") {
+                                } else if (Dato.Descripcion == "Peso (KG)") {
+                                    console.log(Dato);
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtPeso").val(Dato.ValorCadena);
                                         existeP = true;
@@ -1865,7 +1874,7 @@
                                     } else {
                                         $("#TxtPeso").val(Dato.ValorNumerico);
                                         $("#TxtFC02").val("");
-                                        existeP = false;
+                                        existeP = true;
                                     }
 
                                 } else if (Dato.Descripcion == "EVOLUCION") {
@@ -1874,7 +1883,7 @@
                                     } else {
                                         $("#TxtEvolucion").val(Dato.ValorNumerico);
                                     }
-                                } else if (Dato.Descripcion == "FC") {
+                                } else if (Dato.Descripcion == "Frec. Cardiaca") {
 
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtFc").val(Dato.ValorCadena);

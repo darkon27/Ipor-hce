@@ -449,6 +449,12 @@ D:\Proyecto\IPOR\MIGRACION\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalReportV
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.csproj.ResolveComReference.cache
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.dll
 D:\Proyecto\IPOR\MIGRACION\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.csprojResolveAssemblyReference.cache
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalPrintControlLib.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalReportsCommonObjectModelLib.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalReportsCubeDefModelLib.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalReportsDataDefModelLib.dll
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.csproj.ResolveComReference.cache
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\AppSaludMVC.dll.config
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\AppSaludMVC.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\AppSaludMVC.pdb
@@ -520,6 +526,7 @@ C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\Microsoft.Extension
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\Microsoft.Extensions.Logging.Abstractions.xml
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\Microsoft.Extensions.Primitives.xml
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\Microsoft.WindowsAzure.Storage.xml
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\Newtonsoft.Json.xml
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\Serilog.xml
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\Serilog.Extensions.Logging.xml
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\Serilog.Extensions.Logging.File.xml
@@ -588,11 +595,5 @@ C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\ko\System.Spatial.r
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\ru\System.Spatial.resources.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\zh-Hans\System.Spatial.resources.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\bin\zh-Hant\System.Spatial.resources.dll
-C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.csprojResolveAssemblyReference.cache
-C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalPrintControlLib.dll
-C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalReportsCommonObjectModelLib.dll
-C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalReportsCubeDefModelLib.dll
-C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\Interop.CrystalReportsDataDefModelLib.dll
-C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.csproj.ResolveComReference.cache
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\AppSaludMVC\obj\Debug\AppSaludMVC.pdb

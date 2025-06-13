@@ -1323,6 +1323,7 @@ namespace AppSaludMVC.Controllers
                         Entity.IndicadorPreExistencia = objEntity.ValorEntero5;
                         Entity.IndicadorCronico = objEntity.ValorEntero6;
                         Entity.IndicadorNuevo = objEntity.ValorEntero7;
+                        Entity.DetalleDiagnostico = objEntity.ValorEntero8;
                         Entity.UsuarioCreacion = ENTITY_GLOBAL.Instance.USUARIO;
                         Entity.FechaCreacion = DateTime.Now;
                         Entity.UsuarioModificacion = ENTITY_GLOBAL.Instance.USUARIO;

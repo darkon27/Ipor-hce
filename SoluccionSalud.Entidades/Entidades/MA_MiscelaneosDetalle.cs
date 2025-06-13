@@ -42,7 +42,7 @@ namespace SoluccionSalud.Entidades.Entidades
         public string ValorCodigo7 { get; set; }
         public Nullable<int> ValorEntero6 { get; set; }
         public Nullable<int> ValorEntero7 { get; set; }
-
+        public string ValorEntero8 { get; set; }
         public string UsuarioActual { get; set; }
     
         public virtual MA_MiscelaneosHeader MA_MiscelaneosHeader { get; set; }

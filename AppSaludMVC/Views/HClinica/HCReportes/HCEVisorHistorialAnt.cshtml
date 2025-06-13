@@ -369,11 +369,15 @@
                     ,
                           X.Checkbox()
                         .FieldLabel("Componentes")
+                         .Hidden(true)
+                         
+                         
                          .ID("CompchkComp")
                                          .Listeners(l => l.Change.Handler = "eventoCheckFiltro(App.CompchkComp,App.Comp_txt);")
                         .Checked(true),
                         X.TextField()
                         .Width(220)
+                        .Hidden(true)
                         .ID("Comp_txt")
                         .Disabled(true)
                 )
@@ -421,7 +425,7 @@
                         .RemotePaging(true)
                         .PageSize(10)
                         .Proxy(proxy => proxy.Add(Html.X().AjaxProxy()
-                                    .Url("HClinica/ListadoPacienteCodigoOA")
+                                        .Url("HClinica/listarDocumentosExternos")
                         .Reader(reader => reader.Add(Html.X().JsonReader()
                         .Root("data")
                         .TotalProperty("total")
@@ -444,32 +448,33 @@
                              fields.Add(Html.X().ModelField().Name("Paciente"));
                              fields.Add(Html.X().ModelField().Name("CodigoOA"));
                              fields.Add(Html.X().ModelField().Name("CodigoComponente"));
-                             fields.Add(Html.X().ModelField().Name("DescripcionComponente"));
+                             fields.Add(Html.X().ModelField().Name("Descripcion"));
                              fields.Add(Html.X().ModelField().Name("IdOrdenAtencion"));
                              fields.Add(Html.X().ModelField().Name("LineaOA"));
                              fields.Add(Html.X().ModelField().Name("TipoOrdenAtencion"));
-                             fields.Add(Html.X().ModelField().Name("Medico"));
+                             //fields.Add(Html.X().ModelField().Name("Medico"));
                              fields.Add(Html.X().ModelField().Name("Observacion"));
                              fields.Add(Html.X().ModelField().Name("FechaProcedimiento"));
                              fields.Add(Html.X().ModelField().Name("UsuarioCreacion"));
+                             fields.Add(Html.X().ModelField().Name("FechaCreacion"));
                              fields.Add(Html.X().ModelField().Name("CodigoEpisodioClinico"));
                              fields.Add(Html.X().ModelField().Name("Accion"));
                          })))))
                          .ColumnModel(columnModel =>
                          {
                              columnModel.Columns.Add(Html.X().Column().Text("Sucursal").DataIndex("UsuarioCreacion").Width(90).Hidden(false));
-                             columnModel.Columns.Add(Html.X().DateColumn().Text("Fecha de Examen").DataIndex("FechaProcedimiento").Width(120).Format("dd/MM/yyyy"));
+                             columnModel.Columns.Add(Html.X().DateColumn().Text("Fecha de Examen").DataIndex("FechaCreacion").Width(120).Format("dd/MM/yyyy"));
                              columnModel.Columns.Add(Html.X().Column().Text("IdProcedimiento").DataIndex("IdProcedimiento").Width(80).Hidden(true)); 
                              columnModel.Columns.Add(Html.X().Column().Text("NombreArchivo").DataIndex("NombreArchivo").Width(150).Hidden(true));
-                             columnModel.Columns.Add(Html.X().Column().Text("RutaInforme").DataIndex("RutaInforme").Width(50).Hidden(true));
+                             columnModel.Columns.Add(Html.X().Column().Text("RutaInforme").DataIndex("Ruta").Width(50).Hidden(true));
                              columnModel.Columns.Add(Html.X().Column().Text("IdPaciente").DataIndex("IdPaciente").Width(250).Hidden(true));
                              columnModel.Columns.Add(Html.X().Column().Text("Paciente").DataIndex("Paciente").Width(250).Hidden(true));
                              columnModel.Columns.Add(Html.X().Column().Text("MotivoConsulta").DataIndex("MotivoConsulta").Width(300).Hidden(true));        
                              columnModel.Columns.Add(Html.X().Column().Text("Código OA").DataIndex("CodigoOA").Width(100).Hidden(false));
                              columnModel.Columns.Add(Html.X().Column().Text("CodigoComponente").DataIndex("CodigoComponente").Width(90).Hidden(true));
-                             columnModel.Columns.Add(Html.X().Column().Text("Descripcion").DataIndex("DescripcionComponente").Width(100).Hidden(false));
+                             columnModel.Columns.Add(Html.X().Column().Text("Descripcion").DataIndex("Descripcion").Width(100).Hidden(false));
                              columnModel.Columns.Add(Html.X().Column().Text("IdOrdenAtencion").DataIndex("IdOrdenAtencion").Width(90).Hidden(true));
-                             columnModel.Columns.Add(Html.X().Column().Text("Medico").DataIndex("Medico").Width(90).Hidden(false));                            
+                             //columnModel.Columns.Add(Html.X().Column().Text("Medico").DataIndex("Medico").Width(90).Hidden(false));                            
                              columnModel.Columns.Add(Html.X().Column().Text("Ruta").DataIndex("Accion").Width(90).Hidden(true));
                          })
 

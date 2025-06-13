@@ -12663,6 +12663,65 @@ namespace AppSaludMVC.Controllers
             return this.Store(Listar, cantElementos);
         }
 
+        public System.Web.Mvc.ActionResult listarDocumentosExternos(int start, int limit, String componente, String txtbuscar, String tipoBuscar, String codigooa, String accion)
+        {
+            Log.Information("HClinicaControllerSup - ListadoPacienteCodigoOA - Entrar");
+            int ini = (start == 0 ? start : start + 1);
+            int fin = start + limit;
+            if (tipoBuscar == "FILTRO") { ini = 0; fin = limit; }
+            var Listar = new List<SS_AD_OrdenAtencionAttach>();
+            ENTITY_GLOBAL.Instance.GRUPO = string.Empty;
+            var localEnty = new SS_AD_OrdenAtencionAttach
+            {
+                FechaCreacion = DateTime.Now,
+                IdPaciente = ENTITY_GLOBAL.Instance.PacienteID ?? 0,
+                Descripcion = getValorFiltroStr(componente),
+                CodigoOA = getValorFiltroStr(codigooa),
+                IdOrdenAtencion = tipoBuscar == "FILTRO" ? limit : start + limit
+            };
+            int cantElementos = 0;
+            //Listar = Svc_ProcedimientoInformeSPRING.ListarProcedimientoInformeSPRING(LocalEnty, ini, fin);
+
+            var URL_SERVER = ConfigurationManager.AppSettings.Get("ApiRest");
+            HttpClient clienteHttp = new HttpClient();
+            ViewResponse envioJsons = new ViewResponse();
+            envioJsons.valor = 1;
+            envioJsons.msg = Newtonsoft.Json.JsonConvert.SerializeObject(localEnty);
+
+            clienteHttp.BaseAddress = new Uri(URL_SERVER);
+            var request = clienteHttp.PostAsync("Consulta/listarDocumentosExternos", envioJsons, new JsonMediaTypeFormatter()).Result;
+            if (request.IsSuccessStatusCode)
+            {
+                var resultString = request.Content.ReadAsStringAsync().Result;
+                Listar = (List<SS_AD_OrdenAtencionAttach>)Newtonsoft.Json.JsonConvert.DeserializeObject(resultString, typeof(List<SS_AD_OrdenAtencionAttach>));
+            }
+
+            if (Listar.Count > 0)
+            {
+                var rutaServidor = Server.MapPath("../resources/DocumentosAdjuntos/compartir/");
+                if (!Directory.Exists(rutaServidor))
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(rutaServidor);
+                }
+
+                foreach (SS_AD_OrdenAtencionAttach dtMes in Listar.AsEnumerable())
+                {
+                    System.IO.FileInfo fi = new System.IO.FileInfo(dtMes.Ruta);
+                    if (fi.Exists)
+                    {
+                        var NombreServidor = fi.Name;
+                        var PathServidor = rutaServidor + NombreServidor;
+                        System.IO.File.Copy(dtMes.Ruta, PathServidor, true);
+                        //System.IO.FileInfo fiServidor = new System.IO.FileInfo(PathServidor);
+                        var PathOri = "../resources/DocumentosAdjuntos/compartir/" + NombreServidor.Trim();
+                        dtMes.Accion = PathOri;
+                    }
+                }
+                //cantElementos = Convert.ToInt32(Listar[0].Contador_filas);
+            }
+            return this.Store(Listar, Listar.Count);
+        }
+
         private byte[] PDF_Bytes(string Path)
         {
             string sPath;

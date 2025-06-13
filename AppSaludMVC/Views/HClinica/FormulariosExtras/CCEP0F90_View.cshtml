@@ -208,6 +208,7 @@
                         ValorEntero5: r.get('ValorEntero5'),
                         ValorEntero6: r.get('ValorEntero6'),
                         ValorEntero7: r.get('ValorEntero7'),
+                        ValorEntero8: r.get('ValorEntero8'),
                         CodigoElemento: r.get('CodigoElemento'),
                         ACCION: (r.get('ACCION') == 'NUEVO' ? 'NUEVO' : 'UPDATE')
                     };
@@ -657,7 +658,7 @@
             var ValorEntero5 = r.get('ValorEntero5');
             var ValorEntero6 = r.get('ValorEntero6');
             var ValorEntero7 = r.get('ValorEntero7');
-
+            var ValorEntero8 = r.get('ValorEntero8');
             if (ValorCodigo1 == null || ValorCodigo1 == '') {
                 App.IdDiagnostico.setValue(null);
             }
@@ -1006,6 +1007,7 @@
                                                                            new ModelField("ValorEntero5", ModelFieldType.Int),
                                                                            new ModelField("ValorEntero6", ModelFieldType.Int),
                                                                            new ModelField("ValorEntero7", ModelFieldType.Int),
+                                                                           new ModelField("ValorEntero8", ModelFieldType.Int),
                                                                            new ModelField("ValorEntero3", ModelFieldType.Int),
                                                                            new ModelField("CodigoElemento", ModelFieldType.String),
                                                                            new ModelField("ValorCodigo7", ModelFieldType.String),
@@ -1202,6 +1204,20 @@
                                                                         .AllowBlank(false).BlankText("Debe ingresar el campo nuevo")
                                                                         .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABCOLABORACION").Select(d => new ListItem(d.Name, d.ID)))
                                                              ),
+                                                     Html.X().ComponentColumn()
+                                                         .Editor(true)
+                                                         .DataIndex("ValorEntero8")
+                                                         .Text("Estado")
+                                                         .Hidden(true)
+                                                         .Width(50)
+                                                         .Component(
+                                                             Html.X().ComboBox().ReadOnly(indicaModoLectura)
+                                                                        .Editable(false)
+                                                                        .QueryMode(DataLoadMode.Local)
+                                                                        .TriggerAction(TriggerAction.All)
+                                                                        .AllowBlank(false).BlankText("Debe ingresar el campo nuevo")
+                                                                        .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABCOLABORACION").Select(d => new ListItem(d.Name, d.ID)))
+                                                             ),
                                                       Html.X().ComponentColumn()
                                                          .Editor(true)
                                                          .DataIndex("CodigoElemento")
@@ -1344,6 +1360,6 @@
                 )
 
 
-    )
+    )C
 
 }

@@ -76,3 +76,4 @@ C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Repository\bin\Debug
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Repository\obj\Debug\SoluccionSalud.Repository.csprojResolveAssemblyReference.cache
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Repository\obj\Debug\SoluccionSalud.Repository.dll
 C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Repository\obj\Debug\SoluccionSalud.Repository.pdb
+C:\CajalSac\Desarrollo\Prj_Ipor_Hce\Ipor-hce\SoluccionSalud.Repository\bin\Debug\Newtonsoft.Json.xml
