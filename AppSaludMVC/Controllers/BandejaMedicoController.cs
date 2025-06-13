@@ -14701,19 +14701,6 @@ string tipoConsulta, string tipoEstado, string idPaciente,
                 }
                 else if (accion == "UPDATE")
                 {
-                    //VW_ATENCIONPACIENTE_GENERAL vistaGenSelec = new VW_ATENCIONPACIENTE_GENERAL();
-                    //if (Session["VW_ATENCIONPACIENTE_GEN_SELECC"] != null)
-                    //{
-                    //    vistaGenSelec = (VW_ATENCIONPACIENTE_GENERAL)Session["VW_ATENCIONPACIENTE_GEN_SELECC"];
-                    //}
-                    //var Listar = new List<PERSONAMAST>();
-                    //var LocalEnty = new PERSONAMAST();
-                    //var objDatos = new PERSONAMAST();
-                    //LocalEnty.ACCION = "LISTARPACIENTE";
-                    //LocalEnty.Persona = (int)ENTITY_GLOBAL.Instance.PacienteID;
-                    //LocalEnty.Persona = (int)vistaGenSelec.IdPaciente;
-                    //Listar = SvcPersonaMast.GetSelectPersonaMast(LocalEnty).ToList();
-
                     var Listar = new List<PERSONAMAST>();
                     var objDatos = new PERSONAMAST();
                     if (Session["ssesion_ListarPaciiente"] != null)
@@ -14758,6 +14745,27 @@ string tipoConsulta, string tipoEstado, string idPaciente,
                         localEntity.Accion = ENTITY_GLOBAL.Instance.ESTADOFORMULARIO_ACCION;
                         ENTITY_GLOBAL.Instance.OBJETOS_F5 = localEntity;
                         //Cambiar estado de ATENCIO FIRMADA
+
+                        epiAtencionSave.UnidadReplicacion = listaEpi[0].UnidadReplicacion;
+                        epiAtencionSave.UnidadReplicacionEC = listaEpi[0].UnidadReplicacionEC;
+                        epiAtencionSave.EpisodioClinico = listaEpi[0].EpisodioClinico;
+                        epiAtencionSave.IdEpisodioAtencion = listaEpi[0].IdEpisodioAtencion;
+                        epiAtencionSave.EpisodioAtencion = listaEpi[0].EpisodioAtencion;
+                        epiAtencionSave.Accion = "INTEROPERABILIDAD UPDATE";
+                        /******ADD PARA INTEROPERABILIDAD UPDATE***/
+                        if (ENTITY_GLOBAL.Instance.COD_BANDEJA == "AMBULATORIO")
+                        {
+                            try
+                            {
+                                string valor = "";
+                                int IdEp = Convert.ToInt32(epiAtencionSave.IdEpisodioAtencion);
+                                valor = ObtenerTramaOA.InterOperabilidadConsultaExterna(epiAtencionSave.UnidadReplicacion, IdEp, epiAtencionSave.IdPaciente, epiAtencionSave.EpisodioClinico).ToString();
+                            }
+                            catch
+                            {
+
+                            }
+                        }
                         return showMensajeNotify("Ventana de Mensajes",
                         "Registro de Episodio en Modo - MODIFICAR . Código Transacción: " +
                             UTILES_MENSAJES.getCodigoTransaccionHCE(ENTITY_GLOBAL.Instance.EpisodioClinicoCodigo,

@@ -3595,6 +3595,7 @@
     <Content Include="assets\vendor\summernote\summernote.js" />
     <Content Include="bin\AppSaludMVC.dll" />
     <Content Include="bin\AppSaludMVC.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
     <Content Include="Content\ADD_FACTOR.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -5511,6 +5512,7 @@
     <Content Include="Views\VisorReceta\CCEP991802_View.cshtml" />
     <Content Include="Views\Gestion\Maestros\ExamenQuiru\ComponenteQuirur.cshtml" />
     <Content Include="Views\Gestion\Maestros\ExamenQuiru\CCEP9925_View.cshtml" />
+    <Content Include="Views\HClinica\HCReportes\HCEVisorHistorialAnt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
