@@ -1733,50 +1733,42 @@
 
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtAntecedentes").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtAntecedentes").val(Dato.ValorNumerico);
-
                                     }
                                 } else if (Dato.Descripcion == "Antecedente") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtAntecedentes").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtAntecedentes").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Descripcion") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtExamenFisico").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtExamenFisico").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Cabeza") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtCabeza").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtCabeza").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Cuello") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtCuello").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtCuello").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Torax") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtTorax").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtTorax").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Abdomen") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtAbdomen").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtAbdomen").val(Dato.ValorNumerico);
                                     }
@@ -1790,42 +1782,36 @@
                                 } else if (Dato.Descripcion == "Musc Esqueletico") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtEsqueletico").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtEsqueletico").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Neurológico") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtNeurologico").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtNeurologico").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Otros") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtOtros").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtOtros").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Tiempo Transcurrido") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtTipoEnfermedad").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtTipoEnfermedad").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "P.A. (Max/Min)") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtPA").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtPA").val(Dato.ValorNumerico);
                                     }
                                 } else if (Dato.Descripcion == "Sat. de Oxigeno") {
                                     if (Dato.TipoDato == "T") {
                                         $("#TxtSat").val(Dato.ValorCadena);
-
                                     } else {
                                         $("#TxtSat").val(Dato.ValorNumerico);
                                     }
@@ -1836,18 +1822,14 @@
                                         if (existeP) {
                                             console.log(TxtFC.value)
                                             console.log(TxtPeso.value)
-
                                             $("#TxtFC02").val((parseInt(TxtPeso.value, 10) / ((parseInt(TxtFC.value, 10) / 100) * (parseInt(TxtFC.value, 10) / 100))).toFixed(2).toString());
                                         }
-
                                     } else {
                                         $("#TxtFC").val(Dato.ValorNumerico);
                                         $("#TxtFC02").val("");
-
                                         if (existeP) {
                                             console.log(TxtFC.value)
                                             console.log(TxtPeso.value)
-
                                             $("#TxtFC02").val((parseInt(TxtPeso.value, 10) / ((parseInt(TxtFC.value, 10) / 100) * (parseInt(TxtFC.value, 10) / 100))).toFixed(2).toString());
                                         }
                                     }

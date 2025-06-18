@@ -118,35 +118,106 @@ GO
 
 CREATE OR ALTER VIEW [dbo].[VW_SS_HCE_VisorAnamnesis] 
 AS 
-SELECT 'ANAMNESIS' TAB, EXT.IdOrdenAtencion,EXT.LineaOrdenAtencion, det.IdInforme, det.Secuencial, det.IdConcepto, 
-	det.IdPlantilla, det.SecuencialPlantilla,co.Descripcion, isnull(det.ValorNumerico,0.000000)ValorNumerico,
-	isnull( det.ValorCadena,'')ValorCadena, 	det.ValorFecha, det.Estado, 
-	det.UsuarioCreacion, det.FechaCreacion, det.UsuarioModificacion,	 det.FechaModificacion, CO.Codigo, CO.TipoDato, 
-	0 IndAutosize, 0 IndAjustarCampo ,OA.IdPaciente,per.documento,inf.TipoInforme,per.tipodocumento, OA.Sucursal
-FROM SS_CE_InformeDetalle det				WITH(NOLOCK)
-	INNER JOIN SS_CE_Informe inf			WITH(NOLOCK)	ON inf.IdInforme		= det.IdInforme 
-	INNER JOIN SS_CE_ConsultaExterna EXT	WITH(NOLOCK)	ON EXT.IdConsultaExterna= inf.IdConsultaExterna
-	INNER JOIN SS_AD_OrdenAtencion OA		WITH(NOLOCK)	ON EXT.IdOrdenAtencion  = OA.IdOrdenAtencion
-	INNER JOIN PersonaMast per				WITH(NOLOCK)	ON OA.IdPaciente		= per.Persona 
-	LEFT  JOIN SS_GE_PlantillaConcepto CO	WITH(NOLOCK)	ON CO.IdConcepto		= det.IdConcepto 
+-- Primer SELECT: SS_CE_InformeDetalle
+SELECT 
+	'ANAMNESIS' TAB, 
+	EXT.IdOrdenAtencion,
+	EXT.LineaOrdenAtencion, 
+	det.IdInforme, 
+	det.Secuencial, 
+	det.IdConcepto, 
+	det.IdPlantilla, 
+	det.SecuencialPlantilla, 
+	co.Descripcion, 
+	ISNULL(det.ValorNumerico,0.000000) AS ValorNumerico,
+	ISNULL(det.ValorCadena,'') AS ValorCadena, 	
+	det.ValorFecha, 
+	det.Estado, 
+	det.UsuarioCreacion, 
+	det.FechaCreacion, 
+	det.UsuarioModificacion,	 
+	det.FechaModificacion, 
+	CO.Codigo, 
+	CO.TipoDato, 
+	0 AS IndAutosize, 
+	0 AS IndAjustarCampo,
+	OA.IdPaciente,
+	per.documento,
+	inf.TipoInforme,
+	per.tipodocumento, 
+	OA.Sucursal
+FROM SS_CE_InformeDetalle det WITH(NOLOCK)
+	INNER JOIN SS_CE_Informe inf			WITH(NOLOCK) ON inf.IdInforme = det.IdInforme 
+	INNER JOIN SS_CE_ConsultaExterna EXT	WITH(NOLOCK) ON EXT.IdConsultaExterna = inf.IdConsultaExterna
+	INNER JOIN SS_AD_OrdenAtencion OA		WITH(NOLOCK) ON EXT.IdOrdenAtencion  = OA.IdOrdenAtencion
+	INNER JOIN PersonaMast per				WITH(NOLOCK) ON OA.IdPaciente = per.Persona 
+	LEFT JOIN SS_GE_PlantillaConcepto CO	WITH(NOLOCK) ON CO.IdConcepto = det.IdConcepto 
+
+UNION
+
+-- Segundo SELECT: SS_CE_ConsultaExternaSignosVitales
+SELECT 
+	'ANAMNESIS' TAB, 
+	EXT.IdOrdenAtencion,
+	EXT.LineaOrdenAtencion,
+	T0.[IdConsultaExterna] AS IdInforme,    -- Equivalente a det.IdInforme
+	T0.[IdTabla] AS Secuencial,             -- Equivalente a det.Secuencial
+	T2.[Secuencial] AS IdConcepto,          -- Equivalente a det.IdConcepto
+	0 AS IdPlantilla,					-- Equivalente a det.IdPlantilla
+	0 AS SecuencialPlantilla,			-- Equivalente a det.SecuencialPlantilla
+	T2.Nombre AS Codigo,
+	ISNULL(T0.ValorNumerico1, 0) AS ValorNumerico,
+	ISNULL(T0.ValorTexto, '') AS ValorCadena,
+	NULL AS ValorFecha,
+	T0.Estado,
+	T0.UsuarioCreacion, 
+	T0.FechaCreacion, 
+	T0.UsuarioModificacion, 
+	T0.FechaModificacion,
+	T2.Nombre AS Codigo,
+	CASE T2.TipoCaja 
+		WHEN 1 THEN 'N' -- Textos
+		WHEN 2 THEN 'T' -- Numéricos
+		WHEN 3 THEN 'T' -- Combos
+		WHEN 4 THEN 'F' -- Fechas
+		ELSE ''
+	END AS TipoDato,
+	0 AS IndAutosize,
+	0 AS IndAjustarCampo,
+	OA.IdPaciente,
+	per.documento,
+	'CE' AS TipoInforme,
+	per.tipodocumento,
+	OA.Sucursal
+FROM SS_CE_ConsultaExternaSignosVitales T0 WITH(NOLOCK)
+	INNER JOIN SS_CE_ConsultaExterna EXT	WITH(NOLOCK) ON EXT.IdConsultaExterna = T0.IdConsultaExterna
+	INNER JOIN SS_AD_OrdenAtencion OA		WITH(NOLOCK) ON EXT.IdOrdenAtencion = OA.IdOrdenAtencion
+	INNER JOIN PersonaMast per				WITH(NOLOCK) ON OA.IdPaciente = per.Persona 
+	INNER JOIN SS_CE_SignosVitales T1		WITH(NOLOCK) ON T0.IdTabla = T1.IdTabla
+	INNER JOIN SS_CE_SignosVitalesDetalle T2 WITH(NOLOCK) ON T0.IdTabla = T2.IdTabla AND T0.SecuencialTabla = T2.Secuencial
+
+
 GO
 
 CREATE OR ALTER VIEW [dbo].[VW_SS_HCE_VisorDiagnostico] 
 AS 
 	SELECT 'CONSULTA' TAB, EXT.IdOrdenAtencion,EXT.LineaOrdenAtencion, det.IdConsultaExterna, det.iddiagnostico, OA.IdPaciente,
 		DA.Nombre,DA.CodigoDiagnostico, det.TipoDiagnostico, det.TipoAntecedente, det.IndicadorAntecedente, det.DetalleDiagnostico,	 
-		det.Estado, ESP.Nombre  UsuarioCreacion, det.FechaCreacion,	 CASE  WHEN OA.UnidadReplicacion='LIMA' THEN '0001' ELSE OA.UnidadReplicacion END  UsuarioModificacion,	 det.FechaModificacion,per.documento,per.tipodocumento
+		det.Estado, ESP.Nombre  UsuarioCreacion, det.FechaCreacion,	 CASE  WHEN OA.UnidadReplicacion='LIMA' THEN '0001' ELSE OA.UnidadReplicacion END  UsuarioModificacion,	
+		det.FechaModificacion,per.documento,per.tipodocumento,isnull(GE.Descripcion,'') DesEstadio,det.Estadio
 	FROM SS_CE_ConsultaExternaDiagnostico det	WITH(NOLOCK)
 	  INNER JOIN SS_GE_Diagnostico DA			WITH(NOLOCK)	ON det.iddiagnostico=DA.IdDiagnostico
 	  INNER JOIN SS_CE_ConsultaExterna EXT		WITH(NOLOCK)	ON EXT.IdConsultaExterna= det.IdConsultaExterna
 	  INNER JOIN SS_AD_OrdenAtencion OA			WITH(NOLOCK)	ON EXT.IdOrdenAtencion  = OA.IdOrdenAtencion
 	  INNER JOIN PersonaMast per				WITH(NOLOCK)	ON OA.IdPaciente		= per.Persona 
-	  LEFT JOIN SS_GE_Especialidad	ESP		WITH(NOLOCK)	ON ESP.IdEspecialidad	= IsNull(EXT.Especialidad, OA.Especialidad)
+	  LEFT JOIN SS_GE_Especialidad	ESP			WITH(NOLOCK)	ON ESP.IdEspecialidad	= IsNull(EXT.Especialidad, OA.Especialidad)
+	  LEFT JOIN ge_varios   GE					WITH(NOLOCK)	ON codigotabla='estadio' AND det.Estadio=GE.Secuencial   
 	UNION
 
 	SELECT 'PROCEDIMIENTO' TAB, EXT.IdOrdenAtencion,EXT.LineaOrdenAtencion, det.IdProcedimiento IdConsultaExterna, det.iddiagnostico, OA.IdPaciente,
 		DA.Nombre,DA.CodigoDiagnostico, det.TipoDiagnostico, '' TipoAntecedente, '' IndicadorAntecedente, '' DetalleDiagnostico,	 
-		det.Estado, ESP.Nombre UsuarioCreacion, det.FechaCreacion,	CASE  WHEN OA.UnidadReplicacion='LIMA' THEN '0001' ELSE OA.UnidadReplicacion END   UsuarioModificacion,	 det.FechaModificacion,per.documento,per.tipodocumento
+		det.Estado, ESP.Nombre UsuarioCreacion, det.FechaCreacion,	CASE  WHEN OA.UnidadReplicacion='LIMA' THEN '0001' ELSE OA.UnidadReplicacion END   UsuarioModificacion,	
+		det.FechaModificacion,per.documento,per.tipodocumento, '' DesEstadio, 0 Estadio
 	FROM SS_PR_ProcedimientoDiagnostico det	WITH(NOLOCK)
 	  INNER JOIN SS_GE_Diagnostico DA		WITH(NOLOCK)	ON det.iddiagnostico=DA.IdDiagnostico
 	  INNER JOIN SS_PR_Procedimiento EXT	WITH(NOLOCK)	ON EXT.IdProcedimiento= det.IdProcedimiento
@@ -402,3 +473,58 @@ as
 	AND (@FechaInicio IS NULL OR FechaInicio >=  @FechaInicio)
 	AND (@FechaFin IS NULL OR FechaFin < DATEADD(DAY,1,@FechaFin))
 GO
+
+
+CREATE OR ALTER VIEW [dbo].[VW_SS_HCE_VisorProcedimientoInforme] 
+AS 
+ 	 SELECT   Replace(Replace(Replace(Replace(Replace(Replace (I.RutaInforme,
+				    'X:\','\\SVSB-SERV-FL02\pdf-imagenes\'),
+					'W:\','\\SVSB-SERV-FL02\PDF-Precisa\'),
+					'R:\','\\SVSB-SERV-FL02\PDF_Patologia\'),
+				    'I:\','\\controlador\informes\'),
+					'\\172.0.3.5\','\\SVSB-SERV-FL02\'),				
+			'B:\','\\SVSB-SERV-FL02\Informes Radiologia\') LinkInforme,OA.codigoOA,EE.Nombre DesEspecialidad ,OA.Sucursal
+			,per.documento,per.tipodocumento,OAD.IdOrdenAtencion,OAD.Linea,OAD.Componente,CC.Nombre Observacion,I.IdProcedimiento 
+			,I.IdInforme,I.Nombre,I.RutaInforme,I.Estado ,I.UsuarioCreacion,I.FechaCreacion,I.UsuarioModificacion,I.FechaModificacion
+			,OAD.TipoOrdenAtencion,	OAD.Estado estdetalle,	a.EstadoDocumento ,	OAD.FechaCreacion FechaDetalle,OAD.SituacionInterfase,OAD.GrupoInterfase
+			,A.Medico,A.Especialidad				
+			FROM   SS_PR_ProcedimientoInforme I	    WITH(NOLOCK)	
+	INNER JOIN SS_PR_Procedimiento A				WITH(NOLOCK) 		 ON A.IdProcedimiento=I.IdProcedimiento	 
+	INNER JOIN SS_AD_OrdenAtencionDetalle OAD		WITH(NOLOCK) ON A.IdOrdenAtencion  = OAD.IdOrdenAtencion AND OAD.Linea=A.LineaOrdenAtencion
+	INNER JOIN SS_AD_OrdenAtencion OA	            WITH(NOLOCK) ON OAD.IdOrdenAtencion  = OA.IdOrdenAtencion	
+	INNER JOIN PersonaMast per						WITH(NOLOCK) ON OA.IdPaciente		= per.Persona 	
+	INNER JOIN CM_CO_Componente CC					WITH(NOLOCK) ON ( CC.CodigoComponente = OAD.Componente )
+	LEFT JOIN SS_GE_Especialidad EE					WITH(NOLOCK) ON EE.IdEspecialidad = OA.Especialidad
+
+GO
+
+
+--SELECT  
+--		PR.IdProcedimiento AS IdProcedimiento,
+--		PRI.Nombre AS NombreArchivo,
+--		PRI.RutaInforme AS RutaInforme,
+--		OA.IdPaciente AS IdPaciente,
+--		pa.Busqueda AS Paciente,
+--		oa.CodigoOA AS CodigoOA,
+--		OAD.Componente AS CodigoComponente,
+--		co.Descripcion AS DescripcionComponente,
+--		oa.IdOrdenAtencion AS IdOrdenAtencion,
+--		oad.Linea AS LineaOA ,
+--		oa.Tipoordenatencion AS TipoOrdenAtencion,
+--		pm.busqueda as Medico,
+--		NULL,
+--		PR.FechaProcedimiento AS FechaProcedimiento,
+--		pri.FechaCreacion AS FechaCreacion,
+--		PRI.UsuarioCreacion AS UsuarioCreacion,
+--		PRI.FechaModificacion AS FechaModificacion,
+--		PRI.UsuarioModificacion AS UsuarioModificacion,
+--		'I'
+--		from ss_pr_procedimiento PR WITH (NOLOCK)
+--		INNER join SS_PR_ProcedimientoInforme PRI WITH (NOLOCK) ON PRI.IdProcedimiento=PR.IdProcedimiento  
+--		INNER join SS_AD_OrdenAtencion OA WITH (NOLOCK) on oa.IdOrdenAtencion=pr.IdOrdenAtencion
+--		INNER join PersonaMast PA WITH (NOLOCK) on oa.IdPaciente=pa.Persona 
+--		LEFT join personamast PM WITH (NOLOCK) on pr.medico =pm.persona
+--		INNER join SS_AD_OrdenAtencionDetalle OAD WITH (NOLOCK) ON OAD.IdOrdenAtencion=PR.IdOrdenAtencion AND OAD.Linea=PR.LineaOrdenAtencion 
+--		INNER JOIN CM_CO_Componente CO WITH (NOLOCK) on oad.Componente=co.CodigoComponente
+--		where PR.IdProcedimiento=@IdProcedimiento AND PRI.IdInforme=@IdInforme
+--GO
