@@ -1007,7 +1007,7 @@
                                                                            new ModelField("ValorEntero5", ModelFieldType.Int),
                                                                            new ModelField("ValorEntero6", ModelFieldType.Int),
                                                                            new ModelField("ValorEntero7", ModelFieldType.Int),
-                                                                           new ModelField("ValorEntero8", ModelFieldType.Int),
+                                                                           new ModelField("ValorEntero8", ModelFieldType.String),
                                                                            new ModelField("ValorEntero3", ModelFieldType.Int),
                                                                            new ModelField("CodigoElemento", ModelFieldType.String),
                                                                            new ModelField("ValorCodigo7", ModelFieldType.String),
@@ -1176,20 +1176,20 @@
                                                                         .AllowBlank(false).BlankText("Debe ingresar el campo preexistencia")
                                                                         .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABCOLABORACION").Select(d => new ListItem(d.Name, d.ID)))
                                                              ),
-                                                     Html.X().ComponentColumn()
-                                                         .Editor(true)
-                                                         .DataIndex("ValorEntero6")
-                                                         .Text("Crónico")
-                                                         .Hidden(true)
-                                                         .Width(50)
-                                                         .Component(
-                                                             Html.X().ComboBox().ReadOnly(indicaModoLectura)
-                                                                        .Editable(false)
-                                                                        .QueryMode(DataLoadMode.Local)
-                                                                        .TriggerAction(TriggerAction.All)
-                                                                        .AllowBlank(false).BlankText("Debe ingresar el campo crónico")
-                                                                        .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABCOLABORACION").Select(d => new ListItem(d.Name, d.ID)))
-                                                             ),
+                                                     //Html.X().ComponentColumn()
+                                                     //    .Editor(true)
+                                                     //    .DataIndex("ValorEntero6")
+                                                     //    .Text("Crónico")
+                                                     //    .Hidden(true)
+                                                     //    .Width(50)
+                                                     //    .Component(
+                                                     //        Html.X().ComboBox().ReadOnly(indicaModoLectura)
+                                                     //                   .Editable(false)
+                                                     //                   .QueryMode(DataLoadMode.Local)
+                                                     //                   .TriggerAction(TriggerAction.All)
+                                                     //                   .AllowBlank(false).BlankText("Debe ingresar el campo crónico")
+                                                     //                   .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABCOLABORACION").Select(d => new ListItem(d.Name, d.ID)))
+                                                     //        ), // Cronico está siendo reemplazado por Estado
                                                      Html.X().ComponentColumn()
                                                          .Editor(true)
                                                          .DataIndex("ValorEntero7")
@@ -1206,17 +1206,17 @@
                                                              ),
                                                      Html.X().ComponentColumn()
                                                          .Editor(true)
-                                                         .DataIndex("ValorEntero8")
+                                                         .DataIndex("ValorEntero6")
                                                          .Text("Estado")
-                                                         .Hidden(true)
+                                                         //.Hidden(true)
                                                          .Width(50)
                                                          .Component(
                                                              Html.X().ComboBox().ReadOnly(indicaModoLectura)
                                                                         .Editable(false)
                                                                         .QueryMode(DataLoadMode.Local)
                                                                         .TriggerAction(TriggerAction.All)
-                                                                        .AllowBlank(false).BlankText("Debe ingresar el campo nuevo")
-                                                                        .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("TABCOLABORACION").Select(d => new ListItem(d.Name, d.ID)))
+                                                                        .AllowBlank(false).BlankText("Seleccione")
+                                                                        .Items(SoluccionSalud.Service.MiscelaneosService.SvcMiscelaneos.comboModelGenerico.GetComboGenerico("ESTADIO").Select(d => new ListItem(d.Name, d.ID)))
                                                              ),
                                                       Html.X().ComponentColumn()
                                                          .Editor(true)
